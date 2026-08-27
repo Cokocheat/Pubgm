@@ -9,8 +9,12 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="preconnect" href="https://cdnjs.cloudflare.com"><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-*{font-family:'Poppins',sans-serif;box-sizing:border-box}
+*{font-family:'Poppins',sans-serif;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;font-size:14px}
+a,button{ -webkit-tap-highlight-color:transparent; outline:none; -webkit-touch-callout:none; background-clip:padding-box; position:relative; overflow:hidden; isolation:isolate; }
+a:focus,button:focus,a:active,button:active{outline:none !important; box-shadow:none !important}
+a.rounded-full,button.rounded-full,.rounded-full{overflow:hidden !important; background-clip:padding-box !important}
+a.rounded-xl,button.rounded-xl,.rounded-xl,a.rounded-2xl,button.rounded-2xl,.rounded-2xl,a.rounded-3xl,button.rounded-3xl,.rounded-3xl{overflow:hidden !important}
 html,body{width:100%;max-width:100%;margin:0 auto;overflow-x:hidden;position:relative}
 *{max-width:100%;box-sizing:border-box}
 section,nav,footer{max-width:100%;overflow-x:hidden;box-sizing:border-box}
@@ -29,6 +33,7 @@ img{max-width:100%;display:block}
 @media(max-width:768px){
   html{font-size:12.5px}
   .glass{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(255,255,255,0.05)}
+  nav{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;background:rgba(6,10,15,0.96) !important}
   .hero-bg{background:#060a0f}
   .esp-glow{box-shadow:none}
   .neon-btn{box-shadow:0 0 10px rgba(0,255,136,0.3)}
@@ -42,8 +47,13 @@ img{max-width:100%;display:block}
 html{transition:background .3s,color .3s}
 html[data-theme="light"] body{background:#eef2f7 !important;color:#0f172a !important}
 html[data-theme="light"] .hero-bg{background:radial-gradient(ellipse at top, rgba(0,255,136,0.10) 0%, transparent 60%), radial-gradient(ellipse at bottom right, rgba(0,212,255,0.08) 0%, transparent 55%), #eef2f7 !important}
-html[data-theme="light"] .glass{background:rgba(255,255,255,0.88) !important;border-color:rgba(15,23,42,0.08) !important;backdrop-filter:blur(12px) !important;-webkit-backdrop-filter:blur(12px) !important}
+html[data-theme="light"] .glass{background:rgba(255,255,255,0.82) !important;border-color:rgba(15,23,42,0.06) !important;backdrop-filter:blur(8px) !important;-webkit-backdrop-filter:blur(8px) !important}
 html[data-theme="light"] nav{border-color:rgba(15,23,42,0.08) !important}
+@media(max-width:768px){
+  html[data-theme="light"] .glass{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;background:rgba(255,255,255,0.94) !important;box-shadow:0 1px 6px rgba(15,23,42,0.06) !important}
+  html[data-theme="light"] nav{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;background:rgba(255,255,255,0.96) !important}
+  html[data-theme="light"] .hero-bg{background:#eef2f7 !important}
+}
 html[data-theme="light"] .text-white{color:#0f172a !important}
 html[data-theme="light"] .text-gray-400{color:#64748b !important}
 html[data-theme="light"] .text-gray-500{color:#64748b !important}
