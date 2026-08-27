@@ -378,9 +378,11 @@ document.getElementById('downloadBtn').addEventListener('click', function(e){
     localStorage.setItem(key, cur);
     apply(cur);
   });
-  // auto follow HP if user belum pilih manual
+  // auto follow HP selalu — override manual jika HP ganti mode
   mql.addEventListener('change', e=>{
-    if(!localStorage.getItem(key)) apply(e.matches?'dark':'light');
+    const t = e.matches ? 'dark' : 'light';
+    localStorage.setItem(key, t);
+    apply(t);
   });
 })();
 // smooth scroll
