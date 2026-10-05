@@ -17,10 +17,6 @@
             --border-color: rgba(255, 170, 0, 0.2);
             --success-green: #00ff88;
             --danger-red: #ff4444;
-            --dana-blue: #118eea;
-            --ovo-purple: #4c3494;
-            --seabank-orange: #ff6b00;
-            --bni-orange: #f05a22;
             --font-heading: 'Orbitron', sans-serif;
             --font-body: 'Inter', sans-serif;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -236,7 +232,6 @@
             text-transform: uppercase;
         }
 
-        /* PAKS TEXT */
         .paks-text {
             font-family: var(--font-heading);
             font-size: 22px;
@@ -552,22 +547,57 @@
             padding: 40px 5%;
             border-top: 1px solid var(--border-color);
             background: rgba(5, 5, 5, 0.9);
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
             width: 100%;
+            gap: 30px;
+        }
+
+        .footer-col {
+            width: 100%;
+            max-width: 900px;
         }
 
         .footer-col h4 {
             font-family: var(--font-heading);
             color: var(--gold-primary);
             font-size: 18px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             letter-spacing: 1px;
         }
 
-        .footer-col p, .footer-col a {
+        .footer-col p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* Navigasi & Pembayaran : item rata ke samping */
+        .footer-links-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .footer-links-row a,
+        .footer-links-row span {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .footer-links-row a:hover {
+            color: var(--gold-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Hubungi Kami : tetap menumpuk ke bawah seperti semula */
+        .footer-contact a {
             color: var(--text-muted);
             text-decoration: none;
             font-size: 14px;
@@ -576,10 +606,10 @@
             transition: var(--transition);
         }
 
-        .footer-col a:hover { color: var(--gold-primary); padding-left: 5px; }
+        .footer-contact a:hover { color: var(--gold-primary); }
 
         .footer-bottom {
-            grid-column: 1 / -1;
+            width: 100%;
             text-align: center;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -652,7 +682,6 @@
 
         .close-modal:hover { color: var(--danger-red); transform: rotate(90deg); }
 
-        /* --- LOGIN FORM --- */
         .form-group { margin-bottom: 20px; }
 
         .form-group label {
@@ -749,7 +778,6 @@
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Ringkasan Produk */
         .summary-box {
             background: rgba(255, 170, 0, 0.05);
             border: 1px solid var(--border-color);
@@ -772,7 +800,6 @@
         .summary-value { font-weight: 600; font-size: 15px; }
         .summary-value.gold { color: var(--gold-primary); font-family: var(--font-heading); font-size: 18px; }
 
-        /* Payment Methods */
         .payment-section-title {
             font-size: 14px;
             font-weight: 600;
@@ -853,7 +880,6 @@
             margin-top: 2px;
         }
 
-        /* Payment Details */
         .payment-detail-box {
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid var(--border-color);
@@ -883,11 +909,7 @@
             color: #fff;
         }
 
-        .payment-detail-info {
-            display: flex;
-            flex-direction: column;
-        }
-
+        .payment-detail-info { display: flex; flex-direction: column; }
         .payment-detail-info strong { font-size: 15px; }
         .payment-detail-info span { font-size: 12px; color: var(--text-muted); }
 
@@ -956,7 +978,6 @@
 
         .instruction-box strong { color: var(--text-main); }
 
-        /* Checkout Buttons */
         .checkout-actions {
             display: flex;
             gap: 12px;
@@ -1073,31 +1094,10 @@
             .checkout-steps .step-label { font-size: 9px; }
             .step-circle { width: 28px; height: 28px; font-size: 12px; }
 
-            /* --- PERBAIKAN FOOTER MOBILE --- */
-            footer {
-                grid-template-columns: 1fr 1fr; /* Membuat 2 kolom */
-                gap: 20px;
-                text-align: center;
-                padding: 30px 5%;
-            }
-            /* Kolom 1 (Brand) mengambil 2 kolom penuh */
-            .footer-col:first-child {
-                grid-column: span 2;
-                margin-bottom: 10px;
-            }
-            /* Kolom 2 (Navigasi) dan Kolom 3 (Pembayaran) masing-masing 1 kolom */
-            .footer-col:nth-child(2),
-            .footer-col:nth-child(3) {
-                grid-column: span 1;
-            }
-            /* Kolom 4 (Hubungi Kami) mengambil 2 kolom penuh */
-            .footer-col:last-child {
-                grid-column: span 2;
-                margin-top: 10px;
-            }
-            .footer-col h4 { font-size: 15px; margin-bottom: 12px; }
-            .footer-col p, .footer-col a { font-size: 13px; margin-bottom: 6px; }
-            .footer-bottom { margin-top: 10px; padding-top: 15px; }
+            /* Footer responsive */
+            .footer-links-row { gap: 15px; }
+            .footer-links-row a,
+            .footer-links-row span { font-size: 13px; }
         }
 
         /* Mobile Menu */
@@ -1182,7 +1182,6 @@
                 <span class="game-badge-text">PUBG MOBILE</span>
             </div>
 
-            <!-- TEKS PAKS -->
             <div class="paks-text">PUBG MOBILE PAKS</div>
 
             <h1 class="hero-title">SHADOWCHEAT PROJECT</h1>
@@ -1274,26 +1273,37 @@
             <h4>SHADOWCHEAT PROJECT</h4>
             <p>Platform penyedia produk digital premium untuk PUBG Mobile Paks. Support Global, Korea, Vietnam, Taiwan. Full Safe &amp; Android Non-Root.</p>
         </div>
+
+        <!-- Navigasi : item rata ke samping -->
         <div class="footer-col">
             <h4>Navigasi</h4>
-            <a href="#home">Home</a>
-            <a href="#produk">Produk</a>
-            <a href="#faq">FAQ</a>
-            <a href="https://t.me/scp281025" target="_blank">Support</a>
+            <div class="footer-links-row">
+                <a href="#home">Home</a>
+                <a href="#produk">Produk</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://t.me/scp281025" target="_blank">Support</a>
+            </div>
         </div>
+
+        <!-- Pembayaran : item rata ke samping -->
         <div class="footer-col">
             <h4>Pembayaran</h4>
-            <p>DANA</p>
-            <p>OVO</p>
-            <p>SeaBank</p>
-            <p>BNI</p>
+            <div class="footer-links-row">
+                <span>DANA</span>
+                <span>OVO</span>
+                <span>SeaBank</span>
+                <span>BNI</span>
+            </div>
         </div>
-        <div class="footer-col">
+
+        <!-- Hubungi Kami : tetap menumpuk ke bawah -->
+        <div class="footer-col footer-contact">
             <h4>Hubungi Kami</h4>
             <a href="https://t.me/scp281025" target="_blank">Telegram: @scp281025</a>
             <a href="#">Email: support@shadowcheat.com</a>
             <a href="#">Website: shadowcheat.com</a>
         </div>
+
         <div class="footer-bottom">
             &copy; 2024 Shadowcheat Project. All rights reserved. | Safe &amp; Secure
         </div>
@@ -1327,7 +1337,6 @@
                 <button class="close-modal" onclick="closeModal('checkoutModal')">&times;</button>
             </div>
 
-            <!-- Step Indicator -->
             <div class="checkout-steps">
                 <div class="step-indicator active" id="step1Indicator">
                     <div class="step-circle">1</div>
@@ -1343,7 +1352,6 @@
                 </div>
             </div>
 
-            <!-- STEP 1: Ringkasan Produk -->
             <div class="checkout-step active" id="step1">
                 <div class="summary-box">
                     <div class="summary-row">
@@ -1372,7 +1380,6 @@
                 </div>
             </div>
 
-            <!-- STEP 2: Pilih Metode Pembayaran -->
             <div class="checkout-step" id="step2">
                 <div class="payment-section-title">Pilih Metode Pembayaran</div>
                 <div class="payment-grid">
@@ -1403,7 +1410,6 @@
                 </div>
             </div>
 
-            <!-- STEP 3: Instruksi Pembayaran -->
             <div class="checkout-step" id="step3">
                 <div class="payment-detail-box">
                     <div class="payment-detail-header">
@@ -1458,155 +1464,80 @@
     <script>
         // ============ DATA PEMBAYARAN ============
         const paymentData = {
-            'DANA': {
-                type: 'E-Wallet',
-                number: '0812-3456-7890',
-                owner: 'Shadowcheat Store',
-                logoClass: 'dana',
-                logoText: 'DANA'
-            },
-            'OVO': {
-                type: 'E-Wallet',
-                number: '0812-3456-7890',
-                owner: 'Shadowcheat Store',
-                logoClass: 'ovo',
-                logoText: 'OVO'
-            },
-            'SeaBank': {
-                type: 'Transfer Bank',
-                number: '9012-3456-7890',
-                owner: 'Shadowcheat Store',
-                logoClass: 'seabank',
-                logoText: 'SB'
-            },
-            'BNI': {
-                type: 'Transfer Bank',
-                number: '0123-4567-890',
-                owner: 'Shadowcheat Store',
-                logoClass: 'bni',
-                logoText: 'BNI'
-            }
+            'DANA': { type: 'E-Wallet', number: '0812-3456-7890', owner: 'Shadowcheat Store', logoClass: 'dana', logoText: 'DANA' },
+            'OVO': { type: 'E-Wallet', number: '0812-3456-7890', owner: 'Shadowcheat Store', logoClass: 'ovo', logoText: 'OVO' },
+            'SeaBank': { type: 'Transfer Bank', number: '9012-3456-7890', owner: 'Shadowcheat Store', logoClass: 'seabank', logoText: 'SB' },
+            'BNI': { type: 'Transfer Bank', number: '0123-4567-890', owner: 'Shadowcheat Store', logoClass: 'bni', logoText: 'BNI' }
         };
 
-        // ============ CHECKOUT STATE ============
-        let checkoutData = {
-            product: '',
-            price: 0,
-            duration: '',
-            paymentMethod: ''
-        };
+        let checkoutData = { product: '', price: 0, duration: '', paymentMethod: '' };
 
-        // ============ FORMAT RUPIAH ============
-        function formatRupiah(num) {
-            return 'Rp ' + num.toLocaleString('id-ID');
-        }
+        function formatRupiah(num) { return 'Rp ' + num.toLocaleString('id-ID'); }
 
-        // ============ BUKA CHECKOUT ============
         function openCheckout(product, price, duration) {
             checkoutData = { product, price, duration, paymentMethod: '' };
-            
-            // Isi ringkasan
             document.getElementById('summaryProduct').textContent = product;
             document.getElementById('summaryDuration').textContent = duration;
             document.getElementById('summaryPrice').textContent = formatRupiah(price);
-            
-            // Reset ke step 1
             resetCheckoutSteps();
-            
-            // Buka modal
             document.getElementById('checkoutModal').classList.add('active');
         }
 
         function resetCheckoutSteps() {
-            // Reset semua indikator
             document.querySelectorAll('.step-indicator').forEach((el, i) => {
                 el.classList.remove('active', 'completed');
                 if (i === 0) el.classList.add('active');
             });
-            
-            // Reset semua step content
             document.querySelectorAll('.checkout-step').forEach(el => el.classList.remove('active'));
             document.getElementById('step1').classList.add('active');
-            
-            // Reset pilihan pembayaran
             document.querySelectorAll('.payment-option').forEach(el => el.classList.remove('selected'));
             document.getElementById('btnToStep3').disabled = true;
             checkoutData.paymentMethod = '';
         }
 
-        // ============ NAVIGASI STEP ============
         function goToStep(step) {
-            // Validasi
-            if (step === 2 && checkoutData.paymentMethod === '') {
-                // Jika dari step 1 ke 2, reset pilihan
-                document.querySelectorAll('.payment-option').forEach(el => el.classList.remove('selected'));
-            }
-            
             if (step === 3 && checkoutData.paymentMethod === '') {
                 showToast('Silakan pilih metode pembayaran terlebih dahulu!');
                 return;
             }
-            
-            // Update step content
             document.querySelectorAll('.checkout-step').forEach(el => el.classList.remove('active'));
             document.getElementById('step' + step).classList.add('active');
-            
-            // Update indicator
             document.querySelectorAll('.step-indicator').forEach((el, i) => {
                 el.classList.remove('active', 'completed');
                 if (i + 1 < step) el.classList.add('completed');
                 if (i + 1 === step) el.classList.add('active');
             });
-            
-            // Jika masuk step 3, isi detail pembayaran
             if (step === 3) fillPaymentDetail();
         }
 
-        // ============ PILIH PEMBAYARAN ============
         function selectPayment(method) {
             checkoutData.paymentMethod = method;
-            
             document.querySelectorAll('.payment-option').forEach(el => {
                 el.classList.remove('selected');
                 if (el.dataset.method === method) el.classList.add('selected');
             });
-            
             document.getElementById('btnToStep3').disabled = false;
         }
 
-        // ============ ISI DETAIL PEMBAYARAN ============
         function fillPaymentDetail() {
             const data = paymentData[checkoutData.paymentMethod];
             if (!data) return;
-            
-            // Header
             const logo = document.getElementById('paymentDetailLogo');
             logo.className = 'payment-detail-logo ' + data.logoClass;
             logo.textContent = data.logoText;
-            
             document.getElementById('paymentDetailName').textContent = checkoutData.paymentMethod;
             document.getElementById('paymentDetailType').textContent = data.type;
             document.getElementById('paymentNumber').textContent = data.number;
             document.getElementById('paymentOwner').textContent = data.owner;
-            
-            // Total
             document.getElementById('totalPayment').textContent = formatRupiah(checkoutData.price);
-            
-            // Update link Telegram dengan info
             document.getElementById('confirmLink').href = 'https://t.me/scp281025';
         }
 
-        // ============ COPY NUMBER ============
         function copyNumber() {
             const number = document.getElementById('paymentNumber').textContent;
-            navigator.clipboard.writeText(number).then(() => {
-                showToast('Nomor berhasil disalin!');
-            }).catch(() => {
-                showToast('Gagal menyalin, silakan salin manual.');
-            });
+            navigator.clipboard.writeText(number).then(() => showToast('Nomor berhasil disalin!')).catch(() => showToast('Gagal menyalin, silakan salin manual.'));
         }
 
-        // ============ TOAST ============
         function showToast(message) {
             const toast = document.getElementById('toast');
             document.getElementById('toastMessage').textContent = message;
@@ -1614,18 +1545,12 @@
             setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
-        // ============ MODAL CLOSE ============
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('active');
-        }
+        function closeModal(modalId) { document.getElementById(modalId).classList.remove('active'); }
 
         window.addEventListener('click', function(event) {
-            if (event.target.classList.contains('modal-overlay')) {
-                event.target.classList.remove('active');
-            }
+            if (event.target.classList.contains('modal-overlay')) event.target.classList.remove('active');
         });
 
-        // ============ LOGIN ============
         document.getElementById('loginBtn').addEventListener('click', function() {
             document.getElementById('loginModal').classList.add('active');
         });
@@ -1633,24 +1558,17 @@
         function handleLogin() {
             const user = document.getElementById('loginUser').value;
             const pass = document.getElementById('loginPass').value;
-            
-            if (user === '' || pass === '') {
-                showToast('Harap isi username dan password!');
-                return;
-            }
-            
+            if (user === '' || pass === '') { showToast('Harap isi username dan password!'); return; }
             showToast('Login berhasil! Selamat datang, ' + user);
             closeModal('loginModal');
             document.getElementById('loginUser').value = '';
             document.getElementById('loginPass').value = '';
         }
 
-        // ============ FAQ ============
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', function() {
                 const parent = this.parentElement;
                 const toggle = this.querySelector('.faq-toggle');
-                
                 document.querySelectorAll('.faq-item').forEach(item => {
                     if (item !== parent) {
                         item.classList.remove('active');
@@ -1658,28 +1576,20 @@
                         if (otherToggle) otherToggle.textContent = '+';
                     }
                 });
-                
                 parent.classList.toggle('active');
                 toggle.textContent = parent.classList.contains('active') ? '−' : '+';
             });
         });
 
-        // ============ PENCARIAN ============
         document.getElementById('searchInput').addEventListener('keyup', function() {
             const searchValue = this.value.toLowerCase();
             document.querySelectorAll('.product-card').forEach(product => {
                 const productName = product.getAttribute('data-name').toLowerCase();
                 const productTitle = product.querySelector('.product-name').textContent.toLowerCase();
-                
-                if (productName.includes(searchValue) || productTitle.includes(searchValue)) {
-                    product.style.display = 'flex';
-                } else {
-                    product.style.display = 'none';
-                }
+                product.style.display = (productName.includes(searchValue) || productTitle.includes(searchValue)) ? 'flex' : 'none';
             });
         });
 
-        // ============ MOBILE MENU ============
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -1708,7 +1618,6 @@
             });
         });
 
-        // ============ SMOOTH SCROLL ============
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
