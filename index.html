@@ -12,7 +12,16 @@
             --bg-glass: rgba(20, 20, 20, 0.85);
             --gold-primary: #ffaa00;
             --gold-glow: rgba(255, 170, 0, 0.4);
-            --gold-glow-strong: rgba(255, 170, 0, 0.8);
+            --gold-glow-strong: rgba(255, 170, 0, 0.85);
+            --blue-glow: rgba(0, 168, 232, 0.85);
+            --blue-primary: #00a8e8;
+            --red-glow: rgba(255, 68, 68, 0.8);
+            --green-glow: rgba(0, 255, 136, 0.7);
+            --white-glow: rgba(255, 255, 255, 0.5);
+            --dana-glow: rgba(17, 142, 234, 0.85);
+            --qris-glow: rgba(227, 6, 19, 0.85);
+            --seabank-glow: rgba(255, 107, 0, 0.85);
+            --bni-glow: rgba(240, 90, 34, 0.85);
             --text-main: #ffffff;
             --text-muted: #a0a0a0;
             --border-color: rgba(255, 170, 0, 0.2);
@@ -27,11 +36,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        html { 
-            scroll-behavior: smooth; 
-            overflow-x: hidden; 
-            width: 100%; 
-        }
+        html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
 
         body {
             background-color: var(--bg-dark);
@@ -62,73 +67,29 @@
         .svg-icon { width: 18px; height: 18px; fill: currentColor; display: inline-block; vertical-align: middle; }
 
         /* ============================================ */
-        /* --- TOMBOL MODERN: SUDUT MEMBULAT + GLOW --- */
+        /* --- GLOBAL CLICK EFFECT --- */
         /* ============================================ */
-
-        /* Base style untuk semua tombol utama */
-        .btn-modern {
-            border-radius: 50px !important;
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition-fast);
+        .clickable,
+        button,
+        .nav-link,
+        .footer-link,
+        .server-tag,
+        .faq-question,
+        .payment-option,
+        .close-modal,
+        .logo-container,
+        .hamburger {
             -webkit-tap-highlight-color: transparent;
             user-select: none;
+            transition: var(--transition-fast);
         }
 
-        /* Efek glow saat ditekan (klik) */
-        .btn-modern:active,
-        .btn-primary:active,
-        .btn-secondary:active,
-        .login-btn:active,
-        .buy-btn:active,
-        .btn-checkout:active,
-        .btn-next:active,
-        .btn-back:active,
-        .btn-confirm:active {
-            transform: scale(0.96) !important;
-            box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow) !important;
-            filter: brightness(1.3);
-        }
-
-        /* Efek ripple saat klik (garis kilat) */
-        .btn-primary::before,
-        .btn-secondary::before,
-        .login-btn::before,
-        .buy-btn::before,
-        .btn-next::before,
-        .btn-back::before,
-        .btn-confirm::before {
-            content: '';
-            position: absolute;
-            top: 50%; left: 50%;
-            width: 0; height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            transform: translate(-50%, -50%);
-            transition: width 0.5s, height 0.5s, opacity 0.5s;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .btn-primary:active::before,
-        .btn-secondary:active::before,
-        .login-btn:active::before,
-        .buy-btn:active::before,
-        .btn-next:active::before,
-        .btn-back:active::before,
-        .btn-confirm:active::before {
-            width: 300px;
-            height: 300px;
-            opacity: 1;
-            transition: width 0s, height 0s, opacity 0.5s;
-        }
-
-        /* --- HEADER (FIXED) --- */
+        /* ============================================ */
+        /* --- HEADER --- */
+        /* ============================================ */
         header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             height: var(--header-height);
             z-index: 1000;
             background: var(--bg-glass);
@@ -142,7 +103,24 @@
             width: 100%;
         }
 
-        .logo-container { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+        /* Logo: scale + glow emas halus saat diklik */
+        .logo-container { 
+            display: flex; align-items: center; gap: 12px; cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 50px;
+            transition: var(--transition-fast);
+        }
+        .logo-container:hover .logo-img {
+            box-shadow: 0 0 25px var(--gold-glow-strong), 0 0 40px var(--gold-glow);
+            transform: scale(1.05);
+        }
+        .logo-container:active {
+            transform: scale(0.97);
+            background: rgba(255, 170, 0, 0.1);
+        }
+        .logo-container:active .logo-img {
+            box-shadow: 0 0 35px var(--gold-glow-strong), 0 0 60px var(--gold-glow);
+        }
 
         .logo-img {
             width: 45px; height: 45px;
@@ -151,6 +129,7 @@
             box-shadow: 0 0 15px var(--gold-glow);
             object-fit: cover;
             background: #000;
+            transition: var(--transition-fast);
         }
 
         .brand-name {
@@ -160,12 +139,14 @@
             letter-spacing: 1px;
             line-height: 1.2;
         }
-
         .brand-name span { color: var(--gold-primary); }
 
+        /* ============================================ */
+        /* --- NAV LINKS (Emas, garis + glow saat klik) --- */
+        /* ============================================ */
         nav.desktop-nav { display: flex; gap: 30px; }
 
-        nav.desktop-nav a {
+        .nav-link {
             color: var(--text-main);
             text-decoration: none;
             font-size: 15px;
@@ -173,21 +154,38 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             position: relative;
-            transition: var(--transition);
+            padding: 8px 4px;
+            transition: var(--transition-fast);
+            border-radius: 6px;
         }
 
-        nav.desktop-nav a::after {
+        .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -5px; left: 0;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
             width: 0; height: 2px;
             background: var(--gold-primary);
+            box-shadow: 0 0 8px var(--gold-glow);
             transition: var(--transition);
+            border-radius: 2px;
         }
 
-        nav.desktop-nav a:hover { color: var(--gold-primary); }
-        nav.desktop-nav a:hover::after { width: 100%; }
+        .nav-link:hover { 
+            color: var(--gold-primary);
+            text-shadow: 0 0 10px var(--gold-glow);
+        }
+        .nav-link:hover::after { width: 100%; }
 
+        .nav-link:active {
+            transform: scale(0.95);
+            color: var(--gold-primary);
+            text-shadow: 0 0 20px var(--gold-glow-strong), 0 0 40px var(--gold-glow);
+        }
+
+        /* ============================================ */
+        /* --- SEARCH INPUT --- */
+        /* ============================================ */
         .search-container { position: relative; display: flex; align-items: center; }
 
         .search-input {
@@ -195,7 +193,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--text-main);
             padding: 10px 15px 10px 40px;
-            border-radius: 20px;
+            border-radius: 50px;
             font-family: var(--font-body);
             font-size: 14px;
             width: 200px;
@@ -203,10 +201,14 @@
             outline: none;
         }
 
+        .search-input:hover {
+            border-color: rgba(255, 170, 0, 0.4);
+        }
+
         .search-input:focus {
             width: 250px;
             border-color: var(--gold-primary);
-            box-shadow: 0 0 15px rgba(255, 170, 0, 0.1);
+            box-shadow: 0 0 20px var(--gold-glow), inset 0 0 10px rgba(255, 170, 0, 0.1);
         }
 
         .search-icon {
@@ -219,7 +221,9 @@
 
         .header-actions { display: flex; align-items: center; gap: 15px; }
 
-        /* --- LOGIN BUTTON (MODERN) --- */
+        /* ============================================ */
+        /* --- LOGIN BUTTON (Emas) --- */
+        /* ============================================ */
         .login-btn {
             background: linear-gradient(90deg, #b8860b, var(--gold-primary));
             color: #000;
@@ -236,7 +240,6 @@
             box-shadow: 0 0 15px var(--gold-glow);
             position: relative;
             overflow: hidden;
-            -webkit-tap-highlight-color: transparent;
         }
 
         .login-btn:hover { 
@@ -245,15 +248,38 @@
             filter: brightness(1.1);
         }
 
+        .login-btn:active {
+            transform: scale(0.94);
+            box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow), inset 0 0 15px rgba(255, 255, 255, 0.3);
+            filter: brightness(1.3);
+        }
+
+        /* ============================================ */
+        /* --- HAMBURGER (Emas) --- */
+        /* ============================================ */
         .hamburger {
             display: none;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
-            background: none;
-            border: none;
-            padding: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 12px;
             z-index: 1100;
+            transition: var(--transition-fast);
+        }
+
+        .hamburger:hover {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 15px var(--gold-glow);
+        }
+
+        .hamburger:active {
+            transform: scale(0.9);
+            background: rgba(255, 170, 0, 0.15);
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 25px var(--gold-glow-strong), 0 0 45px var(--gold-glow);
         }
 
         .hamburger span {
@@ -263,7 +289,11 @@
             transition: var(--transition);
         }
 
-        /* --- HERO --- */
+        .hamburger:active span { background: var(--gold-primary); box-shadow: 0 0 8px var(--gold-glow); }
+
+        /* ============================================ */
+        /* --- MAIN / HERO --- */
+        /* ============================================ */
         main {
             padding: 0 5%;
             max-width: 1400px;
@@ -301,10 +331,15 @@
             background: linear-gradient(90deg, rgba(255, 170, 0, 0.15), rgba(255, 170, 0, 0.05));
             border: 1px solid var(--gold-primary);
             padding: 8px 22px 8px 12px;
-            border-radius: 30px;
+            border-radius: 50px;
             margin-bottom: 20px;
             box-shadow: 0 0 20px rgba(255, 170, 0, 0.2);
             animation: floatBadge 3s ease-in-out infinite;
+            transition: var(--transition);
+        }
+
+        .game-badge:hover {
+            box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 50px var(--gold-glow);
         }
 
         @keyframes floatBadge {
@@ -376,6 +411,9 @@
             margin-bottom: 25px;
         }
 
+        /* ============================================ */
+        /* --- SERVER TAGS (Emas & Hijau) --- */
+        /* ============================================ */
         .server-support {
             display: flex;
             align-items: center;
@@ -389,30 +427,50 @@
         .server-tag {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-color);
-            padding: 8px 16px;
+            padding: 8px 18px;
             border-radius: 50px;
             font-size: 12px;
             font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--text-main);
-            transition: var(--transition);
             display: flex;
             align-items: center;
             gap: 8px;
+            cursor: pointer;
+            transition: var(--transition-fast);
         }
 
         .server-tag:hover {
             border-color: var(--gold-primary);
             color: var(--gold-primary);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 170, 0, 0.2);
+            box-shadow: 0 5px 20px var(--gold-glow);
+            text-shadow: 0 0 8px var(--gold-glow);
+        }
+
+        .server-tag:active {
+            transform: scale(0.93);
+            box-shadow: 0 0 25px var(--gold-glow-strong), 0 0 50px var(--gold-glow);
+            background: rgba(255, 170, 0, 0.15);
         }
 
         .server-tag.safe {
             background: rgba(0, 255, 136, 0.08);
             border-color: rgba(0, 255, 136, 0.4);
             color: var(--success-green);
+        }
+
+        .server-tag.safe:hover {
+            border-color: var(--success-green);
+            color: var(--success-green);
+            box-shadow: 0 5px 20px var(--green-glow);
+            text-shadow: 0 0 10px var(--green-glow);
+        }
+
+        .server-tag.safe:active {
+            box-shadow: 0 0 25px var(--green-glow), 0 0 50px var(--green-glow);
+            background: rgba(0, 255, 136, 0.15);
         }
 
         .server-tag .dot {
@@ -424,7 +482,9 @@
 
         .hero-cta { display: flex; gap: 20px; }
 
-        /* --- BUTTONS PRIMARY & SECONDARY (MODERN PILL) --- */
+        /* ============================================ */
+        /* --- TOMBOL PRIMARY & SECONDARY --- */
+        /* ============================================ */
         .btn-primary, .btn-secondary {
             font-family: var(--font-heading);
             font-size: 15px;
@@ -440,7 +500,6 @@
             border: none;
             position: relative;
             overflow: hidden;
-            -webkit-tap-highlight-color: transparent;
         }
 
         .btn-primary {
@@ -455,6 +514,12 @@
             filter: brightness(1.1);
         }
 
+        .btn-primary:active {
+            transform: scale(0.94);
+            box-shadow: 0 0 35px var(--gold-glow-strong), 0 0 70px var(--gold-glow);
+            filter: brightness(1.3);
+        }
+
         .btn-secondary {
             background: transparent;
             color: var(--gold-primary);
@@ -466,9 +531,18 @@
             background: rgba(255, 170, 0, 0.1); 
             transform: translateY(-3px);
             box-shadow: 0 8px 25px var(--gold-glow), inset 0 0 20px rgba(255, 170, 0, 0.2);
+            text-shadow: 0 0 10px var(--gold-glow);
         }
 
+        .btn-secondary:active {
+            transform: scale(0.94);
+            background: rgba(255, 170, 0, 0.2);
+            box-shadow: 0 0 30px var(--gold-glow-strong), inset 0 0 30px rgba(255, 170, 0, 0.3);
+        }
+
+        /* ============================================ */
         /* --- SECTION HEADER --- */
+        /* ============================================ */
         .section-header { text-align: center; margin-bottom: 50px; }
 
         .section-title {
@@ -482,7 +556,9 @@
 
         .section-desc { color: var(--text-muted); font-size: 16px; }
 
-        /* --- PRODUK --- */
+        /* ============================================ */
+        /* --- PRODUK CARD --- */
+        /* ============================================ */
         #produk { padding: 80px 0; }
 
         .product-grid {
@@ -509,7 +585,7 @@
         .product-card:hover {
             transform: translateY(-10px);
             border-color: var(--gold-primary);
-            box-shadow: 0 15px 40px rgba(255, 170, 0, 0.15);
+            box-shadow: 0 15px 40px rgba(255, 170, 0, 0.15), 0 0 60px rgba(255, 170, 0, 0.1);
         }
 
         .product-badge {
@@ -523,10 +599,19 @@
             transform: rotate(45deg);
             text-transform: uppercase;
             letter-spacing: 1px;
+            box-shadow: 0 0 15px var(--gold-glow);
         }
 
-        .product-badge.hot { background: var(--danger-red); color: #fff; }
-        .product-badge.permanent { background: linear-gradient(90deg, #ff4444, #ff8800); color: #fff; }
+        .product-badge.hot { 
+            background: var(--danger-red); 
+            color: #fff; 
+            box-shadow: 0 0 15px var(--red-glow);
+        }
+        .product-badge.permanent { 
+            background: linear-gradient(90deg, #ff4444, #ff8800); 
+            color: #fff;
+            box-shadow: 0 0 15px var(--red-glow);
+        }
 
         .product-icon-box {
             width: 80px; height: 80px;
@@ -537,9 +622,23 @@
             border: 1px solid var(--border-color);
             background: rgba(255, 170, 0, 0.08);
             margin-bottom: 20px;
+            transition: var(--transition);
         }
 
-        .product-icon-box svg { width: 36px; height: 36px; fill: var(--gold-primary); }
+        .product-card:hover .product-icon-box {
+            box-shadow: 0 0 25px var(--gold-glow), inset 0 0 15px rgba(255, 170, 0, 0.15);
+            transform: scale(1.08);
+        }
+
+        .product-icon-box svg { 
+            width: 36px; height: 36px; 
+            fill: var(--gold-primary);
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-icon-box svg {
+            filter: drop-shadow(0 0 8px var(--gold-glow-strong));
+        }
 
         .product-name {
             font-size: 22px;
@@ -562,9 +661,10 @@
             font-weight: 900;
             color: var(--gold-primary);
             margin-bottom: 25px;
+            text-shadow: 0 0 15px var(--gold-glow);
         }
 
-        /* --- BUY BUTTON (MODERN PILL) --- */
+        /* --- BUY BUTTON (Emas) --- */
         .buy-btn {
             background: linear-gradient(90deg, #b8860b, var(--gold-primary));
             color: #000;
@@ -586,7 +686,6 @@
             box-shadow: 0 0 15px var(--gold-glow);
             position: relative;
             overflow: hidden;
-            -webkit-tap-highlight-color: transparent;
         }
 
         .buy-btn:hover {
@@ -596,7 +695,15 @@
             filter: brightness(1.1);
         }
 
-        /* --- FAQ --- */
+        .buy-btn:active {
+            transform: scale(0.94);
+            box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow);
+            filter: brightness(1.3);
+        }
+
+        /* ============================================ */
+        /* --- FAQ (Emas) --- */
+        /* ============================================ */
         #faq { padding: 80px 0; max-width: 800px; margin: 0 auto; }
 
         .faq-item {
@@ -608,7 +715,15 @@
             transition: var(--transition);
         }
 
-        .faq-item:hover { border-color: rgba(255, 170, 0, 0.5); }
+        .faq-item:hover { 
+            border-color: rgba(255, 170, 0, 0.5);
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.1);
+        }
+
+        .faq-item.active {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 25px var(--gold-glow);
+        }
 
         .faq-question {
             padding: 20px;
@@ -618,11 +733,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: var(--transition);
+            transition: var(--transition-fast);
             gap: 15px;
         }
 
-        .faq-question:hover { color: var(--gold-primary); }
+        .faq-question:hover { 
+            color: var(--gold-primary);
+            text-shadow: 0 0 10px var(--gold-glow);
+        }
+
+        .faq-question:active {
+            transform: scale(0.99);
+            background: rgba(255, 170, 0, 0.08);
+        }
 
         .faq-toggle {
             font-family: var(--font-heading);
@@ -630,8 +753,21 @@
             font-weight: 700;
             color: var(--gold-primary);
             flex-shrink: 0;
-            width: 24px;
+            width: 30px;
+            height: 30px;
             text-align: center;
+            border-radius: 50%;
+            background: rgba(255, 170, 0, 0.1);
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faq-question:hover .faq-toggle {
+            background: var(--gold-primary);
+            color: #000;
+            box-shadow: 0 0 15px var(--gold-glow-strong);
         }
 
         .faq-answer {
@@ -649,7 +785,9 @@
             border-top-color: rgba(255, 255, 255, 0.05);
         }
 
+        /* ============================================ */
         /* --- FOOTER --- */
+        /* ============================================ */
         footer {
             margin-top: 80px;
             padding: 40px 5%;
@@ -671,6 +809,7 @@
             font-size: 18px;
             margin-bottom: 15px;
             letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(255, 170, 0, 0.3);
         }
 
         .footer-col p { color: var(--text-muted); font-size: 14px; line-height: 1.7; }
@@ -687,11 +826,25 @@
             color: var(--text-muted);
             text-decoration: none;
             font-size: 14px;
-            transition: var(--transition);
+            transition: var(--transition-fast);
             cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 50px;
+            display: inline-block;
         }
 
-        .footer-links-row a:hover { color: var(--gold-primary); transform: translateY(-2px); }
+        .footer-links-row a:hover { 
+            color: var(--gold-primary);
+            text-shadow: 0 0 10px var(--gold-glow);
+            background: rgba(255, 170, 0, 0.08);
+        }
+
+        .footer-links-row a:active {
+            transform: scale(0.93);
+            color: var(--gold-primary);
+            background: rgba(255, 170, 0, 0.15);
+            box-shadow: 0 0 20px var(--gold-glow);
+        }
 
         .footer-contact a {
             color: var(--text-muted);
@@ -699,10 +852,23 @@
             font-size: 14px;
             display: block;
             margin-bottom: 10px;
-            transition: var(--transition);
+            transition: var(--transition-fast);
+            padding: 5px 10px;
+            border-radius: 50px;
         }
 
-        .footer-contact a:hover { color: var(--gold-primary); }
+        .footer-contact a:hover { 
+            color: var(--gold-primary);
+            text-shadow: 0 0 10px var(--gold-glow);
+            background: rgba(255, 170, 0, 0.08);
+        }
+
+        .footer-contact a:active {
+            transform: scale(0.95);
+            color: var(--gold-primary);
+            background: rgba(255, 170, 0, 0.15);
+            box-shadow: 0 0 20px var(--gold-glow);
+        }
 
         .footer-bottom {
             width: 100%;
@@ -713,7 +879,9 @@
             font-size: 13px;
         }
 
-        /* --- MODAL BASE --- */
+        /* ============================================ */
+        /* --- MODAL --- */
+        /* ============================================ */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -766,22 +934,25 @@
             color: var(--gold-primary);
             font-size: 20px;
             letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(255, 170, 0, 0.3);
         }
 
+        /* --- CLOSE BUTTON (Merah) --- */
         .close-modal {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--text-muted);
             font-size: 22px;
             cursor: pointer;
-            transition: var(--transition);
+            transition: var(--transition-fast);
             line-height: 1;
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
         .close-modal:hover { 
@@ -789,6 +960,14 @@
             transform: rotate(90deg);
             background: rgba(255, 68, 68, 0.1);
             border-color: var(--danger-red);
+            box-shadow: 0 0 20px var(--red-glow);
+        }
+
+        .close-modal:active {
+            transform: rotate(180deg) scale(0.9);
+            background: rgba(255, 68, 68, 0.2);
+            box-shadow: 0 0 30px var(--red-glow), 0 0 60px rgba(255, 68, 68, 0.4);
+            color: #fff;
         }
 
         .form-group { margin-bottom: 20px; }
@@ -812,12 +991,18 @@
             transition: var(--transition);
         }
 
-        .form-group input:focus {
-            border-color: var(--gold-primary);
-            box-shadow: 0 0 15px rgba(255, 170, 0, 0.25);
+        .form-group input:hover {
+            border-color: rgba(255, 170, 0, 0.4);
         }
 
-        /* --- CHECKOUT MODAL --- */
+        .form-group input:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 20px var(--gold-glow), inset 0 0 10px rgba(255, 170, 0, 0.1);
+        }
+
+        /* ============================================ */
+        /* --- CHECKOUT STEPS --- */
+        /* ============================================ */
         .checkout-steps {
             display: flex;
             justify-content: space-between;
@@ -862,13 +1047,14 @@
             border-color: var(--gold-primary);
             background: var(--gold-primary);
             color: #000;
-            box-shadow: 0 0 15px var(--gold-glow);
+            box-shadow: 0 0 15px var(--gold-glow-strong), 0 0 30px var(--gold-glow);
         }
 
         .step-indicator.completed .step-circle {
             border-color: var(--success-green);
             background: var(--success-green);
             color: #000;
+            box-shadow: 0 0 15px var(--green-glow);
         }
 
         .step-label {
@@ -880,7 +1066,10 @@
             text-align: center;
         }
 
-        .step-indicator.active .step-label { color: var(--gold-primary); }
+        .step-indicator.active .step-label { 
+            color: var(--gold-primary); 
+            text-shadow: 0 0 8px var(--gold-glow);
+        }
 
         .checkout-step { display: none; }
         .checkout-step.active { display: block; animation: fadeIn 0.3s ease; }
@@ -928,6 +1117,7 @@
             font-family: var(--font-heading); 
             font-size: 18px; 
             white-space: nowrap;
+            text-shadow: 0 0 10px rgba(255, 170, 0, 0.4);
         }
 
         .payment-section-title {
@@ -939,6 +1129,9 @@
             margin-bottom: 15px;
         }
 
+        /* ============================================ */
+        /* --- PAYMENT OPTIONS (Warna per Brand) --- */
+        /* ============================================ */
         .payment-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -952,31 +1145,81 @@
             border-radius: 15px;
             padding: 15px;
             cursor: pointer;
-            transition: var(--transition);
             text-align: center;
             position: relative;
+            transition: var(--transition-fast);
         }
 
-        .payment-option:hover {
-            border-color: var(--gold-primary);
-            background: rgba(255, 170, 0, 0.05);
+        .payment-option[data-method="DANA"]:hover {
+            border-color: #118eea;
+            background: rgba(17, 142, 234, 0.08);
             transform: translateY(-3px);
+            box-shadow: 0 5px 20px var(--dana-glow);
+        }
+        .payment-option[data-method="DANA"]:active,
+        .payment-option[data-method="DANA"].selected {
+            border-color: #118eea;
+            background: rgba(17, 142, 234, 0.15);
+            box-shadow: 0 0 25px var(--dana-glow), 0 0 50px rgba(17, 142, 234, 0.4);
+        }
+
+        .payment-option[data-method="QRIS"]:hover {
+            border-color: #e30613;
+            background: rgba(227, 6, 19, 0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px var(--qris-glow);
+        }
+        .payment-option[data-method="QRIS"]:active,
+        .payment-option[data-method="QRIS"].selected {
+            border-color: #e30613;
+            background: rgba(227, 6, 19, 0.15);
+            box-shadow: 0 0 25px var(--qris-glow), 0 0 50px rgba(227, 6, 19, 0.4);
+        }
+
+        .payment-option[data-method="SeaBank"]:hover {
+            border-color: #ff6b00;
+            background: rgba(255, 107, 0, 0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px var(--seabank-glow);
+        }
+        .payment-option[data-method="SeaBank"]:active,
+        .payment-option[data-method="SeaBank"].selected {
+            border-color: #ff6b00;
+            background: rgba(255, 107, 0, 0.15);
+            box-shadow: 0 0 25px var(--seabank-glow), 0 0 50px rgba(255, 107, 0, 0.4);
+        }
+
+        .payment-option[data-method="BNI"]:hover {
+            border-color: #f05a22;
+            background: rgba(240, 90, 34, 0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px var(--bni-glow);
+        }
+        .payment-option[data-method="BNI"]:active,
+        .payment-option[data-method="BNI"].selected {
+            border-color: #f05a22;
+            background: rgba(240, 90, 34, 0.15);
+            box-shadow: 0 0 25px var(--bni-glow), 0 0 50px rgba(240, 90, 34, 0.4);
         }
 
         .payment-option.selected {
-            border-color: var(--gold-primary);
-            background: rgba(255, 170, 0, 0.1);
-            box-shadow: 0 0 20px rgba(255, 170, 0, 0.3);
+            border-width: 2px;
         }
 
         .payment-option.selected::after {
             content: '✓';
             position: absolute;
             top: 8px; right: 10px;
-            color: var(--gold-primary);
             font-weight: 700;
             font-size: 16px;
+            color: var(--text-main);
+            text-shadow: 0 0 10px currentColor;
         }
+
+        .payment-option[data-method="DANA"].selected::after { color: #118eea; text-shadow: 0 0 12px var(--dana-glow); }
+        .payment-option[data-method="QRIS"].selected::after { color: #e30613; text-shadow: 0 0 12px var(--qris-glow); }
+        .payment-option[data-method="SeaBank"].selected::after { color: #ff6b00; text-shadow: 0 0 12px var(--seabank-glow); }
+        .payment-option[data-method="BNI"].selected::after { color: #f05a22; text-shadow: 0 0 12px var(--bni-glow); }
 
         .payment-logo {
             width: 60px; height: 60px;
@@ -990,12 +1233,17 @@
             font-size: 18px;
             color: #fff;
             letter-spacing: 1px;
+            transition: var(--transition);
         }
 
-        .payment-logo.dana { background: linear-gradient(135deg, #118eea, #0a6fbf); }
-        .payment-logo.qris { background: linear-gradient(135deg, #e30613, #ff6b6b); font-size: 13px; }
-        .payment-logo.seabank { background: linear-gradient(135deg, #ff6b00, #ff8c33); }
-        .payment-logo.bni { background: linear-gradient(135deg, #f05a22, #005e8a); }
+        .payment-option:hover .payment-logo {
+            transform: scale(1.05);
+        }
+
+        .payment-logo.dana { background: linear-gradient(135deg, #118eea, #0a6fbf); box-shadow: 0 0 15px rgba(17, 142, 234, 0.4); }
+        .payment-logo.qris { background: linear-gradient(135deg, #e30613, #ff6b6b); box-shadow: 0 0 15px rgba(227, 6, 19, 0.4); font-size: 13px; }
+        .payment-logo.seabank { background: linear-gradient(135deg, #ff6b00, #ff8c33); box-shadow: 0 0 15px rgba(255, 107, 0, 0.4); }
+        .payment-logo.bni { background: linear-gradient(135deg, #f05a22, #005e8a); box-shadow: 0 0 15px rgba(240, 90, 34, 0.4); }
 
         .payment-name {
             font-size: 13px;
@@ -1050,6 +1298,11 @@
             border-radius: 12px;
             padding: 18px;
             text-align: center;
+            transition: var(--transition);
+        }
+
+        .contact-admin-box:hover {
+            box-shadow: 0 0 20px rgba(0, 136, 204, 0.3);
         }
 
         .contact-admin-box p {
@@ -1078,6 +1331,12 @@
             box-shadow: 0 0 25px rgba(255, 170, 0, 0.3);
             background: #fff;
             padding: 8px;
+            transition: var(--transition);
+        }
+
+        .qr-container img:hover {
+            box-shadow: 0 0 35px var(--gold-glow-strong), 0 0 60px var(--gold-glow);
+            transform: scale(1.02);
         }
 
         .qr-container p {
@@ -1095,6 +1354,7 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.15);
         }
 
         .total-payment .label {
@@ -1109,6 +1369,7 @@
             font-size: 24px;
             font-weight: 900;
             color: var(--gold-primary);
+            text-shadow: 0 0 15px var(--gold-glow);
         }
 
         .instruction-box {
@@ -1130,7 +1391,9 @@
             margin-top: 20px;
         }
 
-        /* --- CHECKOUT BUTTONS (MODERN PILL) --- */
+        /* ============================================ */
+        /* --- CHECKOUT BUTTONS --- */
+        /* ============================================ */
         .btn-checkout {
             flex: 1;
             font-family: var(--font-heading);
@@ -1150,9 +1413,9 @@
             gap: 8px;
             position: relative;
             overflow: hidden;
-            -webkit-tap-highlight-color: transparent;
         }
 
+        /* --- NEXT (Emas) --- */
         .btn-next {
             background: linear-gradient(90deg, #b8860b, var(--gold-primary));
             color: #000;
@@ -1164,8 +1427,14 @@
             box-shadow: 0 8px 25px var(--gold-glow), 0 0 45px var(--gold-glow);
             filter: brightness(1.1);
         }
+        .btn-next:active:not(:disabled) {
+            transform: scale(0.94);
+            box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow);
+            filter: brightness(1.3);
+        }
         .btn-next:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; }
 
+        /* --- BACK (Putih transparan) --- */
         .btn-back {
             background: transparent;
             color: var(--text-muted);
@@ -1175,9 +1444,19 @@
         .btn-back:hover { 
             color: var(--text-main); 
             border-color: var(--text-main);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 15px var(--white-glow), inset 0 0 15px rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.05);
         }
 
+        .btn-back:active {
+            transform: scale(0.94);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 25px var(--white-glow), inset 0 0 20px rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            border-color: var(--text-main);
+        }
+
+        /* --- CONFIRM (Biru Telegram) --- */
         .btn-confirm {
             background: linear-gradient(90deg, #0088cc, #00a8e8);
             color: #fff;
@@ -1191,7 +1470,15 @@
             filter: brightness(1.15);
         }
 
+        .btn-confirm:active {
+            transform: scale(0.94);
+            box-shadow: 0 0 30px var(--blue-glow), 0 0 60px rgba(0, 136, 204, 0.4);
+            filter: brightness(1.25);
+        }
+
+        /* ============================================ */
         /* --- TOAST --- */
+        /* ============================================ */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -1231,7 +1518,7 @@
             .brand-name { font-size: 17px; }
             .logo-img { width: 40px; height: 40px; }
             nav.desktop-nav { gap: 15px; }
-            nav.desktop-nav a { font-size: 12px; }
+            .nav-link { font-size: 12px; }
             .search-input { width: 140px; font-size: 13px; padding: 8px 12px 8px 35px; }
             .search-input:focus { width: 180px; }
             .search-icon { left: 11px; width: 15px; height: 15px; }
@@ -1285,7 +1572,7 @@
             .game-badge { padding: 6px 15px 6px 8px; }
             .pubg-logo { width: 26px; height: 26px; }
             .game-badge-text { font-size: 11px; letter-spacing: 1px; }
-            .server-tag { font-size: 10px; padding: 6px 10px; letter-spacing: 1px; }
+            .server-tag { font-size: 10px; padding: 6px 12px; letter-spacing: 1px; }
             .payment-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
             .payment-option { padding: 12px 8px; }
             .payment-logo { width: 48px; height: 48px; font-size: 14px; }
@@ -1293,11 +1580,13 @@
             .modal-content { padding: 20px; max-width: 100%; }
             .checkout-steps .step-label { font-size: 9px; }
             .step-circle { width: 28px; height: 28px; font-size: 12px; }
-            .footer-links-row { gap: 15px; }
+            .footer-links-row { gap: 12px; }
             .footer-links-row a,
-            .footer-links-row span { font-size: 13px; }
+            .footer-links-row span { font-size: 13px; padding: 4px 8px; }
             .total-payment { padding: 15px 20px; }
             .total-payment .value { font-size: 20px; }
+            .faq-question { font-size: 16px; padding: 16px; }
+            .faq-toggle { width: 26px; height: 26px; font-size: 16px; }
         }
 
         @media (max-width: 400px) {
@@ -1306,13 +1595,13 @@
             .brand-name { font-size: 13px; }
         }
 
-        /* --- MOBILE MENU OVERLAY --- */
+        /* ============================================ */
+        /* --- MOBILE MENU --- */
+        /* ============================================ */
         .mobile-menu {
             position: fixed;
             top: var(--header-height);
-            left: 0;
-            right: 0;
-            bottom: 0;
+            left: 0; right: 0; bottom: 0;
             width: 100%;
             height: calc(100vh - var(--header-height));
             background: var(--bg-dark);
@@ -1334,12 +1623,26 @@
             text-decoration: none;
             font-size: 20px;
             font-weight: 600;
-            padding: 15px 0;
+            padding: 15px 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
+            transition: var(--transition-fast);
+            border-radius: 12px;
+            position: relative;
         }
 
-        .mobile-menu a:hover { color: var(--gold-primary); padding-left: 10px; }
+        .mobile-menu a:hover { 
+            color: var(--gold-primary); 
+            padding-left: 30px;
+            background: rgba(255, 170, 0, 0.08);
+            text-shadow: 0 0 10px var(--gold-glow);
+        }
+
+        .mobile-menu a:active {
+            transform: scale(0.97);
+            color: var(--gold-primary);
+            background: rgba(255, 170, 0, 0.15);
+            box-shadow: 0 0 20px var(--gold-glow);
+        }
     </style>
 </head>
 <body>
@@ -1352,10 +1655,10 @@
         </div>
 
         <nav class="desktop-nav">
-            <a href="#home">Home</a>
-            <a href="#produk">Produk</a>
-            <a href="#faq">FAQ</a>
-            <a href="https://t.me/scp281025" target="_blank">Support</a>
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#produk" class="nav-link">Produk</a>
+            <a href="#faq" class="nav-link">FAQ</a>
+            <a href="https://t.me/scp281025" target="_blank" class="nav-link">Support</a>
         </nav>
 
         <div class="search-container">
@@ -1555,7 +1858,7 @@
                 <input type="password" id="loginPass" placeholder="Masukkan password">
             </div>
             <button class="btn-primary" style="width: 100%; margin-top: 10px;" onclick="handleLogin()">Masuk</button>
-            <p style="text-align: center; margin-top: 15px; font-size: 14px; color: var(--text-muted);">Belum punya akun? <a href="https://t.me/scp281025" target="_blank" style="color: var(--gold-primary); text-decoration: none;">Hubungi Admin</a></p>
+            <p style="text-align: center; margin-top: 15px; font-size: 14px; color: var(--text-muted);">Belum punya akun? <a href="https://t.me/scp281025" target="_blank" style="color: var(--gold-primary); text-decoration: none; transition: 0.15s; padding: 4px 8px; border-radius: 50px; display: inline-block;" onmouseover="this.style.textShadow='0 0 12px rgba(255,170,0,0.8)'; this.style.background='rgba(255,170,0,0.1)';" onmouseout="this.style.textShadow='none'; this.style.background='transparent';">Hubungi Admin</a></p>
         </div>
     </div>
 
