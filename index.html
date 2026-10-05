@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shadowcheat Project - PUBG Mobile Paks</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://youtu.be; child-src 'self' https://www.youtube.com https://www.youtube-nocookie.com;">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="robots" content="noarchive, nosnippet">
@@ -307,56 +307,32 @@
         .buy-btn:active { transform: scale(0.94);
             box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow); filter: brightness(1.3); }
 
-        /* TUTORIAL */
+        /* TUTORIAL - VIDEO ONLY */
         #tutorial { padding: 70px 0; max-width: 900px; margin: 0 auto; }
 
-        .tutorial-container { display: flex; flex-direction: column; gap: 30px; }
-
-        .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%;
-            border-radius: 20px; overflow: hidden; border: 2px solid var(--border-color);
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid var(--border-color);
             box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255, 170, 0, 0.15);
-            transition: var(--transition); }
+            background: #000;
+            transition: var(--transition);
+        }
 
-        .video-wrapper:hover { border-color: var(--gold-primary);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 50px rgba(255, 170, 0, 0.3); }
+        .video-wrapper:hover {
+            border-color: var(--gold-primary);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 50px rgba(255, 170, 0, 0.3);
+        }
 
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-
-        .tutorial-warning { display: flex; align-items: center; gap: 15px;
-            background: rgba(255, 68, 68, 0.08); border: 1px solid rgba(255, 68, 68, 0.4);
-            border-left: 4px solid var(--danger-red); border-radius: 12px; padding: 18px 22px;
-            box-shadow: 0 0 20px rgba(255, 68, 68, 0.15); }
-
-        .warning-icon { font-family: var(--font-heading); font-size: 24px; font-weight: 900;
-            color: var(--danger-red); width: 40px; height: 40px; display: flex;
-            align-items: center; justify-content: center; border-radius: 50%;
-            background: rgba(255, 68, 68, 0.15); border: 2px solid var(--danger-red);
-            flex-shrink: 0; text-shadow: 0 0 10px var(--red-glow); }
-
-        .tutorial-warning p { color: var(--danger-red); font-size: 14px; font-weight: 700;
-            line-height: 1.6; letter-spacing: 0.5px; }
-
-        .tutorial-steps { display: flex; flex-direction: column; gap: 15px; }
-
-        .steps-title { font-family: var(--font-heading); font-size: 20px; color: var(--gold-primary);
-            letter-spacing: 1px; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 170, 0, 0.3); }
-
-        .step-item { display: flex; gap: 20px; align-items: flex-start;
-            background: var(--bg-panel); border: 1px solid var(--border-color);
-            border-radius: 15px; padding: 20px; transition: var(--transition); }
-
-        .step-item:hover { border-color: var(--gold-primary);
-            box-shadow: 0 0 25px rgba(255, 170, 0, 0.15); transform: translateX(5px); }
-
-        .step-number { font-family: var(--font-heading); font-size: 18px; font-weight: 900;
-            color: #000; width: 42px; height: 42px; display: flex; align-items: center;
-            justify-content: center; border-radius: 50%;
-            background: linear-gradient(135deg, #b8860b, var(--gold-primary));
-            box-shadow: 0 0 15px var(--gold-glow); flex-shrink: 0; }
-
-        .step-content h4 { font-family: var(--font-heading); font-size: 16px;
-            color: var(--text-main); margin-bottom: 6px; letter-spacing: 0.5px; }
-        .step-content p { color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
 
         /* FAQ */
         #faq { padding: 70px 0; max-width: 800px; margin: 0 auto; }
@@ -732,12 +708,9 @@
             .faq-question { font-size: 15px; padding: 15px; }
             .faq-toggle { width: 26px; height: 26px; font-size: 15px; }
             .section-header { margin-bottom: 35px; }
-            #produk, #faq, #tutorial { padding: 50px 0; }
-            .tutorial-warning { flex-direction: column; text-align: center; gap: 10px; }
-            .step-item { padding: 15px; gap: 12px; }
-            .step-number { width: 36px; height: 36px; font-size: 15px; }
-            .step-content h4 { font-size: 14px; } .step-content p { font-size: 13px; }
-            .steps-title { font-size: 17px; }
+            #produk, #faq { padding: 50px 0; }
+            #tutorial { padding: 50px 0; }
+            .video-wrapper { border-radius: 15px; }
         }
 
         @media (max-width: 400px) {
@@ -873,58 +846,17 @@
             </div>
         </section>
 
-        <!-- TUTORIAL SECTION -->
+        <!-- TUTORIAL - VIDEO ONLY -->
         <section id="tutorial">
-            <div class="section-header">
-                <h2 class="section-title" data-i18n="tutorial_title">How to Install Paks</h2>
-                <p class="section-desc" data-i18n="tutorial_desc">Follow the video tutorial below correctly so features work optimally</p>
-            </div>
-            <div class="tutorial-container">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/UXfZIuauFAY" title="Tutorial Pemasangan PUBG Mobile Paks" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="tutorial-warning">
-                    <span class="warning-icon">!</span>
-                    <p data-i18n="tutorial_warning">IMPORTANT: Installation must be exactly like in the video. If you miss a step, features will not work!</p>
-                </div>
-                <div class="tutorial-steps">
-                    <h3 class="steps-title" data-i18n="tutorial_steps_title">Installation Steps:</h3>
-                    <div class="step-item">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4 data-i18n="step1_title">Download Paks File</h4>
-                            <p data-i18n="step1_desc">Download the Paks file (.pak) from the link provided by admin. Make sure the file size matches.</p>
-                        </div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4 data-i18n="step2_title">Install File Manager</h4>
-                            <p data-i18n="step2_desc">Download and install ZArchiver or another file manager from Play Store.</p>
-                        </div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4 data-i18n="step3_title">Open Target Folder</h4>
-                            <p data-i18n="step3_desc">Open folder: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks</p>
-                        </div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h4 data-i18n="step4_title">Copy Paks File</h4>
-                            <p data-i18n="step4_desc">Copy the downloaded Paks file to that folder. Replace existing file if prompted.</p>
-                        </div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-number">5</div>
-                        <div class="step-content">
-                            <h4 data-i18n="step5_title">Close Game & Restart</h4>
-                            <p data-i18n="step5_desc">Close PUBG Mobile completely, then reopen it. Paks features will activate automatically.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/UXfZIuauFAY?rel=0&modestbranding=1&playsinline=1"
+                    title="Tutorial Pemasangan Paks"
+                    frameborder="0"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                    allowfullscreen>
+                </iframe>
             </div>
         </section>
 
@@ -982,7 +914,6 @@
         <div class="footer-bottom" data-i18n="footer_copy">&copy; 2024 Shadowcheat Project. All rights reserved. | Safe & Secure</div>
     </footer>
 
-    <!-- LOGIN MODAL -->
     <div class="modal-overlay" id="loginModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1002,7 +933,6 @@
         </div>
     </div>
 
-    <!-- CHECKOUT MODAL -->
     <div class="modal-overlay" id="checkoutModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1069,9 +999,6 @@
     </div>
 
     <script>
-        // ============================================
-        // --- MULTI-LANGUAGE TRANSLATIONS ---
-        // ============================================
         const translations = {
             'en': {
                 nav_home: 'Home', nav_products: 'Products', nav_tutorial: 'Tutorial', nav_faq: 'FAQ', nav_support: 'Support',
@@ -1087,20 +1014,6 @@
                 prod_season_name: 'Key 1 Season', prod_season_desc: 'Full access for 1 season (about 2 months). Full Safe for all servers.',
                 prod_perm_name: 'Key Permanent', prod_perm_desc: 'Permanent access without time limit. Full Safe & lifetime warranty for all servers.',
                 btn_buy: 'BUY NOW',
-                tutorial_title: 'How to Install Paks',
-                tutorial_desc: 'Follow the video tutorial below correctly so features work optimally',
-                tutorial_warning: 'IMPORTANT: Installation must be exactly like in the video. If you miss a step, features will not work!',
-                tutorial_steps_title: 'Installation Steps:',
-                step1_title: 'Download Paks File',
-                step1_desc: 'Download the Paks file (.pak) from the link provided by admin. Make sure the file size matches.',
-                step2_title: 'Install File Manager',
-                step2_desc: 'Download and install ZArchiver or another file manager from Play Store.',
-                step3_title: 'Open Target Folder',
-                step3_desc: 'Open folder: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
-                step4_title: 'Copy Paks File',
-                step4_desc: 'Copy the downloaded Paks file to that folder. Replace existing file if prompted.',
-                step5_title: 'Close Game & Restart',
-                step5_desc: 'Close PUBG Mobile completely, then reopen it. Paks features will activate automatically.',
                 faq_title: 'Frequently Asked Questions', faq_desc: 'Common questions from our customers',
                 faq_q1: 'How to buy a product?',
                 faq_a1: 'Click "BUY NOW" on the product, choose payment method (DANA, QRIS, SeaBank, BNI), then follow the instructions. For DANA/SeaBank/BNI, payment details will be sent by admin via personal Telegram chat.',
@@ -1140,20 +1053,6 @@
                 prod_season_name: 'Key 1 Season', prod_season_desc: 'Akses penuh selama 1 season (sekitar 2 bulan). Full Safe untuk semua server.',
                 prod_perm_name: 'Key Permanen', prod_perm_desc: 'Akses permanen tanpa batas waktu. Full Safe & garansi seumur hidup untuk semua server.',
                 btn_buy: 'BELI SEKARANG',
-                tutorial_title: 'Cara Pasang Paks',
-                tutorial_desc: 'Ikuti tutorial video di bawah ini dengan benar agar fitur berfungsi optimal',
-                tutorial_warning: 'PENTING: Pemasangan harus sama persis seperti di video. Jika salah langkah, fitur tidak akan berfungsi!',
-                tutorial_steps_title: 'Langkah-Langkah Pemasangan:',
-                step1_title: 'Download File Paks',
-                step1_desc: 'Download file Paks (.pak) dari link yang diberikan admin. Pastikan ukuran file sesuai.',
-                step2_title: 'Install File Manager',
-                step2_desc: 'Download dan install aplikasi ZArchiver atau file manager lainnya dari Play Store.',
-                step3_title: 'Buka Folder Tujuan',
-                step3_desc: 'Buka folder: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
-                step4_title: 'Copy File Paks',
-                step4_desc: 'Copy file Paks yang sudah didownload ke folder tersebut. Ganti file yang ada jika diminta.',
-                step5_title: 'Tutup Game & Restart',
-                step5_desc: 'Tutup PUBG Mobile sepenuhnya, lalu buka kembali. Fitur Paks akan aktif secara otomatis.',
                 faq_title: 'Pertanyaan Umum', faq_desc: 'Hal-hal yang sering ditanyakan oleh pelanggan',
                 faq_q1: 'Bagaimana cara membeli produk?',
                 faq_a1: 'Klik tombol "BELI SEKARANG" pada produk, pilih metode pembayaran (DANA, QRIS, SeaBank, BNI), lalu ikuti instruksi. Untuk DANA/SeaBank/BNI, detail pembayaran akan dikirim admin via chat Telegram pribadi.',
@@ -1193,20 +1092,6 @@
                 prod_season_name: 'की 1 सीज़न', prod_season_desc: '1 सीज़न (लगभग 2 महीने) तक पूर्ण पहुँच। सभी सर्वर के लिए पूर्ण सुरक्षित।',
                 prod_perm_name: 'की स्थायी', prod_perm_desc: 'समय सीमा के बिना स्थायी पहुँच। सभी सर्वर के लिए पूर्ण सुरक्षित और आजीवन वारंटी।',
                 btn_buy: 'अभी खरीदें',
-                tutorial_title: 'Paks कैसे इंस्टॉल करें',
-                tutorial_desc: 'नीचे दिए गए वीडियो ट्यूटोरियल का सही तरीके से पालन करें ताकि सुविधाएं इष्टतम रूप से काम करें',
-                tutorial_warning: 'महत्वपूर्ण: इंस्टॉलेशन वीडियो के अनुसार ही होना चाहिए। यदि कोई कदम छूट गया, तो सुविधाएं काम नहीं करेंगी!',
-                tutorial_steps_title: 'इंस्टॉलेशन के चरण:',
-                step1_title: 'Paks फ़ाइल डाउनलोड करें',
-                step1_desc: 'व्यवस्थापक द्वारा दिए गए लिंक से Paks फ़ाइल (.pak) डाउनलोड करें। सुनिश्चित करें कि फ़ाइल का आकार मेल खाता है।',
-                step2_title: 'फ़ाइल प्रबंधक इंस्टॉल करें',
-                step2_desc: 'Play Store से ZArchiver या अन्य फ़ाइल प्रबंधक डाउनलोड और इंस्टॉल करें।',
-                step3_title: 'लक्ष्य फ़ोल्डर खोलें',
-                step3_desc: 'फ़ोल्डर खोलें: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
-                step4_title: 'Paks फ़ाइल कॉपी करें',
-                step4_desc: 'डाउनलोड की गई Paks फ़ाइल को उस फ़ोल्डर में कॉपी करें। यदि संकेत दिया जाए तो मौजूदा फ़ाइल को बदलें।',
-                step5_title: 'गेम बंद करें और पुनः आरंभ करें',
-                step5_desc: 'PUBG Mobile को पूरी तरह बंद करें, फिर दोबारा खोलें। Paks सुविधाएं स्वचालित रूप से सक्रिय हो जाएंगी।',
                 faq_title: 'सामान्य प्रश्न', faq_desc: 'ग्राहकों द्वारा पूछे जाने वाले सामान्य प्रश्न',
                 faq_q1: 'उत्पाद कैसे खरीदें?',
                 faq_a1: 'उत्पाद पर "अभी खरीदें" क्लिक करें, भुगतान विधि चुनें (DANA, QRIS, SeaBank, BNI), फिर निर्देशों का पालन करें। DANA/SeaBank/BNI के लिए, भुगतान विवरण व्यक्तिगत Telegram चैट के माध्यम से भेजा जाएगा।',
@@ -1246,20 +1131,6 @@
                 prod_season_name: '1 赛季密钥', prod_season_desc: '1 赛季（约 2 个月）完全访问。所有服务器完全安全。',
                 prod_perm_name: '永久密钥', prod_perm_desc: '永久访问无时间限制。所有服务器完全安全并终身保修。',
                 btn_buy: '立即购买',
-                tutorial_title: '如何安装 Paks',
-                tutorial_desc: '请正确遵循下面的视频教程，以确保功能正常运作',
-                tutorial_warning: '重要提示：安装步骤必须与视频完全一致。如果遗漏任何步骤，功能将无法正常工作！',
-                tutorial_steps_title: '安装步骤：',
-                step1_title: '下载 Paks 文件',
-                step1_desc: '从管理员提供的链接下载 Paks 文件（.pak）。确保文件大小匹配。',
-                step2_title: '安装文件管理器',
-                step2_desc: '从 Play Store 下载并安装 ZArchiver 或其他文件管理器。',
-                step3_title: '打开目标文件夹',
-                step3_desc: '打开文件夹：Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
-                step4_title: '复制 Paks 文件',
-                step4_desc: '将下载的 Paks 文件复制到该文件夹。如果提示，请替换现有文件。',
-                step5_title: '关闭游戏并重新启动',
-                step5_desc: '完全关闭 PUBG Mobile，然后重新打开。Paks 功能将自动激活。',
                 faq_title: '常见问题', faq_desc: '客户常问的问题',
                 faq_q1: '如何购买产品？',
                 faq_a1: '在产品上点击"立即购买"，选择付款方式（DANA、QRIS、SeaBank、BNI），然后按照说明操作。对于 DANA/SeaBank/BNI，付款详情将通过个人 Telegram 聊天发送。',
@@ -1299,20 +1170,6 @@
                 prod_season_name: 'Key 1 Mùa', prod_season_desc: 'Truy cập đầy đủ trong 1 mùa (khoảng 2 tháng). Full Safe cho tất cả các server.',
                 prod_perm_name: 'Key Vĩnh viễn', prod_perm_desc: 'Truy cập vĩnh viễn không giới hạn thời gian. Full Safe & bảo hành trọn đời cho tất cả các server.',
                 btn_buy: 'MUA NGAY',
-                tutorial_title: 'Cách Cài Đặt Paks',
-                tutorial_desc: 'Làm theo video hướng dẫn bên dưới một cách chính xác để các tính năng hoạt động tối ưu',
-                tutorial_warning: 'QUAN TRỌNG: Cài đặt phải giống hệt như trong video. Nếu sai bước, tính năng sẽ không hoạt động!',
-                tutorial_steps_title: 'Các Bước Cài Đặt:',
-                step1_title: 'Tải File Paks',
-                step1_desc: 'Tải file Paks (.pak) từ link do admin cung cấp. Đảm bảo kích thước file phù hợp.',
-                step2_title: 'Cài File Manager',
-                step2_desc: 'Tải và cài đặt ZArchiver hoặc file manager khác từ Play Store.',
-                step3_title: 'Mở Thư Mục Đích',
-                step3_desc: 'Mở thư mục: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
-                step4_title: 'Copy File Paks',
-                step4_desc: 'Copy file Paks đã tải vào thư mục đó. Thay thế file hiện có nếu được yêu cầu.',
-                step5_title: 'Đóng Game & Khởi Động Lại',
-                step5_desc: 'Đóng hoàn toàn PUBG Mobile, sau đó mở lại. Tính năng Paks sẽ tự động kích hoạt.',
                 faq_title: 'Câu hỏi Thường gặp', faq_desc: 'Những câu hỏi phổ biến từ khách hàng',
                 faq_q1: 'Làm thế nào để mua sản phẩm?',
                 faq_a1: 'Nhấp "MUA NGAY" trên sản phẩm, chọn phương thức thanh toán (DANA, QRIS, SeaBank, BNI), sau đó làm theo hướng dẫn. Đối với DANA/SeaBank/BNI, chi tiết thanh toán sẽ được admin gửi qua chat Telegram riêng.',
@@ -1352,20 +1209,6 @@
                 prod_season_name: '1 시즌 키', prod_season_desc: '1 시즌(약 2개월) 동안 완전 액세스. 모든 서버 완전 안전.',
                 prod_perm_name: '영구 키', prod_perm_desc: '시간 제한 없이 영구 액세스. 모든 서버 완전 안전 및 평생 보증.',
                 btn_buy: '지금 구매',
-                tutorial_title: 'Paks 설치 방법',
-                tutorial_desc: '기능이 최적으로 작동하도록 아래 비디오 튜토리얼을 올바르게 따르세요',
-                tutorial_warning: '중요: 설치는 비디오와 정확히 동일해야 합니다. 단계를 놓치면 기능이 작동하지 않습니다!',
-                tutorial_steps_title: '설치 단계:',
-                step1_title: 'Paks 파일 다운로드',
-                step1_desc: '관리자가 제공한 링크에서 Paks 파일(.pak)을 다운로드하세요. 파일 크기가 일치하는지 확인하세요.',
-                step2_title: '파일 관리자 설치',
-                step2_desc: 'Play Store에서 ZArchiver 또는 다른 파일 관리자를 다운로드하여 설치하세요.',
-                step3_title: '대상 폴더 열기',
-                step3_desc: '폴더 열기: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
-                step4_title: 'Paks 파일 복사',
-                step4_desc: '다운로드한 Paks 파일을 해당 폴더에 복사하세요. 메시지가 표시되면 기존 파일을 교체하세요.',
-                step5_title: '게임 종료 및 재시작',
-                step5_desc: 'PUBG Mobile을 완전히 종료한 후 다시 여세요. Paks 기능이 자동으로 활성화됩니다.',
                 faq_title: '자주 묻는 질문', faq_desc: '고객들이 자주 묻는 질문',
                 faq_q1: '제품을 구매하는 방법?',
                 faq_a1: '제품의 "지금 구매"를 클릭하고 결제 방법(DANA, QRIS, SeaBank, BNI)을 선택한 다음 지침을 따르세요. DANA/SeaBank/BNI의 경우 결제 세부 정보가 개인 Telegram 채팅을 통해 전송됩니다.',
@@ -1405,20 +1248,6 @@
                 prod_season_name: '1シーズンキー', prod_season_desc: '1シーズン（約2ヶ月）の完全アクセス。すべてのサーバーで完全安全。',
                 prod_perm_name: '永久キー', prod_perm_desc: '時間制限なしの永久アクセス。すべてのサーバーで完全安全＆生涯保証。',
                 btn_buy: '今すぐ購入',
-                tutorial_title: 'Paksのインストール方法',
-                tutorial_desc: '機能が最適に動作するように、以下のビデオチュートリアルを正しく実行してください',
-                tutorial_warning: '重要：インストールはビデオと全く同じでなければなりません。手順を間違えると機能が動作しません！',
-                tutorial_steps_title: 'インストール手順：',
-                step1_title: 'Paksファイルをダウンロード',
-                step1_desc: '管理者から提供されたリンクからPaksファイル（.pak）をダウンロードしてください。ファイルサイズが一致することを確認してください。',
-                step2_title: 'ファイルマネージャーをインストール',
-                step2_desc: 'Play StoreからZArchiverまたは他のファイルマネージャーをダウンロードしてインストールしてください。',
-                step3_title: '対象フォルダを開く',
-                step3_desc: 'フォルダを開く：Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
-                step4_title: 'Paksファイルをコピー',
-                step4_desc: 'ダウンロードしたPaksファイルをそのフォルダにコピーしてください。求められたら既存のファイルを置き換えてください。',
-                step5_title: 'ゲームを閉じて再起動',
-                step5_desc: 'PUBG Mobileを完全に閉じて、再度開いてください。Paks機能が自動的に有効になります。',
                 faq_title: 'よくある質問', faq_desc: 'お客様からよく寄せられる質問',
                 faq_q1: '製品の購入方法は？',
                 faq_a1: '製品の「今すぐ購入」をクリックし、支払い方法（DANA、QRIS、SeaBank、BNI）を選択して、指示に従ってください。DANA/SeaBank/BNIの場合、支払いの詳細は個人のTelegramチャットで送信されます。',
@@ -1458,20 +1287,6 @@
                 prod_season_name: 'คีย์ 1 ซีซั่น', prod_season_desc: 'เข้าถึงเต็มรูปแบบ 1 ซีซั่น (ประมาณ 2 เดือน) ปลอดภัยเต็มรูปแบบสำหรับทุกเซิร์ฟเวอร์',
                 prod_perm_name: 'คีย์ถาวร', prod_perm_desc: 'เข้าถึงถาวรไม่มีขีดจำกัดเวลา ปลอดภัยเต็มรูปแบบและรับประกันตลอดชีพสำหรับทุกเซิร์ฟเวอร์',
                 btn_buy: 'ซื้อเลย',
-                tutorial_title: 'วิธีติดตั้ง Paks',
-                tutorial_desc: 'ทำตามวิดีโอสอนด้านล่างอย่างถูกต้องเพื่อให้ฟีเจอร์ทำงานได้อย่างเหมาะสม',
-                tutorial_warning: 'สำคัญ: การติดตั้งต้องเหมือนในวิดีโอทุกประการ หากผิดขั้นตอน ฟีเจอร์จะไม่ทำงาน!',
-                tutorial_steps_title: 'ขั้นตอนการติดตั้ง:',
-                step1_title: 'ดาวน์โหลดไฟล์ Paks',
-                step1_desc: 'ดาวน์โหลดไฟล์ Paks (.pak) จากลิงก์ที่ผู้ดูแลให้ ตรวจสอบขนาดไฟล์ให้ตรง',
-                step2_title: 'ติดตั้ง File Manager',
-                step2_desc: 'ดาวน์โหลดและติดตั้ง ZArchiver หรือ file manager อื่นจาก Play Store',
-                step3_title: 'เปิดโฟลเดอร์เป้าหมาย',
-                step3_desc: 'เปิดโฟลเดอร์: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
-                step4_title: 'คัดลอกไฟล์ Paks',
-                step4_desc: 'คัดลอกไฟล์ Paks ที่ดาวน์โหลดไปยังโฟลเดอร์นั้น แทนที่ไฟล์ที่มีอยู่หากระบบแจ้ง',
-                step5_title: 'ปิดเกมและรีสตาร์ท',
-                step5_desc: 'ปิด PUBG Mobile ให้สนิท แล้วเปิดใหม่ ฟีเจอร์ Paks จะเปิดใช้งานอัตโนมัติ',
                 faq_title: 'คำถามที่พบบ่อย', faq_desc: 'คำถามทั่วไปจากลูกค้า',
                 faq_q1: 'วิธีการซื้อสินค้า?',
                 faq_a1: 'คลิก "ซื้อเลย" ที่สินค้า เลือกวิธีการชำระเงิน (DANA, QRIS, SeaBank, BNI) จากนั้นทำตามคำแนะนำ สำหรับ DANA/SeaBank/BNI รายละเอียดการชำระเงินจะถูกส่งโดยผู้ดูแลผ่านแชท Telegram ส่วนตัว',
@@ -1511,20 +1326,6 @@
                 prod_season_name: 'مفتاح موسم 1', prod_season_desc: 'وصول كامل لموسم واحد (حوالي شهرين). آمن تمامًا لجميع الخوادم.',
                 prod_perm_name: 'مفتاح دائم', prod_perm_desc: 'وصول دائم بدون حد زمني. آمن تمامًا وضمان مدى الحياة لجميع الخوادم.',
                 btn_buy: 'اشتر الآن',
-                tutorial_title: 'كيفية تثبيت Paks',
-                tutorial_desc: 'اتبع الفيديو التعليمي أدناه بشكل صحيح حتى تعمل الميزات بشكل مثالي',
-                tutorial_warning: 'مهم: يجب أن يكون التثبيت مطابقًا تمامًا كما في الفيديو. إذا أخطأت في خطوة، لن تعمل الميزات!',
-                tutorial_steps_title: 'خطوات التثبيت:',
-                step1_title: 'تحميل ملف Paks',
-                step1_desc: 'قم بتحميل ملف Paks (.pak) من الرابط الذي يوفره المشرف. تأكد من تطابق حجم الملف.',
-                step2_title: 'تثبيت مدير الملفات',
-                step2_desc: 'قم بتحميل وتثبيت ZArchiver أو أي مدير ملفات آخر من Play Store.',
-                step3_title: 'فتح المجلد الهدف',
-                step3_desc: 'افتح المجلد: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
-                step4_title: 'نسخ ملف Paks',
-                step4_desc: 'انسخ ملف Paks الذي تم تحميله إلى ذلك المجلد. استبدل الملف الموجود إذا طُلب منك ذلك.',
-                step5_title: 'إغلاق اللعبة وإعادة التشغيل',
-                step5_desc: 'أغلق PUBG Mobile بالكامل، ثم أعد فتحه. سيتم تنشيط ميزات Paks تلقائيًا.',
                 faq_title: 'الأسئلة الشائعة', faq_desc: 'الأسئلة الشائعة من عملائنا',
                 faq_q1: 'كيف تشتري منتجًا؟',
                 faq_a1: 'انقر فوق "اشتر الآن" على المنتج، واختر طريقة الدفع (DANA، QRIS، SeaBank، BNI)، ثم اتبع التعليمات. بالنسبة لـ DANA/SeaBank/BNI، سيتم إرسال تفاصيل الدفع بواسطة المشرف عبر محادثة Telegram الشخصية.',
@@ -1564,20 +1365,6 @@
                 prod_season_name: 'Clave 1 Temporada', prod_season_desc: 'Acceso completo por 1 temporada (aproximadamente 2 meses). Full Safe para todos los servidores.',
                 prod_perm_name: 'Clave Permanente', prod_perm_desc: 'Acceso permanente sin límite de tiempo. Full Safe y garantía de por vida para todos los servidores.',
                 btn_buy: 'COMPRAR AHORA',
-                tutorial_title: 'Cómo Instalar Paks',
-                tutorial_desc: 'Sigue el video tutorial a continuación correctamente para que las funciones funcionen de manera óptima',
-                tutorial_warning: 'IMPORTANTE: ¡La instalación debe ser exactamente como en el video. Si te saltas un paso, las funciones no funcionarán!',
-                tutorial_steps_title: 'Pasos de Instalación:',
-                step1_title: 'Descargar Archivo Paks',
-                step1_desc: 'Descarga el archivo Paks (.pak) desde el enlace proporcionado por el administrador. Asegúrate de que el tamaño del archivo coincida.',
-                step2_title: 'Instalar Gestor de Archivos',
-                step2_desc: 'Descarga e instala ZArchiver u otro gestor de archivos desde Play Store.',
-                step3_title: 'Abrir Carpeta Destino',
-                step3_desc: 'Abre la carpeta: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
-                step4_title: 'Copiar Archivo Paks',
-                step4_desc: 'Copia el archivo Paks descargado a esa carpeta. Reemplaza el archivo existente si se te solicita.',
-                step5_title: 'Cerrar Juego y Reiniciar',
-                step5_desc: 'Cierra PUBG Mobile completamente, luego vuelve a abrirlo. Las funciones de Paks se activarán automáticamente.',
                 faq_title: 'Preguntas Frecuentes', faq_desc: 'Preguntas comunes de nuestros clientes',
                 faq_q1: '¿Cómo comprar un producto?',
                 faq_a1: 'Haz clic en "COMPRAR AHORA" en el producto, elige el método de pago (DANA, QRIS, SeaBank, BNI), luego sigue las instrucciones. Para DANA/SeaBank/BNI, los detalles de pago serán enviados por el administrador a través de chat personal de Telegram.',
@@ -1617,20 +1404,6 @@
                 prod_season_name: 'Chave 1 Temporada', prod_season_desc: 'Acesso completo por 1 temporada (cerca de 2 meses). Full Safe para todos os servidores.',
                 prod_perm_name: 'Chave Permanente', prod_perm_desc: 'Acesso permanente sem limite de tempo. Full Safe e garantia vitalícia para todos os servidores.',
                 btn_buy: 'COMPRAR AGORA',
-                tutorial_title: 'Como Instalar Paks',
-                tutorial_desc: 'Siga o vídeo tutorial abaixo corretamente para que os recursos funcionem de forma ideal',
-                tutorial_warning: 'IMPORTANTE: A instalação deve ser exatamente como no vídeo. Se você pular uma etapa, os recursos não funcionarão!',
-                tutorial_steps_title: 'Passos de Instalação:',
-                step1_title: 'Baixar Arquivo Paks',
-                step1_desc: 'Baixe o arquivo Paks (.pak) no link fornecido pelo administrador. Certifique-se de que o tamanho do arquivo corresponde.',
-                step2_title: 'Instalar Gerenciador de Arquivos',
-                step2_desc: 'Baixe e instale o ZArchiver ou outro gerenciador de arquivos da Play Store.',
-                step3_title: 'Abrir Pasta de Destino',
-                step3_desc: 'Abra a pasta: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
-                step4_title: 'Copiar Arquivo Paks',
-                step4_desc: 'Copie o arquivo Paks baixado para essa pasta. Substitua o arquivo existente se solicitado.',
-                step5_title: 'Fechar Jogo e Reiniciar',
-                step5_desc: 'Feche o PUBG Mobile completamente e reabra-o. Os recursos de Paks serão ativados automaticamente.',
                 faq_title: 'Perguntas Frequentes', faq_desc: 'Perguntas comuns dos nossos clientes',
                 faq_q1: 'Como comprar um produto?',
                 faq_a1: 'Clique em "COMPRAR AGORA" no produto, escolha o método de pagamento (DANA, QRIS, SeaBank, BNI), depois siga as instruções. Para DANA/SeaBank/BNI, os detalhes de pagamento serão enviados pelo administrador via chat pessoal do Telegram.',
@@ -1670,20 +1443,6 @@
                 prod_season_name: 'Ключ 1 Сезон', prod_season_desc: 'Полный доступ на 1 сезон (около 2 месяцев). Full Safe для всех серверов.',
                 prod_perm_name: 'Ключ Навсегда', prod_perm_desc: 'Постоянный доступ без ограничения по времени. Full Safe и пожизненная гарантия для всех серверов.',
                 btn_buy: 'КУПИТЬ СЕЙЧАС',
-                tutorial_title: 'Как Установить Paks',
-                tutorial_desc: 'Следуйте видеоуроку ниже правильно, чтобы функции работали оптимально',
-                tutorial_warning: 'ВАЖНО: Установка должна быть точно такой же, как в видео. Если вы пропустите шаг, функции не будут работать!',
-                tutorial_steps_title: 'Шаги Установки:',
-                step1_title: 'Скачать Файл Paks',
-                step1_desc: 'Скачайте файл Paks (.pak) по ссылке, предоставленной администратором. Убедитесь, что размер файла совпадает.',
-                step2_title: 'Установить Файловый Менеджер',
-                step2_desc: 'Скачайте и установите ZArchiver или другой файловый менеджер из Play Store.',
-                step3_title: 'Открыть Целевую Папку',
-                step3_desc: 'Откройте папку: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
-                step4_title: 'Скопировать Файл Paks',
-                step4_desc: 'Скопируйте скачанный файл Paks в эту папку. Замените существующий файл, если будет предложено.',
-                step5_title: 'Закрыть Игру и Перезапустить',
-                step5_desc: 'Полностью закройте PUBG Mobile, затем откройте снова. Функции Paks активируются автоматически.',
                 faq_title: 'Часто Задаваемые Вопросы', faq_desc: 'Общие вопросы от наших клиентов',
                 faq_q1: 'Как купить продукт?',
                 faq_a1: 'Нажмите "КУПИТЬ СЕЙЧАС" на продукте, выберите способ оплаты (DANA, QRIS, SeaBank, BNI), затем следуйте инструкциям. Для DANA/SeaBank/BNI реквизиты для оплаты будут отправлены администратором через личный чат Telegram.',
@@ -1711,9 +1470,6 @@
             }
         };
 
-        // ============================================
-        // --- AUTO DETECT & APPLY LANGUAGE ---
-        // ============================================
         function detectLanguage() {
             const systemLang = navigator.language || navigator.userLanguage || 'en';
             const langCode = systemLang.toLowerCase().split('-')[0];
@@ -1748,15 +1504,11 @@
                 if (t[key]) el.placeholder = t[key];
             });
             window.currentLang = t;
-            window.currentLangCode = lang;
         }
 
         const detectedLang = detectLanguage();
         applyTranslations(detectedLang);
 
-        // ============================================
-        // --- DATA PEMBAYARAN ---
-        // ============================================
         const QR_IMAGE_URL = "[QR_IMAGE]";
 
         const paymentData = {
@@ -1770,7 +1522,6 @@
 
         function formatRupiah(num) { return 'Rp ' + num.toLocaleString('id-ID'); }
 
-        // SCROLL LOCK
         function lockScroll() {
             const scrollY = window.scrollY || window.pageYOffset;
             document.body.style.top = `-${scrollY}px`;
