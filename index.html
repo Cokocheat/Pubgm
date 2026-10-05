@@ -1057,7 +1057,6 @@
             .paks-text { font-size: 16px; letter-spacing: 5px; padding: 5px 15px; }
             .section-title { font-size: 24px; }
             .product-grid { grid-template-columns: 1fr; }
-            footer { grid-template-columns: 1fr; text-align: center; }
             .toast { bottom: 20px; right: 20px; left: 20px; transform: translateY(150%); }
             .toast.show { transform: translateY(0); }
             .hero-cta { flex-direction: column; width: 100%; max-width: 300px; }
@@ -1073,6 +1072,32 @@
             .modal-content { padding: 20px; }
             .checkout-steps .step-label { font-size: 9px; }
             .step-circle { width: 28px; height: 28px; font-size: 12px; }
+
+            /* --- PERBAIKAN FOOTER MOBILE --- */
+            footer {
+                grid-template-columns: 1fr 1fr; /* Membuat 2 kolom */
+                gap: 20px;
+                text-align: center;
+                padding: 30px 5%;
+            }
+            /* Kolom 1 (Brand) mengambil 2 kolom penuh */
+            .footer-col:first-child {
+                grid-column: span 2;
+                margin-bottom: 10px;
+            }
+            /* Kolom 2 (Navigasi) dan Kolom 3 (Pembayaran) masing-masing 1 kolom */
+            .footer-col:nth-child(2),
+            .footer-col:nth-child(3) {
+                grid-column: span 1;
+            }
+            /* Kolom 4 (Hubungi Kami) mengambil 2 kolom penuh */
+            .footer-col:last-child {
+                grid-column: span 2;
+                margin-top: 10px;
+            }
+            .footer-col h4 { font-size: 15px; margin-bottom: 12px; }
+            .footer-col p, .footer-col a { font-size: 13px; margin-bottom: 6px; }
+            .footer-bottom { margin-top: 10px; padding-top: 15px; }
         }
 
         /* Mobile Menu */
@@ -1568,15 +1593,6 @@
             document.getElementById('totalPayment').textContent = formatRupiah(checkoutData.price);
             
             // Update link Telegram dengan info
-            const message = encodeURIComponent(
-                `Halo Admin, saya ingin konfirmasi pembelian:\n\n` +
-                `Produk: ${checkoutData.product}\n` +
-                `Durasi: ${checkoutData.duration}\n` +
-                `Metode: ${checkoutData.paymentMethod}\n` +
-                `Total: ${formatRupiah(checkoutData.price)}\n\n` +
-                `Saya sudah transfer, mohon dicek ya. Terima kasih.`
-            );
-            // Telegram tidak support pre-filled text via URL, jadi kita arahkan saja ke chat
             document.getElementById('confirmLink').href = 'https://t.me/scp281025';
         }
 
