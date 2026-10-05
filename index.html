@@ -42,6 +42,7 @@
             line-height: 1.6;
         }
 
+        /* --- SCROLL LOCK: Mencegah background di-scroll saat modal / menu terbuka --- */
         body.no-scroll {
             overflow: hidden;
             height: 100vh;
@@ -230,7 +231,13 @@
             50% { transform: translateY(-5px); }
         }
 
-        .pubg-logo { width: 32px; height: 32px; object-fit: contain; filter: drop-shadow(0 0 5px var(--gold-glow)); }
+        .pubg-logo { 
+            width: 32px; height: 32px; 
+            border-radius: 50%;
+            object-fit: cover; 
+            border: 1px solid var(--gold-primary);
+            box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+        }
 
         .game-badge-text {
             font-family: var(--font-heading);
@@ -1174,6 +1181,7 @@
             gap: 20px;
             transform: translateX(-100%);
             transition: var(--transition);
+            overflow-y: auto; /* Agar menu bisa di-scroll internal jika kontennya panjang */
         }
 
         .mobile-menu.active { transform: translateX(0); }
@@ -1196,8 +1204,8 @@
     <!-- HEADER -->
     <header>
         <div class="logo-container" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-            <!-- GANTI [LOGO_ANDA] DENGAN LINK LOGO SHADOWCHEAT YANG SUDAH DI-UPLOAD -->
-            <img src="[LOGO_ANDA]" alt="Shadowcheat Logo" class="logo-img">
+            <!-- LOGO SHADOWCHEAT DARI GITHUB (CDN) -->
+            <img src="https://cdn.jsdelivr.net/gh/Cokocheat/Pubgm@main/icon.png" alt="Shadowcheat Logo" class="logo-img">
             <div class="brand-name">SHADOW<span>CHEAT</span> PROJECT</div>
         </div>
 
@@ -1239,8 +1247,8 @@
     <main>
         <section class="hero" id="home">
             <div class="game-badge">
-                <!-- GANTI [PUBG_LOGO] DENGAN LINK LOGO PUBG YANG SUDAH DI-UPLOAD -->
-                <img src="[PUBG_LOGO]" alt="PUBG Mobile" class="pubg-logo">
+                <!-- LOGO PUBG DARI GITHUB (CDN) -->
+                <img src="https://cdn.jsdelivr.net/gh/Cokocheat/Pubgm@main/Wallpaper-PUBG-Mobile-1.jpg" alt="PUBG Mobile" class="pubg-logo">
                 <span class="game-badge-text">PUBG MOBILE</span>
             </div>
 
@@ -1715,14 +1723,24 @@
             });
         });
 
+        // ============ MOBILE MENU & SCROLL LOCK ============
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
         hamburgerBtn.addEventListener('click', function() {
             mobileMenu.classList.toggle('active');
+            const isActive = mobileMenu.classList.contains('active');
+            
+            // Kunci scroll background
+            if (isActive) {
+                document.body.classList.add('no-scroll');
+            } else {
+                document.body.classList.remove('no-scroll');
+            }
+
             const spans = hamburgerBtn.querySelectorAll('span');
-            if (mobileMenu.classList.contains('active')) {
+            if (isActive) {
                 spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
                 spans[1].style.opacity = '0';
                 spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
@@ -1736,6 +1754,7 @@
         mobileLinks.forEach(link => {
             link.addEventListener('click', function() {
                 mobileMenu.classList.remove('active');
+                document.body.classList.remove('no-scroll'); // Buka kunci saat link diklik
                 const spans = hamburgerBtn.querySelectorAll('span');
                 spans[0].style.transform = 'none';
                 spans[1].style.opacity = '1';
