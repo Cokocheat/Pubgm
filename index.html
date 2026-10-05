@@ -4,101 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shadowcheat Project - PUBG Mobile Paks</title>
-    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="robots" content="noarchive, nosnippet">
     <meta name="referrer" content="no-referrer">
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #050505;
-            --bg-panel: #0f0f0f;
-            --bg-glass: rgba(20, 20, 20, 0.85);
-            --gold-primary: #ffaa00;
-            --gold-glow: rgba(255, 170, 0, 0.4);
-            --gold-glow-strong: rgba(255, 170, 0, 0.85);
-            --blue-glow: rgba(0, 168, 232, 0.85);
-            --red-glow: rgba(255, 68, 68, 0.8);
-            --green-glow: rgba(0, 255, 136, 0.7);
-            --white-glow: rgba(255, 255, 255, 0.5);
-            --dana-glow: rgba(17, 142, 234, 0.85);
-            --qris-glow: rgba(227, 6, 19, 0.85);
-            --seabank-glow: rgba(255, 107, 0, 0.85);
-            --bni-glow: rgba(240, 90, 34, 0.85);
-            --text-main: #ffffff;
-            --text-muted: #a0a0a0;
-            --border-color: rgba(255, 170, 0, 0.2);
-            --success-green: #00ff88;
-            --danger-red: #ff4444;
-            --font-heading: 'Orbitron', sans-serif;
-            --font-body: 'Inter', sans-serif;
+            --bg-dark: #050505; --bg-panel: #0f0f0f; --bg-glass: rgba(20, 20, 20, 0.85);
+            --gold-primary: #ffaa00; --gold-glow: rgba(255, 170, 0, 0.4); --gold-glow-strong: rgba(255, 170, 0, 0.85);
+            --blue-glow: rgba(0, 168, 232, 0.85); --red-glow: rgba(255, 68, 68, 0.8);
+            --green-glow: rgba(0, 255, 136, 0.7); --white-glow: rgba(255, 255, 255, 0.5);
+            --dana-glow: rgba(17, 142, 234, 0.85); --qris-glow: rgba(227, 6, 19, 0.85);
+            --seabank-glow: rgba(255, 107, 0, 0.85); --bni-glow: rgba(240, 90, 34, 0.85);
+            --text-main: #ffffff; --text-muted: #a0a0a0; --border-color: rgba(255, 170, 0, 0.2);
+            --success-green: #00ff88; --danger-red: #ff4444;
+            --font-heading: 'Orbitron', sans-serif; --font-body: 'Inter', sans-serif;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
             --header-height: 70px;
         }
 
-        * { 
-            margin: 0; padding: 0; box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none;
+            -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none;
+            -ms-user-select: none; user-select: none; }
 
         input, textarea {
-            -webkit-user-select: text !important;
-            -moz-user-select: text !important;
-            -ms-user-select: text !important;
-            user-select: text !important;
-        }
+            -webkit-user-select: text !important; -moz-user-select: text !important;
+            -ms-user-select: text !important; user-select: text !important; }
 
-        img {
-            -webkit-user-drag: none;
-            user-drag: none;
-        }
+        img { -webkit-user-drag: none; user-drag: none; }
 
-        @media print {
-            body * { display: none !important; }
-            body::after {
-                content: "⚠️ Protected Page";
-                display: block;
-                text-align: center;
-                font-size: 24px;
-                color: #ffaa00;
-                background: #050505;
-                padding: 50px;
-            }
-        }
-        
+        @media print { body * { display: none !important; }
+            body::after { content: "⚠️ Protected Page"; display: block; text-align: center;
+                font-size: 24px; color: #ffaa00; background: #050505; padding: 50px; } }
+
         html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: var(--font-body);
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: var(--font-body);
             background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #050505 70%);
-            min-height: 100vh;
-            overflow-x: hidden;
-            width: 100%;
-            position: relative;
-            line-height: 1.6;
-            padding-top: var(--header-height);
-        }
+            min-height: 100vh; overflow-x: hidden; width: 100%; position: relative;
+            line-height: 1.6; padding-top: var(--header-height); }
 
-        body.no-scroll {
-            position: fixed;
-            top: var(--scroll-top, 0);
-            left: 0; right: 0;
-            width: 100%;
-            overflow: hidden;
-        }
+        body.no-scroll { position: fixed; top: var(--scroll-top, 0); left: 0; right: 0; width: 100%; overflow: hidden; }
 
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-dark); }
@@ -106,953 +57,522 @@
 
         .svg-icon { width: 18px; height: 18px; fill: currentColor; display: inline-block; vertical-align: middle; }
 
-        a, button, div, span, input, .logo-container, .hamburger,
-        .nav-link, .footer-links-row a, .footer-contact a,
-        .mobile-menu a, .server-tag, .faq-question, .payment-option,
-        .close-modal, .game-badge, .login-btn, .buy-btn,
-        .btn-primary, .btn-secondary, .btn-checkout {
+        a, button, div, span, input, .logo-container, .hamburger, .nav-link,
+        .footer-links-row a, .footer-contact a, .mobile-menu a, .server-tag,
+        .faq-question, .payment-option, .close-modal, .game-badge, .login-btn,
+        .buy-btn, .btn-primary, .btn-secondary, .btn-checkout {
             -webkit-tap-highlight-color: transparent !important;
-            -webkit-touch-callout: none !important;
-            outline: none !important;
-        }
-
+            -webkit-touch-callout: none !important; outline: none !important; }
         a:focus, button:focus, div:focus, span:focus, input:focus { outline: none !important; }
 
         /* HEADER */
-        header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            height: var(--header-height);
-            z-index: 1000;
-            background: var(--bg-glass);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 0 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-        }
+        header { position: fixed; top: 0; left: 0; right: 0; height: var(--header-height); z-index: 1000;
+            background: var(--bg-glass); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-color); padding: 0 5%; display: flex;
+            align-items: center; justify-content: space-between; width: 100%; }
 
-        .logo-container { 
-            display: flex; align-items: center; gap: 12px; cursor: pointer;
-            padding: 5px 10px; border-radius: 50px;
-            transition: var(--transition-fast);
-        }
+        .logo-container { display: flex; align-items: center; gap: 12px; cursor: pointer;
+            padding: 5px 10px; border-radius: 50px; transition: var(--transition-fast); }
         .logo-container:active { transform: scale(0.97); background: rgba(255, 170, 0, 0.1); }
         .logo-container:active .logo-img { box-shadow: 0 0 35px var(--gold-glow-strong), 0 0 60px var(--gold-glow); }
 
-        .logo-img {
-            width: 45px; height: 45px;
-            border-radius: 50%;
-            border: 2px solid var(--gold-primary);
-            box-shadow: 0 0 15px var(--gold-glow);
-            object-fit: cover;
-            background: #000;
-            transition: var(--transition-fast);
-        }
+        .logo-img { width: 45px; height: 45px; border-radius: 50%;
+            border: 2px solid var(--gold-primary); box-shadow: 0 0 15px var(--gold-glow);
+            object-fit: cover; background: #000; transition: var(--transition-fast); }
 
-        .brand-name {
-            font-family: var(--font-heading);
-            font-size: 20px; font-weight: 900;
-            letter-spacing: 1px; line-height: 1.2;
-        }
+        .brand-name { font-family: var(--font-heading); font-size: 20px; font-weight: 900;
+            letter-spacing: 1px; line-height: 1.2; }
         .brand-name span { color: var(--gold-primary); }
 
         nav.desktop-nav { display: flex; gap: 30px; }
 
-        .nav-link {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 15px; font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            padding: 8px 4px;
-            transition: var(--transition-fast);
-            border-radius: 6px;
-        }
+        .nav-link { color: var(--text-main); text-decoration: none; font-size: 15px;
+            font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+            position: relative; padding: 8px 4px; transition: var(--transition-fast); border-radius: 6px; }
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 0; height: 2px;
-            background: var(--gold-primary);
-            box-shadow: 0 0 8px var(--gold-glow);
-            transition: var(--transition);
-            border-radius: 2px;
-        }
+        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 50%;
+            transform: translateX(-50%); width: 0; height: 2px;
+            background: var(--gold-primary); box-shadow: 0 0 8px var(--gold-glow);
+            transition: var(--transition); border-radius: 2px; }
 
         .nav-link:hover { color: var(--gold-primary); text-shadow: 0 0 10px var(--gold-glow); }
         .nav-link:hover::after { width: 100%; }
-        .nav-link:active {
-            transform: scale(0.95);
-            color: var(--gold-primary);
-            text-shadow: 0 0 20px var(--gold-glow-strong), 0 0 40px var(--gold-glow);
-        }
+        .nav-link:active { transform: scale(0.95); color: var(--gold-primary);
+            text-shadow: 0 0 20px var(--gold-glow-strong), 0 0 40px var(--gold-glow); }
 
         .search-container { position: relative; display: flex; align-items: center; }
 
-        .search-input {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-main);
-            padding: 10px 15px 10px 40px;
-            border-radius: 50px;
-            font-family: var(--font-body);
-            font-size: 14px;
-            width: 200px;
-            transition: var(--transition);
-            outline: none;
-        }
+        .search-input { background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-main);
+            padding: 10px 15px 10px 40px; border-radius: 50px;
+            font-family: var(--font-body); font-size: 14px; width: 200px;
+            transition: var(--transition); outline: none; }
 
         .search-input:hover { border-color: rgba(255, 170, 0, 0.4); }
-        .search-input:focus {
-            width: 250px;
-            border-color: var(--gold-primary);
-            box-shadow: 0 0 20px var(--gold-glow), inset 0 0 10px rgba(255, 170, 0, 0.1);
-        }
+        .search-input:focus { width: 250px; border-color: var(--gold-primary);
+            box-shadow: 0 0 20px var(--gold-glow), inset 0 0 10px rgba(255, 170, 0, 0.1); }
 
-        .search-icon {
-            position: absolute;
-            left: 14px; top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-            pointer-events: none;
-        }
+        .search-icon { position: absolute; left: 14px; top: 50%;
+            transform: translateY(-50%); color: var(--text-muted); pointer-events: none; }
 
         .header-actions { display: flex; align-items: center; gap: 15px; }
 
-        .login-btn {
-            background: linear-gradient(90deg, #b8860b, var(--gold-primary));
-            color: #000;
-            font-family: var(--font-heading);
-            font-size: 14px; font-weight: 700;
-            padding: 12px 30px;
-            border: none; border-radius: 50px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition-fast);
-            box-shadow: 0 0 15px var(--gold-glow);
-            position: relative; overflow: hidden;
-        }
+        .login-btn { background: linear-gradient(90deg, #b8860b, var(--gold-primary));
+            color: #000; font-family: var(--font-heading); font-size: 14px; font-weight: 700;
+            padding: 12px 30px; border: none; border-radius: 50px; cursor: pointer;
+            text-transform: uppercase; letter-spacing: 1px; transition: var(--transition-fast);
+            box-shadow: 0 0 15px var(--gold-glow); position: relative; overflow: hidden; }
 
-        .login-btn:hover { 
-            transform: translateY(-2px);
-            box-shadow: 0 5px 25px var(--gold-glow), 0 0 40px var(--gold-glow);
-            filter: brightness(1.1);
-        }
-        .login-btn:active {
-            transform: scale(0.94);
-            box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow);
-            filter: brightness(1.3);
-        }
+        .login-btn:hover { transform: translateY(-2px);
+            box-shadow: 0 5px 25px var(--gold-glow), 0 0 40px var(--gold-glow); filter: brightness(1.1); }
+        .login-btn:active { transform: scale(0.94);
+            box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow); filter: brightness(1.3); }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 10px; border-radius: 12px;
-            z-index: 1100;
-            transition: var(--transition-fast);
-        }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer;
+            background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px; border-radius: 12px; z-index: 1100; transition: var(--transition-fast); }
 
         .hamburger:hover { border-color: var(--gold-primary); box-shadow: 0 0 15px var(--gold-glow); }
-        .hamburger:active {
-            transform: scale(0.9);
-            background: rgba(255, 170, 0, 0.15);
+        .hamburger:active { transform: scale(0.9); background: rgba(255, 170, 0, 0.15);
             border-color: var(--gold-primary);
-            box-shadow: 0 0 25px var(--gold-glow-strong), 0 0 45px var(--gold-glow);
-        }
+            box-shadow: 0 0 25px var(--gold-glow-strong), 0 0 45px var(--gold-glow); }
 
-        .hamburger span {
-            width: 25px; height: 3px;
-            background: var(--text-main);
-            border-radius: 3px;
-            transition: var(--transition);
-        }
-
+        .hamburger span { width: 25px; height: 3px; background: var(--text-main);
+            border-radius: 3px; transition: var(--transition); }
         .hamburger:active span { background: var(--gold-primary); box-shadow: 0 0 8px var(--gold-glow); }
 
         /* HERO */
         main { padding: 0 5%; max-width: 1400px; margin: 0 auto; width: 100%; overflow: hidden; }
 
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 0 50px;
-            position: relative;
-        }
+        .hero { display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; padding: 40px 0 50px; position: relative; }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 500px; height: 500px;
+        .hero::before { content: ''; position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%); width: 500px; height: 500px;
             max-width: 90vw; max-height: 90vw;
             background: radial-gradient(circle, rgba(255, 170, 0, 0.08) 0%, transparent 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
+            z-index: -1; pointer-events: none; }
 
-        .game-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
+        .game-badge { display: inline-flex; align-items: center; gap: 12px;
             background: linear-gradient(90deg, rgba(255, 170, 0, 0.15), rgba(255, 170, 0, 0.05));
-            border: 1px solid var(--gold-primary);
-            padding: 8px 22px 8px 12px;
-            border-radius: 50px;
-            margin-bottom: 18px;
+            border: 1px solid var(--gold-primary); padding: 8px 22px 8px 12px;
+            border-radius: 50px; margin-bottom: 18px;
             box-shadow: 0 0 20px rgba(255, 170, 0, 0.2);
-            animation: floatBadge 3s ease-in-out infinite;
-        }
+            animation: floatBadge 3s ease-in-out infinite; }
 
         .game-badge:hover { box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 50px var(--gold-glow); }
 
-        @keyframes floatBadge {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
+        @keyframes floatBadge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 
-        .pubg-logo { 
-            width: 32px; height: 32px; 
-            border-radius: 50%;
-            object-fit: cover; 
-            border: 1px solid var(--gold-primary);
-            box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
-        }
+        .pubg-logo { width: 32px; height: 32px; border-radius: 50%; object-fit: cover;
+            border: 1px solid var(--gold-primary); box-shadow: 0 0 10px rgba(255, 170, 0, 0.5); }
 
-        .game-badge-text {
-            font-family: var(--font-heading);
-            font-size: 14px; font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--gold-primary);
-            text-transform: uppercase;
-        }
+        .game-badge-text { font-family: var(--font-heading); font-size: 14px; font-weight: 700;
+            letter-spacing: 2px; color: var(--gold-primary); text-transform: uppercase; }
 
-        .paks-text {
-            font-family: var(--font-heading);
-            font-size: 20px; font-weight: 700;
-            letter-spacing: 6px;
-            color: var(--gold-primary);
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            padding: 6px 24px;
-            border-top: 1px solid var(--gold-primary);
-            border-bottom: 1px solid var(--gold-primary);
-            text-shadow: 0 0 15px var(--gold-glow);
-            animation: pulsePaks 2s ease-in-out infinite;
-        }
+        .paks-text { font-family: var(--font-heading); font-size: 20px; font-weight: 700;
+            letter-spacing: 6px; color: var(--gold-primary); text-transform: uppercase;
+            margin-bottom: 15px; padding: 6px 24px;
+            border-top: 1px solid var(--gold-primary); border-bottom: 1px solid var(--gold-primary);
+            text-shadow: 0 0 15px var(--gold-glow); animation: pulsePaks 2s ease-in-out infinite; }
 
-        @keyframes pulsePaks {
-            0%, 100% { opacity: 1; text-shadow: 0 0 15px var(--gold-glow); }
-            50% { opacity: 0.85; text-shadow: 0 0 25px var(--gold-glow); }
-        }
+        @keyframes pulsePaks { 0%, 100% { opacity: 1; text-shadow: 0 0 15px var(--gold-glow); }
+            50% { opacity: 0.85; text-shadow: 0 0 25px var(--gold-glow); } }
 
-        .hero-title {
-            font-family: var(--font-heading);
-            font-size: 60px; font-weight: 900;
+        .hero-title { font-family: var(--font-heading); font-size: 60px; font-weight: 900;
             letter-spacing: 3px;
             background: linear-gradient(90deg, #fff, var(--gold-primary), #fff);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            animation: shine 3s linear infinite;
-            line-height: 1.15;
-            word-break: break-word;
-            max-width: 100%;
-        }
+            background-size: 200% auto; -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent; margin-bottom: 15px; text-transform: uppercase;
+            animation: shine 3s linear infinite; line-height: 1.15; word-break: break-word; max-width: 100%; }
 
         @keyframes shine { to { background-position: 200% auto; } }
 
-        .hero-subtitle {
-            font-size: 16px;
-            letter-spacing: 5px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            margin-bottom: 25px;
-        }
+        .hero-subtitle { font-size: 16px; letter-spacing: 5px; color: var(--text-muted);
+            text-transform: uppercase; margin-bottom: 25px; }
 
-        .server-support {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 35px;
-            max-width: 100%;
-        }
+        .server-support { display: flex; align-items: center; justify-content: center;
+            gap: 12px; flex-wrap: wrap; margin-bottom: 35px; max-width: 100%; }
 
-        .server-tag {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            padding: 9px 20px;
-            border-radius: 50px;
-            font-size: 12px; font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: var(--text-main);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            transition: var(--transition-fast);
-        }
+        .server-tag { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color);
+            padding: 9px 20px; border-radius: 50px; font-size: 12px; font-weight: 700;
+            letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-main);
+            display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+            transition: var(--transition-fast); }
 
-        .server-tag:hover {
-            border-color: var(--gold-primary);
-            color: var(--gold-primary);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px var(--gold-glow);
-            text-shadow: 0 0 8px var(--gold-glow);
-        }
+        .server-tag:hover { border-color: var(--gold-primary); color: var(--gold-primary);
+            transform: translateY(-3px); box-shadow: 0 5px 20px var(--gold-glow);
+            text-shadow: 0 0 8px var(--gold-glow); }
 
-        .server-tag:active {
-            transform: scale(0.93);
+        .server-tag:active { transform: scale(0.93);
             box-shadow: 0 0 25px var(--gold-glow-strong), 0 0 50px var(--gold-glow);
-            background: rgba(255, 170, 0, 0.15);
-        }
+            background: rgba(255, 170, 0, 0.15); }
 
-        .server-tag.safe {
-            background: rgba(0, 255, 136, 0.08);
-            border-color: rgba(0, 255, 136, 0.4);
-            color: var(--success-green);
-        }
+        .server-tag.safe { background: rgba(0, 255, 136, 0.08);
+            border-color: rgba(0, 255, 136, 0.4); color: var(--success-green); }
 
-        .server-tag.safe:hover {
-            border-color: var(--success-green);
-            color: var(--success-green);
-            box-shadow: 0 5px 20px var(--green-glow);
-            text-shadow: 0 0 10px var(--green-glow);
-        }
+        .server-tag.safe:hover { border-color: var(--success-green); color: var(--success-green);
+            box-shadow: 0 5px 20px var(--green-glow); text-shadow: 0 0 10px var(--green-glow); }
 
-        .server-tag.safe:active {
-            box-shadow: 0 0 25px var(--green-glow), 0 0 50px var(--green-glow);
-            background: rgba(0, 255, 136, 0.15);
-        }
+        .server-tag.safe:active { box-shadow: 0 0 25px var(--green-glow), 0 0 50px var(--green-glow);
+            background: rgba(0, 255, 136, 0.15); }
 
-        .server-tag .dot {
-            width: 7px; height: 7px;
-            background: currentColor;
-            border-radius: 50%;
-            box-shadow: 0 0 8px currentColor;
-        }
+        .server-tag .dot { width: 7px; height: 7px; background: currentColor;
+            border-radius: 50%; box-shadow: 0 0 8px currentColor; }
 
         .hero-cta { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
 
-        .btn-primary, .btn-secondary {
-            font-family: var(--font-heading);
-            font-size: 15px; font-weight: 700;
-            padding: 16px 45px;
-            border-radius: 50px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: var(--transition-fast);
-            text-decoration: none;
-            display: inline-block;
-            border: none;
-            position: relative; overflow: hidden;
-        }
+        .btn-primary, .btn-secondary { font-family: var(--font-heading); font-size: 15px;
+            font-weight: 700; padding: 16px 45px; border-radius: 50px; cursor: pointer;
+            text-transform: uppercase; letter-spacing: 2px; transition: var(--transition-fast);
+            text-decoration: none; display: inline-block; border: none;
+            position: relative; overflow: hidden; }
 
-        .btn-primary {
-            background: linear-gradient(90deg, #b8860b, var(--gold-primary));
-            color: #000;
-            box-shadow: 0 0 20px var(--gold-glow);
-        }
+        .btn-primary { background: linear-gradient(90deg, #b8860b, var(--gold-primary));
+            color: #000; box-shadow: 0 0 20px var(--gold-glow); }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px var(--gold-glow), 0 0 50px var(--gold-glow);
-            filter: brightness(1.1);
-        }
+        .btn-primary:hover { transform: translateY(-3px);
+            box-shadow: 0 8px 30px var(--gold-glow), 0 0 50px var(--gold-glow); filter: brightness(1.1); }
+        .btn-primary:active { transform: scale(0.94);
+            box-shadow: 0 0 35px var(--gold-glow-strong), 0 0 70px var(--gold-glow); filter: brightness(1.3); }
 
-        .btn-primary:active {
-            transform: scale(0.94);
-            box-shadow: 0 0 35px var(--gold-glow-strong), 0 0 70px var(--gold-glow);
-            filter: brightness(1.3);
-        }
+        .btn-secondary { background: transparent; color: var(--gold-primary);
+            border: 2px solid var(--gold-primary); box-shadow: inset 0 0 15px rgba(255, 170, 0, 0.1); }
 
-        .btn-secondary {
-            background: transparent;
-            color: var(--gold-primary);
-            border: 2px solid var(--gold-primary);
-            box-shadow: inset 0 0 15px rgba(255, 170, 0, 0.1);
-        }
-
-        .btn-secondary:hover { 
-            background: rgba(255, 170, 0, 0.1); 
-            transform: translateY(-3px);
+        .btn-secondary:hover { background: rgba(255, 170, 0, 0.1); transform: translateY(-3px);
             box-shadow: 0 8px 25px var(--gold-glow), inset 0 0 20px rgba(255, 170, 0, 0.2);
-            text-shadow: 0 0 10px var(--gold-glow);
-        }
+            text-shadow: 0 0 10px var(--gold-glow); }
 
-        .btn-secondary:active {
-            transform: scale(0.94);
-            background: rgba(255, 170, 0, 0.2);
-            box-shadow: 0 0 30px var(--gold-glow-strong), inset 0 0 30px rgba(255, 170, 0, 0.3);
-        }
+        .btn-secondary:active { transform: scale(0.94); background: rgba(255, 170, 0, 0.2);
+            box-shadow: 0 0 30px var(--gold-glow-strong), inset 0 0 30px rgba(255, 170, 0, 0.3); }
 
         /* SECTION */
         .section-header { text-align: center; margin-bottom: 50px; }
 
-        .section-title {
-            font-family: var(--font-heading);
-            font-size: 30px;
-            color: var(--gold-primary);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            text-shadow: 0 0 15px rgba(255, 170, 0, 0.3);
-        }
+        .section-title { font-family: var(--font-heading); font-size: 30px; color: var(--gold-primary);
+            letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(255, 170, 0, 0.3); }
 
         .section-desc { color: var(--text-muted); font-size: 15px; }
 
+        /* PRODUK */
         #produk { padding: 70px 0; }
 
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 
-        .product-card {
-            background: var(--bg-panel);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-        }
+        .product-card { background: var(--bg-panel); border: 1px solid var(--border-color);
+            border-radius: 20px; padding: 30px; display: flex; flex-direction: column;
+            align-items: center; text-align: center; transition: var(--transition);
+            position: relative; overflow: hidden; height: 100%; }
 
-        .product-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold-primary);
-            box-shadow: 0 15px 40px rgba(255, 170, 0, 0.15), 0 0 60px rgba(255, 170, 0, 0.1);
-        }
+        .product-card:hover { transform: translateY(-10px); border-color: var(--gold-primary);
+            box-shadow: 0 15px 40px rgba(255, 170, 0, 0.15), 0 0 60px rgba(255, 170, 0, 0.1); }
 
-        .product-badge {
-            position: absolute;
-            top: 18px; right: -38px;
-            background: var(--gold-primary);
-            color: #000;
-            font-weight: 700;
-            font-size: 10px;
-            padding: 5px 45px;
-            transform: rotate(45deg);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 0 15px var(--gold-glow);
-        }
+        .product-badge { position: absolute; top: 18px; right: -38px;
+            background: var(--gold-primary); color: #000; font-weight: 700; font-size: 10px;
+            padding: 5px 45px; transform: rotate(45deg); text-transform: uppercase;
+            letter-spacing: 1px; box-shadow: 0 0 15px var(--gold-glow); }
 
-        .product-badge.hot { background: var(--danger-red); color: #fff; }
+        .product-badge.hot { background: var(--danger-red); color: #fff; box-shadow: 0 0 15px var(--red-glow); }
         .product-badge.permanent { background: linear-gradient(90deg, #ff4444, #ff8800); color: #fff; }
 
-        .product-icon-box {
-            width: 80px; height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            border: 1px solid var(--border-color);
-            background: rgba(255, 170, 0, 0.08);
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
+        .product-icon-box { width: 80px; height: 80px; display: flex; align-items: center;
+            justify-content: center; border-radius: 50%; border: 1px solid var(--border-color);
+            background: rgba(255, 170, 0, 0.08); margin-bottom: 20px; transition: var(--transition); }
 
-        .product-card:hover .product-icon-box {
-            box-shadow: 0 0 25px var(--gold-glow), inset 0 0 15px rgba(255, 170, 0, 0.15);
-            transform: scale(1.08);
-        }
+        .product-card:hover .product-icon-box { box-shadow: 0 0 25px var(--gold-glow),
+            inset 0 0 15px rgba(255, 170, 0, 0.15); transform: scale(1.08); }
 
         .product-icon-box svg { width: 36px; height: 36px; fill: var(--gold-primary); transition: var(--transition); }
-
         .product-card:hover .product-icon-box svg { filter: drop-shadow(0 0 8px var(--gold-glow-strong)); }
 
-        .product-name {
-            font-size: 22px; font-weight: 700;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .product-name { font-size: 22px; font-weight: 700; margin-bottom: 10px;
+            text-transform: uppercase; letter-spacing: 1px; }
 
-        .product-desc {
-            color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 25px;
-            flex-grow: 1;
-        }
+        .product-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 25px; flex-grow: 1; }
 
-        .product-price {
-            font-family: var(--font-heading);
-            font-size: 28px; font-weight: 900;
-            color: var(--gold-primary);
-            margin-bottom: 25px;
-            text-shadow: 0 0 15px var(--gold-glow);
-        }
+        .product-price { font-family: var(--font-heading); font-size: 28px; font-weight: 900;
+            color: var(--gold-primary); margin-bottom: 25px; text-shadow: 0 0 15px var(--gold-glow); }
 
-        .buy-btn {
-            background: linear-gradient(90deg, #b8860b, var(--gold-primary));
-            color: #000;
-            font-family: var(--font-heading);
-            font-size: 14px; font-weight: 700;
-            padding: 16px 30px;
-            border: none; border-radius: 50px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition-fast);
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 0 15px var(--gold-glow);
-            position: relative; overflow: hidden;
-        }
+        .buy-btn { background: linear-gradient(90deg, #b8860b, var(--gold-primary));
+            color: #000; font-family: var(--font-heading); font-size: 14px; font-weight: 700;
+            padding: 16px 30px; border: none; border-radius: 50px; cursor: pointer;
+            text-transform: uppercase; letter-spacing: 1px; transition: var(--transition-fast);
+            width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
+            box-shadow: 0 0 15px var(--gold-glow); position: relative; overflow: hidden; }
 
-        .buy-btn:hover {
-            background: linear-gradient(90deg, var(--gold-primary), #ffcc00);
+        .buy-btn:hover { background: linear-gradient(90deg, var(--gold-primary), #ffcc00);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px var(--gold-glow), 0 0 45px var(--gold-glow);
-            filter: brightness(1.1);
-        }
+            box-shadow: 0 8px 25px var(--gold-glow), 0 0 45px var(--gold-glow); filter: brightness(1.1); }
+        .buy-btn:active { transform: scale(0.94);
+            box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow); filter: brightness(1.3); }
 
-        .buy-btn:active {
-            transform: scale(0.94);
-            box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow);
-            filter: brightness(1.3);
-        }
+        /* TUTORIAL */
+        #tutorial { padding: 70px 0; max-width: 900px; margin: 0 auto; }
+
+        .tutorial-container { display: flex; flex-direction: column; gap: 30px; }
+
+        .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%;
+            border-radius: 20px; overflow: hidden; border: 2px solid var(--border-color);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255, 170, 0, 0.15);
+            transition: var(--transition); }
+
+        .video-wrapper:hover { border-color: var(--gold-primary);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 50px rgba(255, 170, 0, 0.3); }
+
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+        .tutorial-warning { display: flex; align-items: center; gap: 15px;
+            background: rgba(255, 68, 68, 0.08); border: 1px solid rgba(255, 68, 68, 0.4);
+            border-left: 4px solid var(--danger-red); border-radius: 12px; padding: 18px 22px;
+            box-shadow: 0 0 20px rgba(255, 68, 68, 0.15); }
+
+        .warning-icon { font-family: var(--font-heading); font-size: 24px; font-weight: 900;
+            color: var(--danger-red); width: 40px; height: 40px; display: flex;
+            align-items: center; justify-content: center; border-radius: 50%;
+            background: rgba(255, 68, 68, 0.15); border: 2px solid var(--danger-red);
+            flex-shrink: 0; text-shadow: 0 0 10px var(--red-glow); }
+
+        .tutorial-warning p { color: var(--danger-red); font-size: 14px; font-weight: 700;
+            line-height: 1.6; letter-spacing: 0.5px; }
+
+        .tutorial-steps { display: flex; flex-direction: column; gap: 15px; }
+
+        .steps-title { font-family: var(--font-heading); font-size: 20px; color: var(--gold-primary);
+            letter-spacing: 1px; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 170, 0, 0.3); }
+
+        .step-item { display: flex; gap: 20px; align-items: flex-start;
+            background: var(--bg-panel); border: 1px solid var(--border-color);
+            border-radius: 15px; padding: 20px; transition: var(--transition); }
+
+        .step-item:hover { border-color: var(--gold-primary);
+            box-shadow: 0 0 25px rgba(255, 170, 0, 0.15); transform: translateX(5px); }
+
+        .step-number { font-family: var(--font-heading); font-size: 18px; font-weight: 900;
+            color: #000; width: 42px; height: 42px; display: flex; align-items: center;
+            justify-content: center; border-radius: 50%;
+            background: linear-gradient(135deg, #b8860b, var(--gold-primary));
+            box-shadow: 0 0 15px var(--gold-glow); flex-shrink: 0; }
+
+        .step-content h4 { font-family: var(--font-heading); font-size: 16px;
+            color: var(--text-main); margin-bottom: 6px; letter-spacing: 0.5px; }
+        .step-content p { color: var(--text-muted); font-size: 14px; line-height: 1.6; }
 
         /* FAQ */
         #faq { padding: 70px 0; max-width: 800px; margin: 0 auto; }
 
-        .faq-item {
-            background: var(--bg-panel);
-            border: 1px solid var(--border-color);
-            border-radius: 15px;
-            margin-bottom: 15px;
-            overflow: hidden;
-            transition: var(--transition);
-        }
+        .faq-item { background: var(--bg-panel); border: 1px solid var(--border-color);
+            border-radius: 15px; margin-bottom: 15px; overflow: hidden; transition: var(--transition); }
 
         .faq-item:hover { border-color: rgba(255, 170, 0, 0.5); box-shadow: 0 0 20px rgba(255, 170, 0, 0.1); }
         .faq-item.active { border-color: var(--gold-primary); box-shadow: 0 0 25px var(--gold-glow); }
 
-        .faq-question {
-            padding: 18px 20px;
-            font-size: 17px; font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition-fast);
-            gap: 15px;
-        }
+        .faq-question { padding: 18px 20px; font-size: 17px; font-weight: 600;
+            cursor: pointer; display: flex; justify-content: space-between;
+            align-items: center; transition: var(--transition-fast); gap: 15px; }
 
         .faq-question:hover { color: var(--gold-primary); text-shadow: 0 0 10px var(--gold-glow); }
         .faq-question:active { transform: scale(0.99); background: rgba(255, 170, 0, 0.08); }
 
-        .faq-toggle {
-            font-family: var(--font-heading);
-            font-size: 18px; font-weight: 700;
-            color: var(--gold-primary);
-            flex-shrink: 0;
-            width: 30px; height: 30px;
-            text-align: center;
-            border-radius: 50%;
-            background: rgba(255, 170, 0, 0.1);
-            transition: var(--transition-fast);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        .faq-toggle { font-family: var(--font-heading); font-size: 18px; font-weight: 700;
+            color: var(--gold-primary); flex-shrink: 0; width: 30px; height: 30px;
+            text-align: center; border-radius: 50%; background: rgba(255, 170, 0, 0.1);
+            transition: var(--transition-fast); display: flex; align-items: center; justify-content: center; }
 
-        .faq-question:hover .faq-toggle { background: var(--gold-primary); color: #000; box-shadow: 0 0 15px var(--gold-glow-strong); }
+        .faq-question:hover .faq-toggle { background: var(--gold-primary); color: #000;
+            box-shadow: 0 0 15px var(--gold-glow-strong); }
 
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            padding: 0 20px;
-            color: var(--text-muted);
-            border-top: 1px solid transparent;
-            font-size: 14px;
-        }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;
+            padding: 0 20px; color: var(--text-muted); border-top: 1px solid transparent; font-size: 14px; }
 
-        .faq-item.active .faq-answer { max-height: 300px; padding: 0 20px 20px; border-top-color: rgba(255, 255, 255, 0.05); }
+        .faq-item.active .faq-answer { max-height: 300px; padding: 0 20px 20px;
+            border-top-color: rgba(255, 255, 255, 0.05); }
 
         /* FOOTER */
-        footer {
-            margin-top: 70px;
-            padding: 40px 5%;
-            border-top: 1px solid var(--border-color);
-            background: rgba(5, 5, 5, 0.9);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            width: 100%;
-            gap: 30px;
-        }
+        footer { margin-top: 70px; padding: 40px 5%; border-top: 1px solid var(--border-color);
+            background: rgba(5, 5, 5, 0.9); display: flex; flex-direction: column;
+            align-items: center; text-align: center; width: 100%; gap: 30px; }
 
         .footer-col { width: 100%; max-width: 900px; }
 
-        .footer-col h4 {
-            font-family: var(--font-heading);
-            color: var(--gold-primary);
-            font-size: 17px;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(255, 170, 0, 0.3);
-        }
+        .footer-col h4 { font-family: var(--font-heading); color: var(--gold-primary);
+            font-size: 17px; margin-bottom: 15px; letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(255, 170, 0, 0.3); }
 
         .footer-col p { color: var(--text-muted); font-size: 14px; line-height: 1.7; }
 
         .footer-links-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; }
 
-        .footer-links-row a, .footer-links-row span {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 14px;
-            transition: var(--transition-fast);
-            cursor: pointer;
-            padding: 6px 12px;
-            border-radius: 50px;
-            display: inline-block;
-        }
+        .footer-links-row a, .footer-links-row span { color: var(--text-muted);
+            text-decoration: none; font-size: 14px; transition: var(--transition-fast);
+            cursor: pointer; padding: 6px 12px; border-radius: 50px; display: inline-block; }
 
-        .footer-links-row a:hover { color: var(--gold-primary); text-shadow: 0 0 10px var(--gold-glow); background: rgba(255, 170, 0, 0.08); }
-        .footer-links-row a:active {
-            transform: scale(0.93);
-            color: var(--gold-primary);
-            background: rgba(255, 170, 0, 0.15);
-            box-shadow: 0 0 20px var(--gold-glow);
-            text-shadow: 0 0 15px var(--gold-glow-strong);
-        }
+        .footer-links-row a:hover { color: var(--gold-primary);
+            text-shadow: 0 0 10px var(--gold-glow); background: rgba(255, 170, 0, 0.08); }
+        .footer-links-row a:active { transform: scale(0.93); color: var(--gold-primary);
+            background: rgba(255, 170, 0, 0.15); box-shadow: 0 0 20px var(--gold-glow);
+            text-shadow: 0 0 15px var(--gold-glow-strong); }
 
-        .footer-contact a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 14px;
-            display: block;
-            margin-bottom: 8px;
-            transition: var(--transition-fast);
-            padding: 6px 12px;
-            border-radius: 50px;
-        }
+        .footer-contact a { color: var(--text-muted); text-decoration: none; font-size: 14px;
+            display: block; margin-bottom: 8px; transition: var(--transition-fast);
+            padding: 6px 12px; border-radius: 50px; }
 
-        .footer-contact a:hover { color: var(--gold-primary); text-shadow: 0 0 10px var(--gold-glow); background: rgba(255, 170, 0, 0.08); }
-        .footer-contact a:active {
-            transform: scale(0.95);
-            color: var(--gold-primary);
-            background: rgba(255, 170, 0, 0.15);
-            box-shadow: 0 0 20px var(--gold-glow);
-            text-shadow: 0 0 15px var(--gold-glow-strong);
-        }
+        .footer-contact a:hover { color: var(--gold-primary);
+            text-shadow: 0 0 10px var(--gold-glow); background: rgba(255, 170, 0, 0.08); }
+        .footer-contact a:active { transform: scale(0.95); color: var(--gold-primary);
+            background: rgba(255, 170, 0, 0.15); box-shadow: 0 0 20px var(--gold-glow);
+            text-shadow: 0 0 15px var(--gold-glow-strong); }
 
-        .footer-bottom {
-            width: 100%;
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-            font-size: 13px;
-        }
+        .footer-bottom { width: 100%; text-align: center; padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-muted); font-size: 13px; }
 
         /* MODAL */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            padding: 20px;
-            overflow-y: auto;
-        }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            display: flex; align-items: center; justify-content: center; z-index: 2000;
+            opacity: 0; visibility: hidden; transition: var(--transition);
+            padding: 20px; overflow-y: auto; }
 
         .modal-overlay.active { opacity: 1; visibility: visible; }
 
-        .modal-content {
-            background: var(--bg-panel);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 30px;
-            width: 100%;
-            max-width: 500px;
+        .modal-content { background: var(--bg-panel); border: 1px solid var(--border-color);
+            border-radius: 20px; padding: 30px; width: 100%; max-width: 500px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.9), 0 0 30px rgba(255, 170, 0, 0.1);
-            transform: scale(0.9);
-            transition: var(--transition);
-            max-height: 90vh;
-            overflow-y: auto;
-            margin: auto;
-            position: relative;
-            z-index: 2001;
-        }
+            transform: scale(0.9); transition: var(--transition); max-height: 90vh;
+            overflow-y: auto; margin: auto; position: relative; z-index: 2001; }
 
         .modal-overlay.active .modal-content { transform: scale(1); }
 
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 15px;
-        }
+        .modal-header { display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
 
-        .modal-header h3 {
-            font-family: var(--font-heading);
-            color: var(--gold-primary);
-            font-size: 19px;
-            letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(255, 170, 0, 0.3);
-        }
+        .modal-header h3 { font-family: var(--font-heading); color: var(--gold-primary);
+            font-size: 19px; letter-spacing: 1px; text-shadow: 0 0 10px rgba(255, 170, 0, 0.3); }
 
-        .close-modal {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-muted);
-            font-size: 22px;
-            cursor: pointer;
-            transition: var(--transition-fast);
-            line-height: 1;
-            width: 40px; height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
+        .close-modal { background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-muted);
+            font-size: 22px; cursor: pointer; transition: var(--transition-fast);
+            line-height: 1; width: 40px; height: 40px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
-        .close-modal:hover { 
-            color: var(--danger-red); 
-            transform: rotate(90deg);
-            background: rgba(255, 68, 68, 0.1);
-            border-color: var(--danger-red);
-            box-shadow: 0 0 20px var(--red-glow);
-        }
-
-        .close-modal:active {
-            transform: rotate(180deg) scale(0.9);
+        .close-modal:hover { color: var(--danger-red); transform: rotate(90deg);
+            background: rgba(255, 68, 68, 0.1); border-color: var(--danger-red);
+            box-shadow: 0 0 20px var(--red-glow); }
+        .close-modal:active { transform: rotate(180deg) scale(0.9);
             background: rgba(255, 68, 68, 0.2);
-            box-shadow: 0 0 30px var(--red-glow), 0 0 60px rgba(255, 68, 68, 0.4);
-            color: #fff;
-        }
+            box-shadow: 0 0 30px var(--red-glow), 0 0 60px rgba(255, 68, 68, 0.4); color: #fff; }
 
         .form-group { margin-bottom: 20px; }
-
         .form-group label { display: block; margin-bottom: 8px; font-size: 14px; color: var(--text-muted); }
 
-        .form-group input {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-main);
-            padding: 14px 18px;
-            border-radius: 50px;
-            font-family: var(--font-body);
-            outline: none;
-            transition: var(--transition);
-        }
+        .form-group input { width: 100%; background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-main);
+            padding: 14px 18px; border-radius: 50px; font-family: var(--font-body);
+            outline: none; transition: var(--transition); }
 
         .form-group input:hover { border-color: rgba(255, 170, 0, 0.4); }
-
-        .form-group input:focus {
-            border-color: var(--gold-primary);
-            box-shadow: 0 0 20px var(--gold-glow), inset 0 0 10px rgba(255, 170, 0, 0.1);
-        }
+        .form-group input:focus { border-color: var(--gold-primary);
+            box-shadow: 0 0 20px var(--gold-glow), inset 0 0 10px rgba(255, 170, 0, 0.1); }
 
         /* CHECKOUT */
         .checkout-steps { display: flex; justify-content: space-between; margin-bottom: 25px; position: relative; }
 
-        .checkout-steps::before {
-            content: '';
-            position: absolute;
-            top: 15px; left: 15px; right: 15px;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.1);
-            z-index: 1;
-        }
+        .checkout-steps::before { content: ''; position: absolute; top: 15px; left: 15px; right: 15px;
+            height: 2px; background: rgba(255, 255, 255, 0.1); z-index: 1; }
 
-        .step-indicator { display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2; flex: 1; }
+        .step-indicator { display: flex; flex-direction: column; align-items: center;
+            gap: 8px; z-index: 2; flex: 1; }
 
-        .step-circle {
-            width: 32px; height: 32px;
-            border-radius: 50%;
-            background: var(--bg-dark);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px; font-weight: 700;
-            color: var(--text-muted);
-            transition: var(--transition);
-            font-family: var(--font-heading);
-        }
+        .step-circle { width: 32px; height: 32px; border-radius: 50%; background: var(--bg-dark);
+            border: 2px solid rgba(255, 255, 255, 0.2); display: flex; align-items: center;
+            justify-content: center; font-size: 13px; font-weight: 700;
+            color: var(--text-muted); transition: var(--transition); font-family: var(--font-heading); }
 
-        .step-indicator.active .step-circle {
-            border-color: var(--gold-primary);
-            background: var(--gold-primary);
-            color: #000;
-            box-shadow: 0 0 15px var(--gold-glow-strong), 0 0 30px var(--gold-glow);
-        }
+        .step-indicator.active .step-circle { border-color: var(--gold-primary);
+            background: var(--gold-primary); color: #000;
+            box-shadow: 0 0 15px var(--gold-glow-strong), 0 0 30px var(--gold-glow); }
 
-        .step-indicator.completed .step-circle {
-            border-color: var(--success-green);
-            background: var(--success-green);
-            color: #000;
-            box-shadow: 0 0 15px var(--green-glow);
-        }
+        .step-indicator.completed .step-circle { border-color: var(--success-green);
+            background: var(--success-green); color: #000; box-shadow: 0 0 15px var(--green-glow); }
 
-        .step-label {
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-align: center;
-        }
+        .step-label { font-size: 11px; font-weight: 600; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 1px; text-align: center; }
 
         .step-indicator.active .step-label { color: var(--gold-primary); text-shadow: 0 0 8px var(--gold-glow); }
 
         .checkout-step { display: none; }
         .checkout-step.active { display: block; animation: fadeIn 0.3s ease; }
-
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .summary-box {
-            background: rgba(255, 170, 0, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
+        .summary-box { background: rgba(255, 170, 0, 0.05); border: 1px solid var(--border-color);
+            border-radius: 15px; padding: 20px; margin-bottom: 20px; }
 
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 12px 0;
-            gap: 20px;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
-        }
+        .summary-row { display: flex; justify-content: space-between; align-items: flex-start;
+            padding: 12px 0; gap: 20px; border-bottom: 1px dashed rgba(255, 255, 255, 0.08); }
 
         .summary-row:last-child { border-bottom: none; padding-bottom: 0; }
 
-        .summary-label { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; flex-shrink: 0; }
-        
-        .summary-value { font-weight: 600; font-size: 14px; text-align: right; flex-grow: 1; word-break: break-word; line-height: 1.5; }
-        
-        .summary-value.gold { 
-            color: var(--gold-primary); 
-            font-family: var(--font-heading); 
-            font-size: 18px; 
-            white-space: nowrap;
-            text-shadow: 0 0 10px rgba(255, 170, 0, 0.4);
-        }
+        .summary-label { font-size: 13px; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 1px; flex-shrink: 0; }
 
-        .payment-section-title {
-            font-size: 14px; font-weight: 600;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
+        .summary-value { font-weight: 600; font-size: 14px; text-align: right;
+            flex-grow: 1; word-break: break-word; line-height: 1.5; }
 
-        .payment-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
+        .summary-value.gold { color: var(--gold-primary); font-family: var(--font-heading);
+            font-size: 18px; white-space: nowrap; text-shadow: 0 0 10px rgba(255, 170, 0, 0.4); }
 
-        .payment-option {
-            background: rgba(255, 255, 255, 0.03);
-            border: 2px solid rgba(255, 255, 255, 0.08);
-            border-radius: 15px;
-            padding: 15px;
-            cursor: pointer;
-            text-align: center;
-            position: relative;
-            transition: var(--transition-fast);
-        }
+        .payment-section-title { font-size: 14px; font-weight: 600; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
 
-        .payment-option[data-method="DANA"]:hover { border-color: #118eea; background: rgba(17, 142, 234, 0.08); transform: translateY(-3px); box-shadow: 0 5px 20px var(--dana-glow); }
+        .payment-grid { display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 12px; margin-bottom: 20px; }
+
+        .payment-option { background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 255, 255, 0.08); border-radius: 15px;
+            padding: 15px; cursor: pointer; text-align: center; position: relative;
+            transition: var(--transition-fast); }
+
+        .payment-option[data-method="DANA"]:hover { border-color: #118eea;
+            background: rgba(17, 142, 234, 0.08); transform: translateY(-3px);
+            box-shadow: 0 5px 20px var(--dana-glow); }
         .payment-option[data-method="DANA"]:active, .payment-option[data-method="DANA"].selected {
             border-color: #118eea; background: rgba(17, 142, 234, 0.15);
-            box-shadow: 0 0 25px var(--dana-glow), 0 0 50px rgba(17, 142, 234, 0.4);
-        }
+            box-shadow: 0 0 25px var(--dana-glow), 0 0 50px rgba(17, 142, 234, 0.4); }
 
-        .payment-option[data-method="QRIS"]:hover { border-color: #e30613; background: rgba(227, 6, 19, 0.08); transform: translateY(-3px); box-shadow: 0 5px 20px var(--qris-glow); }
+        .payment-option[data-method="QRIS"]:hover { border-color: #e30613;
+            background: rgba(227, 6, 19, 0.08); transform: translateY(-3px);
+            box-shadow: 0 5px 20px var(--qris-glow); }
         .payment-option[data-method="QRIS"]:active, .payment-option[data-method="QRIS"].selected {
             border-color: #e30613; background: rgba(227, 6, 19, 0.15);
-            box-shadow: 0 0 25px var(--qris-glow), 0 0 50px rgba(227, 6, 19, 0.4);
-        }
+            box-shadow: 0 0 25px var(--qris-glow), 0 0 50px rgba(227, 6, 19, 0.4); }
 
-        .payment-option[data-method="SeaBank"]:hover { border-color: #ff6b00; background: rgba(255, 107, 0, 0.08); transform: translateY(-3px); box-shadow: 0 5px 20px var(--seabank-glow); }
+        .payment-option[data-method="SeaBank"]:hover { border-color: #ff6b00;
+            background: rgba(255, 107, 0, 0.08); transform: translateY(-3px);
+            box-shadow: 0 5px 20px var(--seabank-glow); }
         .payment-option[data-method="SeaBank"]:active, .payment-option[data-method="SeaBank"].selected {
             border-color: #ff6b00; background: rgba(255, 107, 0, 0.15);
-            box-shadow: 0 0 25px var(--seabank-glow), 0 0 50px rgba(255, 107, 0, 0.4);
-        }
+            box-shadow: 0 0 25px var(--seabank-glow), 0 0 50px rgba(255, 107, 0, 0.4); }
 
-        .payment-option[data-method="BNI"]:hover { border-color: #f05a22; background: rgba(240, 90, 34, 0.08); transform: translateY(-3px); box-shadow: 0 5px 20px var(--bni-glow); }
+        .payment-option[data-method="BNI"]:hover { border-color: #f05a22;
+            background: rgba(240, 90, 34, 0.08); transform: translateY(-3px);
+            box-shadow: 0 5px 20px var(--bni-glow); }
         .payment-option[data-method="BNI"]:active, .payment-option[data-method="BNI"].selected {
             border-color: #f05a22; background: rgba(240, 90, 34, 0.15);
-            box-shadow: 0 0 25px var(--bni-glow), 0 0 50px rgba(240, 90, 34, 0.4);
-        }
+            box-shadow: 0 0 25px var(--bni-glow), 0 0 50px rgba(240, 90, 34, 0.4); }
 
-        .payment-option.selected::after {
-            content: '✓';
-            position: absolute;
-            top: 8px; right: 10px;
-            font-weight: 700; font-size: 16px;
-            color: var(--text-main);
-            text-shadow: 0 0 10px currentColor;
-        }
+        .payment-option.selected::after { content: '✓'; position: absolute; top: 8px; right: 10px;
+            font-weight: 700; font-size: 16px; color: var(--text-main);
+            text-shadow: 0 0 10px currentColor; }
 
         .payment-option[data-method="DANA"].selected::after { color: #118eea; }
         .payment-option[data-method="QRIS"].selected::after { color: #e30613; }
         .payment-option[data-method="SeaBank"].selected::after { color: #ff6b00; }
         .payment-option[data-method="BNI"].selected::after { color: #f05a22; }
 
-        .payment-logo {
-            width: 60px; height: 60px;
-            margin: 0 auto 10px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 18px;
-            color: #fff;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
+        .payment-logo { width: 60px; height: 60px; margin: 0 auto 10px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-heading); font-weight: 900; font-size: 18px;
+            color: #fff; letter-spacing: 1px; transition: var(--transition); }
 
         .payment-option:hover .payment-logo { transform: scale(1.05); }
 
@@ -1064,230 +584,130 @@
         .payment-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
         .payment-type { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
 
-        .payment-detail-box {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--border-color);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
+        .payment-detail-box { background: rgba(0, 0, 0, 0.3); border: 1px solid var(--border-color);
+            border-radius: 15px; padding: 20px; margin-bottom: 20px; }
 
-        .payment-detail-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
+        .payment-detail-header { display: flex; align-items: center; gap: 12px;
+            margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
 
-        .payment-detail-logo {
-            width: 40px; height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-heading);
-            font-weight: 900;
-            font-size: 13px;
-            color: #fff;
-        }
+        .payment-detail-logo { width: 40px; height: 40px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-heading); font-weight: 900; font-size: 13px; color: #fff; }
 
         .payment-detail-info { display: flex; flex-direction: column; }
         .payment-detail-info strong { font-size: 15px; }
         .payment-detail-info span { font-size: 12px; color: var(--text-muted); }
 
-        .contact-admin-box {
-            background: rgba(0, 136, 204, 0.08);
-            border: 1px solid rgba(0, 136, 204, 0.4);
-            border-left: 3px solid #0088cc;
-            border-radius: 12px;
-            padding: 18px;
-            text-align: center;
-        }
+        .contact-admin-box { background: rgba(0, 136, 204, 0.08);
+            border: 1px solid rgba(0, 136, 204, 0.4); border-left: 3px solid #0088cc;
+            border-radius: 12px; padding: 18px; text-align: center; }
 
-        .contact-admin-box p { color: var(--text-main); font-size: 14px; line-height: 1.6; margin-bottom: 12px; }
+        .contact-admin-box p { color: var(--text-main); font-size: 14px;
+            line-height: 1.6; margin-bottom: 12px; }
         .contact-admin-box .admin-hint { color: var(--text-muted); font-size: 12px; font-style: italic; }
 
         .qr-container { text-align: center; padding: 15px 0; }
-
-        .qr-container img {
-            width: 100%;
-            max-width: 260px;
-            border-radius: 15px;
-            border: 3px solid var(--gold-primary);
-            box-shadow: 0 0 25px rgba(255, 170, 0, 0.3);
-            background: #fff;
-            padding: 8px;
-            transition: var(--transition);
-        }
-
+        .qr-container img { width: 100%; max-width: 260px; border-radius: 15px;
+            border: 3px solid var(--gold-primary); box-shadow: 0 0 25px rgba(255, 170, 0, 0.3);
+            background: #fff; padding: 8px; transition: var(--transition); }
         .qr-container img:hover { box-shadow: 0 0 35px var(--gold-glow-strong), 0 0 60px var(--gold-glow); transform: scale(1.02); }
         .qr-container p { color: var(--text-muted); font-size: 12px; margin-top: 12px; }
 
-        .total-payment {
-            background: linear-gradient(90deg, rgba(255, 170, 0, 0.15), rgba(255, 170, 0, 0.05));
-            border: 1px solid var(--gold-primary);
-            border-radius: 50px;
-            padding: 18px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(255, 170, 0, 0.15);
-        }
+        .total-payment { background: linear-gradient(90deg, rgba(255, 170, 0, 0.15), rgba(255, 170, 0, 0.05));
+            border: 1px solid var(--gold-primary); border-radius: 50px; padding: 18px 25px;
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 20px; box-shadow: 0 0 20px rgba(255, 170, 0, 0.15); }
 
-        .total-payment .label { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
-        .total-payment .value { font-family: var(--font-heading); font-size: 22px; font-weight: 900; color: var(--gold-primary); text-shadow: 0 0 15px var(--gold-glow); }
+        .total-payment .label { font-size: 13px; text-transform: uppercase;
+            letter-spacing: 1px; color: var(--text-muted); }
 
-        .instruction-box {
-            background: rgba(0, 136, 204, 0.08);
-            border-left: 3px solid #0088cc;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 20px;
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
+        .total-payment .value { font-family: var(--font-heading); font-size: 22px;
+            font-weight: 900; color: var(--gold-primary); text-shadow: 0 0 15px var(--gold-glow); }
+
+        .instruction-box { background: rgba(0, 136, 204, 0.08);
+            border-left: 3px solid #0088cc; border-radius: 12px; padding: 15px;
+            margin-bottom: 20px; font-size: 13px; color: var(--text-muted); line-height: 1.7; }
 
         .instruction-box strong { color: var(--text-main); }
 
         .checkout-actions { display: flex; gap: 12px; margin-top: 20px; }
 
-        .btn-checkout {
-            flex: 1;
-            font-family: var(--font-heading);
-            font-size: 13px; font-weight: 700;
-            padding: 16px;
-            border-radius: 50px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition-fast);
-            border: none;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            position: relative;
-            overflow: hidden;
-        }
+        .btn-checkout { flex: 1; font-family: var(--font-heading); font-size: 13px;
+            font-weight: 700; padding: 16px; border-radius: 50px; cursor: pointer;
+            text-transform: uppercase; letter-spacing: 1px; transition: var(--transition-fast);
+            border: none; text-decoration: none; display: inline-flex;
+            align-items: center; justify-content: center; gap: 8px;
+            position: relative; overflow: hidden; }
 
-        .btn-next {
-            background: linear-gradient(90deg, #b8860b, var(--gold-primary));
-            color: #000;
-            box-shadow: 0 0 15px var(--gold-glow);
-        }
-
-        .btn-next:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 25px var(--gold-glow), 0 0 45px var(--gold-glow); filter: brightness(1.1); }
-        .btn-next:active:not(:disabled) { transform: scale(0.94); box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow); filter: brightness(1.3); }
+        .btn-next { background: linear-gradient(90deg, #b8860b, var(--gold-primary));
+            color: #000; box-shadow: 0 0 15px var(--gold-glow); }
+        .btn-next:hover:not(:disabled) { transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--gold-glow), 0 0 45px var(--gold-glow); filter: brightness(1.1); }
+        .btn-next:active:not(:disabled) { transform: scale(0.94);
+            box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow); filter: brightness(1.3); }
         .btn-next:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; }
 
-        .btn-back {
-            background: transparent;
-            color: var(--text-muted);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
+        .btn-back { background: transparent; color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.15); }
+        .btn-back:hover { color: var(--text-main); border-color: var(--text-main);
+            box-shadow: 0 0 15px var(--white-glow), inset 0 0 15px rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.05); }
+        .btn-back:active { transform: scale(0.94); background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 25px var(--white-glow), inset 0 0 20px rgba(255, 255, 255, 0.1);
+            color: var(--text-main); border-color: var(--text-main); }
 
-        .btn-back:hover { color: var(--text-main); border-color: var(--text-main); box-shadow: 0 0 15px var(--white-glow); background: rgba(255, 255, 255, 0.05); }
-        .btn-back:active {
-            transform: scale(0.94);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 0 25px var(--white-glow);
-            color: var(--text-main);
-            border-color: var(--text-main);
-        }
-
-        .btn-confirm {
-            background: linear-gradient(90deg, #0088cc, #00a8e8);
-            color: #fff;
-            box-shadow: 0 0 15px rgba(0, 136, 204, 0.4);
-            width: 100%;
-        }
-
-        .btn-confirm:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 136, 204, 0.6), 0 0 45px rgba(0, 136, 204, 0.4); filter: brightness(1.15); }
-        .btn-confirm:active { transform: scale(0.94); box-shadow: 0 0 30px var(--blue-glow), 0 0 60px rgba(0, 136, 204, 0.4); filter: brightness(1.25); }
+        .btn-confirm { background: linear-gradient(90deg, #0088cc, #00a8e8);
+            color: #fff; box-shadow: 0 0 15px rgba(0, 136, 204, 0.4); width: 100%; }
+        .btn-confirm:hover { transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.6), 0 0 45px rgba(0, 136, 204, 0.4); filter: brightness(1.15); }
+        .btn-confirm:active { transform: scale(0.94);
+            box-shadow: 0 0 30px var(--blue-glow), 0 0 60px rgba(0, 136, 204, 0.4); filter: brightness(1.25); }
 
         /* TOAST */
-        .toast {
-            position: fixed;
-            bottom: 30px; right: 30px;
-            background: var(--bg-panel);
-            border-left: 4px solid var(--gold-primary);
-            color: var(--text-main);
-            padding: 15px 25px;
-            border-radius: 50px;
+        .toast { position: fixed; bottom: 30px; right: 30px; background: var(--bg-panel);
+            border-left: 4px solid var(--gold-primary); color: var(--text-main);
+            padding: 15px 25px; border-radius: 50px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px var(--gold-glow);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transform: translateX(150%);
+            display: flex; align-items: center; gap: 15px; transform: translateX(150%);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 3000;
-            max-width: calc(100vw - 40px);
-        }
+            z-index: 3000; max-width: calc(100vw - 40px); }
 
         .toast.show { transform: translateX(0); }
-
-        .toast-indicator {
-            width: 10px; height: 10px;
-            border-radius: 50%;
-            background: var(--gold-primary);
-            box-shadow: 0 0 10px var(--gold-primary);
-            flex-shrink: 0;
-        }
-
+        .toast-indicator { width: 10px; height: 10px; border-radius: 50%;
+            background: var(--gold-primary); box-shadow: 0 0 10px var(--gold-primary); flex-shrink: 0; }
         .toast-message { font-size: 14px; font-weight: 600; }
 
         /* RESPONSIVE */
         @media (min-width: 769px) and (max-width: 1024px) {
             :root { --header-height: 65px; }
-            .brand-name { font-size: 17px; }
-            .logo-img { width: 40px; height: 40px; }
-            nav.desktop-nav { gap: 15px; }
-            .nav-link { font-size: 12px; }
+            .brand-name { font-size: 17px; } .logo-img { width: 40px; height: 40px; }
+            nav.desktop-nav { gap: 15px; } .nav-link { font-size: 12px; }
             .search-input { width: 140px; font-size: 13px; padding: 8px 12px 8px 35px; }
-            .search-input:focus { width: 180px; }
-            .search-icon { left: 11px; width: 15px; height: 15px; }
-            .hero { padding: 40px 0 40px; }
-            .hero-title { font-size: 46px; letter-spacing: 3px; }
+            .search-input:focus { width: 180px; } .search-icon { left: 11px; width: 15px; height: 15px; }
+            .hero { padding: 40px 0 40px; } .hero-title { font-size: 46px; letter-spacing: 3px; }
             .hero-subtitle { font-size: 14px; letter-spacing: 4px; }
-            .paks-text { font-size: 17px; letter-spacing: 5px; }
-            .game-badge-text { font-size: 12px; }
+            .paks-text { font-size: 17px; letter-spacing: 5px; } .game-badge-text { font-size: 12px; }
             .product-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-            .product-card { padding: 25px 20px; }
-            .product-name { font-size: 19px; }
-            .product-price { font-size: 24px; }
-            .section-title { font-size: 26px; }
+            .product-card { padding: 25px 20px; } .product-name { font-size: 19px; }
+            .product-price { font-size: 24px; } .section-title { font-size: 26px; }
             .modal-content { max-width: 520px; padding: 25px; }
         }
-
         @media (min-width: 1400px) { main { max-width: 1320px; } .product-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (min-width: 1025px) and (max-width: 1399px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
-
         @media (max-width: 992px) {
-            nav.desktop-nav { display: none; }
-            .hamburger { display: flex; }
-            .search-container { display: none; }
-            .login-btn { display: none; }
-        }
+            nav.desktop-nav { display: none; } .hamburger { display: flex; }
+            .search-container { display: none; } .login-btn { display: none; } }
 
         @media (max-width: 768px) {
             :root { --header-height: 65px; }
-            header { padding: 0 20px; }
-            .brand-name { font-size: 15px; }
-            .logo-img { width: 38px; height: 38px; }
-            .hero { padding: 30px 0 30px; }
+            header { padding: 0 20px; } .brand-name { font-size: 15px; }
+            .logo-img { width: 38px; height: 38px; } .hero { padding: 30px 0 30px; }
             .hero-title { font-size: 30px; letter-spacing: 1.5px; }
             .hero-subtitle { font-size: 11px; letter-spacing: 2px; }
             .paks-text { font-size: 13px; letter-spacing: 4px; padding: 5px 14px; margin-bottom: 12px; }
-            .section-title { font-size: 20px; }
-            .section-desc { font-size: 13px; }
+            .section-title { font-size: 20px; } .section-desc { font-size: 13px; }
             .product-grid { grid-template-columns: 1fr; gap: 20px; }
-            .product-card { padding: 25px 20px; }
-            .product-name { font-size: 18px; }
+            .product-card { padding: 25px 20px; } .product-name { font-size: 18px; }
             .product-price { font-size: 22px; }
             .toast { bottom: 20px; right: 20px; left: 20px; transform: translateY(150%); }
             .toast.show { transform: translateY(0); }
@@ -1308,126 +728,90 @@
             .footer-links-row { gap: 10px; }
             .footer-links-row a, .footer-links-row span { font-size: 13px; padding: 5px 10px; }
             .footer-contact a { font-size: 13px; }
-            .total-payment { padding: 15px 20px; }
-            .total-payment .value { font-size: 18px; }
+            .total-payment { padding: 15px 20px; } .total-payment .value { font-size: 18px; }
             .faq-question { font-size: 15px; padding: 15px; }
             .faq-toggle { width: 26px; height: 26px; font-size: 15px; }
             .section-header { margin-bottom: 35px; }
-            #produk, #faq { padding: 50px 0; }
+            #produk, #faq, #tutorial { padding: 50px 0; }
+            .tutorial-warning { flex-direction: column; text-align: center; gap: 10px; }
+            .step-item { padding: 15px; gap: 12px; }
+            .step-number { width: 36px; height: 36px; font-size: 15px; }
+            .step-content h4 { font-size: 14px; } .step-content p { font-size: 13px; }
+            .steps-title { font-size: 17px; }
         }
 
         @media (max-width: 400px) {
             .summary-row { flex-direction: column; align-items: flex-start; gap: 5px; }
             .summary-value, .summary-value.gold { text-align: left; font-size: 14px; }
-            .brand-name { font-size: 13px; }
-            .hero-title { font-size: 26px; }
+            .brand-name { font-size: 13px; } .hero-title { font-size: 26px; }
             .paks-text { font-size: 12px; letter-spacing: 3px; }
         }
 
         /* MOBILE MENU */
-        .mobile-menu {
-            position: fixed;
-            top: var(--header-height);
-            left: 0; right: 0; bottom: 0;
-            width: 100%;
-            height: calc(100vh - var(--header-height));
-            background: var(--bg-dark);
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            padding: 20px 25px;
-            gap: 5px;
-            transform: translateX(-100%);
-            transition: var(--transition);
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
+        .mobile-menu { position: fixed; top: var(--header-height); left: 0; right: 0; bottom: 0;
+            width: 100%; height: calc(100vh - var(--header-height)); background: var(--bg-dark);
+            z-index: 999; display: flex; flex-direction: column; padding: 20px 25px;
+            gap: 5px; transform: translateX(-100%); transition: var(--transition);
+            overflow-y: auto; -webkit-overflow-scrolling: touch; }
 
         .mobile-menu.active { transform: translateX(0); }
 
-        .mobile-menu a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 18px; font-weight: 600;
-            padding: 16px 20px;
+        .mobile-menu a { color: var(--text-main); text-decoration: none;
+            font-size: 18px; font-weight: 600; padding: 16px 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition-fast);
-            border-radius: 12px;
-            display: block;
-        }
+            transition: var(--transition-fast); border-radius: 12px; display: block; }
 
-        .mobile-menu a:hover { 
-            color: var(--gold-primary); 
-            padding-left: 28px;
-            background: rgba(255, 170, 0, 0.08);
-            text-shadow: 0 0 10px var(--gold-glow);
-            border-bottom-color: transparent;
-        }
+        .mobile-menu a:hover { color: var(--gold-primary); padding-left: 28px;
+            background: rgba(255, 170, 0, 0.08); text-shadow: 0 0 10px var(--gold-glow);
+            border-bottom-color: transparent; }
 
-        .mobile-menu a:active {
-            transform: scale(0.97);
-            color: var(--gold-primary);
-            background: rgba(255, 170, 0, 0.15);
-            box-shadow: 0 0 20px var(--gold-glow);
-            text-shadow: 0 0 15px var(--gold-glow-strong);
-            border-bottom-color: transparent;
-        }
+        .mobile-menu a:active { transform: scale(0.97); color: var(--gold-primary);
+            background: rgba(255, 170, 0, 0.15); box-shadow: 0 0 20px var(--gold-glow);
+            text-shadow: 0 0 15px var(--gold-glow-strong); border-bottom-color: transparent; }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
     <header>
         <div class="logo-container" onclick="window.scrollTo({top:0, behavior:'smooth'})">
             <img src="https://cdn.jsdelivr.net/gh/Cokocheat/Pubgm@main/icon.png" alt="Shadowcheat Logo" class="logo-img" onerror="this.style.background='linear-gradient(135deg, #ffaa00, #b8860b)'; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%22 y=%2265%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22black%22 font-family=%22Orbitron,sans-serif%22 font-weight=%22bold%22>S</text></svg>';">
             <div class="brand-name">SHADOW<span>CHEAT</span> PROJECT</div>
         </div>
-
         <nav class="desktop-nav">
             <a href="#home" class="nav-link" data-i18n="nav_home">Home</a>
             <a href="#produk" class="nav-link" data-i18n="nav_products">Products</a>
+            <a href="#tutorial" class="nav-link" data-i18n="nav_tutorial">Tutorial</a>
             <a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a>
             <a href="https://t.me/scp281025" target="_blank" class="nav-link" data-i18n="nav_support">Support</a>
         </nav>
-
         <div class="search-container">
-            <svg class="svg-icon search-icon" viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-            </svg>
+            <svg class="svg-icon search-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
             <input type="text" class="search-input" id="searchInput" placeholder="Search products..." data-i18n-placeholder="search_placeholder">
         </div>
-
         <div class="header-actions">
             <button class="login-btn" id="loginBtn" data-i18n="btn_login">Login</button>
         </div>
-
-        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
     </header>
 
-    <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="#home" class="mobile-link" data-i18n="nav_home">Home</a>
         <a href="#produk" class="mobile-link" data-i18n="nav_products">Products</a>
+        <a href="#tutorial" class="mobile-link" data-i18n="nav_tutorial">Tutorial</a>
         <a href="#faq" class="mobile-link" data-i18n="nav_faq">FAQ</a>
         <a href="https://t.me/scp281025" target="_blank" data-i18n="nav_support">Support</a>
         <button class="login-btn" style="margin-top: 20px; width: 100%;" onclick="openModal('loginModal')" data-i18n="btn_login">Login</button>
     </div>
 
-    <!-- MAIN -->
     <main>
         <section class="hero" id="home">
             <div class="game-badge">
                 <img src="https://cdn.jsdelivr.net/gh/Cokocheat/Pubgm@main/Wallpaper-PUBG-Mobile-1.jpg" alt="PUBG Mobile" class="pubg-logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23ffaa00%22/><text x=%2250%22 y=%2265%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22black%22 font-weight=%22bold%22>P</text></svg>';">
                 <span class="game-badge-text">PUBG MOBILE</span>
             </div>
-
             <div class="paks-text">PUBG MOBILE PAKS</div>
-
             <h1 class="hero-title">SHADOWCHEAT PROJECT</h1>
             <p class="hero-subtitle" data-i18n="hero_subtitle">Premium Digital Store & Tools</p>
-
             <div class="server-support">
                 <div class="server-tag"><span class="dot"></span> GLOBAL</div>
                 <div class="server-tag"><span class="dot"></span> KOREA</div>
@@ -1435,7 +819,6 @@
                 <div class="server-tag"><span class="dot"></span> TAIWAN</div>
                 <div class="server-tag safe"><span class="dot"></span> FULL SAFE</div>
             </div>
-
             <div class="hero-cta">
                 <a href="#produk" class="btn-primary" data-i18n="btn_view_products">View Products</a>
                 <a href="https://t.me/scp281025" target="_blank" class="btn-secondary" data-i18n="btn_contact">Contact Us</a>
@@ -1447,60 +830,100 @@
                 <h2 class="section-title" data-i18n="section_catalog">Product Catalog</h2>
                 <p class="section-desc" data-i18n="section_catalog_desc">Support PUBG Mobile Paks - Global, Korea, Vietnam, Taiwan | Android Non-Root</p>
             </div>
-            
             <div class="product-grid" id="productGrid">
                 <div class="product-card" data-name="key 7 day pubg mobile global korea vietnam taiwan">
                     <div class="product-badge" data-i18n="badge_popular">POPULAR</div>
-                    <div class="product-icon-box">
-                        <svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
-                    </div>
+                    <div class="product-icon-box"><svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></div>
                     <h3 class="product-name" data-i18n="prod_7d_name">Key 7 Days</h3>
                     <p class="product-desc" data-i18n="prod_7d_desc">Full access for 7 days. Support PUBG Mobile Global, Korea, Vietnam & Taiwan. Android Non-Root.</p>
                     <div class="product-price">Rp 50.000</div>
                     <button class="buy-btn" onclick="openCheckout('Key 7 Days', 50000, '7 Days')" data-i18n="btn_buy">BUY NOW</button>
                 </div>
-
                 <div class="product-card" data-name="key 15 day pubg mobile global korea vietnam taiwan">
-                    <div class="product-icon-box">
-                        <svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
-                    </div>
+                    <div class="product-icon-box"><svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></div>
                     <h3 class="product-name" data-i18n="prod_15d_name">Key 15 Days</h3>
                     <p class="product-desc" data-i18n="prod_15d_desc">Full access for 15 days. Support Global, Korea, Vietnam & Taiwan. Android Non-Root.</p>
                     <div class="product-price">Rp 90.000</div>
                     <button class="buy-btn" onclick="openCheckout('Key 15 Days', 90000, '15 Days')" data-i18n="btn_buy">BUY NOW</button>
                 </div>
-
                 <div class="product-card" data-name="key 30 day premium pubg mobile global korea vietnam taiwan">
                     <div class="product-badge hot" data-i18n="badge_best">BEST VALUE</div>
-                    <div class="product-icon-box">
-                        <svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
-                    </div>
+                    <div class="product-icon-box"><svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg></div>
                     <h3 class="product-name" data-i18n="prod_30d_name">Key 30 Days</h3>
                     <p class="product-desc" data-i18n="prod_30d_desc">Full access for 30 days. Full Safe & warranty for PUBG Mobile Global, Korea, Vietnam & Taiwan.</p>
                     <div class="product-price">Rp 150.000</div>
                     <button class="buy-btn" onclick="openCheckout('Key 30 Days', 150000, '30 Days')" data-i18n="btn_buy">BUY NOW</button>
                 </div>
-
                 <div class="product-card" data-name="key 1 season pubg mobile global korea vietnam taiwan">
                     <div class="product-badge hot" data-i18n="badge_season">SEASON</div>
-                    <div class="product-icon-box">
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    </div>
+                    <div class="product-icon-box"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
                     <h3 class="product-name" data-i18n="prod_season_name">Key 1 Season</h3>
                     <p class="product-desc" data-i18n="prod_season_desc">Full access for 1 season (about 2 months). Full Safe for all servers.</p>
                     <div class="product-price">Rp 250.000</div>
                     <button class="buy-btn" onclick="openCheckout('Key 1 Season', 250000, '1 Season')" data-i18n="btn_buy">BUY NOW</button>
                 </div>
-
                 <div class="product-card" data-name="key permanent pubg mobile global korea vietnam taiwan">
                     <div class="product-badge permanent" data-i18n="badge_permanent">PERMANENT</div>
-                    <div class="product-icon-box">
-                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
-                    </div>
+                    <div class="product-icon-box"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg></div>
                     <h3 class="product-name" data-i18n="prod_perm_name">Key Permanent</h3>
                     <p class="product-desc" data-i18n="prod_perm_desc">Permanent access without time limit. Full Safe & lifetime warranty for all servers.</p>
                     <div class="product-price">Rp 500.000</div>
                     <button class="buy-btn" onclick="openCheckout('Key Permanent', 500000, 'Permanent')" data-i18n="btn_buy">BUY NOW</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TUTORIAL SECTION -->
+        <section id="tutorial">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="tutorial_title">How to Install Paks</h2>
+                <p class="section-desc" data-i18n="tutorial_desc">Follow the video tutorial below correctly so features work optimally</p>
+            </div>
+            <div class="tutorial-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/UXfZIuauFAY" title="Tutorial Pemasangan PUBG Mobile Paks" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="tutorial-warning">
+                    <span class="warning-icon">!</span>
+                    <p data-i18n="tutorial_warning">IMPORTANT: Installation must be exactly like in the video. If you miss a step, features will not work!</p>
+                </div>
+                <div class="tutorial-steps">
+                    <h3 class="steps-title" data-i18n="tutorial_steps_title">Installation Steps:</h3>
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4 data-i18n="step1_title">Download Paks File</h4>
+                            <p data-i18n="step1_desc">Download the Paks file (.pak) from the link provided by admin. Make sure the file size matches.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4 data-i18n="step2_title">Install File Manager</h4>
+                            <p data-i18n="step2_desc">Download and install ZArchiver or another file manager from Play Store.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4 data-i18n="step3_title">Open Target Folder</h4>
+                            <p data-i18n="step3_desc">Open folder: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4 data-i18n="step4_title">Copy Paks File</h4>
+                            <p data-i18n="step4_desc">Copy the downloaded Paks file to that folder. Replace existing file if prompted.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4 data-i18n="step5_title">Close Game & Restart</h4>
+                            <p data-i18n="step5_desc">Close PUBG Mobile completely, then reopen it. Paks features will activate automatically.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1510,7 +933,6 @@
                 <h2 class="section-title" data-i18n="faq_title">Frequently Asked Questions</h2>
                 <p class="section-desc" data-i18n="faq_desc">Common questions from our customers</p>
             </div>
-
             <div class="faq-item">
                 <div class="faq-question"><span data-i18n="faq_q1">How to buy a product?</span><span class="faq-toggle">+</span></div>
                 <div class="faq-answer" data-i18n="faq_a1">Click "BUY NOW" on the product, choose payment method (DANA, QRIS, SeaBank, BNI), then follow the instructions. For DANA/SeaBank/BNI, payment details will be sent by admin via personal Telegram chat.</div>
@@ -1530,43 +952,34 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-col">
             <h4>SHADOWCHEAT PROJECT</h4>
             <p data-i18n="footer_desc">Premium digital product provider for PUBG Mobile Paks. Support Global, Korea, Vietnam, Taiwan. Full Safe & Android Non-Root.</p>
         </div>
-
         <div class="footer-col">
             <h4 data-i18n="footer_nav">Navigation</h4>
             <div class="footer-links-row">
                 <a href="#home" data-i18n="nav_home">Home</a>
                 <a href="#produk" data-i18n="nav_products">Products</a>
+                <a href="#tutorial" data-i18n="nav_tutorial">Tutorial</a>
                 <a href="#faq" data-i18n="nav_faq">FAQ</a>
                 <a href="https://t.me/scp281025" target="_blank" data-i18n="nav_support">Support</a>
             </div>
         </div>
-
         <div class="footer-col">
             <h4 data-i18n="footer_payment">Payment</h4>
             <div class="footer-links-row">
-                <span>DANA</span>
-                <span>QRIS</span>
-                <span>SeaBank</span>
-                <span>BNI</span>
+                <span>DANA</span><span>QRIS</span><span>SeaBank</span><span>BNI</span>
             </div>
         </div>
-
         <div class="footer-col footer-contact">
             <h4 data-i18n="footer_contact">Contact Us</h4>
             <a href="https://t.me/scp281025" target="_blank">Telegram: @scp281025</a>
             <a href="#">Email: support@shadowcheat.com</a>
             <a href="#">Website: shadowcheat.com</a>
         </div>
-
-        <div class="footer-bottom" data-i18n="footer_copy">
-            &copy; 2024 Shadowcheat Project. All rights reserved. | Safe & Secure
-        </div>
+        <div class="footer-bottom" data-i18n="footer_copy">&copy; 2024 Shadowcheat Project. All rights reserved. | Safe & Secure</div>
     </footer>
 
     <!-- LOGIN MODAL -->
@@ -1596,97 +1009,45 @@
                 <h3 data-i18n="checkout_title">Checkout</h3>
                 <button class="close-modal" onclick="closeModal('checkoutModal')">&times;</button>
             </div>
-
             <div class="checkout-steps">
-                <div class="step-indicator active" id="step1Indicator">
-                    <div class="step-circle">1</div>
-                    <div class="step-label" data-i18n="step_summary">Summary</div>
-                </div>
-                <div class="step-indicator" id="step2Indicator">
-                    <div class="step-circle">2</div>
-                    <div class="step-label" data-i18n="step_payment">Payment</div>
-                </div>
-                <div class="step-indicator" id="step3Indicator">
-                    <div class="step-circle">3</div>
-                    <div class="step-label" data-i18n="step_confirm">Confirmation</div>
-                </div>
+                <div class="step-indicator active" id="step1Indicator"><div class="step-circle">1</div><div class="step-label" data-i18n="step_summary">Summary</div></div>
+                <div class="step-indicator" id="step2Indicator"><div class="step-circle">2</div><div class="step-label" data-i18n="step_payment">Payment</div></div>
+                <div class="step-indicator" id="step3Indicator"><div class="step-circle">3</div><div class="step-label" data-i18n="step_confirm">Confirmation</div></div>
             </div>
-
             <div class="checkout-step active" id="step1">
                 <div class="summary-box">
-                    <div class="summary-row">
-                        <span class="summary-label" data-i18n="sum_product">Product</span>
-                        <span class="summary-value" id="summaryProduct">-</span>
-                    </div>
-                    <div class="summary-row">
-                        <span class="summary-label" data-i18n="sum_duration">Duration</span>
-                        <span class="summary-value" id="summaryDuration">-</span>
-                    </div>
-                    <div class="summary-row">
-                        <span class="summary-label" data-i18n="sum_server">Server</span>
-                        <span class="summary-value">Global / Korea / Vietnam / Taiwan</span>
-                    </div>
-                    <div class="summary-row">
-                        <span class="summary-label" data-i18n="sum_platform">Platform</span>
-                        <span class="summary-value">Android Non-Root</span>
-                    </div>
-                    <div class="summary-row">
-                        <span class="summary-label" data-i18n="sum_total">Total Price</span>
-                        <span class="summary-value gold" id="summaryPrice">-</span>
-                    </div>
+                    <div class="summary-row"><span class="summary-label" data-i18n="sum_product">Product</span><span class="summary-value" id="summaryProduct">-</span></div>
+                    <div class="summary-row"><span class="summary-label" data-i18n="sum_duration">Duration</span><span class="summary-value" id="summaryDuration">-</span></div>
+                    <div class="summary-row"><span class="summary-label" data-i18n="sum_server">Server</span><span class="summary-value">Global / Korea / Vietnam / Taiwan</span></div>
+                    <div class="summary-row"><span class="summary-label" data-i18n="sum_platform">Platform</span><span class="summary-value">Android Non-Root</span></div>
+                    <div class="summary-row"><span class="summary-label" data-i18n="sum_total">Total Price</span><span class="summary-value gold" id="summaryPrice">-</span></div>
                 </div>
                 <div class="checkout-actions">
                     <button class="btn-checkout btn-next" onclick="goToStep(2)" data-i18n="btn_next_payment">Next to Payment</button>
                 </div>
             </div>
-
             <div class="checkout-step" id="step2">
                 <div class="payment-section-title" data-i18n="pay_choose">Choose Payment Method</div>
                 <div class="payment-grid">
-                    <div class="payment-option" data-method="DANA" onclick="selectPayment('DANA')">
-                        <div class="payment-logo dana">DANA</div>
-                        <div class="payment-name">DANA</div>
-                        <div class="payment-type" data-i18n="pay_ewallet">E-Wallet</div>
-                    </div>
-                    <div class="payment-option" data-method="QRIS" onclick="selectPayment('QRIS')">
-                        <div class="payment-logo qris">QRIS</div>
-                        <div class="payment-name">QRIS</div>
-                        <div class="payment-type" data-i18n="pay_scanqr">Scan QR</div>
-                    </div>
-                    <div class="payment-option" data-method="SeaBank" onclick="selectPayment('SeaBank')">
-                        <div class="payment-logo seabank">SB</div>
-                        <div class="payment-name">SeaBank</div>
-                        <div class="payment-type" data-i18n="pay_bank">Bank Transfer</div>
-                    </div>
-                    <div class="payment-option" data-method="BNI" onclick="selectPayment('BNI')">
-                        <div class="payment-logo bni">BNI</div>
-                        <div class="payment-name">BNI</div>
-                        <div class="payment-type" data-i18n="pay_bank">Bank Transfer</div>
-                    </div>
+                    <div class="payment-option" data-method="DANA" onclick="selectPayment('DANA')"><div class="payment-logo dana">DANA</div><div class="payment-name">DANA</div><div class="payment-type" data-i18n="pay_ewallet">E-Wallet</div></div>
+                    <div class="payment-option" data-method="QRIS" onclick="selectPayment('QRIS')"><div class="payment-logo qris">QRIS</div><div class="payment-name">QRIS</div><div class="payment-type" data-i18n="pay_scanqr">Scan QR</div></div>
+                    <div class="payment-option" data-method="SeaBank" onclick="selectPayment('SeaBank')"><div class="payment-logo seabank">SB</div><div class="payment-name">SeaBank</div><div class="payment-type" data-i18n="pay_bank">Bank Transfer</div></div>
+                    <div class="payment-option" data-method="BNI" onclick="selectPayment('BNI')"><div class="payment-logo bni">BNI</div><div class="payment-name">BNI</div><div class="payment-type" data-i18n="pay_bank">Bank Transfer</div></div>
                 </div>
                 <div class="checkout-actions">
                     <button class="btn-checkout btn-back" onclick="goToStep(1)" data-i18n="btn_back">Back</button>
                     <button class="btn-checkout btn-next" id="btnToStep3" onclick="goToStep(3)" disabled data-i18n="btn_next">Next</button>
                 </div>
             </div>
-
             <div class="checkout-step" id="step3">
                 <div class="payment-detail-box">
                     <div class="payment-detail-header">
                         <div class="payment-detail-logo" id="paymentDetailLogo">-</div>
-                        <div class="payment-detail-info">
-                            <strong id="paymentDetailName">-</strong>
-                            <span id="paymentDetailType">-</span>
-                        </div>
+                        <div class="payment-detail-info"><strong id="paymentDetailName">-</strong><span id="paymentDetailType">-</span></div>
                     </div>
                     <div id="paymentContentArea"></div>
                 </div>
-
-                <div class="total-payment">
-                    <span class="label" data-i18n="total_pay">Total Payment</span>
-                    <span class="value" id="totalPayment">-</span>
-                </div>
-
+                <div class="total-payment"><span class="label" data-i18n="total_pay">Total Payment</span><span class="value" id="totalPayment">-</span></div>
                 <div class="instruction-box">
                     <strong data-i18n="instr_title">Payment Instructions:</strong><br>
                     <span data-i18n="instr_1">1. Complete payment using your chosen method.</span><br>
@@ -1694,18 +1055,14 @@
                     <span data-i18n="instr_3">3. Click the confirmation button below to send proof to Telegram admin.</span><br>
                     <span data-i18n="instr_4">4. Key will be sent after admin verifies your payment.</span>
                 </div>
-
                 <div class="checkout-actions">
                     <button class="btn-checkout btn-back" onclick="goToStep(2)" data-i18n="btn_back">Back</button>
                 </div>
-                <a href="https://t.me/scp281025" target="_blank" class="btn-checkout btn-confirm" id="confirmLink" style="margin-top: 12px;" data-i18n="btn_confirm">
-                    Confirm via Telegram
-                </a>
+                <a href="https://t.me/scp281025" target="_blank" class="btn-checkout btn-confirm" id="confirmLink" style="margin-top: 12px;" data-i18n="btn_confirm">Confirm via Telegram</a>
             </div>
         </div>
     </div>
 
-    <!-- TOAST -->
     <div class="toast" id="toast">
         <span class="toast-indicator"></span>
         <span class="toast-message" id="toastMessage">Message sent!</span>
@@ -1717,9 +1074,8 @@
         // ============================================
         const translations = {
             'en': {
-                nav_home: 'Home', nav_products: 'Products', nav_faq: 'FAQ', nav_support: 'Support',
-                btn_login: 'Login',
-                search_placeholder: 'Search products...',
+                nav_home: 'Home', nav_products: 'Products', nav_tutorial: 'Tutorial', nav_faq: 'FAQ', nav_support: 'Support',
+                btn_login: 'Login', search_placeholder: 'Search products...',
                 hero_subtitle: 'Premium Digital Store & Tools',
                 btn_view_products: 'View Products', btn_contact: 'Contact Us',
                 section_catalog: 'Product Catalog',
@@ -1731,6 +1087,20 @@
                 prod_season_name: 'Key 1 Season', prod_season_desc: 'Full access for 1 season (about 2 months). Full Safe for all servers.',
                 prod_perm_name: 'Key Permanent', prod_perm_desc: 'Permanent access without time limit. Full Safe & lifetime warranty for all servers.',
                 btn_buy: 'BUY NOW',
+                tutorial_title: 'How to Install Paks',
+                tutorial_desc: 'Follow the video tutorial below correctly so features work optimally',
+                tutorial_warning: 'IMPORTANT: Installation must be exactly like in the video. If you miss a step, features will not work!',
+                tutorial_steps_title: 'Installation Steps:',
+                step1_title: 'Download Paks File',
+                step1_desc: 'Download the Paks file (.pak) from the link provided by admin. Make sure the file size matches.',
+                step2_title: 'Install File Manager',
+                step2_desc: 'Download and install ZArchiver or another file manager from Play Store.',
+                step3_title: 'Open Target Folder',
+                step3_desc: 'Open folder: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
+                step4_title: 'Copy Paks File',
+                step4_desc: 'Copy the downloaded Paks file to that folder. Replace existing file if prompted.',
+                step5_title: 'Close Game & Restart',
+                step5_desc: 'Close PUBG Mobile completely, then reopen it. Paks features will activate automatically.',
                 faq_title: 'Frequently Asked Questions', faq_desc: 'Common questions from our customers',
                 faq_q1: 'How to buy a product?',
                 faq_a1: 'Click "BUY NOW" on the product, choose payment method (DANA, QRIS, SeaBank, BNI), then follow the instructions. For DANA/SeaBank/BNI, payment details will be sent by admin via personal Telegram chat.',
@@ -1757,9 +1127,8 @@
                 toast_payment: 'Please select a payment method first!', toast_no_qr: 'QR image not available. Please contact admin via Telegram.'
             },
             'id': {
-                nav_home: 'Beranda', nav_products: 'Produk', nav_faq: 'FAQ', nav_support: 'Dukungan',
-                btn_login: 'Masuk',
-                search_placeholder: 'Cari produk...',
+                nav_home: 'Beranda', nav_products: 'Produk', nav_tutorial: 'Tutorial', nav_faq: 'FAQ', nav_support: 'Dukungan',
+                btn_login: 'Masuk', search_placeholder: 'Cari produk...',
                 hero_subtitle: 'Toko Digital Premium & Alat',
                 btn_view_products: 'Lihat Produk', btn_contact: 'Hubungi Kami',
                 section_catalog: 'Katalog Produk',
@@ -1771,6 +1140,20 @@
                 prod_season_name: 'Key 1 Season', prod_season_desc: 'Akses penuh selama 1 season (sekitar 2 bulan). Full Safe untuk semua server.',
                 prod_perm_name: 'Key Permanen', prod_perm_desc: 'Akses permanen tanpa batas waktu. Full Safe & garansi seumur hidup untuk semua server.',
                 btn_buy: 'BELI SEKARANG',
+                tutorial_title: 'Cara Pasang Paks',
+                tutorial_desc: 'Ikuti tutorial video di bawah ini dengan benar agar fitur berfungsi optimal',
+                tutorial_warning: 'PENTING: Pemasangan harus sama persis seperti di video. Jika salah langkah, fitur tidak akan berfungsi!',
+                tutorial_steps_title: 'Langkah-Langkah Pemasangan:',
+                step1_title: 'Download File Paks',
+                step1_desc: 'Download file Paks (.pak) dari link yang diberikan admin. Pastikan ukuran file sesuai.',
+                step2_title: 'Install File Manager',
+                step2_desc: 'Download dan install aplikasi ZArchiver atau file manager lainnya dari Play Store.',
+                step3_title: 'Buka Folder Tujuan',
+                step3_desc: 'Buka folder: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
+                step4_title: 'Copy File Paks',
+                step4_desc: 'Copy file Paks yang sudah didownload ke folder tersebut. Ganti file yang ada jika diminta.',
+                step5_title: 'Tutup Game & Restart',
+                step5_desc: 'Tutup PUBG Mobile sepenuhnya, lalu buka kembali. Fitur Paks akan aktif secara otomatis.',
                 faq_title: 'Pertanyaan Umum', faq_desc: 'Hal-hal yang sering ditanyakan oleh pelanggan',
                 faq_q1: 'Bagaimana cara membeli produk?',
                 faq_a1: 'Klik tombol "BELI SEKARANG" pada produk, pilih metode pembayaran (DANA, QRIS, SeaBank, BNI), lalu ikuti instruksi. Untuk DANA/SeaBank/BNI, detail pembayaran akan dikirim admin via chat Telegram pribadi.',
@@ -1797,9 +1180,8 @@
                 toast_payment: 'Silakan pilih metode pembayaran terlebih dahulu!', toast_no_qr: 'Gambar QR belum tersedia. Silakan hubungi admin via Telegram.'
             },
             'hi': {
-                nav_home: 'होम', nav_products: 'उत्पाद', nav_faq: 'सामान्य प्रश्न', nav_support: 'सहायता',
-                btn_login: 'लॉगिन',
-                search_placeholder: 'उत्पाद खोजें...',
+                nav_home: 'होम', nav_products: 'उत्पाद', nav_tutorial: 'ट्यूटोरियल', nav_faq: 'सामान्य प्रश्न', nav_support: 'सहायता',
+                btn_login: 'लॉगिन', search_placeholder: 'उत्पाद खोजें...',
                 hero_subtitle: 'प्रीमियम डिजिटल स्टोर और टूल्स',
                 btn_view_products: 'उत्पाद देखें', btn_contact: 'संपर्क करें',
                 section_catalog: 'उत्पाद सूची',
@@ -1811,6 +1193,20 @@
                 prod_season_name: 'की 1 सीज़न', prod_season_desc: '1 सीज़न (लगभग 2 महीने) तक पूर्ण पहुँच। सभी सर्वर के लिए पूर्ण सुरक्षित।',
                 prod_perm_name: 'की स्थायी', prod_perm_desc: 'समय सीमा के बिना स्थायी पहुँच। सभी सर्वर के लिए पूर्ण सुरक्षित और आजीवन वारंटी।',
                 btn_buy: 'अभी खरीदें',
+                tutorial_title: 'Paks कैसे इंस्टॉल करें',
+                tutorial_desc: 'नीचे दिए गए वीडियो ट्यूटोरियल का सही तरीके से पालन करें ताकि सुविधाएं इष्टतम रूप से काम करें',
+                tutorial_warning: 'महत्वपूर्ण: इंस्टॉलेशन वीडियो के अनुसार ही होना चाहिए। यदि कोई कदम छूट गया, तो सुविधाएं काम नहीं करेंगी!',
+                tutorial_steps_title: 'इंस्टॉलेशन के चरण:',
+                step1_title: 'Paks फ़ाइल डाउनलोड करें',
+                step1_desc: 'व्यवस्थापक द्वारा दिए गए लिंक से Paks फ़ाइल (.pak) डाउनलोड करें। सुनिश्चित करें कि फ़ाइल का आकार मेल खाता है।',
+                step2_title: 'फ़ाइल प्रबंधक इंस्टॉल करें',
+                step2_desc: 'Play Store से ZArchiver या अन्य फ़ाइल प्रबंधक डाउनलोड और इंस्टॉल करें।',
+                step3_title: 'लक्ष्य फ़ोल्डर खोलें',
+                step3_desc: 'फ़ोल्डर खोलें: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
+                step4_title: 'Paks फ़ाइल कॉपी करें',
+                step4_desc: 'डाउनलोड की गई Paks फ़ाइल को उस फ़ोल्डर में कॉपी करें। यदि संकेत दिया जाए तो मौजूदा फ़ाइल को बदलें।',
+                step5_title: 'गेम बंद करें और पुनः आरंभ करें',
+                step5_desc: 'PUBG Mobile को पूरी तरह बंद करें, फिर दोबारा खोलें। Paks सुविधाएं स्वचालित रूप से सक्रिय हो जाएंगी।',
                 faq_title: 'सामान्य प्रश्न', faq_desc: 'ग्राहकों द्वारा पूछे जाने वाले सामान्य प्रश्न',
                 faq_q1: 'उत्पाद कैसे खरीदें?',
                 faq_a1: 'उत्पाद पर "अभी खरीदें" क्लिक करें, भुगतान विधि चुनें (DANA, QRIS, SeaBank, BNI), फिर निर्देशों का पालन करें। DANA/SeaBank/BNI के लिए, भुगतान विवरण व्यक्तिगत Telegram चैट के माध्यम से भेजा जाएगा।',
@@ -1837,9 +1233,8 @@
                 toast_payment: 'कृपया पहले भुगतान विधि चुनें!', toast_no_qr: 'QR छवि उपलब्ध नहीं है। कृपया Telegram पर व्यवस्थापक से संपर्क करें।'
             },
             'zh': {
-                nav_home: '首页', nav_products: '产品', nav_faq: '常见问题', nav_support: '支持',
-                btn_login: '登录',
-                search_placeholder: '搜索产品...',
+                nav_home: '首页', nav_products: '产品', nav_tutorial: '教程', nav_faq: '常见问题', nav_support: '支持',
+                btn_login: '登录', search_placeholder: '搜索产品...',
                 hero_subtitle: '高级数字商店和工具',
                 btn_view_products: '查看产品', btn_contact: '联系我们',
                 section_catalog: '产品目录',
@@ -1851,6 +1246,20 @@
                 prod_season_name: '1 赛季密钥', prod_season_desc: '1 赛季（约 2 个月）完全访问。所有服务器完全安全。',
                 prod_perm_name: '永久密钥', prod_perm_desc: '永久访问无时间限制。所有服务器完全安全并终身保修。',
                 btn_buy: '立即购买',
+                tutorial_title: '如何安装 Paks',
+                tutorial_desc: '请正确遵循下面的视频教程，以确保功能正常运作',
+                tutorial_warning: '重要提示：安装步骤必须与视频完全一致。如果遗漏任何步骤，功能将无法正常工作！',
+                tutorial_steps_title: '安装步骤：',
+                step1_title: '下载 Paks 文件',
+                step1_desc: '从管理员提供的链接下载 Paks 文件（.pak）。确保文件大小匹配。',
+                step2_title: '安装文件管理器',
+                step2_desc: '从 Play Store 下载并安装 ZArchiver 或其他文件管理器。',
+                step3_title: '打开目标文件夹',
+                step3_desc: '打开文件夹：Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
+                step4_title: '复制 Paks 文件',
+                step4_desc: '将下载的 Paks 文件复制到该文件夹。如果提示，请替换现有文件。',
+                step5_title: '关闭游戏并重新启动',
+                step5_desc: '完全关闭 PUBG Mobile，然后重新打开。Paks 功能将自动激活。',
                 faq_title: '常见问题', faq_desc: '客户常问的问题',
                 faq_q1: '如何购买产品？',
                 faq_a1: '在产品上点击"立即购买"，选择付款方式（DANA、QRIS、SeaBank、BNI），然后按照说明操作。对于 DANA/SeaBank/BNI，付款详情将通过个人 Telegram 聊天发送。',
@@ -1877,9 +1286,8 @@
                 toast_payment: '请先选择付款方式！', toast_no_qr: 'QR 图片不可用。请通过 Telegram 联系管理员。'
             },
             'vi': {
-                nav_home: 'Trang chủ', nav_products: 'Sản phẩm', nav_faq: 'Câu hỏi', nav_support: 'Hỗ trợ',
-                btn_login: 'Đăng nhập',
-                search_placeholder: 'Tìm sản phẩm...',
+                nav_home: 'Trang chủ', nav_products: 'Sản phẩm', nav_tutorial: 'Hướng dẫn', nav_faq: 'Câu hỏi', nav_support: 'Hỗ trợ',
+                btn_login: 'Đăng nhập', search_placeholder: 'Tìm sản phẩm...',
                 hero_subtitle: 'Cửa hàng Kỹ thuật số Cao cấp & Công cụ',
                 btn_view_products: 'Xem Sản phẩm', btn_contact: 'Liên hệ',
                 section_catalog: 'Danh mục Sản phẩm',
@@ -1891,6 +1299,20 @@
                 prod_season_name: 'Key 1 Mùa', prod_season_desc: 'Truy cập đầy đủ trong 1 mùa (khoảng 2 tháng). Full Safe cho tất cả các server.',
                 prod_perm_name: 'Key Vĩnh viễn', prod_perm_desc: 'Truy cập vĩnh viễn không giới hạn thời gian. Full Safe & bảo hành trọn đời cho tất cả các server.',
                 btn_buy: 'MUA NGAY',
+                tutorial_title: 'Cách Cài Đặt Paks',
+                tutorial_desc: 'Làm theo video hướng dẫn bên dưới một cách chính xác để các tính năng hoạt động tối ưu',
+                tutorial_warning: 'QUAN TRỌNG: Cài đặt phải giống hệt như trong video. Nếu sai bước, tính năng sẽ không hoạt động!',
+                tutorial_steps_title: 'Các Bước Cài Đặt:',
+                step1_title: 'Tải File Paks',
+                step1_desc: 'Tải file Paks (.pak) từ link do admin cung cấp. Đảm bảo kích thước file phù hợp.',
+                step2_title: 'Cài File Manager',
+                step2_desc: 'Tải và cài đặt ZArchiver hoặc file manager khác từ Play Store.',
+                step3_title: 'Mở Thư Mục Đích',
+                step3_desc: 'Mở thư mục: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
+                step4_title: 'Copy File Paks',
+                step4_desc: 'Copy file Paks đã tải vào thư mục đó. Thay thế file hiện có nếu được yêu cầu.',
+                step5_title: 'Đóng Game & Khởi Động Lại',
+                step5_desc: 'Đóng hoàn toàn PUBG Mobile, sau đó mở lại. Tính năng Paks sẽ tự động kích hoạt.',
                 faq_title: 'Câu hỏi Thường gặp', faq_desc: 'Những câu hỏi phổ biến từ khách hàng',
                 faq_q1: 'Làm thế nào để mua sản phẩm?',
                 faq_a1: 'Nhấp "MUA NGAY" trên sản phẩm, chọn phương thức thanh toán (DANA, QRIS, SeaBank, BNI), sau đó làm theo hướng dẫn. Đối với DANA/SeaBank/BNI, chi tiết thanh toán sẽ được admin gửi qua chat Telegram riêng.',
@@ -1917,9 +1339,8 @@
                 toast_payment: 'Vui lòng chọn phương thức thanh toán trước!', toast_no_qr: 'Hình QR không có sẵn. Vui lòng liên hệ admin qua Telegram.'
             },
             'ko': {
-                nav_home: '홈', nav_products: '제품', nav_faq: '자주 묻는 질문', nav_support: '지원',
-                btn_login: '로그인',
-                search_placeholder: '제품 검색...',
+                nav_home: '홈', nav_products: '제품', nav_tutorial: '튜토리얼', nav_faq: '자주 묻는 질문', nav_support: '지원',
+                btn_login: '로그인', search_placeholder: '제품 검색...',
                 hero_subtitle: '프리미엄 디지털 스토어 및 도구',
                 btn_view_products: '제품 보기', btn_contact: '문의하기',
                 section_catalog: '제품 카탈로그',
@@ -1931,6 +1352,20 @@
                 prod_season_name: '1 시즌 키', prod_season_desc: '1 시즌(약 2개월) 동안 완전 액세스. 모든 서버 완전 안전.',
                 prod_perm_name: '영구 키', prod_perm_desc: '시간 제한 없이 영구 액세스. 모든 서버 완전 안전 및 평생 보증.',
                 btn_buy: '지금 구매',
+                tutorial_title: 'Paks 설치 방법',
+                tutorial_desc: '기능이 최적으로 작동하도록 아래 비디오 튜토리얼을 올바르게 따르세요',
+                tutorial_warning: '중요: 설치는 비디오와 정확히 동일해야 합니다. 단계를 놓치면 기능이 작동하지 않습니다!',
+                tutorial_steps_title: '설치 단계:',
+                step1_title: 'Paks 파일 다운로드',
+                step1_desc: '관리자가 제공한 링크에서 Paks 파일(.pak)을 다운로드하세요. 파일 크기가 일치하는지 확인하세요.',
+                step2_title: '파일 관리자 설치',
+                step2_desc: 'Play Store에서 ZArchiver 또는 다른 파일 관리자를 다운로드하여 설치하세요.',
+                step3_title: '대상 폴더 열기',
+                step3_desc: '폴더 열기: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
+                step4_title: 'Paks 파일 복사',
+                step4_desc: '다운로드한 Paks 파일을 해당 폴더에 복사하세요. 메시지가 표시되면 기존 파일을 교체하세요.',
+                step5_title: '게임 종료 및 재시작',
+                step5_desc: 'PUBG Mobile을 완전히 종료한 후 다시 여세요. Paks 기능이 자동으로 활성화됩니다.',
                 faq_title: '자주 묻는 질문', faq_desc: '고객들이 자주 묻는 질문',
                 faq_q1: '제품을 구매하는 방법?',
                 faq_a1: '제품의 "지금 구매"를 클릭하고 결제 방법(DANA, QRIS, SeaBank, BNI)을 선택한 다음 지침을 따르세요. DANA/SeaBank/BNI의 경우 결제 세부 정보가 개인 Telegram 채팅을 통해 전송됩니다.',
@@ -1957,9 +1392,8 @@
                 toast_payment: '먼저 결제 방법을 선택하세요!', toast_no_qr: 'QR 이미지를 사용할 수 없습니다. Telegram을 통해 관리자에게 문의하세요.'
             },
             'ja': {
-                nav_home: 'ホーム', nav_products: '製品', nav_faq: 'よくある質問', nav_support: 'サポート',
-                btn_login: 'ログイン',
-                search_placeholder: '製品を検索...',
+                nav_home: 'ホーム', nav_products: '製品', nav_tutorial: 'チュートリアル', nav_faq: 'よくある質問', nav_support: 'サポート',
+                btn_login: 'ログイン', search_placeholder: '製品を検索...',
                 hero_subtitle: 'プレミアムデジタルストア＆ツール',
                 btn_view_products: '製品を見る', btn_contact: 'お問い合わせ',
                 section_catalog: '製品カタログ',
@@ -1971,6 +1405,20 @@
                 prod_season_name: '1シーズンキー', prod_season_desc: '1シーズン（約2ヶ月）の完全アクセス。すべてのサーバーで完全安全。',
                 prod_perm_name: '永久キー', prod_perm_desc: '時間制限なしの永久アクセス。すべてのサーバーで完全安全＆生涯保証。',
                 btn_buy: '今すぐ購入',
+                tutorial_title: 'Paksのインストール方法',
+                tutorial_desc: '機能が最適に動作するように、以下のビデオチュートリアルを正しく実行してください',
+                tutorial_warning: '重要：インストールはビデオと全く同じでなければなりません。手順を間違えると機能が動作しません！',
+                tutorial_steps_title: 'インストール手順：',
+                step1_title: 'Paksファイルをダウンロード',
+                step1_desc: '管理者から提供されたリンクからPaksファイル（.pak）をダウンロードしてください。ファイルサイズが一致することを確認してください。',
+                step2_title: 'ファイルマネージャーをインストール',
+                step2_desc: 'Play StoreからZArchiverまたは他のファイルマネージャーをダウンロードしてインストールしてください。',
+                step3_title: '対象フォルダを開く',
+                step3_desc: 'フォルダを開く：Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
+                step4_title: 'Paksファイルをコピー',
+                step4_desc: 'ダウンロードしたPaksファイルをそのフォルダにコピーしてください。求められたら既存のファイルを置き換えてください。',
+                step5_title: 'ゲームを閉じて再起動',
+                step5_desc: 'PUBG Mobileを完全に閉じて、再度開いてください。Paks機能が自動的に有効になります。',
                 faq_title: 'よくある質問', faq_desc: 'お客様からよく寄せられる質問',
                 faq_q1: '製品の購入方法は？',
                 faq_a1: '製品の「今すぐ購入」をクリックし、支払い方法（DANA、QRIS、SeaBank、BNI）を選択して、指示に従ってください。DANA/SeaBank/BNIの場合、支払いの詳細は個人のTelegramチャットで送信されます。',
@@ -1997,9 +1445,8 @@
                 toast_payment: '先に支払い方法を選択してください！', toast_no_qr: 'QR画像が利用できません。Telegramで管理者にお問い合わせください。'
             },
             'th': {
-                nav_home: 'หน้าแรก', nav_products: 'สินค้า', nav_faq: 'คำถามที่พบบ่อย', nav_support: 'สนับสนุน',
-                btn_login: 'เข้าสู่ระบบ',
-                search_placeholder: 'ค้นหาสินค้า...',
+                nav_home: 'หน้าแรก', nav_products: 'สินค้า', nav_tutorial: 'สอนใช้งาน', nav_faq: 'คำถามที่พบบ่อย', nav_support: 'สนับสนุน',
+                btn_login: 'เข้าสู่ระบบ', search_placeholder: 'ค้นหาสินค้า...',
                 hero_subtitle: 'ร้านค้าดิจิทัลพรีเมียมและเครื่องมือ',
                 btn_view_products: 'ดูสินค้า', btn_contact: 'ติดต่อเรา',
                 section_catalog: 'แคตตาล็อกสินค้า',
@@ -2011,6 +1458,20 @@
                 prod_season_name: 'คีย์ 1 ซีซั่น', prod_season_desc: 'เข้าถึงเต็มรูปแบบ 1 ซีซั่น (ประมาณ 2 เดือน) ปลอดภัยเต็มรูปแบบสำหรับทุกเซิร์ฟเวอร์',
                 prod_perm_name: 'คีย์ถาวร', prod_perm_desc: 'เข้าถึงถาวรไม่มีขีดจำกัดเวลา ปลอดภัยเต็มรูปแบบและรับประกันตลอดชีพสำหรับทุกเซิร์ฟเวอร์',
                 btn_buy: 'ซื้อเลย',
+                tutorial_title: 'วิธีติดตั้ง Paks',
+                tutorial_desc: 'ทำตามวิดีโอสอนด้านล่างอย่างถูกต้องเพื่อให้ฟีเจอร์ทำงานได้อย่างเหมาะสม',
+                tutorial_warning: 'สำคัญ: การติดตั้งต้องเหมือนในวิดีโอทุกประการ หากผิดขั้นตอน ฟีเจอร์จะไม่ทำงาน!',
+                tutorial_steps_title: 'ขั้นตอนการติดตั้ง:',
+                step1_title: 'ดาวน์โหลดไฟล์ Paks',
+                step1_desc: 'ดาวน์โหลดไฟล์ Paks (.pak) จากลิงก์ที่ผู้ดูแลให้ ตรวจสอบขนาดไฟล์ให้ตรง',
+                step2_title: 'ติดตั้ง File Manager',
+                step2_desc: 'ดาวน์โหลดและติดตั้ง ZArchiver หรือ file manager อื่นจาก Play Store',
+                step3_title: 'เปิดโฟลเดอร์เป้าหมาย',
+                step3_desc: 'เปิดโฟลเดอร์: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
+                step4_title: 'คัดลอกไฟล์ Paks',
+                step4_desc: 'คัดลอกไฟล์ Paks ที่ดาวน์โหลดไปยังโฟลเดอร์นั้น แทนที่ไฟล์ที่มีอยู่หากระบบแจ้ง',
+                step5_title: 'ปิดเกมและรีสตาร์ท',
+                step5_desc: 'ปิด PUBG Mobile ให้สนิท แล้วเปิดใหม่ ฟีเจอร์ Paks จะเปิดใช้งานอัตโนมัติ',
                 faq_title: 'คำถามที่พบบ่อย', faq_desc: 'คำถามทั่วไปจากลูกค้า',
                 faq_q1: 'วิธีการซื้อสินค้า?',
                 faq_a1: 'คลิก "ซื้อเลย" ที่สินค้า เลือกวิธีการชำระเงิน (DANA, QRIS, SeaBank, BNI) จากนั้นทำตามคำแนะนำ สำหรับ DANA/SeaBank/BNI รายละเอียดการชำระเงินจะถูกส่งโดยผู้ดูแลผ่านแชท Telegram ส่วนตัว',
@@ -2037,9 +1498,8 @@
                 toast_payment: 'กรุณาเลือกวิธีการชำระเงินก่อน!', toast_no_qr: 'ไม่มีรูปภาพ QR กรุณาติดต่อผู้ดูแลผ่าน Telegram'
             },
             'ar': {
-                nav_home: 'الرئيسية', nav_products: 'المنتجات', nav_faq: 'الأسئلة الشائعة', nav_support: 'الدعم',
-                btn_login: 'تسجيل الدخول',
-                search_placeholder: 'ابحث عن المنتجات...',
+                nav_home: 'الرئيسية', nav_products: 'المنتجات', nav_tutorial: 'البرنامج التعليمي', nav_faq: 'الأسئلة الشائعة', nav_support: 'الدعم',
+                btn_login: 'تسجيل الدخول', search_placeholder: 'ابحث عن المنتجات...',
                 hero_subtitle: 'متجر رقمي متميز وأدوات',
                 btn_view_products: 'عرض المنتجات', btn_contact: 'اتصل بنا',
                 section_catalog: 'كتالوج المنتجات',
@@ -2051,6 +1511,20 @@
                 prod_season_name: 'مفتاح موسم 1', prod_season_desc: 'وصول كامل لموسم واحد (حوالي شهرين). آمن تمامًا لجميع الخوادم.',
                 prod_perm_name: 'مفتاح دائم', prod_perm_desc: 'وصول دائم بدون حد زمني. آمن تمامًا وضمان مدى الحياة لجميع الخوادم.',
                 btn_buy: 'اشتر الآن',
+                tutorial_title: 'كيفية تثبيت Paks',
+                tutorial_desc: 'اتبع الفيديو التعليمي أدناه بشكل صحيح حتى تعمل الميزات بشكل مثالي',
+                tutorial_warning: 'مهم: يجب أن يكون التثبيت مطابقًا تمامًا كما في الفيديو. إذا أخطأت في خطوة، لن تعمل الميزات!',
+                tutorial_steps_title: 'خطوات التثبيت:',
+                step1_title: 'تحميل ملف Paks',
+                step1_desc: 'قم بتحميل ملف Paks (.pak) من الرابط الذي يوفره المشرف. تأكد من تطابق حجم الملف.',
+                step2_title: 'تثبيت مدير الملفات',
+                step2_desc: 'قم بتحميل وتثبيت ZArchiver أو أي مدير ملفات آخر من Play Store.',
+                step3_title: 'فتح المجلد الهدف',
+                step3_desc: 'افتح المجلد: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
+                step4_title: 'نسخ ملف Paks',
+                step4_desc: 'انسخ ملف Paks الذي تم تحميله إلى ذلك المجلد. استبدل الملف الموجود إذا طُلب منك ذلك.',
+                step5_title: 'إغلاق اللعبة وإعادة التشغيل',
+                step5_desc: 'أغلق PUBG Mobile بالكامل، ثم أعد فتحه. سيتم تنشيط ميزات Paks تلقائيًا.',
                 faq_title: 'الأسئلة الشائعة', faq_desc: 'الأسئلة الشائعة من عملائنا',
                 faq_q1: 'كيف تشتري منتجًا؟',
                 faq_a1: 'انقر فوق "اشتر الآن" على المنتج، واختر طريقة الدفع (DANA، QRIS، SeaBank، BNI)، ثم اتبع التعليمات. بالنسبة لـ DANA/SeaBank/BNI، سيتم إرسال تفاصيل الدفع بواسطة المشرف عبر محادثة Telegram الشخصية.',
@@ -2077,9 +1551,8 @@
                 toast_payment: 'يرجى اختيار طريقة الدفع أولاً!', toast_no_qr: 'صورة QR غير متوفرة. يرجى الاتصال بالمشرف عبر Telegram.'
             },
             'es': {
-                nav_home: 'Inicio', nav_products: 'Productos', nav_faq: 'Preguntas', nav_support: 'Soporte',
-                btn_login: 'Iniciar sesión',
-                search_placeholder: 'Buscar productos...',
+                nav_home: 'Inicio', nav_products: 'Productos', nav_tutorial: 'Tutorial', nav_faq: 'Preguntas', nav_support: 'Soporte',
+                btn_login: 'Iniciar sesión', search_placeholder: 'Buscar productos...',
                 hero_subtitle: 'Tienda Digital Premium y Herramientas',
                 btn_view_products: 'Ver Productos', btn_contact: 'Contáctanos',
                 section_catalog: 'Catálogo de Productos',
@@ -2091,6 +1564,20 @@
                 prod_season_name: 'Clave 1 Temporada', prod_season_desc: 'Acceso completo por 1 temporada (aproximadamente 2 meses). Full Safe para todos los servidores.',
                 prod_perm_name: 'Clave Permanente', prod_perm_desc: 'Acceso permanente sin límite de tiempo. Full Safe y garantía de por vida para todos los servidores.',
                 btn_buy: 'COMPRAR AHORA',
+                tutorial_title: 'Cómo Instalar Paks',
+                tutorial_desc: 'Sigue el video tutorial a continuación correctamente para que las funciones funcionen de manera óptima',
+                tutorial_warning: 'IMPORTANTE: ¡La instalación debe ser exactamente como en el video. Si te saltas un paso, las funciones no funcionarán!',
+                tutorial_steps_title: 'Pasos de Instalación:',
+                step1_title: 'Descargar Archivo Paks',
+                step1_desc: 'Descarga el archivo Paks (.pak) desde el enlace proporcionado por el administrador. Asegúrate de que el tamaño del archivo coincida.',
+                step2_title: 'Instalar Gestor de Archivos',
+                step2_desc: 'Descarga e instala ZArchiver u otro gestor de archivos desde Play Store.',
+                step3_title: 'Abrir Carpeta Destino',
+                step3_desc: 'Abre la carpeta: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
+                step4_title: 'Copiar Archivo Paks',
+                step4_desc: 'Copia el archivo Paks descargado a esa carpeta. Reemplaza el archivo existente si se te solicita.',
+                step5_title: 'Cerrar Juego y Reiniciar',
+                step5_desc: 'Cierra PUBG Mobile completamente, luego vuelve a abrirlo. Las funciones de Paks se activarán automáticamente.',
                 faq_title: 'Preguntas Frecuentes', faq_desc: 'Preguntas comunes de nuestros clientes',
                 faq_q1: '¿Cómo comprar un producto?',
                 faq_a1: 'Haz clic en "COMPRAR AHORA" en el producto, elige el método de pago (DANA, QRIS, SeaBank, BNI), luego sigue las instrucciones. Para DANA/SeaBank/BNI, los detalles de pago serán enviados por el administrador a través de chat personal de Telegram.',
@@ -2117,9 +1604,8 @@
                 toast_payment: '¡Por favor selecciona un método de pago primero!', toast_no_qr: 'Imagen QR no disponible. Por favor contacta al administrador por Telegram.'
             },
             'pt': {
-                nav_home: 'Início', nav_products: 'Produtos', nav_faq: 'FAQ', nav_support: 'Suporte',
-                btn_login: 'Entrar',
-                search_placeholder: 'Pesquisar produtos...',
+                nav_home: 'Início', nav_products: 'Produtos', nav_tutorial: 'Tutorial', nav_faq: 'FAQ', nav_support: 'Suporte',
+                btn_login: 'Entrar', search_placeholder: 'Pesquisar produtos...',
                 hero_subtitle: 'Loja Digital Premium e Ferramentas',
                 btn_view_products: 'Ver Produtos', btn_contact: 'Fale Conosco',
                 section_catalog: 'Catálogo de Produtos',
@@ -2131,6 +1617,20 @@
                 prod_season_name: 'Chave 1 Temporada', prod_season_desc: 'Acesso completo por 1 temporada (cerca de 2 meses). Full Safe para todos os servidores.',
                 prod_perm_name: 'Chave Permanente', prod_perm_desc: 'Acesso permanente sem limite de tempo. Full Safe e garantia vitalícia para todos os servidores.',
                 btn_buy: 'COMPRAR AGORA',
+                tutorial_title: 'Como Instalar Paks',
+                tutorial_desc: 'Siga o vídeo tutorial abaixo corretamente para que os recursos funcionem de forma ideal',
+                tutorial_warning: 'IMPORTANTE: A instalação deve ser exatamente como no vídeo. Se você pular uma etapa, os recursos não funcionarão!',
+                tutorial_steps_title: 'Passos de Instalação:',
+                step1_title: 'Baixar Arquivo Paks',
+                step1_desc: 'Baixe o arquivo Paks (.pak) no link fornecido pelo administrador. Certifique-se de que o tamanho do arquivo corresponde.',
+                step2_title: 'Instalar Gerenciador de Arquivos',
+                step2_desc: 'Baixe e instale o ZArchiver ou outro gerenciador de arquivos da Play Store.',
+                step3_title: 'Abrir Pasta de Destino',
+                step3_desc: 'Abra a pasta: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
+                step4_title: 'Copiar Arquivo Paks',
+                step4_desc: 'Copie o arquivo Paks baixado para essa pasta. Substitua o arquivo existente se solicitado.',
+                step5_title: 'Fechar Jogo e Reiniciar',
+                step5_desc: 'Feche o PUBG Mobile completamente e reabra-o. Os recursos de Paks serão ativados automaticamente.',
                 faq_title: 'Perguntas Frequentes', faq_desc: 'Perguntas comuns dos nossos clientes',
                 faq_q1: 'Como comprar um produto?',
                 faq_a1: 'Clique em "COMPRAR AGORA" no produto, escolha o método de pagamento (DANA, QRIS, SeaBank, BNI), depois siga as instruções. Para DANA/SeaBank/BNI, os detalhes de pagamento serão enviados pelo administrador via chat pessoal do Telegram.',
@@ -2157,9 +1657,8 @@
                 toast_payment: 'Por favor selecione um método de pagamento primeiro!', toast_no_qr: 'Imagem QR não disponível. Por favor contate o administrador via Telegram.'
             },
             'ru': {
-                nav_home: 'Главная', nav_products: 'Продукты', nav_faq: 'Вопросы', nav_support: 'Поддержка',
-                btn_login: 'Войти',
-                search_placeholder: 'Поиск продуктов...',
+                nav_home: 'Главная', nav_products: 'Продукты', nav_tutorial: 'Учебник', nav_faq: 'Вопросы', nav_support: 'Поддержка',
+                btn_login: 'Войти', search_placeholder: 'Поиск продуктов...',
                 hero_subtitle: 'Премиальный Цифровой Магазин и Инструменты',
                 btn_view_products: 'Просмотр Продуктов', btn_contact: 'Связаться',
                 section_catalog: 'Каталог Продуктов',
@@ -2171,6 +1670,20 @@
                 prod_season_name: 'Ключ 1 Сезон', prod_season_desc: 'Полный доступ на 1 сезон (около 2 месяцев). Full Safe для всех серверов.',
                 prod_perm_name: 'Ключ Навсегда', prod_perm_desc: 'Постоянный доступ без ограничения по времени. Full Safe и пожизненная гарантия для всех серверов.',
                 btn_buy: 'КУПИТЬ СЕЙЧАС',
+                tutorial_title: 'Как Установить Paks',
+                tutorial_desc: 'Следуйте видеоуроку ниже правильно, чтобы функции работали оптимально',
+                tutorial_warning: 'ВАЖНО: Установка должна быть точно такой же, как в видео. Если вы пропустите шаг, функции не будут работать!',
+                tutorial_steps_title: 'Шаги Установки:',
+                step1_title: 'Скачать Файл Paks',
+                step1_desc: 'Скачайте файл Paks (.pak) по ссылке, предоставленной администратором. Убедитесь, что размер файла совпадает.',
+                step2_title: 'Установить Файловый Менеджер',
+                step2_desc: 'Скачайте и установите ZArchiver или другой файловый менеджер из Play Store.',
+                step3_title: 'Открыть Целевую Папку',
+                step3_desc: 'Откройте папку: Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Paks',
+                step4_title: 'Скопировать Файл Paks',
+                step4_desc: 'Скопируйте скачанный файл Paks в эту папку. Замените существующий файл, если будет предложено.',
+                step5_title: 'Закрыть Игру и Перезапустить',
+                step5_desc: 'Полностью закройте PUBG Mobile, затем откройте снова. Функции Paks активируются автоматически.',
                 faq_title: 'Часто Задаваемые Вопросы', faq_desc: 'Общие вопросы от наших клиентов',
                 faq_q1: 'Как купить продукт?',
                 faq_a1: 'Нажмите "КУПИТЬ СЕЙЧАС" на продукте, выберите способ оплаты (DANA, QRIS, SeaBank, BNI), затем следуйте инструкциям. Для DANA/SeaBank/BNI реквизиты для оплаты будут отправлены администратором через личный чат Telegram.',
@@ -2199,49 +1712,30 @@
         };
 
         // ============================================
-        // --- AUTO DETECT LANGUAGE FROM SYSTEM ---
+        // --- AUTO DETECT & APPLY LANGUAGE ---
         // ============================================
         function detectLanguage() {
-            // Ambil bahasa sistem dari browser/HP
             const systemLang = navigator.language || navigator.userLanguage || 'en';
-            // Contoh: "id-ID" → "id", "en-US" → "en", "zh-TW" → "zh"
             const langCode = systemLang.toLowerCase().split('-')[0];
-            
-            // Cek apakah bahasa didukung
-            if (translations[langCode]) {
-                return langCode;
-            }
-            
-            // Cek juga navigator.languages (list preferensi)
+            if (translations[langCode]) return langCode;
             if (navigator.languages) {
                 for (let l of navigator.languages) {
                     const code = l.toLowerCase().split('-')[0];
                     if (translations[code]) return code;
                 }
             }
-            
-            // Fallback ke English
             return 'en';
         }
 
-        // ============================================
-        // --- APPLY TRANSLATIONS ---
-        // ============================================
         function applyTranslations(lang) {
             const t = translations[lang];
             if (!t) return;
-            
-            // Update html lang attribute
             document.documentElement.lang = lang;
-            
-            // Translate all elements with data-i18n
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (t[key]) {
-                    // Cek apakah punya child span toggle (FAQ)
                     const toggleChild = el.querySelector('.faq-toggle');
                     if (toggleChild && el.tagName === 'DIV') {
-                        // FAQ question: hanya ganti isi <span> pertama
                         const firstSpan = el.querySelector('span:not(.faq-toggle)');
                         if (firstSpan) firstSpan.textContent = t[key];
                     } else {
@@ -2249,25 +1743,16 @@
                     }
                 }
             });
-            
-            // Translate placeholders
             document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
                 const key = el.getAttribute('data-i18n-placeholder');
                 if (t[key]) el.placeholder = t[key];
             });
-            
-            // Simpan bahasa yang aktif untuk toast
             window.currentLang = t;
+            window.currentLangCode = lang;
         }
 
-        // ============================================
-        // --- INITIALIZE ---
-        // ============================================
         const detectedLang = detectLanguage();
         applyTranslations(detectedLang);
-        
-        // Log untuk debugging (bisa dihapus kalau tidak perlu)
-        console.log('Detected language:', detectedLang, '(' + (navigator.language || 'unknown') + ')');
 
         // ============================================
         // --- DATA PEMBAYARAN ---
@@ -2285,13 +1770,12 @@
 
         function formatRupiah(num) { return 'Rp ' + num.toLocaleString('id-ID'); }
 
-        // ROBUST SCROLL LOCK
+        // SCROLL LOCK
         function lockScroll() {
             const scrollY = window.scrollY || window.pageYOffset;
             document.body.style.top = `-${scrollY}px`;
             document.body.classList.add('no-scroll');
         }
-
         function unlockScroll() {
             const scrollY = document.body.style.top;
             document.body.classList.remove('no-scroll');
@@ -2303,9 +1787,8 @@
             document.getElementById(modalId).classList.add('active');
             lockScroll();
         }
-
-        function closeModal(modalId) { 
-            document.getElementById(modalId).classList.remove('active'); 
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
             unlockScroll();
         }
 
@@ -2358,13 +1841,11 @@
         function fillPaymentDetail() {
             const data = paymentData[checkoutData.paymentMethod];
             if (!data) return;
-
             const logo = document.getElementById('paymentDetailLogo');
             logo.className = 'payment-detail-logo ' + data.logoClass;
             logo.textContent = data.logoText;
             document.getElementById('paymentDetailName').textContent = checkoutData.paymentMethod;
             document.getElementById('paymentDetailType').textContent = data.type;
-
             const contentArea = document.getElementById('paymentContentArea');
             const t = window.currentLang || translations['en'];
 
@@ -2377,7 +1858,6 @@
                     </div>
                 `;
             } else {
-                // Multilingual "contact admin" message
                 const messages = {
                     'en': `Payment details for <strong>${checkoutData.paymentMethod}</strong> will be sent by admin via <strong>personal Telegram chat</strong>.`,
                     'id': `Detail pembayaran <strong>${checkoutData.paymentMethod}</strong> akan dikirim oleh admin melalui <strong>chat pribadi Telegram</strong>.`,
@@ -2414,7 +1894,6 @@
                     </div>
                 `;
             }
-
             document.getElementById('totalPayment').textContent = formatRupiah(checkoutData.price);
             document.getElementById('confirmLink').href = 'https://t.me/scp281025';
         }
@@ -2433,9 +1912,7 @@
             }
         });
 
-        document.getElementById('loginBtn').addEventListener('click', function() {
-            openModal('loginModal');
-        });
+        document.getElementById('loginBtn').addEventListener('click', function() { openModal('loginModal'); });
 
         function handleLogin() {
             const user = document.getElementById('loginUser').value;
@@ -2473,7 +1950,6 @@
             });
         });
 
-        // MOBILE MENU
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -2481,7 +1957,6 @@
         hamburgerBtn.addEventListener('click', function() {
             const isActive = mobileMenu.classList.toggle('active');
             if (isActive) lockScroll(); else unlockScroll();
-
             const spans = hamburgerBtn.querySelectorAll('span');
             if (isActive) {
                 spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
@@ -2529,22 +2004,18 @@
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
             e.preventDefault(); return false;
         });
-
         let longPressTimer;
         document.addEventListener('touchstart', function(e) {
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
             longPressTimer = setTimeout(function() { e.preventDefault(); }, 500);
         }, { passive: false });
-
         document.addEventListener('touchend', function() { clearTimeout(longPressTimer); });
         document.addEventListener('touchmove', function() { clearTimeout(longPressTimer); });
-
         document.addEventListener('keydown', function(e) {
             if (e.ctrlKey && ['c','x','a','u','s'].includes(e.key.toLowerCase())) { e.preventDefault(); return false; }
             if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase()))) { e.preventDefault(); return false; }
             if (e.ctrlKey && e.key.toLowerCase() === 'p') { e.preventDefault(); return false; }
         });
-
         document.addEventListener('selectstart', function(e) {
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
             e.preventDefault(); return false;
@@ -2552,14 +2023,12 @@
 
         // ANTI VIEW SOURCE
         if (window.location.protocol === 'view-source:') { window.location.href = 'about:blank'; }
-
         if (window.top !== window.self) {
             try { window.top.location = window.self.location; }
             catch (e) {
                 document.documentElement.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#050505;color:#ffaa00;font-family:Orbitron,sans-serif;font-size:20px;text-align:center;padding:20px;">Access Denied</div>';
             }
         }
-
         let devtoolsOpen = false;
         const element = new Image();
         Object.defineProperty(element, 'id', {
@@ -2569,14 +2038,11 @@
                 return 'devtools-detector';
             }
         });
-
         setInterval(function() {
             devtoolsOpen = false;
             console.log(element);
             if (devtoolsOpen) window.location.href = 'about:blank';
         }, 1000);
-
-        // Disable console
         (function() {
             const noop = function() {};
             const methods = ['log', 'debug', 'info', 'warn', 'error', 'trace', 'dir', 'dirxml', 'group', 'groupEnd', 'table', 'time', 'timeEnd', 'count', 'assert', 'profile', 'profileEnd'];
