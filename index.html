@@ -84,9 +84,9 @@
             letter-spacing: 1px; line-height: 1.2; }
         .brand-name span { color: var(--gold-primary); }
 
-        nav.desktop-nav { display: flex; gap: 30px; }
+        nav.desktop-nav { display: flex; gap: 25px; }
 
-        .nav-link { color: var(--text-main); text-decoration: none; font-size: 15px;
+        .nav-link { color: var(--text-main); text-decoration: none; font-size: 14px;
             font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
             position: relative; padding: 8px 4px; transition: var(--transition-fast); border-radius: 6px; }
 
@@ -105,11 +105,11 @@
         .search-input { background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-main);
             padding: 10px 15px 10px 40px; border-radius: 50px;
-            font-family: var(--font-body); font-size: 14px; width: 200px;
+            font-family: var(--font-body); font-size: 14px; width: 180px;
             transition: var(--transition); outline: none; }
 
         .search-input:hover { border-color: rgba(255, 170, 0, 0.4); }
-        .search-input:focus { width: 250px; border-color: var(--gold-primary);
+        .search-input:focus { width: 220px; border-color: var(--gold-primary);
             box-shadow: 0 0 20px var(--gold-glow), inset 0 0 10px rgba(255, 170, 0, 0.1); }
 
         .search-icon { position: absolute; left: 14px; top: 50%;
@@ -378,6 +378,198 @@
             letter-spacing: 0.5px;
         }
 
+        /* DOWNLOAD */
+        #download { padding: 70px 0; max-width: 700px; margin: 0 auto; }
+
+        .download-card {
+            background: var(--bg-panel);
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255, 170, 0, 0.15);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #b8860b, var(--gold-primary), #b8860b);
+            box-shadow: 0 0 20px var(--gold-glow);
+        }
+
+        .download-card:hover {
+            border-color: var(--gold-primary);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 60px rgba(255, 170, 0, 0.35);
+            transform: translateY(-5px);
+        }
+
+        .download-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: rgba(255, 170, 0, 0.08);
+            border: 2px solid var(--gold-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 25px var(--gold-glow);
+            animation: downloadFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes downloadFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .download-icon svg {
+            width: 45px;
+            height: 45px;
+            fill: var(--gold-primary);
+            filter: drop-shadow(0 0 10px var(--gold-glow-strong));
+        }
+
+        .download-file-name {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--text-main);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .download-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .download-info-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px 15px;
+            text-align: left;
+            transition: var(--transition-fast);
+        }
+
+        .download-info-item:hover {
+            border-color: var(--gold-primary);
+            background: rgba(255, 170, 0, 0.05);
+            box-shadow: 0 0 15px rgba(255, 170, 0, 0.15);
+        }
+
+        .info-label {
+            display: block;
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .info-value {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gold-primary);
+            text-shadow: 0 0 8px rgba(255, 170, 0, 0.4);
+        }
+
+        .download-features {
+            background: rgba(0, 136, 204, 0.06);
+            border-left: 3px solid var(--gold-primary);
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .download-features h4 {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            color: var(--gold-primary);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .download-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .download-features li {
+            color: var(--text-muted);
+            font-size: 13px;
+            padding: 6px 0 6px 25px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .download-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            color: var(--success-green);
+            font-weight: 900;
+            font-size: 14px;
+            text-shadow: 0 0 8px var(--green-glow);
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(90deg, #b8860b, var(--gold-primary));
+            color: #000;
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 900;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition-fast);
+            box-shadow: 0 0 25px var(--gold-glow);
+            position: relative;
+            overflow: hidden;
+            animation: downloadPulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes downloadPulse {
+            0%, 100% { box-shadow: 0 0 25px var(--gold-glow); }
+            50% { box-shadow: 0 0 40px var(--gold-glow-strong), 0 0 70px var(--gold-glow); }
+        }
+
+        .btn-download svg { transition: var(--transition-fast); }
+
+        .btn-download:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 10px 35px var(--gold-glow-strong), 0 0 60px var(--gold-glow);
+            filter: brightness(1.15);
+        }
+
+        .btn-download:hover svg { transform: translateY(3px); }
+
+        .btn-download:active {
+            transform: scale(0.94);
+            box-shadow: 0 0 50px var(--gold-glow-strong), 0 0 90px var(--gold-glow);
+            filter: brightness(1.3);
+        }
+
         /* FAQ */
         #faq { padding: 70px 0; max-width: 800px; margin: 0 auto; }
 
@@ -421,7 +613,7 @@
 
         .footer-col p { color: var(--text-muted); font-size: 14px; line-height: 1.7; }
 
-        .footer-links-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; }
+        .footer-links-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
 
         .footer-links-row a, .footer-links-row span { color: var(--text-muted);
             text-decoration: none; font-size: 14px; transition: var(--transition-fast);
@@ -701,9 +893,9 @@
         @media (min-width: 769px) and (max-width: 1024px) {
             :root { --header-height: 65px; }
             .brand-name { font-size: 17px; } .logo-img { width: 40px; height: 40px; }
-            nav.desktop-nav { gap: 15px; } .nav-link { font-size: 12px; }
-            .search-input { width: 140px; font-size: 13px; padding: 8px 12px 8px 35px; }
-            .search-input:focus { width: 180px; } .search-icon { left: 11px; width: 15px; height: 15px; }
+            nav.desktop-nav { gap: 12px; } .nav-link { font-size: 11px; }
+            .search-input { width: 130px; font-size: 13px; padding: 8px 12px 8px 35px; }
+            .search-input:focus { width: 160px; } .search-icon { left: 11px; width: 15px; height: 15px; }
             .hero { padding: 40px 0 40px; } .hero-title { font-size: 46px; letter-spacing: 3px; }
             .hero-subtitle { font-size: 14px; letter-spacing: 4px; }
             .paks-text { font-size: 17px; letter-spacing: 5px; } .game-badge-text { font-size: 12px; }
@@ -752,16 +944,17 @@
             .faq-question { font-size: 15px; padding: 15px; }
             .faq-toggle { width: 26px; height: 26px; font-size: 15px; }
             .section-header { margin-bottom: 35px; }
-            #produk, #faq { padding: 50px 0; }
-            #tutorial { padding: 50px 0; }
+            #produk, #faq, #tutorial, #download { padding: 50px 0; }
             .video-wrapper { border-radius: 15px; }
-            .tutorial-warning {
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
-                padding: 15px 18px;
-            }
+            .tutorial-warning { flex-direction: column; text-align: center; gap: 10px; padding: 15px 18px; }
             .tutorial-warning p { font-size: 13px; }
+            .download-card { padding: 30px 20px; }
+            .download-icon { width: 75px; height: 75px; }
+            .download-icon svg { width: 38px; height: 38px; }
+            .download-file-name { font-size: 20px; }
+            .download-info-grid { grid-template-columns: 1fr; gap: 8px; }
+            .btn-download { width: 100%; padding: 16px 30px; font-size: 14px; }
+            .download-features li { font-size: 12px; }
         }
 
         @media (max-width: 400px) {
@@ -805,6 +998,7 @@
             <a href="#home" class="nav-link" data-i18n="nav_home">Home</a>
             <a href="#produk" class="nav-link" data-i18n="nav_products">Products</a>
             <a href="#tutorial" class="nav-link" data-i18n="nav_tutorial">Tutorial</a>
+            <a href="#download" class="nav-link" data-i18n="nav_download">Download</a>
             <a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a>
             <a href="https://t.me/scp281025" target="_blank" class="nav-link" data-i18n="nav_support">Support</a>
         </nav>
@@ -822,6 +1016,7 @@
         <a href="#home" class="mobile-link" data-i18n="nav_home">Home</a>
         <a href="#produk" class="mobile-link" data-i18n="nav_products">Products</a>
         <a href="#tutorial" class="mobile-link" data-i18n="nav_tutorial">Tutorial</a>
+        <a href="#download" class="mobile-link" data-i18n="nav_download">Download</a>
         <a href="#faq" class="mobile-link" data-i18n="nav_faq">FAQ</a>
         <a href="https://t.me/scp281025" target="_blank" data-i18n="nav_support">Support</a>
         <button class="login-btn" style="margin-top: 20px; width: 100%;" onclick="openModal('loginModal')" data-i18n="btn_login">Login</button>
@@ -919,6 +1114,65 @@
             </div>
         </section>
 
+        <!-- DOWNLOAD SECTION -->
+        <section id="download">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="download_title">Download Paks Mod</h2>
+                <p class="section-desc" data-i18n="download_desc">File Paks mod terbaru untuk PUBG Mobile</p>
+            </div>
+
+            <div class="download-card">
+                <div class="download-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/>
+                    </svg>
+                </div>
+
+                <h3 class="download-file-name" data-i18n="download_file">Paks Mod PUBG Mobile</h3>
+
+                <div class="download-info-grid">
+                    <div class="download-info-item">
+                        <span class="info-label" data-i18n="download_type_label">Tipe File</span>
+                        <span class="info-value">.ZIP</span>
+                    </div>
+                    <div class="download-info-item">
+                        <span class="info-label" data-i18n="download_support_label">Support Server</span>
+                        <span class="info-value">Global / Korea / Vietnam / Taiwan</span>
+                    </div>
+                    <div class="download-info-item">
+                        <span class="info-label" data-i18n="download_platform_label">Platform</span>
+                        <span class="info-value">Android Non-Root</span>
+                    </div>
+                    <div class="download-info-item">
+                        <span class="info-label" data-i18n="download_updated_label">Terakhir Update</span>
+                        <span class="info-value">2024</span>
+                    </div>
+                </div>
+
+                <div class="download-features">
+                    <h4 data-i18n="download_features_title">Keterangan:</h4>
+                    <ul>
+                        <li data-i18n="download_feat_1">File berisi Paks Mod untuk PUBG Mobile</li>
+                        <li data-i18n="download_feat_2">Cocok untuk Android Non-Root (tanpa root)</li>
+                        <li data-i18n="download_feat_3">Support server Global, Korea, Vietnam, Taiwan</li>
+                        <li data-i18n="download_feat_4">Cara pasang: tonton video tutorial di atas</li>
+                        <li data-i18n="download_feat_5">Pastikan mengikuti video agar fitur berfungsi</li>
+                    </ul>
+                </div>
+
+                <a href="https://files.catbox.moe/an62hk.zip" 
+                   download 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn-download">
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px;">
+                        <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/>
+                    </svg>
+                    <span data-i18n="download_btn">DOWNLOAD SEKARANG</span>
+                </a>
+            </div>
+        </section>
+
         <section id="faq">
             <div class="section-header">
                 <h2 class="section-title" data-i18n="faq_title">Frequently Asked Questions</h2>
@@ -954,6 +1208,7 @@
                 <a href="#home" data-i18n="nav_home">Home</a>
                 <a href="#produk" data-i18n="nav_products">Products</a>
                 <a href="#tutorial" data-i18n="nav_tutorial">Tutorial</a>
+                <a href="#download" data-i18n="nav_download">Download</a>
                 <a href="#faq" data-i18n="nav_faq">FAQ</a>
                 <a href="https://t.me/scp281025" target="_blank" data-i18n="nav_support">Support</a>
             </div>
@@ -1060,7 +1315,7 @@
     <script>
         const translations = {
             'en': {
-                nav_home: 'Home', nav_products: 'Products', nav_tutorial: 'Tutorial', nav_faq: 'FAQ', nav_support: 'Support',
+                nav_home: 'Home', nav_products: 'Products', nav_tutorial: 'Tutorial', nav_download: 'Download', nav_faq: 'FAQ', nav_support: 'Support',
                 btn_login: 'Login', search_placeholder: 'Search products...',
                 hero_subtitle: 'Premium Digital Store & Tools',
                 btn_view_products: 'View Products', btn_contact: 'Contact Us',
@@ -1076,6 +1331,20 @@
                 tutorial_title: 'How to Install Paks',
                 tutorial_desc: 'Follow the video tutorial below correctly so features work optimally',
                 tutorial_warning: 'Follow the video correctly. If you miss a step, features will not work!',
+                download_title: 'Download Paks Mod',
+                download_desc: 'Latest Paks mod file for PUBG Mobile',
+                download_file: 'Paks Mod PUBG Mobile',
+                download_type_label: 'File Type',
+                download_support_label: 'Server Support',
+                download_platform_label: 'Platform',
+                download_updated_label: 'Last Update',
+                download_features_title: 'Description:',
+                download_feat_1: 'File contains Paks Mod for PUBG Mobile',
+                download_feat_2: 'Suitable for Android Non-Root (no root needed)',
+                download_feat_3: 'Support Global, Korea, Vietnam, Taiwan servers',
+                download_feat_4: 'How to install: watch the video tutorial above',
+                download_feat_5: 'Follow the video to make features work',
+                download_btn: 'DOWNLOAD NOW',
                 faq_title: 'Frequently Asked Questions', faq_desc: 'Common questions from our customers',
                 faq_q1: 'How to buy a product?',
                 faq_a1: 'Click "BUY NOW" on the product, choose payment method (DANA, QRIS, SeaBank, BNI), then follow the instructions. For DANA/SeaBank/BNI, payment details will be sent by admin via personal Telegram chat.',
@@ -1102,7 +1371,7 @@
                 toast_payment: 'Please select a payment method first!', toast_no_qr: 'QR image not available. Please contact admin via Telegram.'
             },
             'id': {
-                nav_home: 'Beranda', nav_products: 'Produk', nav_tutorial: 'Tutorial', nav_faq: 'FAQ', nav_support: 'Dukungan',
+                nav_home: 'Beranda', nav_products: 'Produk', nav_tutorial: 'Tutorial', nav_download: 'Download', nav_faq: 'FAQ', nav_support: 'Dukungan',
                 btn_login: 'Masuk', search_placeholder: 'Cari produk...',
                 hero_subtitle: 'Toko Digital Premium & Alat',
                 btn_view_products: 'Lihat Produk', btn_contact: 'Hubungi Kami',
@@ -1118,6 +1387,20 @@
                 tutorial_title: 'Cara Pasang Paks',
                 tutorial_desc: 'Ikuti tutorial video di bawah ini dengan benar agar fitur berfungsi optimal',
                 tutorial_warning: 'Ikuti cara di video dengan benar. Jika salah langkah, fitur tidak akan aktif!',
+                download_title: 'Download Paks Mod',
+                download_desc: 'File Paks mod terbaru untuk PUBG Mobile',
+                download_file: 'Paks Mod PUBG Mobile',
+                download_type_label: 'Tipe File',
+                download_support_label: 'Support Server',
+                download_platform_label: 'Platform',
+                download_updated_label: 'Terakhir Update',
+                download_features_title: 'Keterangan:',
+                download_feat_1: 'File berisi Paks Mod untuk PUBG Mobile',
+                download_feat_2: 'Cocok untuk Android Non-Root (tanpa root)',
+                download_feat_3: 'Support server Global, Korea, Vietnam, Taiwan',
+                download_feat_4: 'Cara pasang: tonton video tutorial di atas',
+                download_feat_5: 'Pastikan mengikuti video agar fitur berfungsi',
+                download_btn: 'DOWNLOAD SEKARANG',
                 faq_title: 'Pertanyaan Umum', faq_desc: 'Hal-hal yang sering ditanyakan oleh pelanggan',
                 faq_q1: 'Bagaimana cara membeli produk?',
                 faq_a1: 'Klik tombol "BELI SEKARANG" pada produk, pilih metode pembayaran (DANA, QRIS, SeaBank, BNI), lalu ikuti instruksi. Untuk DANA/SeaBank/BNI, detail pembayaran akan dikirim admin via chat Telegram pribadi.',
@@ -1144,7 +1427,7 @@
                 toast_payment: 'Silakan pilih metode pembayaran terlebih dahulu!', toast_no_qr: 'Gambar QR belum tersedia. Silakan hubungi admin via Telegram.'
             },
             'hi': {
-                nav_home: 'होम', nav_products: 'उत्पाद', nav_tutorial: 'ट्यूटोरियल', nav_faq: 'सामान्य प्रश्न', nav_support: 'सहायता',
+                nav_home: 'होम', nav_products: 'उत्पाद', nav_tutorial: 'ट्यूटोरियल', nav_download: 'डाउनलोड', nav_faq: 'सामान्य प्रश्न', nav_support: 'सहायता',
                 btn_login: 'लॉगिन', search_placeholder: 'उत्पाद खोजें...',
                 hero_subtitle: 'प्रीमियम डिजिटल स्टोर और टूल्स',
                 btn_view_products: 'उत्पाद देखें', btn_contact: 'संपर्क करें',
@@ -1160,6 +1443,20 @@
                 tutorial_title: 'Paks कैसे इंस्टॉल करें',
                 tutorial_desc: 'नीचे दिए गए वीडियो ट्यूटोरियल का सही तरीके से पालन करें ताकि सुविधाएं इष्टतम रूप से काम करें',
                 tutorial_warning: 'वीडियो के अनुसार सही तरीके से करें। यदि कोई कदम छूट गया, तो सुविधाएं काम नहीं करेंगी!',
+                download_title: 'Paks Mod डाउनलोड करें',
+                download_desc: 'PUBG Mobile के लिए नवीनतम Paks mod फ़ाइल',
+                download_file: 'Paks Mod PUBG Mobile',
+                download_type_label: 'फ़ाइल प्रकार',
+                download_support_label: 'सर्वर सपोर्ट',
+                download_platform_label: 'प्लेटफ़ॉर्म',
+                download_updated_label: 'अंतिम अपडेट',
+                download_features_title: 'विवरण:',
+                download_feat_1: 'फ़ाइल में PUBG Mobile के लिए Paks Mod है',
+                download_feat_2: 'Android Non-Root के लिए उपयुक्त (रूट की आवश्यकता नहीं)',
+                download_feat_3: 'Global, Korea, Vietnam, Taiwan सर्वर सपोर्ट',
+                download_feat_4: 'कैसे इंस्टॉल करें: ऊपर वीडियो ट्यूटोरियल देखें',
+                download_feat_5: 'सुविधाओं के लिए वीडियो का पालन करें',
+                download_btn: 'अभी डाउनलोड करें',
                 faq_title: 'सामान्य प्रश्न', faq_desc: 'ग्राहकों द्वारा पूछे जाने वाले सामान्य प्रश्न',
                 faq_q1: 'उत्पाद कैसे खरीदें?',
                 faq_a1: 'उत्पाद पर "अभी खरीदें" क्लिक करें, भुगतान विधि चुनें (DANA, QRIS, SeaBank, BNI), फिर निर्देशों का पालन करें। DANA/SeaBank/BNI के लिए, भुगतान विवरण व्यक्तिगत Telegram चैट के माध्यम से भेजा जाएगा।',
@@ -1186,7 +1483,7 @@
                 toast_payment: 'कृपया पहले भुगतान विधि चुनें!', toast_no_qr: 'QR छवि उपलब्ध नहीं है। कृपया Telegram पर व्यवस्थापक से संपर्क करें।'
             },
             'zh': {
-                nav_home: '首页', nav_products: '产品', nav_tutorial: '教程', nav_faq: '常见问题', nav_support: '支持',
+                nav_home: '首页', nav_products: '产品', nav_tutorial: '教程', nav_download: '下载', nav_faq: '常见问题', nav_support: '支持',
                 btn_login: '登录', search_placeholder: '搜索产品...',
                 hero_subtitle: '高级数字商店和工具',
                 btn_view_products: '查看产品', btn_contact: '联系我们',
@@ -1202,6 +1499,20 @@
                 tutorial_title: '如何安装 Paks',
                 tutorial_desc: '请正确遵循下面的视频教程，以确保功能正常运作',
                 tutorial_warning: '请按照视频正确操作。如果遗漏任何步骤，功能将无法激活！',
+                download_title: '下载 Paks Mod',
+                download_desc: 'PUBG Mobile 最新 Paks mod 文件',
+                download_file: 'Paks Mod PUBG Mobile',
+                download_type_label: '文件类型',
+                download_support_label: '支持服务器',
+                download_platform_label: '平台',
+                download_updated_label: '最后更新',
+                download_features_title: '说明：',
+                download_feat_1: '文件包含 PUBG Mobile 的 Paks Mod',
+                download_feat_2: '适用于 Android 免 Root（无需 Root）',
+                download_feat_3: '支持 Global、Korea、Vietnam、Taiwan 服务器',
+                download_feat_4: '安装方法：观看上方视频教程',
+                download_feat_5: '请按视频操作以使功能正常工作',
+                download_btn: '立即下载',
                 faq_title: '常见问题', faq_desc: '客户常问的问题',
                 faq_q1: '如何购买产品？',
                 faq_a1: '在产品上点击"立即购买"，选择付款方式（DANA、QRIS、SeaBank、BNI），然后按照说明操作。对于 DANA/SeaBank/BNI，付款详情将通过个人 Telegram 聊天发送。',
@@ -1228,7 +1539,7 @@
                 toast_payment: '请先选择付款方式！', toast_no_qr: 'QR 图片不可用。请通过 Telegram 联系管理员。'
             },
             'vi': {
-                nav_home: 'Trang chủ', nav_products: 'Sản phẩm', nav_tutorial: 'Hướng dẫn', nav_faq: 'Câu hỏi', nav_support: 'Hỗ trợ',
+                nav_home: 'Trang chủ', nav_products: 'Sản phẩm', nav_tutorial: 'Hướng dẫn', nav_download: 'Tải xuống', nav_faq: 'Câu hỏi', nav_support: 'Hỗ trợ',
                 btn_login: 'Đăng nhập', search_placeholder: 'Tìm sản phẩm...',
                 hero_subtitle: 'Cửa hàng Kỹ thuật số Cao cấp & Công cụ',
                 btn_view_products: 'Xem Sản phẩm', btn_contact: 'Liên hệ',
@@ -1244,6 +1555,20 @@
                 tutorial_title: 'Cách Cài Đặt Paks',
                 tutorial_desc: 'Làm theo video hướng dẫn bên dưới một cách chính xác để các tính năng hoạt động tối ưu',
                 tutorial_warning: 'Làm theo video một cách chính xác. Nếu sai bước, tính năng sẽ không hoạt động!',
+                download_title: 'Tải Paks Mod',
+                download_desc: 'File Paks mod mới nhất cho PUBG Mobile',
+                download_file: 'Paks Mod PUBG Mobile',
+                download_type_label: 'Loại File',
+                download_support_label: 'Hỗ trợ Server',
+                download_platform_label: 'Nền tảng',
+                download_updated_label: 'Cập nhật cuối',
+                download_features_title: 'Mô tả:',
+                download_feat_1: 'File chứa Paks Mod cho PUBG Mobile',
+                download_feat_2: 'Phù hợp với Android Non-Root (không cần root)',
+                download_feat_3: 'Hỗ trợ server Global, Korea, Vietnam, Taiwan',
+                download_feat_4: 'Cách cài: xem video hướng dẫn ở trên',
+                download_feat_5: 'Làm theo video để tính năng hoạt động',
+                download_btn: 'TẢI NGAY',
                 faq_title: 'Câu hỏi Thường gặp', faq_desc: 'Những câu hỏi phổ biến từ khách hàng',
                 faq_q1: 'Làm thế nào để mua sản phẩm?',
                 faq_a1: 'Nhấp "MUA NGAY" trên sản phẩm, chọn phương thức thanh toán (DANA, QRIS, SeaBank, BNI), sau đó làm theo hướng dẫn. Đối với DANA/SeaBank/BNI, chi tiết thanh toán sẽ được admin gửi qua chat Telegram riêng.',
@@ -1270,7 +1595,7 @@
                 toast_payment: 'Vui lòng chọn phương thức thanh toán trước!', toast_no_qr: 'Hình QR không có sẵn. Vui lòng liên hệ admin qua Telegram.'
             },
             'ko': {
-                nav_home: '홈', nav_products: '제품', nav_tutorial: '튜토리얼', nav_faq: '자주 묻는 질문', nav_support: '지원',
+                nav_home: '홈', nav_products: '제품', nav_tutorial: '튜토리얼', nav_download: '다운로드', nav_faq: '자주 묻는 질문', nav_support: '지원',
                 btn_login: '로그인', search_placeholder: '제품 검색...',
                 hero_subtitle: '프리미엄 디지털 스토어 및 도구',
                 btn_view_products: '제품 보기', btn_contact: '문의하기',
@@ -1286,6 +1611,20 @@
                 tutorial_title: 'Paks 설치 방법',
                 tutorial_desc: '기능이 최적으로 작동하도록 아래 비디오 튜토리얼을 올바르게 따르세요',
                 tutorial_warning: '비디오대로 정확히 따라하세요. 단계를 놓치면 기능이 활성화되지 않습니다!',
+                download_title: 'Paks Mod 다운로드',
+                download_desc: 'PUBG Mobile용 최신 Paks mod 파일',
+                download_file: 'Paks Mod PUBG Mobile',
+                download_type_label: '파일 형식',
+                download_support_label: '지원 서버',
+                download_platform_label: '플랫폼',
+                download_updated_label: '마지막 업데이트',
+                download_features_title: '설명:',
+                download_feat_1: 'PUBG Mobile용 Paks Mod가 포함된 파일',
+                download_feat_2: 'Android Non-Root에 적합 (루트 불필요)',
+                download_feat_3: 'Global, Korea, Vietnam, Taiwan 서버 지원',
+                download_feat_4: '설치 방법: 위 비디오 튜토리얼 시청',
+                download_feat_5: '기능이 작동하도록 비디오를 따르세요',
+                download_btn: '지금 다운로드',
                 faq_title: '자주 묻는 질문', faq_desc: '고객들이 자주 묻는 질문',
                 faq_q1: '제품을 구매하는 방법?',
                 faq_a1: '제품의 "지금 구매"를 클릭하고 결제 방법(DANA, QRIS, SeaBank, BNI)을 선택한 다음 지침을 따르세요. DANA/SeaBank/BNI의 경우 결제 세부 정보가 개인 Telegram 채팅을 통해 전송됩니다.',
@@ -1312,7 +1651,7 @@
                 toast_payment: '먼저 결제 방법을 선택하세요!', toast_no_qr: 'QR 이미지를 사용할 수 없습니다. Telegram을 통해 관리자에게 문의하세요.'
             },
             'ja': {
-                nav_home: 'ホーム', nav_products: '製品', nav_tutorial: 'チュートリアル', nav_faq: 'よくある質問', nav_support: 'サポート',
+                nav_home: 'ホーム', nav_products: '製品', nav_tutorial: 'チュートリアル', nav_download: 'ダウンロード', nav_faq: 'よくある質問', nav_support: 'サポート',
                 btn_login: 'ログイン', search_placeholder: '製品を検索...',
                 hero_subtitle: 'プレミアムデジタルストア＆ツール',
                 btn_view_products: '製品を見る', btn_contact: 'お問い合わせ',
@@ -1328,6 +1667,20 @@
                 tutorial_title: 'Paksのインストール方法',
                 tutorial_desc: '機能が最適に動作するように、以下のビデオチュートリアルを正しく実行してください',
                 tutorial_warning: 'ビデオの通りに正確に実行してください。手順を間違えると機能が有効になりません！',
+                download_title: 'Paks Modをダウンロード',
+                download_desc: 'PUBG Mobile用の最新Paks modファイル',
+                download_file: 'Paks Mod PUBG Mobile',
+                download_type_label: 'ファイルタイプ',
+                download_support_label: 'サポートサーバー',
+                download_platform_label: 'プラットフォーム',
+                download_updated_label: '最終更新',
+                download_features_title: '説明：',
+                download_feat_1: 'PUBG Mobile用のPaks Modを含むファイル',
+                download_feat_2: 'Android Non-Rootに最適（root不要）',
+                download_feat_3: 'Global、Korea、Vietnam、Taiwanサーバー対応',
+                download_feat_4: 'インストール方法：上のビデオチュートリアルを見る',
+                download_feat_5: '機能が動作するようにビデオに従ってください',
+                download_btn: '今すぐダウンロード',
                 faq_title: 'よくある質問', faq_desc: 'お客様からよく寄せられる質問',
                 faq_q1: '製品の購入方法は？',
                 faq_a1: '製品の「今すぐ購入」をクリックし、支払い方法（DANA、QRIS、SeaBank、BNI）を選択して、指示に従ってください。DANA/SeaBank/BNIの場合、支払いの詳細は個人のTelegramチャットで送信されます。',
@@ -1354,7 +1707,7 @@
                 toast_payment: '先に支払い方法を選択してください！', toast_no_qr: 'QR画像が利用できません。Telegramで管理者にお問い合わせください。'
             },
             'th': {
-                nav_home: 'หน้าแรก', nav_products: 'สินค้า', nav_tutorial: 'สอนใช้งาน', nav_faq: 'คำถามที่พบบ่อย', nav_support: 'สนับสนุน',
+                nav_home: 'หน้าแรก', nav_products: 'สินค้า', nav_tutorial: 'สอนใช้งาน', nav_download: 'ดาวน์โหลด', nav_faq: 'คำถามที่พบบ่อย', nav_support: 'สนับสนุน',
                 btn_login: 'เข้าสู่ระบบ', search_placeholder: 'ค้นหาสินค้า...',
                 hero_subtitle: 'ร้านค้าดิจิทัลพรีเมียมและเครื่องมือ',
                 btn_view_products: 'ดูสินค้า', btn_contact: 'ติดต่อเรา',
@@ -1370,6 +1723,20 @@
                 tutorial_title: 'วิธีติดตั้ง Paks',
                 tutorial_desc: 'ทำตามวิดีโอสอนด้านล่างอย่างถูกต้องเพื่อให้ฟีเจอร์ทำงานได้อย่างเหมาะสม',
                 tutorial_warning: 'ทำตามวิดีโออย่างถูกต้อง หากผิดขั้นตอน ฟีเจอร์จะไม่ทำงาน!',
+                download_title: 'ดาวน์โหลด Paks Mod',
+                download_desc: 'ไฟล์ Paks mod ล่าสุดสำหรับ PUBG Mobile',
+                download_file: 'Paks Mod PUBG Mobile',
+                download_type_label: 'ประเภทไฟล์',
+                download_support_label: 'รองรับเซิร์ฟเวอร์',
+                download_platform_label: 'แพลตฟอร์ม',
+                download_updated_label: 'อัปเดตล่าสุด',
+                download_features_title: 'คำอธิบาย:',
+                download_feat_1: 'ไฟล์มี Paks Mod สำหรับ PUBG Mobile',
+                download_feat_2: 'เหมาะสำหรับ Android Non-Root (ไม่ต้องรูท)',
+                download_feat_3: 'รองรับเซิร์ฟเวอร์ Global, Korea, Vietnam, Taiwan',
+                download_feat_4: 'วิธีติดตั้ง: ดูวิดีโอสอนด้านบน',
+                download_feat_5: 'ทำตามวิดีโอเพื่อให้ฟีเจอร์ทำงาน',
+                download_btn: 'ดาวน์โหลดเลย',
                 faq_title: 'คำถามที่พบบ่อย', faq_desc: 'คำถามทั่วไปจากลูกค้า',
                 faq_q1: 'วิธีการซื้อสินค้า?',
                 faq_a1: 'คลิก "ซื้อเลย" ที่สินค้า เลือกวิธีการชำระเงิน (DANA, QRIS, SeaBank, BNI) จากนั้นทำตามคำแนะนำ สำหรับ DANA/SeaBank/BNI รายละเอียดการชำระเงินจะถูกส่งโดยผู้ดูแลผ่านแชท Telegram ส่วนตัว',
@@ -1396,7 +1763,7 @@
                 toast_payment: 'กรุณาเลือกวิธีการชำระเงินก่อน!', toast_no_qr: 'ไม่มีรูปภาพ QR กรุณาติดต่อผู้ดูแลผ่าน Telegram'
             },
             'ar': {
-                nav_home: 'الرئيسية', nav_products: 'المنتجات', nav_tutorial: 'البرنامج التعليمي', nav_faq: 'الأسئلة الشائعة', nav_support: 'الدعم',
+                nav_home: 'الرئيسية', nav_products: 'المنتجات', nav_tutorial: 'البرنامج التعليمي', nav_download: 'تحميل', nav_faq: 'الأسئلة الشائعة', nav_support: 'الدعم',
                 btn_login: 'تسجيل الدخول', search_placeholder: 'ابحث عن المنتجات...',
                 hero_subtitle: 'متجر رقمي متميز وأدوات',
                 btn_view_products: 'عرض المنتجات', btn_contact: 'اتصل بنا',
@@ -1412,6 +1779,20 @@
                 tutorial_title: 'كيفية تثبيت Paks',
                 tutorial_desc: 'اتبع الفيديو التعليمي أدناه بشكل صحيح حتى تعمل الميزات بشكل مثالي',
                 tutorial_warning: 'اتبع الفيديو بشكل صحيح. إذا أخطأت في خطوة، لن يتم تنشيط الميزات!',
+                download_title: 'تحميل Paks Mod',
+                download_desc: 'أحدث ملف Paks mod لـ PUBG Mobile',
+                download_file: 'Paks Mod PUBG Mobile',
+                download_type_label: 'نوع الملف',
+                download_support_label: 'دعم الخوادم',
+                download_platform_label: 'المنصة',
+                download_updated_label: 'آخر تحديث',
+                download_features_title: 'الوصف:',
+                download_feat_1: 'يحتوي الملف على Paks Mod لـ PUBG Mobile',
+                download_feat_2: 'مناسب لـ Android Non-Root (بدون روت)',
+                download_feat_3: 'دعم خوادم Global, Korea, Vietnam, Taiwan',
+                download_feat_4: 'طريقة التثبيت: شاهد الفيديو التعليمي أعلاه',
+                download_feat_5: 'اتبع الفيديو لتعمل الميزات',
+                download_btn: 'تحميل الآن',
                 faq_title: 'الأسئلة الشائعة', faq_desc: 'الأسئلة الشائعة من عملائنا',
                 faq_q1: 'كيف تشتري منتجًا؟',
                 faq_a1: 'انقر فوق "اشتر الآن" على المنتج، واختر طريقة الدفع (DANA، QRIS، SeaBank، BNI)، ثم اتبع التعليمات. بالنسبة لـ DANA/SeaBank/BNI، سيتم إرسال تفاصيل الدفع بواسطة المشرف عبر محادثة Telegram الشخصية.',
@@ -1438,7 +1819,7 @@
                 toast_payment: 'يرجى اختيار طريقة الدفع أولاً!', toast_no_qr: 'صورة QR غير متوفرة. يرجى الاتصال بالمشرف عبر Telegram.'
             },
             'es': {
-                nav_home: 'Inicio', nav_products: 'Productos', nav_tutorial: 'Tutorial', nav_faq: 'Preguntas', nav_support: 'Soporte',
+                nav_home: 'Inicio', nav_products: 'Productos', nav_tutorial: 'Tutorial', nav_download: 'Descargar', nav_faq: 'Preguntas', nav_support: 'Soporte',
                 btn_login: 'Iniciar sesión', search_placeholder: 'Buscar productos...',
                 hero_subtitle: 'Tienda Digital Premium y Herramientas',
                 btn_view_products: 'Ver Productos', btn_contact: 'Contáctanos',
@@ -1454,6 +1835,20 @@
                 tutorial_title: 'Cómo Instalar Paks',
                 tutorial_desc: 'Sigue el video tutorial a continuación correctamente para que las funciones funcionen de manera óptima',
                 tutorial_warning: 'Sigue el video correctamente. ¡Si te saltas un paso, las funciones no se activarán!',
+                download_title: 'Descargar Paks Mod',
+                download_desc: 'Archivo Paks mod más reciente para PUBG Mobile',
+                download_file: 'Paks Mod PUBG Mobile',
+                download_type_label: 'Tipo de Archivo',
+                download_support_label: 'Soporte de Servidor',
+                download_platform_label: 'Plataforma',
+                download_updated_label: 'Última Actualización',
+                download_features_title: 'Descripción:',
+                download_feat_1: 'El archivo contiene Paks Mod para PUBG Mobile',
+                download_feat_2: 'Apto para Android Sin Root (sin root)',
+                download_feat_3: 'Soporte servidores Global, Korea, Vietnam, Taiwan',
+                download_feat_4: 'Cómo instalar: mira el video tutorial arriba',
+                download_feat_5: 'Sigue el video para que las funciones funcionen',
+                download_btn: 'DESCARGAR AHORA',
                 faq_title: 'Preguntas Frecuentes', faq_desc: 'Preguntas comunes de nuestros clientes',
                 faq_q1: '¿Cómo comprar un producto?',
                 faq_a1: 'Haz clic en "COMPRAR AHORA" en el producto, elige el método de pago (DANA, QRIS, SeaBank, BNI), luego sigue las instrucciones. Para DANA/SeaBank/BNI, los detalles de pago serán enviados por el administrador a través de chat personal de Telegram.',
@@ -1480,7 +1875,7 @@
                 toast_payment: '¡Por favor selecciona un método de pago primero!', toast_no_qr: 'Imagen QR no disponible. Por favor contacta al administrador por Telegram.'
             },
             'pt': {
-                nav_home: 'Início', nav_products: 'Produtos', nav_tutorial: 'Tutorial', nav_faq: 'FAQ', nav_support: 'Suporte',
+                nav_home: 'Início', nav_products: 'Produtos', nav_tutorial: 'Tutorial', nav_download: 'Baixar', nav_faq: 'FAQ', nav_support: 'Suporte',
                 btn_login: 'Entrar', search_placeholder: 'Pesquisar produtos...',
                 hero_subtitle: 'Loja Digital Premium e Ferramentas',
                 btn_view_products: 'Ver Produtos', btn_contact: 'Fale Conosco',
@@ -1496,6 +1891,20 @@
                 tutorial_title: 'Como Instalar Paks',
                 tutorial_desc: 'Siga o vídeo tutorial abaixo corretamente para que os recursos funcionem de forma ideal',
                 tutorial_warning: 'Siga o vídeo corretamente. Se você pular uma etapa, os recursos não serão ativados!',
+                download_title: 'Baixar Paks Mod',
+                download_desc: 'Arquivo Paks mod mais recente para PUBG Mobile',
+                download_file: 'Paks Mod PUBG Mobile',
+                download_type_label: 'Tipo de Arquivo',
+                download_support_label: 'Suporte de Servidor',
+                download_platform_label: 'Plataforma',
+                download_updated_label: 'Última Atualização',
+                download_features_title: 'Descrição:',
+                download_feat_1: 'O arquivo contém Paks Mod para PUBG Mobile',
+                download_feat_2: 'Adequado para Android Sem Root (sem root)',
+                download_feat_3: 'Suporte servidores Global, Korea, Vietnam, Taiwan',
+                download_feat_4: 'Como instalar: assista o vídeo tutorial acima',
+                download_feat_5: 'Siga o vídeo para que os recursos funcionem',
+                download_btn: 'BAIXAR AGORA',
                 faq_title: 'Perguntas Frequentes', faq_desc: 'Perguntas comuns dos nossos clientes',
                 faq_q1: 'Como comprar um produto?',
                 faq_a1: 'Clique em "COMPRAR AGORA" no produto, escolha o método de pagamento (DANA, QRIS, SeaBank, BNI), depois siga as instruções. Para DANA/SeaBank/BNI, os detalhes de pagamento serão enviados pelo administrador via chat pessoal do Telegram.',
@@ -1522,7 +1931,7 @@
                 toast_payment: 'Por favor selecione um método de pagamento primeiro!', toast_no_qr: 'Imagem QR não disponível. Por favor contate o administrador via Telegram.'
             },
             'ru': {
-                nav_home: 'Главная', nav_products: 'Продукты', nav_tutorial: 'Учебник', nav_faq: 'Вопросы', nav_support: 'Поддержка',
+                nav_home: 'Главная', nav_products: 'Продукты', nav_tutorial: 'Учебник', nav_download: 'Скачать', nav_faq: 'Вопросы', nav_support: 'Поддержка',
                 btn_login: 'Войти', search_placeholder: 'Поиск продуктов...',
                 hero_subtitle: 'Премиальный Цифровой Магазин и Инструменты',
                 btn_view_products: 'Просмотр Продуктов', btn_contact: 'Связаться',
@@ -1538,6 +1947,20 @@
                 tutorial_title: 'Как Установить Paks',
                 tutorial_desc: 'Следуйте видеоуроку ниже правильно, чтобы функции работали оптимально',
                 tutorial_warning: 'Следуйте видео правильно. Если вы пропустите шаг, функции не активируются!',
+                download_title: 'Скачать Paks Mod',
+                download_desc: 'Последний файл Paks mod для PUBG Mobile',
+                download_file: 'Paks Mod PUBG Mobile',
+                download_type_label: 'Тип файла',
+                download_support_label: 'Поддержка серверов',
+                download_platform_label: 'Платформа',
+                download_updated_label: 'Последнее обновление',
+                download_features_title: 'Описание:',
+                download_feat_1: 'Файл содержит Paks Mod для PUBG Mobile',
+                download_feat_2: 'Подходит для Android Non-Root (без root)',
+                download_feat_3: 'Поддержка серверов Global, Korea, Vietnam, Taiwan',
+                download_feat_4: 'Как установить: посмотрите видеоурок выше',
+                download_feat_5: 'Следуйте видео, чтобы функции работали',
+                download_btn: 'СКАЧАТЬ СЕЙЧАС',
                 faq_title: 'Часто Задаваемые Вопросы', faq_desc: 'Общие вопросы от наших клиентов',
                 faq_q1: 'Как купить продукт?',
                 faq_a1: 'Нажмите "КУПИТЬ СЕЙЧАС" на продукте, выберите способ оплаты (DANA, QRIS, SeaBank, BNI), затем следуйте инструкциям. Для DANA/SeaBank/BNI реквизиты для оплаты будут отправлены администратором через личный чат Telegram.',
