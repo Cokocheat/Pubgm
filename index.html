@@ -9,7 +9,7 @@
         :root {
             --bg-dark: #050505;
             --bg-panel: #0f0f0f;
-            --bg-glass: rgba(20, 20, 20, 0.7);
+            --bg-glass: rgba(20, 20, 20, 0.85);
             --gold-primary: #ffaa00;
             --gold-glow: rgba(255, 170, 0, 0.4);
             --text-main: #ffffff;
@@ -20,6 +20,7 @@
             --font-heading: 'Orbitron', sans-serif;
             --font-body: 'Inter', sans-serif;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --header-height: 75px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -40,12 +41,17 @@
             width: 100%;
             position: relative;
             line-height: 1.6;
+            padding-top: var(--header-height);
         }
 
-        /* --- SCROLL LOCK: Mencegah background di-scroll saat modal / menu terbuka --- */
+        /* --- SCROLL LOCK ROBUST --- */
         body.no-scroll {
+            position: fixed;
+            top: var(--scroll-top, 0);
+            left: 0;
+            right: 0;
+            width: 100%;
             overflow: hidden;
-            height: 100vh;
         }
 
         ::-webkit-scrollbar { width: 8px; }
@@ -54,16 +60,19 @@
 
         .svg-icon { width: 18px; height: 18px; fill: currentColor; display: inline-block; vertical-align: middle; }
 
-        /* --- HEADER --- */
+        /* --- HEADER (FIXED) --- */
         header {
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
             z-index: 1000;
             background: var(--bg-glass);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border-color);
-            padding: 15px 5%;
+            padding: 0 5%;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -173,6 +182,7 @@
             background: none;
             border: none;
             padding: 5px;
+            z-index: 1100;
         }
 
         .hamburger span {
@@ -197,7 +207,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 70px 0 60px;
+            padding: 60px 0 60px;
             position: relative;
         }
 
@@ -471,13 +481,6 @@
             font-weight: 900;
             color: var(--gold-primary);
             margin-bottom: 25px;
-        }
-
-        .product-price span {
-            font-size: 14px;
-            color: var(--text-muted);
-            text-decoration: line-through;
-            margin-left: 10px;
         }
 
         .buy-btn {
@@ -1106,18 +1109,47 @@
 
         .toast-message { font-size: 14px; font-weight: 600; }
 
-        /* --- TABLET & DESKTOP RESPONSIVE FIXES --- */
+        /* ============================================ */
+        /* --- RESPONSIVE: TABLET (768px - 1024px) --- */
+        /* ============================================ */
         @media (min-width: 769px) and (max-width: 1024px) {
-            .hero-title { font-size: 52px; }
+            :root { --header-height: 70px; }
+            .brand-name { font-size: 17px; }
+            .logo-img { width: 40px; height: 40px; }
             nav.desktop-nav { gap: 15px; }
-            nav.desktop-nav a { font-size: 13px; }
-            .search-input { width: 150px; }
-            .search-input:focus { width: 200px; }
+            nav.desktop-nav a { font-size: 12px; }
+            .search-input { width: 140px; font-size: 13px; padding: 8px 12px 8px 35px; }
+            .search-input:focus { width: 180px; }
+            .search-icon { left: 11px; width: 15px; height: 15px; }
+            .hero { padding: 50px 0 40px; }
+            .hero-title { font-size: 50px; letter-spacing: 3px; }
+            .hero-subtitle { font-size: 15px; letter-spacing: 4px; }
+            .paks-text { font-size: 18px; letter-spacing: 6px; }
+            .game-badge-text { font-size: 12px; }
             .product-grid { 
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
             }
-            .modal-content { max-width: 550px; }
+            .product-card { padding: 25px 20px; }
+            .product-name { font-size: 19px; }
+            .product-price { font-size: 24px; }
+            .section-title { font-size: 28px; }
+            .modal-content { max-width: 520px; padding: 25px; }
+        }
+
+        /* ============================================ */
+        /* --- RESPONSIVE: DESKTOP BESAR (>1400px) --- */
+        /* ============================================ */
+        @media (min-width: 1400px) {
+            main { max-width: 1320px; }
+            .product-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* ============================================ */
+        /* --- RESPONSIVE: MEDIUM DESKTOP (1025-1399) --- */
+        /* ============================================ */
+        @media (min-width: 1025px) and (max-width: 1399px) {
+            .product-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
         @media (max-width: 992px) {
@@ -1127,27 +1159,36 @@
             .login-btn { display: none; }
         }
 
+        /* ============================================ */
+        /* --- RESPONSIVE: MOBILE (<768px) --- */
+        /* ============================================ */
         @media (max-width: 768px) {
-            header { padding: 15px 20px; }
-            .brand-name { font-size: 16px; }
-            .hero-title { font-size: 34px; letter-spacing: 2px; }
-            .hero-subtitle { font-size: 13px; letter-spacing: 3px; }
-            .paks-text { font-size: 16px; letter-spacing: 5px; padding: 5px 15px; }
-            .section-title { font-size: 24px; }
-            .product-grid { grid-template-columns: 1fr; }
+            :root { --header-height: 65px; }
+            header { padding: 0 20px; }
+            .brand-name { font-size: 15px; }
+            .logo-img { width: 38px; height: 38px; }
+            .hero { padding: 40px 0 30px; }
+            .hero-title { font-size: 32px; letter-spacing: 2px; }
+            .hero-subtitle { font-size: 12px; letter-spacing: 2px; }
+            .paks-text { font-size: 14px; letter-spacing: 4px; padding: 5px 12px; }
+            .section-title { font-size: 22px; }
+            .product-grid { grid-template-columns: 1fr; gap: 20px; }
+            .product-card { padding: 25px 20px; }
+            .product-name { font-size: 18px; }
+            .product-price { font-size: 22px; }
             .toast { bottom: 20px; right: 20px; left: 20px; transform: translateY(150%); }
             .toast.show { transform: translateY(0); }
             .hero-cta { flex-direction: column; width: 100%; max-width: 300px; }
-            .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+            .btn-primary, .btn-secondary { width: 100%; text-align: center; padding: 14px 30px; }
             .game-badge { padding: 6px 15px 6px 8px; }
             .pubg-logo { width: 26px; height: 26px; }
-            .game-badge-text { font-size: 12px; letter-spacing: 1px; }
-            .server-tag { font-size: 11px; padding: 6px 12px; }
+            .game-badge-text { font-size: 11px; letter-spacing: 1px; }
+            .server-tag { font-size: 10px; padding: 6px 10px; letter-spacing: 1px; }
             .payment-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
             .payment-option { padding: 12px 8px; }
             .payment-logo { width: 48px; height: 48px; font-size: 14px; }
             .payment-name { font-size: 11px; }
-            .modal-content { padding: 20px; }
+            .modal-content { padding: 20px; max-width: 100%; }
             .checkout-steps .step-label { font-size: 9px; }
             .step-circle { width: 28px; height: 28px; font-size: 12px; }
             .footer-links-row { gap: 15px; }
@@ -1165,23 +1206,30 @@
                 text-align: left;
                 font-size: 14px;
             }
+            .brand-name { font-size: 13px; }
         }
 
-        /* Mobile Menu */
+        /* ============================================ */
+        /* --- MOBILE MENU OVERLAY --- */
+        /* ============================================ */
         .mobile-menu {
             position: fixed;
-            top: 70px; left: 0;
+            top: var(--header-height);
+            left: 0;
+            right: 0;
+            bottom: 0;
             width: 100%;
-            height: calc(100vh - 70px);
+            height: calc(100vh - var(--header-height));
             background: var(--bg-dark);
             z-index: 999;
             display: flex;
             flex-direction: column;
             padding: 30px;
-            gap: 20px;
+            gap: 10px;
             transform: translateX(-100%);
             transition: var(--transition);
-            overflow-y: auto; /* Agar menu bisa di-scroll internal jika kontennya panjang */
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .mobile-menu.active { transform: translateX(0); }
@@ -1204,8 +1252,7 @@
     <!-- HEADER -->
     <header>
         <div class="logo-container" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-            <!-- LOGO SHADOWCHEAT DARI GITHUB (CDN) -->
-            <img src="https://cdn.jsdelivr.net/gh/Cokocheat/Pubgm@main/icon.png" alt="Shadowcheat Logo" class="logo-img">
+            <img src="https://cdn.jsdelivr.net/gh/Cokocheat/Pubgm@main/icon.png" alt="Shadowcheat Logo" class="logo-img" onerror="this.style.background='linear-gradient(135deg, #ffaa00, #b8860b)'; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%22 y=%2265%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22black%22 font-family=%22Orbitron,sans-serif%22 font-weight=%22bold%22>S</text></svg>';">
             <div class="brand-name">SHADOW<span>CHEAT</span> PROJECT</div>
         </div>
 
@@ -1227,7 +1274,7 @@
             <button class="login-btn" id="loginBtn">Login</button>
         </div>
 
-        <button class="hamburger" id="hamburgerBtn">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
             <span></span>
             <span></span>
             <span></span>
@@ -1240,15 +1287,14 @@
         <a href="#produk" class="mobile-link">Produk</a>
         <a href="#faq" class="mobile-link">FAQ</a>
         <a href="https://t.me/scp281025" target="_blank">Support</a>
-        <button class="login-btn" style="margin-top: 20px; width: 100%;" onclick="document.getElementById('loginModal').classList.add('active'); document.body.classList.add('no-scroll');">Login</button>
+        <button class="login-btn" style="margin-top: 20px; width: 100%;" onclick="openModal('loginModal')">Login</button>
     </div>
 
     <!-- MAIN CONTENT -->
     <main>
         <section class="hero" id="home">
             <div class="game-badge">
-                <!-- LOGO PUBG DARI GITHUB (CDN) -->
-                <img src="https://cdn.jsdelivr.net/gh/Cokocheat/Pubgm@main/Wallpaper-PUBG-Mobile-1.jpg" alt="PUBG Mobile" class="pubg-logo">
+                <img src="https://cdn.jsdelivr.net/gh/Cokocheat/Pubgm@main/Wallpaper-PUBG-Mobile-1.jpg" alt="PUBG Mobile" class="pubg-logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23ffaa00%22/><text x=%2250%22 y=%2265%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22black%22 font-weight=%22bold%22>P</text></svg>';">
                 <span class="game-badge-text">PUBG MOBILE</span>
             </div>
 
@@ -1446,7 +1492,6 @@
                 </div>
             </div>
 
-            <!-- STEP 1 -->
             <div class="checkout-step active" id="step1">
                 <div class="summary-box">
                     <div class="summary-row">
@@ -1475,7 +1520,6 @@
                 </div>
             </div>
 
-            <!-- STEP 2 -->
             <div class="checkout-step" id="step2">
                 <div class="payment-section-title">Pilih Metode Pembayaran</div>
                 <div class="payment-grid">
@@ -1506,7 +1550,6 @@
                 </div>
             </div>
 
-            <!-- STEP 3 -->
             <div class="checkout-step" id="step3">
                 <div class="payment-detail-box">
                     <div class="payment-detail-header">
@@ -1550,48 +1593,52 @@
 
     <script>
         // ============ DATA METODE PEMBAYARAN ============
-        // GANTI [QR_IMAGE] DENGAN URL FOTO QR CODE ANDA!
         const QR_IMAGE_URL = "[QR_IMAGE]";
 
         const paymentData = {
-            'DANA': {
-                type: 'E-Wallet',
-                logoClass: 'dana',
-                logoText: 'DANA',
-                displayMode: 'contact'
-            },
-            'QRIS': {
-                type: 'Scan QR Code',
-                logoClass: 'qris',
-                logoText: 'QRIS',
-                displayMode: 'qr'
-            },
-            'SeaBank': {
-                type: 'Transfer Bank',
-                logoClass: 'seabank',
-                logoText: 'SB',
-                displayMode: 'contact'
-            },
-            'BNI': {
-                type: 'Transfer Bank',
-                logoClass: 'bni',
-                logoText: 'BNI',
-                displayMode: 'contact'
-            }
+            'DANA': { type: 'E-Wallet', logoClass: 'dana', logoText: 'DANA', displayMode: 'contact' },
+            'QRIS': { type: 'Scan QR Code', logoClass: 'qris', logoText: 'QRIS', displayMode: 'qr' },
+            'SeaBank': { type: 'Transfer Bank', logoClass: 'seabank', logoText: 'SB', displayMode: 'contact' },
+            'BNI': { type: 'Transfer Bank', logoClass: 'bni', logoText: 'BNI', displayMode: 'contact' }
         };
 
         let checkoutData = { product: '', price: 0, duration: '', paymentMethod: '' };
 
         function formatRupiah(num) { return 'Rp ' + num.toLocaleString('id-ID'); }
 
+        // ============ ROBUST SCROLL LOCK ============
+        function lockScroll() {
+            const scrollY = window.scrollY || window.pageYOffset;
+            document.body.style.top = `-${scrollY}px`;
+            document.body.classList.add('no-scroll');
+        }
+
+        function unlockScroll() {
+            const scrollY = document.body.style.top;
+            document.body.classList.remove('no-scroll');
+            document.body.style.top = '';
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        }
+
+        // ============ OPEN/CLOSE MODAL ============
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            lockScroll();
+        }
+
+        function closeModal(modalId) { 
+            document.getElementById(modalId).classList.remove('active'); 
+            unlockScroll();
+        }
+
+        // ============ CHECKOUT ============
         function openCheckout(product, price, duration) {
             checkoutData = { product, price, duration, paymentMethod: '' };
             document.getElementById('summaryProduct').textContent = product;
             document.getElementById('summaryDuration').textContent = duration;
             document.getElementById('summaryPrice').textContent = formatRupiah(price);
             resetCheckoutSteps();
-            document.getElementById('checkoutModal').classList.add('active');
-            document.body.classList.add('no-scroll');
+            openModal('checkoutModal');
         }
 
         function resetCheckoutSteps() {
@@ -1671,21 +1718,16 @@
             setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
-        function closeModal(modalId) { 
-            document.getElementById(modalId).classList.remove('active'); 
-            document.body.classList.remove('no-scroll');
-        }
-
+        // ============ EVENT LISTENERS ============
         window.addEventListener('click', function(event) {
             if (event.target.classList.contains('modal-overlay')) {
                 event.target.classList.remove('active');
-                document.body.classList.remove('no-scroll');
+                unlockScroll();
             }
         });
 
         document.getElementById('loginBtn').addEventListener('click', function() {
-            document.getElementById('loginModal').classList.add('active');
-            document.body.classList.add('no-scroll');
+            openModal('loginModal');
         });
 
         function handleLogin() {
@@ -1723,20 +1765,18 @@
             });
         });
 
-        // ============ MOBILE MENU & SCROLL LOCK ============
+        // ============ MOBILE MENU ============
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
         hamburgerBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('active');
-            const isActive = mobileMenu.classList.contains('active');
+            const isActive = mobileMenu.classList.toggle('active');
             
-            // Kunci scroll background
             if (isActive) {
-                document.body.classList.add('no-scroll');
+                lockScroll();
             } else {
-                document.body.classList.remove('no-scroll');
+                unlockScroll();
             }
 
             const spans = hamburgerBtn.querySelectorAll('span');
@@ -1754,7 +1794,7 @@
         mobileLinks.forEach(link => {
             link.addEventListener('click', function() {
                 mobileMenu.classList.remove('active');
-                document.body.classList.remove('no-scroll'); // Buka kunci saat link diklik
+                unlockScroll();
                 const spans = hamburgerBtn.querySelectorAll('span');
                 spans[0].style.transform = 'none';
                 spans[1].style.opacity = '1';
@@ -1762,13 +1802,19 @@
             });
         });
 
+        // ============ SMOOTH SCROLL ============
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (href !== '#') {
                     e.preventDefault();
                     const target = document.querySelector(href);
-                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                    if (target) {
+                        const headerOffset = document.querySelector('header').offsetHeight;
+                        const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - headerOffset - 10;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
                 }
             });
         });
