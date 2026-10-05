@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SVA Bypass - Premium Store</title>
+    <title>Shadowcheat Project - Premium Store</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -34,17 +34,23 @@
             overflow-x: hidden;
         }
 
-        /* --- HEADER --- */
+        /* --- SCROLLBAR --- */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-color); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-primary); border-radius: 10px; }
+
+        /* --- HEADER & NAVBAR --- */
         header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 15px 40px;
             border-bottom: 1px solid var(--border-gold);
-            background: rgba(10, 10, 10, 0.9);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
-            position: relative;
-            z-index: 100;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo-container {
@@ -65,20 +71,36 @@
 
         .brand-name {
             font-family: 'Orbitron', sans-serif;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 900;
             letter-spacing: 2px;
         }
 
-        .brand-name span {
-            color: var(--gold-primary);
+        .brand-name span { color: var(--gold-primary); }
+
+        /* Navigasi */
+        nav {
+            display: flex;
+            gap: 30px;
         }
 
-        /* --- HEADER MENU (TITIK 3 & SETTINGS) --- */
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover { color: var(--gold-primary); text-shadow: 0 0 10px var(--gold-primary); }
+
+        /* Header Actions (Settings & Titik 3) */
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
             position: relative;
         }
 
@@ -104,7 +126,7 @@
             transform: scale(1.05);
         }
 
-        /* Dropdown Menu */
+        /* Dropdown Menu Titik 3 */
         .dropdown-menu {
             position: absolute;
             top: 60px;
@@ -114,16 +136,13 @@
             border-radius: 10px;
             width: 200px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            display: none; /* Tersembunyi secara default */
+            display: none;
             flex-direction: column;
             overflow: hidden;
-            z-index: 1000;
+            z-index: 1001;
         }
 
-        .dropdown-menu.active {
-            display: flex;
-            animation: fadeIn 0.3s ease;
-        }
+        .dropdown-menu.active { display: flex; animation: fadeIn 0.3s ease; }
 
         .dropdown-item {
             padding: 15px 20px;
@@ -135,27 +154,14 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            cursor: pointer;
         }
 
-        .dropdown-item:hover {
-            background: rgba(255, 170, 0, 0.1);
-            color: var(--gold-primary);
-        }
+        .dropdown-item:hover { background: rgba(255, 170, 0, 0.1); color: var(--gold-primary); }
+        .dropdown-item.logout { border-top: 1px solid rgba(255, 255, 255, 0.05); color: #ff4444; }
+        .dropdown-item.logout:hover { background: rgba(255, 68, 68, 0.1); color: #ff4444; }
 
-        .dropdown-item.logout {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: #ff4444;
-        }
-        
-        .dropdown-item.logout:hover {
-            background: rgba(255, 68, 68, 0.1);
-            color: #ff4444;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* --- MAIN CONTENT --- */
         main {
@@ -163,14 +169,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             padding: 60px 20px;
             text-align: center;
         }
 
         .hero-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 72px;
+            font-size: 64px;
             font-weight: 900;
             letter-spacing: 5px;
             background: linear-gradient(90deg, var(--gold-primary), var(--gold-secondary));
@@ -186,111 +191,115 @@
             letter-spacing: 8px;
             color: var(--text-muted);
             text-transform: uppercase;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
-        /* Feature Cards */
-        .features-grid {
-            display: flex;
+        /* --- KATALOG PRODUK --- */
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            color: var(--gold-primary);
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            max-width: 900px;
+            max-width: 1200px;
             width: 100%;
-            margin-bottom: 50px;
-            justify-content: center;
+            margin-bottom: 60px;
         }
 
-        .feature-card {
+        .product-card {
             background: var(--panel-bg);
             border: 1px solid var(--border-gold);
             border-radius: 15px;
             padding: 30px;
-            flex: 1;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 20px;
+            text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             transition: transform 0.3s ease, border-color 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 170, 0, 0.05), transparent);
-            transform: translateX(-100%);
-            transition: 0.5s;
-        }
-
-        .feature-card:hover::before {
-            transform: translateX(100%);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
+        .product-card:hover {
+            transform: translateY(-10px);
             border-color: var(--gold-primary);
-            box-shadow: 0 10px 30px rgba(255, 170, 0, 0.15);
+            box-shadow: 0 15px 40px rgba(255, 170, 0, 0.2);
         }
 
-        .feature-icon {
-            font-size: 30px;
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--gold-primary);
+            color: #000;
+            font-weight: 700;
+            font-size: 12px;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            text-transform: uppercase;
+        }
+
+        .product-icon {
+            font-size: 40px;
             color: var(--gold-primary);
+            margin-bottom: 15px;
             background: rgba(255, 170, 0, 0.1);
-            padding: 15px;
-            border-radius: 10px;
+            padding: 20px;
+            border-radius: 50%;
         }
 
-        .feature-text h3 {
-            font-size: 24px;
+        .product-name {
+            font-size: 22px;
             font-weight: 700;
             margin-bottom: 5px;
+            text-transform: uppercase;
         }
 
-        .feature-text p {
+        .product-desc {
             color: var(--text-muted);
-            font-size: 16px;
+            font-size: 14px;
+            margin-bottom: 20px;
         }
 
-        /* --- CTA BUTTON (BELI KEY) --- */
-        .cta-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
+        .product-price {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--gold-primary);
+            margin-bottom: 20px;
         }
 
         .buy-btn {
             background: linear-gradient(90deg, #b8860b, var(--gold-primary));
             color: #000;
             font-family: 'Orbitron', sans-serif;
-            font-size: 20px;
-            font-weight: 900;
-            padding: 20px 60px;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 15px 30px;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 2px;
-            box-shadow: 0 0 25px rgba(255, 170, 0, 0.5);
+            box-shadow: 0 0 15px rgba(255, 170, 0, 0.4);
             transition: all 0.3s ease;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            animation: pulse 2s infinite;
+            width: 100%;
+            display: inline-block;
         }
 
         .buy-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(255, 170, 0, 0.9);
+            box-shadow: 0 0 25px rgba(255, 170, 0, 0.8);
             background: linear-gradient(90deg, var(--gold-primary), #ffcc00);
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 170, 0, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 170, 0, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 170, 0, 0); }
         }
 
         /* --- FOOTER --- */
@@ -305,32 +314,102 @@
             font-size: 14px;
         }
 
-        .footer-status {
-            display: flex;
+        /* --- MODAL PENGATURAN --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+            display: none;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            z-index: 2000;
         }
 
-        .status-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #00ff00;
+        .modal-overlay.active { display: flex; }
+
+        .modal-content {
+            background: var(--panel-bg);
+            border: 1px solid var(--gold-primary);
+            border-radius: 15px;
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 0 50px rgba(255, 170, 0, 0.2);
+            text-align: left;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-gold);
+            padding-bottom: 10px;
+        }
+
+        .modal-header h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--gold-primary);
+            font-size: 20px;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .setting-item:last-child { border-bottom: none; }
+
+        .setting-item span { font-size: 16px; font-weight: 600; }
+
+        /* Toggle Switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #333;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
             border-radius: 50%;
-            box-shadow: 0 0 10px #00ff00;
-            animation: blink 1.5s infinite;
         }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
+        input:checked + .slider { background-color: var(--gold-primary); }
+        input:checked + .slider:before { transform: translateX(26px); }
 
         /* Responsive */
         @media (max-width: 768px) {
-            header { padding: 15px 20px; }
-            .hero-title { font-size: 40px; }
-            .features-grid { flex-direction: column; }
-            .buy-btn { padding: 15px 30px; font-size: 16px; width: 100%; justify-content: center;}
+            header { flex-direction: column; gap: 15px; padding: 15px; }
+            nav { gap: 15px; font-size: 14px; }
+            .hero-title { font-size: 36px; }
+            .product-grid { grid-template-columns: 1fr; }
             footer { flex-direction: column; gap: 10px; text-align: center; }
         }
     </style>
@@ -340,91 +419,200 @@
     <!-- HEADER -->
     <header>
         <div class="logo-container">
-            <!-- Ganti src dengan link logo SVA Anda -->
-            <img src="[LOGO_SVA_ANDA]" alt="SVA Logo" class="logo-img">
-            <div class="brand-name">SVA <span>BYPASS</span></div>
+            <!-- Ganti src dengan link logo SVA/Shadowcheat Anda -->
+            <img src="[LOGO_ANDA]" alt="Shadowcheat Logo" class="logo-img">
+            <div class="brand-name">SHADOW<span>CHEAT</span> PROJECT</div>
         </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#produk">Produk</a>
+            <a href="#fitur">Fitur</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
 
         <div class="header-actions">
             <!-- Tombol Pengaturan -->
-            <button class="icon-btn" title="Pengaturan">
-                ⚙️
-            </button>
+            <button class="icon-btn" id="settingsBtn" title="Pengaturan">⚙️</button>
             
             <!-- Tombol Titik 3 -->
-            <button class="icon-btn" id="menuBtn" title="Menu">
-                ⋮
-            </button>
+            <button class="icon-btn" id="menuBtn" title="Menu">⋮</button>
 
             <!-- Dropdown Menu Titik 3 -->
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="#" class="dropdown-item">🏠 Home</a>
+                <a href="#home" class="dropdown-item">🏠 Home</a>
                 <a href="#" class="dropdown-item">👤 Profile</a>
-                <a href="#" class="dropdown-item">💬 Support</a>
+                <a href="https://t.me/scp281025" target="_blank" class="dropdown-item">💬 Support</a>
                 <a href="#" class="dropdown-item logout">🚪 Logout</a>
             </div>
         </div>
     </header>
 
     <!-- MAIN CONTENT -->
-    <main>
-        <h1 class="hero-title">SVA BYPASS</h1>
-        <p class="hero-subtitle">Android Non-Root</p>
+    <main id="home">
+        <h1 class="hero-title">SHADOWCHEAT PROJECT</h1>
+        <p class="hero-subtitle">Premium Digital Store</p>
 
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🎮</div>
-                <div class="feature-text">
-                    <h3>Game</h3>
-                    <p>PUBGM & BGMI</p>
+        <!-- KATALOG PRODUK -->
+        <div id="produk" style="width: 100%; max-width: 1200px;">
+            <h2 class="section-title">Katalog Produk</h2>
+            <div class="product-grid">
+                
+                <!-- Produk 1 -->
+                <div class="product-card">
+                    <div class="product-badge">POPULER</div>
+                    <div class="product-icon">🔑</div>
+                    <h3 class="product-name">Key 1 Hari</h3>
+                    <p class="product-desc">Akses penuh selama 24 jam. Support Android Non-Root.</p>
+                    <div class="product-price">Rp 15.000</div>
+                    <a href="https://t.me/scp281025" target="_blank" class="buy-btn">BELI SEKARANG</a>
                 </div>
+
+                <!-- Produk 2 -->
+                <div class="product-card">
+                    <div class="product-icon">🔑</div>
+                    <h3 class="product-name">Key 7 Hari</h3>
+                    <p class="product-desc">Akses penuh selama 7 hari. Auto update & prioritas support.</p>
+                    <div class="product-price">Rp 50.000</div>
+                    <a href="https://t.me/scp281025" target="_blank" class="buy-btn">BELI SEKARANG</a>
+                </div>
+
+                <!-- Produk 3 -->
+                <div class="product-card">
+                    <div class="product-badge" style="background: #ff4444; color: #fff;">BEST VALUE</div>
+                    <div class="product-icon">👑</div>
+                    <h3 class="product-name">Key 30 Hari</h3>
+                    <p class="product-desc">Akses penuh 1 bulan. Fitur terlengkap & garansi penuh.</p>
+                    <div class="product-price">Rp 150.000</div>
+                    <a href="https://t.me/scp281025" target="_blank" class="buy-btn">BELI SEKARANG</a>
+                </div>
+
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <div class="feature-text">
-                    <h3>Support</h3>
-                    <p>Android Non-Root</p>
+        </div>
+
+        <!-- FITUR -->
+        <div id="fitur" style="width: 100%; max-width: 1200px; margin-top: 40px;">
+            <h2 class="section-title">Mengapa Memilih Kami?</h2>
+            <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                <div style="background: var(--panel-bg); padding: 20px; border-radius: 10px; border: 1px solid var(--border-gold); flex: 1; min-width: 250px;">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 10px;">🔒 Aman & Terjamin</h3>
+                    <p style="color: var(--text-muted);">Sistem keamanan berlapis untuk melindungi akun Anda.</p>
+                </div>
+                <div style="background: var(--panel-bg); padding: 20px; border-radius: 10px; border: 1px solid var(--border-gold); flex: 1; min-width: 250px;">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 10px;">⚡ Update Cepat</h3>
+                    <p style="color: var(--text-muted);">Tim kami selalu memperbarui produk setiap ada patch terbaru.</p>
+                </div>
+                <div style="background: var(--panel-bg); padding: 20px; border-radius: 10px; border: 1px solid var(--border-gold); flex: 1; min-width: 250px;">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 10px;">💬 Support 24/7</h3>
+                    <p style="color: var(--text-muted);">Customer service siap membantu Anda kapan saja via Telegram.</p>
                 </div>
             </div>
         </div>
 
-        <div class="cta-container">
-            <!-- Tombol Beli Key yang mengarah ke Telegram -->
-            <a href="https://t.me/scp281025" target="_blank" class="buy-btn">
-                🛒 BELI KEY SEKARANG
-            </a>
-            <p style="color: var(--text-muted); font-size: 14px;">Klik tombol di atas untuk membeli Key via Telegram</p>
-        </div>
     </main>
 
     <!-- FOOTER -->
-    <footer>
-        <div class="footer-status">
-            <div class="status-dot"></div>
-            <span>Safe & Secure - Android Non-Root</span>
+    <footer id="kontak">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 10px; height: 10px; background-color: #00ff00; border-radius: 50%; box-shadow: 0 0 10px #00ff00; animation: blink 1.5s infinite;"></div>
+            <span>Online - Safe & Secure</span>
         </div>
         <div>
-            &copy; 2024 SVA Bypass. All rights reserved.
+            Hubungi Kami: <a href="https://t.me/scp281025" target="_blank" style="color: var(--gold-primary); text-decoration: none;">Telegram Support</a>
         </div>
+        <div>&copy; 2024 Shadowcheat Project. All rights reserved.</div>
     </footer>
 
-    <!-- JAVASCRIPT UNTUK MENU TITIK 3 -->
+    <!-- MODAL PENGATURAN -->
+    <div class="modal-overlay" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>⚙️ Pengaturan</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="setting-item">
+                <span>Notifikasi Suara</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <span>Mode Gelap (Default)</span>
+                <label class="switch">
+                    <input type="checkbox" checked disabled>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <span>Auto Update</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div style="margin-top: 20px; text-align: center;">
+                <button class="buy-btn" id="saveSettings" style="font-size: 14px; padding: 10px 20px;">Simpan Pengaturan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
     <script>
-        // Mengambil elemen tombol dan menu
+        // 1. FUNGSI UNTUK MENU TITIK 3
         const menuBtn = document.getElementById('menuBtn');
         const dropdownMenu = document.getElementById('dropdownMenu');
 
-        // Fungsi untuk membuka/menutup menu saat tombol titik 3 diklik
         menuBtn.addEventListener('click', function(event) {
-            event.stopPropagation(); // Mencegah klik menyebar ke document
+            event.stopPropagation();
             dropdownMenu.classList.toggle('active');
         });
 
-        // Menutup menu jika user mengklik di luar area menu
+        // Menutup dropdown jika klik di luar
         document.addEventListener('click', function(event) {
             if (!dropdownMenu.contains(event.target) && event.target !== menuBtn) {
                 dropdownMenu.classList.remove('active');
             }
+        });
+
+        // 2. FUNGSI UNTUK MODAL PENGATURAN
+        const settingsBtn = document.getElementById('settingsBtn');
+        const settingsModal = document.getElementById('settingsModal');
+        const closeModal = document.getElementById('closeModal');
+        const saveSettings = document.getElementById('saveSettings');
+
+        settingsBtn.addEventListener('click', function() {
+            settingsModal.classList.add('active');
+        });
+
+        closeModal.addEventListener('click', function() {
+            settingsModal.classList.remove('active');
+        });
+
+        // Menutup modal jika klik di luar area modal
+        settingsModal.addEventListener('click', function(event) {
+            if (event.target === settingsModal) {
+                settingsModal.classList.remove('active');
+            }
+        });
+
+        saveSettings.addEventListener('click', function() {
+            alert('Pengaturan berhasil disimpan!');
+            settingsModal.classList.remove('active');
+        });
+
+        // 3. SMOOTH SCROLLING UNTUK NAVIGASI
+        document.querySelectorAll('nav a, .dropdown-item').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
         });
     </script>
 
