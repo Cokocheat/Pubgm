@@ -23,7 +23,12 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
+        
+        html { 
+            scroll-behavior: smooth; 
+            overflow-x: hidden; 
+            width: 100%; 
+        }
 
         body {
             background-color: var(--bg-dark);
@@ -35,6 +40,11 @@
             width: 100%;
             position: relative;
             line-height: 1.6;
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+            height: 100vh;
         }
 
         ::-webkit-scrollbar { width: 8px; }
@@ -395,6 +405,7 @@
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+            height: 100%;
         }
 
         .product-card:hover {
@@ -638,6 +649,8 @@
             max-height: 90vh;
             overflow-y: auto;
             margin: auto;
+            position: relative;
+            z-index: 2001;
         }
 
         .modal-overlay.active .modal-content { transform: scale(1); }
@@ -777,16 +790,37 @@
         .summary-row {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
+            align-items: flex-start;
+            padding: 12px 0;
+            gap: 20px;
             border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
         }
 
         .summary-row:last-child { border-bottom: none; padding-bottom: 0; }
 
-        .summary-label { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-        .summary-value { font-weight: 600; font-size: 15px; }
-        .summary-value.gold { color: var(--gold-primary); font-family: var(--font-heading); font-size: 18px; }
+        .summary-label { 
+            font-size: 13px; 
+            color: var(--text-muted); 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            flex-shrink: 0;
+        }
+        
+        .summary-value { 
+            font-weight: 600; 
+            font-size: 14px; 
+            text-align: right; 
+            flex-grow: 1;
+            word-break: break-word;
+            line-height: 1.5;
+        }
+        
+        .summary-value.gold { 
+            color: var(--gold-primary); 
+            font-family: var(--font-heading); 
+            font-size: 18px; 
+            white-space: nowrap;
+        }
 
         .payment-section-title {
             font-size: 14px;
@@ -1065,12 +1099,24 @@
 
         .toast-message { font-size: 14px; font-weight: 600; }
 
-        /* --- RESPONSIVE --- */
+        /* --- TABLET & DESKTOP RESPONSIVE FIXES --- */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-title { font-size: 52px; }
+            nav.desktop-nav { gap: 15px; }
+            nav.desktop-nav a { font-size: 13px; }
+            .search-input { width: 150px; }
+            .search-input:focus { width: 200px; }
+            .product-grid { 
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .modal-content { max-width: 550px; }
+        }
+
         @media (max-width: 992px) {
             nav.desktop-nav { display: none; }
             .hamburger { display: flex; }
             .search-container { display: none; }
-            .hero-title { font-size: 48px; }
             .login-btn { display: none; }
         }
 
@@ -1100,6 +1146,18 @@
             .footer-links-row { gap: 15px; }
             .footer-links-row a,
             .footer-links-row span { font-size: 13px; }
+        }
+
+        @media (max-width: 400px) {
+            .summary-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            .summary-value, .summary-value.gold {
+                text-align: left;
+                font-size: 14px;
+            }
         }
 
         /* Mobile Menu */
@@ -1138,6 +1196,7 @@
     <!-- HEADER -->
     <header>
         <div class="logo-container" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+            <!-- GANTI [LOGO_ANDA] DENGAN LINK LOGO SHADOWCHEAT YANG SUDAH DI-UPLOAD -->
             <img src="[LOGO_ANDA]" alt="Shadowcheat Logo" class="logo-img">
             <div class="brand-name">SHADOW<span>CHEAT</span> PROJECT</div>
         </div>
@@ -1173,14 +1232,15 @@
         <a href="#produk" class="mobile-link">Produk</a>
         <a href="#faq" class="mobile-link">FAQ</a>
         <a href="https://t.me/scp281025" target="_blank">Support</a>
-        <button class="login-btn" style="margin-top: 20px; width: 100%;" onclick="document.getElementById('loginModal').classList.add('active')">Login</button>
+        <button class="login-btn" style="margin-top: 20px; width: 100%;" onclick="document.getElementById('loginModal').classList.add('active'); document.body.classList.add('no-scroll');">Login</button>
     </div>
 
     <!-- MAIN CONTENT -->
     <main>
         <section class="hero" id="home">
             <div class="game-badge">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/PUBG_Mobile_logo.png/220px-PUBG_Mobile_logo.png" alt="PUBG Mobile" class="pubg-logo">
+                <!-- GANTI [PUBG_LOGO] DENGAN LINK LOGO PUBG YANG SUDAH DI-UPLOAD -->
+                <img src="[PUBG_LOGO]" alt="PUBG Mobile" class="pubg-logo">
                 <span class="game-badge-text">PUBG MOBILE</span>
             </div>
 
@@ -1448,7 +1508,6 @@
                             <span id="paymentDetailType">-</span>
                         </div>
                     </div>
-                    <!-- Konten dinamis: QR atau Contact Admin -->
                     <div id="paymentContentArea"></div>
                 </div>
 
@@ -1483,8 +1542,6 @@
 
     <script>
         // ============ DATA METODE PEMBAYARAN ============
-        // Untuk DANA/SeaBank/BNI: tidak menampilkan nomor, hanya pesan "Hubungi Admin".
-        // Untuk QRIS: menampilkan gambar QR code.
         // GANTI [QR_IMAGE] DENGAN URL FOTO QR CODE ANDA!
         const QR_IMAGE_URL = "[QR_IMAGE]";
 
@@ -1493,13 +1550,13 @@
                 type: 'E-Wallet',
                 logoClass: 'dana',
                 logoText: 'DANA',
-                displayMode: 'contact' // Hanya tampilkan pesan "Hubungi Admin"
+                displayMode: 'contact'
             },
             'QRIS': {
                 type: 'Scan QR Code',
                 logoClass: 'qris',
                 logoText: 'QRIS',
-                displayMode: 'qr' // Tampilkan gambar QR
+                displayMode: 'qr'
             },
             'SeaBank': {
                 type: 'Transfer Bank',
@@ -1519,7 +1576,6 @@
 
         function formatRupiah(num) { return 'Rp ' + num.toLocaleString('id-ID'); }
 
-        // ============ BUKA CHECKOUT ============
         function openCheckout(product, price, duration) {
             checkoutData = { product, price, duration, paymentMethod: '' };
             document.getElementById('summaryProduct').textContent = product;
@@ -1527,6 +1583,7 @@
             document.getElementById('summaryPrice').textContent = formatRupiah(price);
             resetCheckoutSteps();
             document.getElementById('checkoutModal').classList.add('active');
+            document.body.classList.add('no-scroll');
         }
 
         function resetCheckoutSteps() {
@@ -1542,7 +1599,6 @@
             checkoutData.paymentMethod = '';
         }
 
-        // ============ NAVIGASI STEP ============
         function goToStep(step) {
             if (step === 3 && checkoutData.paymentMethod === '') {
                 showToast('Silakan pilih metode pembayaran terlebih dahulu!');
@@ -1558,7 +1614,6 @@
             if (step === 3) fillPaymentDetail();
         }
 
-        // ============ PILIH PEMBAYARAN ============
         function selectPayment(method) {
             checkoutData.paymentMethod = method;
             document.querySelectorAll('.payment-option').forEach(el => {
@@ -1568,23 +1623,19 @@
             document.getElementById('btnToStep3').disabled = false;
         }
 
-        // ============ ISI DETAIL PEMBAYARAN ============
         function fillPaymentDetail() {
             const data = paymentData[checkoutData.paymentMethod];
             if (!data) return;
 
-            // Header info
             const logo = document.getElementById('paymentDetailLogo');
             logo.className = 'payment-detail-logo ' + data.logoClass;
             logo.textContent = data.logoText;
             document.getElementById('paymentDetailName').textContent = checkoutData.paymentMethod;
             document.getElementById('paymentDetailType').textContent = data.type;
 
-            // Konten dinamis
             const contentArea = document.getElementById('paymentContentArea');
 
             if (data.displayMode === 'qr') {
-                // Tampilkan QR Code
                 contentArea.innerHTML = `
                     <div class="qr-container">
                         <img src="${QR_IMAGE_URL}" alt="QRIS QR Code" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -1593,7 +1644,6 @@
                     </div>
                 `;
             } else {
-                // Tampilkan pesan "Hubungi Admin" (tanpa nomor)
                 contentArea.innerHTML = `
                     <div class="contact-admin-box">
                         <p>Detail pembayaran <strong>${checkoutData.paymentMethod}</strong> akan dikirim oleh admin melalui <strong>chat pribadi Telegram</strong>.</p>
@@ -1602,12 +1652,10 @@
                 `;
             }
 
-            // Total
             document.getElementById('totalPayment').textContent = formatRupiah(checkoutData.price);
             document.getElementById('confirmLink').href = 'https://t.me/scp281025';
         }
 
-        // ============ TOAST ============
         function showToast(message) {
             const toast = document.getElementById('toast');
             document.getElementById('toastMessage').textContent = message;
@@ -1615,16 +1663,21 @@
             setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
-        // ============ MODAL CLOSE ============
-        function closeModal(modalId) { document.getElementById(modalId).classList.remove('active'); }
+        function closeModal(modalId) { 
+            document.getElementById(modalId).classList.remove('active'); 
+            document.body.classList.remove('no-scroll');
+        }
 
         window.addEventListener('click', function(event) {
-            if (event.target.classList.contains('modal-overlay')) event.target.classList.remove('active');
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            }
         });
 
-        // ============ LOGIN ============
         document.getElementById('loginBtn').addEventListener('click', function() {
             document.getElementById('loginModal').classList.add('active');
+            document.body.classList.add('no-scroll');
         });
 
         function handleLogin() {
@@ -1637,7 +1690,6 @@
             document.getElementById('loginPass').value = '';
         }
 
-        // ============ FAQ ============
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', function() {
                 const parent = this.parentElement;
@@ -1654,7 +1706,6 @@
             });
         });
 
-        // ============ PENCARIAN ============
         document.getElementById('searchInput').addEventListener('keyup', function() {
             const searchValue = this.value.toLowerCase();
             document.querySelectorAll('.product-card').forEach(product => {
@@ -1664,7 +1715,6 @@
             });
         });
 
-        // ============ MOBILE MENU ============
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -1693,7 +1743,6 @@
             });
         });
 
-        // ============ SMOOTH SCROLL ============
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
