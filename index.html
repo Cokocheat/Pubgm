@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shadowcheat Project - PUBG Mobile Paks</title>
     
-    <!-- ===== PROTEKSI HTML ===== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
     <meta http-equiv="X-Frame-Options" content="DENY">
@@ -23,7 +22,6 @@
             --gold-glow: rgba(255, 170, 0, 0.4);
             --gold-glow-strong: rgba(255, 170, 0, 0.85);
             --blue-glow: rgba(0, 168, 232, 0.85);
-            --blue-primary: #00a8e8;
             --red-glow: rgba(255, 68, 68, 0.8);
             --green-glow: rgba(0, 255, 136, 0.7);
             --white-glow: rgba(255, 255, 255, 0.5);
@@ -43,15 +41,10 @@
             --header-height: 70px;
         }
 
-        /* ===== RESET & ANTI COPY ===== */
         * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box;
+            margin: 0; padding: 0; box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
             -webkit-touch-callout: none;
-            
-            /* ANTI COPY / PASTE */
             -webkit-user-select: none;
             -khtml-user-select: none;
             -moz-user-select: none;
@@ -59,29 +52,22 @@
             user-select: none;
         }
 
-        /* Izinkan select hanya di kolom input (untuk Login) */
         input, textarea {
             -webkit-user-select: text !important;
-            -khtml-user-select: text !important;
             -moz-user-select: text !important;
             -ms-user-select: text !important;
             user-select: text !important;
         }
 
-        /* Cegah gambar diseret */
         img {
             -webkit-user-drag: none;
-            -khtml-user-drag: none;
-            -moz-user-drag: none;
-            -o-user-drag: none;
             user-drag: none;
         }
 
-        /* ===== ANTI PRINT ===== */
         @media print {
             body * { display: none !important; }
             body::after {
-                content: "⚠️ Halaman ini dilindungi. Tidak dapat dicetak.";
+                content: "⚠️ Protected Page";
                 display: block;
                 text-align: center;
                 font-size: 24px;
@@ -109,8 +95,7 @@
         body.no-scroll {
             position: fixed;
             top: var(--scroll-top, 0);
-            left: 0;
-            right: 0;
+            left: 0; right: 0;
             width: 100%;
             overflow: hidden;
         }
@@ -121,23 +106,19 @@
 
         .svg-icon { width: 18px; height: 18px; fill: currentColor; display: inline-block; vertical-align: middle; }
 
-        /* ===== KILL TAP HIGHLIGHTS ===== */
         a, button, div, span, input, .logo-container, .hamburger,
         .nav-link, .footer-links-row a, .footer-contact a,
         .mobile-menu a, .server-tag, .faq-question, .payment-option,
         .close-modal, .game-badge, .login-btn, .buy-btn,
-        .btn-primary, .btn-secondary, .btn-checkout, .btn-next,
-        .btn-back, .btn-confirm, .icon-btn {
+        .btn-primary, .btn-secondary, .btn-checkout {
             -webkit-tap-highlight-color: transparent !important;
             -webkit-touch-callout: none !important;
             outline: none !important;
         }
 
-        a:focus, button:focus, div:focus, span:focus, input:focus {
-            outline: none !important;
-        }
+        a:focus, button:focus, div:focus, span:focus, input:focus { outline: none !important; }
 
-        /* ===== HEADER ===== */
+        /* HEADER */
         header {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -155,21 +136,12 @@
         }
 
         .logo-container { 
-            display: flex; 
-            align-items: center; 
-            gap: 12px; 
-            cursor: pointer;
-            padding: 5px 10px;
-            border-radius: 50px;
+            display: flex; align-items: center; gap: 12px; cursor: pointer;
+            padding: 5px 10px; border-radius: 50px;
             transition: var(--transition-fast);
         }
-        .logo-container:active {
-            transform: scale(0.97);
-            background: rgba(255, 170, 0, 0.1);
-        }
-        .logo-container:active .logo-img {
-            box-shadow: 0 0 35px var(--gold-glow-strong), 0 0 60px var(--gold-glow);
-        }
+        .logo-container:active { transform: scale(0.97); background: rgba(255, 170, 0, 0.1); }
+        .logo-container:active .logo-img { box-shadow: 0 0 35px var(--gold-glow-strong), 0 0 60px var(--gold-glow); }
 
         .logo-img {
             width: 45px; height: 45px;
@@ -183,10 +155,8 @@
 
         .brand-name {
             font-family: var(--font-heading);
-            font-size: 20px;
-            font-weight: 900;
-            letter-spacing: 1px;
-            line-height: 1.2;
+            font-size: 20px; font-weight: 900;
+            letter-spacing: 1px; line-height: 1.2;
         }
         .brand-name span { color: var(--gold-primary); }
 
@@ -195,8 +165,7 @@
         .nav-link {
             color: var(--text-main);
             text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
+            font-size: 15px; font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
             position: relative;
@@ -217,12 +186,8 @@
             border-radius: 2px;
         }
 
-        .nav-link:hover { 
-            color: var(--gold-primary);
-            text-shadow: 0 0 10px var(--gold-glow);
-        }
+        .nav-link:hover { color: var(--gold-primary); text-shadow: 0 0 10px var(--gold-glow); }
         .nav-link:hover::after { width: 100%; }
-
         .nav-link:active {
             transform: scale(0.95);
             color: var(--gold-primary);
@@ -245,7 +210,6 @@
         }
 
         .search-input:hover { border-color: rgba(255, 170, 0, 0.4); }
-
         .search-input:focus {
             width: 250px;
             border-color: var(--gold-primary);
@@ -266,18 +230,15 @@
             background: linear-gradient(90deg, #b8860b, var(--gold-primary));
             color: #000;
             font-family: var(--font-heading);
-            font-size: 14px;
-            font-weight: 700;
+            font-size: 14px; font-weight: 700;
             padding: 12px 30px;
-            border: none;
-            border-radius: 50px;
+            border: none; border-radius: 50px;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: var(--transition-fast);
             box-shadow: 0 0 15px var(--gold-glow);
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
 
         .login-btn:hover { 
@@ -285,7 +246,6 @@
             box-shadow: 0 5px 25px var(--gold-glow), 0 0 40px var(--gold-glow);
             filter: brightness(1.1);
         }
-
         .login-btn:active {
             transform: scale(0.94);
             box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow);
@@ -299,17 +259,12 @@
             cursor: pointer;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 10px;
-            border-radius: 12px;
+            padding: 10px; border-radius: 12px;
             z-index: 1100;
             transition: var(--transition-fast);
         }
 
-        .hamburger:hover {
-            border-color: var(--gold-primary);
-            box-shadow: 0 0 15px var(--gold-glow);
-        }
-
+        .hamburger:hover { border-color: var(--gold-primary); box-shadow: 0 0 15px var(--gold-glow); }
         .hamburger:active {
             transform: scale(0.9);
             background: rgba(255, 170, 0, 0.15);
@@ -326,14 +281,8 @@
 
         .hamburger:active span { background: var(--gold-primary); box-shadow: 0 0 8px var(--gold-glow); }
 
-        /* ===== MAIN / HERO ===== */
-        main {
-            padding: 0 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-            overflow: hidden;
-        }
+        /* HERO */
+        main { padding: 0 5%; max-width: 1400px; margin: 0 auto; width: 100%; overflow: hidden; }
 
         .hero {
             display: flex;
@@ -368,12 +317,9 @@
             margin-bottom: 18px;
             box-shadow: 0 0 20px rgba(255, 170, 0, 0.2);
             animation: floatBadge 3s ease-in-out infinite;
-            transition: var(--transition);
         }
 
-        .game-badge:hover {
-            box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 50px var(--gold-glow);
-        }
+        .game-badge:hover { box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 50px var(--gold-glow); }
 
         @keyframes floatBadge {
             0%, 100% { transform: translateY(0); }
@@ -390,8 +336,7 @@
 
         .game-badge-text {
             font-family: var(--font-heading);
-            font-size: 14px;
-            font-weight: 700;
+            font-size: 14px; font-weight: 700;
             letter-spacing: 2px;
             color: var(--gold-primary);
             text-transform: uppercase;
@@ -399,8 +344,7 @@
 
         .paks-text {
             font-family: var(--font-heading);
-            font-size: 20px;
-            font-weight: 700;
+            font-size: 20px; font-weight: 700;
             letter-spacing: 6px;
             color: var(--gold-primary);
             text-transform: uppercase;
@@ -419,8 +363,7 @@
 
         .hero-title {
             font-family: var(--font-heading);
-            font-size: 60px;
-            font-weight: 900;
+            font-size: 60px; font-weight: 900;
             letter-spacing: 3px;
             background: linear-gradient(90deg, #fff, var(--gold-primary), #fff);
             background-size: 200% auto;
@@ -460,8 +403,7 @@
             border: 1px solid var(--border-color);
             padding: 9px 20px;
             border-radius: 50px;
-            font-size: 12px;
-            font-weight: 700;
+            font-size: 12px; font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--text-main);
@@ -511,17 +453,11 @@
             box-shadow: 0 0 8px currentColor;
         }
 
-        .hero-cta { 
-            display: flex; 
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+        .hero-cta { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
 
         .btn-primary, .btn-secondary {
             font-family: var(--font-heading);
-            font-size: 15px;
-            font-weight: 700;
+            font-size: 15px; font-weight: 700;
             padding: 16px 45px;
             border-radius: 50px;
             cursor: pointer;
@@ -531,8 +467,7 @@
             text-decoration: none;
             display: inline-block;
             border: none;
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
 
         .btn-primary {
@@ -573,7 +508,7 @@
             box-shadow: 0 0 30px var(--gold-glow-strong), inset 0 0 30px rgba(255, 170, 0, 0.3);
         }
 
-        /* ===== SECTION HEADER ===== */
+        /* SECTION */
         .section-header { text-align: center; margin-bottom: 50px; }
 
         .section-title {
@@ -588,7 +523,6 @@
 
         .section-desc { color: var(--text-muted); font-size: 15px; }
 
-        /* ===== PRODUK ===== */
         #produk { padding: 70px 0; }
 
         .product-grid {
@@ -632,8 +566,8 @@
             box-shadow: 0 0 15px var(--gold-glow);
         }
 
-        .product-badge.hot { background: var(--danger-red); color: #fff; box-shadow: 0 0 15px var(--red-glow); }
-        .product-badge.permanent { background: linear-gradient(90deg, #ff4444, #ff8800); color: #fff; box-shadow: 0 0 15px var(--red-glow); }
+        .product-badge.hot { background: var(--danger-red); color: #fff; }
+        .product-badge.permanent { background: linear-gradient(90deg, #ff4444, #ff8800); color: #fff; }
 
         .product-icon-box {
             width: 80px; height: 80px;
@@ -652,19 +586,12 @@
             transform: scale(1.08);
         }
 
-        .product-icon-box svg { 
-            width: 36px; height: 36px; 
-            fill: var(--gold-primary);
-            transition: var(--transition);
-        }
+        .product-icon-box svg { width: 36px; height: 36px; fill: var(--gold-primary); transition: var(--transition); }
 
-        .product-card:hover .product-icon-box svg {
-            filter: drop-shadow(0 0 8px var(--gold-glow-strong));
-        }
+        .product-card:hover .product-icon-box svg { filter: drop-shadow(0 0 8px var(--gold-glow-strong)); }
 
         .product-name {
-            font-size: 22px;
-            font-weight: 700;
+            font-size: 22px; font-weight: 700;
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -679,8 +606,7 @@
 
         .product-price {
             font-family: var(--font-heading);
-            font-size: 28px;
-            font-weight: 900;
+            font-size: 28px; font-weight: 900;
             color: var(--gold-primary);
             margin-bottom: 25px;
             text-shadow: 0 0 15px var(--gold-glow);
@@ -690,11 +616,9 @@
             background: linear-gradient(90deg, #b8860b, var(--gold-primary));
             color: #000;
             font-family: var(--font-heading);
-            font-size: 14px;
-            font-weight: 700;
+            font-size: 14px; font-weight: 700;
             padding: 16px 30px;
-            border: none;
-            border-radius: 50px;
+            border: none; border-radius: 50px;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -705,8 +629,7 @@
             justify-content: center;
             gap: 10px;
             box-shadow: 0 0 15px var(--gold-glow);
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
 
         .buy-btn:hover {
@@ -722,7 +645,7 @@
             filter: brightness(1.3);
         }
 
-        /* ===== FAQ ===== */
+        /* FAQ */
         #faq { padding: 70px 0; max-width: 800px; margin: 0 auto; }
 
         .faq-item {
@@ -734,20 +657,12 @@
             transition: var(--transition);
         }
 
-        .faq-item:hover { 
-            border-color: rgba(255, 170, 0, 0.5);
-            box-shadow: 0 0 20px rgba(255, 170, 0, 0.1);
-        }
-
-        .faq-item.active {
-            border-color: var(--gold-primary);
-            box-shadow: 0 0 25px var(--gold-glow);
-        }
+        .faq-item:hover { border-color: rgba(255, 170, 0, 0.5); box-shadow: 0 0 20px rgba(255, 170, 0, 0.1); }
+        .faq-item.active { border-color: var(--gold-primary); box-shadow: 0 0 25px var(--gold-glow); }
 
         .faq-question {
             padding: 18px 20px;
-            font-size: 17px;
-            font-weight: 600;
+            font-size: 17px; font-weight: 600;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -756,24 +671,15 @@
             gap: 15px;
         }
 
-        .faq-question:hover { 
-            color: var(--gold-primary);
-            text-shadow: 0 0 10px var(--gold-glow);
-        }
-
-        .faq-question:active {
-            transform: scale(0.99);
-            background: rgba(255, 170, 0, 0.08);
-        }
+        .faq-question:hover { color: var(--gold-primary); text-shadow: 0 0 10px var(--gold-glow); }
+        .faq-question:active { transform: scale(0.99); background: rgba(255, 170, 0, 0.08); }
 
         .faq-toggle {
             font-family: var(--font-heading);
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 18px; font-weight: 700;
             color: var(--gold-primary);
             flex-shrink: 0;
-            width: 30px;
-            height: 30px;
+            width: 30px; height: 30px;
             text-align: center;
             border-radius: 50%;
             background: rgba(255, 170, 0, 0.1);
@@ -783,11 +689,7 @@
             justify-content: center;
         }
 
-        .faq-question:hover .faq-toggle {
-            background: var(--gold-primary);
-            color: #000;
-            box-shadow: 0 0 15px var(--gold-glow-strong);
-        }
+        .faq-question:hover .faq-toggle { background: var(--gold-primary); color: #000; box-shadow: 0 0 15px var(--gold-glow-strong); }
 
         .faq-answer {
             max-height: 0;
@@ -799,13 +701,9 @@
             font-size: 14px;
         }
 
-        .faq-item.active .faq-answer {
-            max-height: 250px;
-            padding: 0 20px 20px;
-            border-top-color: rgba(255, 255, 255, 0.05);
-        }
+        .faq-item.active .faq-answer { max-height: 300px; padding: 0 20px 20px; border-top-color: rgba(255, 255, 255, 0.05); }
 
-        /* ===== FOOTER ===== */
+        /* FOOTER */
         footer {
             margin-top: 70px;
             padding: 40px 5%;
@@ -832,15 +730,9 @@
 
         .footer-col p { color: var(--text-muted); font-size: 14px; line-height: 1.7; }
 
-        .footer-links-row {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-        }
+        .footer-links-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; }
 
-        .footer-links-row a,
-        .footer-links-row span {
+        .footer-links-row a, .footer-links-row span {
             color: var(--text-muted);
             text-decoration: none;
             font-size: 14px;
@@ -851,12 +743,7 @@
             display: inline-block;
         }
 
-        .footer-links-row a:hover { 
-            color: var(--gold-primary);
-            text-shadow: 0 0 10px var(--gold-glow);
-            background: rgba(255, 170, 0, 0.08);
-        }
-
+        .footer-links-row a:hover { color: var(--gold-primary); text-shadow: 0 0 10px var(--gold-glow); background: rgba(255, 170, 0, 0.08); }
         .footer-links-row a:active {
             transform: scale(0.93);
             color: var(--gold-primary);
@@ -876,12 +763,7 @@
             border-radius: 50px;
         }
 
-        .footer-contact a:hover { 
-            color: var(--gold-primary);
-            text-shadow: 0 0 10px var(--gold-glow);
-            background: rgba(255, 170, 0, 0.08);
-        }
-
+        .footer-contact a:hover { color: var(--gold-primary); text-shadow: 0 0 10px var(--gold-glow); background: rgba(255, 170, 0, 0.08); }
         .footer-contact a:active {
             transform: scale(0.95);
             color: var(--gold-primary);
@@ -899,7 +781,7 @@
             font-size: 13px;
         }
 
-        /* ===== MODAL ===== */
+        /* MODAL */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -963,8 +845,7 @@
             cursor: pointer;
             transition: var(--transition-fast);
             line-height: 1;
-            width: 40px;
-            height: 40px;
+            width: 40px; height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -989,12 +870,7 @@
 
         .form-group { margin-bottom: 20px; }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: var(--text-muted);
-        }
+        .form-group label { display: block; margin-bottom: 8px; font-size: 14px; color: var(--text-muted); }
 
         .form-group input {
             width: 100%;
@@ -1015,13 +891,8 @@
             box-shadow: 0 0 20px var(--gold-glow), inset 0 0 10px rgba(255, 170, 0, 0.1);
         }
 
-        /* ===== CHECKOUT ===== */
-        .checkout-steps {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 25px;
-            position: relative;
-        }
+        /* CHECKOUT */
+        .checkout-steps { display: flex; justify-content: space-between; margin-bottom: 25px; position: relative; }
 
         .checkout-steps::before {
             content: '';
@@ -1032,14 +903,7 @@
             z-index: 1;
         }
 
-        .step-indicator {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            z-index: 2;
-            flex: 1;
-        }
+        .step-indicator { display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2; flex: 1; }
 
         .step-circle {
             width: 32px; height: 32px;
@@ -1049,8 +913,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 13px;
-            font-weight: 700;
+            font-size: 13px; font-weight: 700;
             color: var(--text-muted);
             transition: var(--transition);
             font-family: var(--font-heading);
@@ -1079,10 +942,7 @@
             text-align: center;
         }
 
-        .step-indicator.active .step-label { 
-            color: var(--gold-primary); 
-            text-shadow: 0 0 8px var(--gold-glow);
-        }
+        .step-indicator.active .step-label { color: var(--gold-primary); text-shadow: 0 0 8px var(--gold-glow); }
 
         .checkout-step { display: none; }
         .checkout-step.active { display: block; animation: fadeIn 0.3s ease; }
@@ -1108,22 +968,9 @@
 
         .summary-row:last-child { border-bottom: none; padding-bottom: 0; }
 
-        .summary-label { 
-            font-size: 13px; 
-            color: var(--text-muted); 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            flex-shrink: 0;
-        }
+        .summary-label { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; flex-shrink: 0; }
         
-        .summary-value { 
-            font-weight: 600; 
-            font-size: 14px; 
-            text-align: right; 
-            flex-grow: 1;
-            word-break: break-word;
-            line-height: 1.5;
-        }
+        .summary-value { font-weight: 600; font-size: 14px; text-align: right; flex-grow: 1; word-break: break-word; line-height: 1.5; }
         
         .summary-value.gold { 
             color: var(--gold-primary); 
@@ -1134,20 +981,14 @@
         }
 
         .payment-section-title {
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 14px; font-weight: 600;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 15px;
         }
 
-        .payment-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-bottom: 20px;
-        }
+        .payment-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
 
         .payment-option {
             background: rgba(255, 255, 255, 0.03);
@@ -1160,74 +1001,43 @@
             transition: var(--transition-fast);
         }
 
-        .payment-option[data-method="DANA"]:hover {
-            border-color: #118eea;
-            background: rgba(17, 142, 234, 0.08);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px var(--dana-glow);
-        }
-        .payment-option[data-method="DANA"]:active,
-        .payment-option[data-method="DANA"].selected {
-            border-color: #118eea;
-            background: rgba(17, 142, 234, 0.15);
+        .payment-option[data-method="DANA"]:hover { border-color: #118eea; background: rgba(17, 142, 234, 0.08); transform: translateY(-3px); box-shadow: 0 5px 20px var(--dana-glow); }
+        .payment-option[data-method="DANA"]:active, .payment-option[data-method="DANA"].selected {
+            border-color: #118eea; background: rgba(17, 142, 234, 0.15);
             box-shadow: 0 0 25px var(--dana-glow), 0 0 50px rgba(17, 142, 234, 0.4);
         }
 
-        .payment-option[data-method="QRIS"]:hover {
-            border-color: #e30613;
-            background: rgba(227, 6, 19, 0.08);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px var(--qris-glow);
-        }
-        .payment-option[data-method="QRIS"]:active,
-        .payment-option[data-method="QRIS"].selected {
-            border-color: #e30613;
-            background: rgba(227, 6, 19, 0.15);
+        .payment-option[data-method="QRIS"]:hover { border-color: #e30613; background: rgba(227, 6, 19, 0.08); transform: translateY(-3px); box-shadow: 0 5px 20px var(--qris-glow); }
+        .payment-option[data-method="QRIS"]:active, .payment-option[data-method="QRIS"].selected {
+            border-color: #e30613; background: rgba(227, 6, 19, 0.15);
             box-shadow: 0 0 25px var(--qris-glow), 0 0 50px rgba(227, 6, 19, 0.4);
         }
 
-        .payment-option[data-method="SeaBank"]:hover {
-            border-color: #ff6b00;
-            background: rgba(255, 107, 0, 0.08);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px var(--seabank-glow);
-        }
-        .payment-option[data-method="SeaBank"]:active,
-        .payment-option[data-method="SeaBank"].selected {
-            border-color: #ff6b00;
-            background: rgba(255, 107, 0, 0.15);
+        .payment-option[data-method="SeaBank"]:hover { border-color: #ff6b00; background: rgba(255, 107, 0, 0.08); transform: translateY(-3px); box-shadow: 0 5px 20px var(--seabank-glow); }
+        .payment-option[data-method="SeaBank"]:active, .payment-option[data-method="SeaBank"].selected {
+            border-color: #ff6b00; background: rgba(255, 107, 0, 0.15);
             box-shadow: 0 0 25px var(--seabank-glow), 0 0 50px rgba(255, 107, 0, 0.4);
         }
 
-        .payment-option[data-method="BNI"]:hover {
-            border-color: #f05a22;
-            background: rgba(240, 90, 34, 0.08);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px var(--bni-glow);
-        }
-        .payment-option[data-method="BNI"]:active,
-        .payment-option[data-method="BNI"].selected {
-            border-color: #f05a22;
-            background: rgba(240, 90, 34, 0.15);
+        .payment-option[data-method="BNI"]:hover { border-color: #f05a22; background: rgba(240, 90, 34, 0.08); transform: translateY(-3px); box-shadow: 0 5px 20px var(--bni-glow); }
+        .payment-option[data-method="BNI"]:active, .payment-option[data-method="BNI"].selected {
+            border-color: #f05a22; background: rgba(240, 90, 34, 0.15);
             box-shadow: 0 0 25px var(--bni-glow), 0 0 50px rgba(240, 90, 34, 0.4);
         }
-
-        .payment-option.selected { border-width: 2px; }
 
         .payment-option.selected::after {
             content: '✓';
             position: absolute;
             top: 8px; right: 10px;
-            font-weight: 700;
-            font-size: 16px;
+            font-weight: 700; font-size: 16px;
             color: var(--text-main);
             text-shadow: 0 0 10px currentColor;
         }
 
-        .payment-option[data-method="DANA"].selected::after { color: #118eea; text-shadow: 0 0 12px var(--dana-glow); }
-        .payment-option[data-method="QRIS"].selected::after { color: #e30613; text-shadow: 0 0 12px var(--qris-glow); }
-        .payment-option[data-method="SeaBank"].selected::after { color: #ff6b00; text-shadow: 0 0 12px var(--seabank-glow); }
-        .payment-option[data-method="BNI"].selected::after { color: #f05a22; text-shadow: 0 0 12px var(--bni-glow); }
+        .payment-option[data-method="DANA"].selected::after { color: #118eea; }
+        .payment-option[data-method="QRIS"].selected::after { color: #e30613; }
+        .payment-option[data-method="SeaBank"].selected::after { color: #ff6b00; }
+        .payment-option[data-method="BNI"].selected::after { color: #f05a22; }
 
         .payment-logo {
             width: 60px; height: 60px;
@@ -1251,18 +1061,8 @@
         .payment-logo.seabank { background: linear-gradient(135deg, #ff6b00, #ff8c33); box-shadow: 0 0 15px rgba(255, 107, 0, 0.4); }
         .payment-logo.bni { background: linear-gradient(135deg, #f05a22, #005e8a); box-shadow: 0 0 15px rgba(240, 90, 34, 0.4); }
 
-        .payment-name {
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .payment-type {
-            font-size: 11px;
-            color: var(--text-muted);
-            margin-top: 2px;
-        }
+        .payment-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .payment-type { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
 
         .payment-detail-box {
             background: rgba(0, 0, 0, 0.3);
@@ -1304,23 +1104,10 @@
             border-radius: 12px;
             padding: 18px;
             text-align: center;
-            transition: var(--transition);
         }
 
-        .contact-admin-box:hover { box-shadow: 0 0 20px rgba(0, 136, 204, 0.3); }
-
-        .contact-admin-box p {
-            color: var(--text-main);
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 12px;
-        }
-
-        .contact-admin-box .admin-hint {
-            color: var(--text-muted);
-            font-size: 12px;
-            font-style: italic;
-        }
+        .contact-admin-box p { color: var(--text-main); font-size: 14px; line-height: 1.6; margin-bottom: 12px; }
+        .contact-admin-box .admin-hint { color: var(--text-muted); font-size: 12px; font-style: italic; }
 
         .qr-container { text-align: center; padding: 15px 0; }
 
@@ -1335,16 +1122,8 @@
             transition: var(--transition);
         }
 
-        .qr-container img:hover {
-            box-shadow: 0 0 35px var(--gold-glow-strong), 0 0 60px var(--gold-glow);
-            transform: scale(1.02);
-        }
-
-        .qr-container p {
-            color: var(--text-muted);
-            font-size: 12px;
-            margin-top: 12px;
-        }
+        .qr-container img:hover { box-shadow: 0 0 35px var(--gold-glow-strong), 0 0 60px var(--gold-glow); transform: scale(1.02); }
+        .qr-container p { color: var(--text-muted); font-size: 12px; margin-top: 12px; }
 
         .total-payment {
             background: linear-gradient(90deg, rgba(255, 170, 0, 0.15), rgba(255, 170, 0, 0.05));
@@ -1358,20 +1137,8 @@
             box-shadow: 0 0 20px rgba(255, 170, 0, 0.15);
         }
 
-        .total-payment .label {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-        }
-
-        .total-payment .value {
-            font-family: var(--font-heading);
-            font-size: 22px;
-            font-weight: 900;
-            color: var(--gold-primary);
-            text-shadow: 0 0 15px var(--gold-glow);
-        }
+        .total-payment .label { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
+        .total-payment .value { font-family: var(--font-heading); font-size: 22px; font-weight: 900; color: var(--gold-primary); text-shadow: 0 0 15px var(--gold-glow); }
 
         .instruction-box {
             background: rgba(0, 136, 204, 0.08);
@@ -1386,17 +1153,12 @@
 
         .instruction-box strong { color: var(--text-main); }
 
-        .checkout-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-        }
+        .checkout-actions { display: flex; gap: 12px; margin-top: 20px; }
 
         .btn-checkout {
             flex: 1;
             font-family: var(--font-heading);
-            font-size: 13px;
-            font-weight: 700;
+            font-size: 13px; font-weight: 700;
             padding: 16px;
             border-radius: 50px;
             cursor: pointer;
@@ -1419,16 +1181,8 @@
             box-shadow: 0 0 15px var(--gold-glow);
         }
 
-        .btn-next:hover:not(:disabled) { 
-            transform: translateY(-2px); 
-            box-shadow: 0 8px 25px var(--gold-glow), 0 0 45px var(--gold-glow);
-            filter: brightness(1.1);
-        }
-        .btn-next:active:not(:disabled) {
-            transform: scale(0.94);
-            box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow);
-            filter: brightness(1.3);
-        }
+        .btn-next:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 25px var(--gold-glow), 0 0 45px var(--gold-glow); filter: brightness(1.1); }
+        .btn-next:active:not(:disabled) { transform: scale(0.94); box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow); filter: brightness(1.3); }
         .btn-next:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; }
 
         .btn-back {
@@ -1437,17 +1191,11 @@
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        .btn-back:hover { 
-            color: var(--text-main); 
-            border-color: var(--text-main);
-            box-shadow: 0 0 15px var(--white-glow), inset 0 0 15px rgba(255, 255, 255, 0.05);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
+        .btn-back:hover { color: var(--text-main); border-color: var(--text-main); box-shadow: 0 0 15px var(--white-glow); background: rgba(255, 255, 255, 0.05); }
         .btn-back:active {
             transform: scale(0.94);
             background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 0 25px var(--white-glow), inset 0 0 20px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 25px var(--white-glow);
             color: var(--text-main);
             border-color: var(--text-main);
         }
@@ -1459,23 +1207,13 @@
             width: 100%;
         }
 
-        .btn-confirm:hover { 
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.6), 0 0 45px rgba(0, 136, 204, 0.4);
-            filter: brightness(1.15);
-        }
+        .btn-confirm:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 136, 204, 0.6), 0 0 45px rgba(0, 136, 204, 0.4); filter: brightness(1.15); }
+        .btn-confirm:active { transform: scale(0.94); box-shadow: 0 0 30px var(--blue-glow), 0 0 60px rgba(0, 136, 204, 0.4); filter: brightness(1.25); }
 
-        .btn-confirm:active {
-            transform: scale(0.94);
-            box-shadow: 0 0 30px var(--blue-glow), 0 0 60px rgba(0, 136, 204, 0.4);
-            filter: brightness(1.25);
-        }
-
-        /* ===== TOAST ===== */
+        /* TOAST */
         .toast {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 30px; right: 30px;
             background: var(--bg-panel);
             border-left: 4px solid var(--gold-primary);
             color: var(--text-main);
@@ -1503,7 +1241,7 @@
 
         .toast-message { font-size: 14px; font-weight: 600; }
 
-        /* ===== RESPONSIVE ===== */
+        /* RESPONSIVE */
         @media (min-width: 769px) and (max-width: 1024px) {
             :root { --header-height: 65px; }
             .brand-name { font-size: 17px; }
@@ -1526,14 +1264,8 @@
             .modal-content { max-width: 520px; padding: 25px; }
         }
 
-        @media (min-width: 1400px) {
-            main { max-width: 1320px; }
-            .product-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-
-        @media (min-width: 1025px) and (max-width: 1399px) {
-            .product-grid { grid-template-columns: repeat(3, 1fr); }
-        }
+        @media (min-width: 1400px) { main { max-width: 1320px; } .product-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 1025px) and (max-width: 1399px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
 
         @media (max-width: 992px) {
             nav.desktop-nav { display: none; }
@@ -1574,8 +1306,7 @@
             .checkout-steps .step-label { font-size: 9px; }
             .step-circle { width: 28px; height: 28px; font-size: 12px; }
             .footer-links-row { gap: 10px; }
-            .footer-links-row a,
-            .footer-links-row span { font-size: 13px; padding: 5px 10px; }
+            .footer-links-row a, .footer-links-row span { font-size: 13px; padding: 5px 10px; }
             .footer-contact a { font-size: 13px; }
             .total-payment { padding: 15px 20px; }
             .total-payment .value { font-size: 18px; }
@@ -1593,7 +1324,7 @@
             .paks-text { font-size: 12px; letter-spacing: 3px; }
         }
 
-        /* ===== MOBILE MENU ===== */
+        /* MOBILE MENU */
         .mobile-menu {
             position: fixed;
             top: var(--header-height);
@@ -1617,8 +1348,7 @@
         .mobile-menu a {
             color: var(--text-main);
             text-decoration: none;
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 18px; font-weight: 600;
             padding: 16px 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             transition: var(--transition-fast);
@@ -1654,40 +1384,38 @@
         </div>
 
         <nav class="desktop-nav">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#produk" class="nav-link">Produk</a>
-            <a href="#faq" class="nav-link">FAQ</a>
-            <a href="https://t.me/scp281025" target="_blank" class="nav-link">Support</a>
+            <a href="#home" class="nav-link" data-i18n="nav_home">Home</a>
+            <a href="#produk" class="nav-link" data-i18n="nav_products">Products</a>
+            <a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a>
+            <a href="https://t.me/scp281025" target="_blank" class="nav-link" data-i18n="nav_support">Support</a>
         </nav>
 
         <div class="search-container">
             <svg class="svg-icon search-icon" viewBox="0 0 24 24">
                 <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
             </svg>
-            <input type="text" class="search-input" id="searchInput" placeholder="Cari produk...">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search products..." data-i18n-placeholder="search_placeholder">
         </div>
 
         <div class="header-actions">
-            <button class="login-btn" id="loginBtn">Login</button>
+            <button class="login-btn" id="loginBtn" data-i18n="btn_login">Login</button>
         </div>
 
         <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </button>
     </header>
 
     <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#home" class="mobile-link">Home</a>
-        <a href="#produk" class="mobile-link">Produk</a>
-        <a href="#faq" class="mobile-link">FAQ</a>
-        <a href="https://t.me/scp281025" target="_blank">Support</a>
-        <button class="login-btn" style="margin-top: 20px; width: 100%;" onclick="openModal('loginModal')">Login</button>
+        <a href="#home" class="mobile-link" data-i18n="nav_home">Home</a>
+        <a href="#produk" class="mobile-link" data-i18n="nav_products">Products</a>
+        <a href="#faq" class="mobile-link" data-i18n="nav_faq">FAQ</a>
+        <a href="https://t.me/scp281025" target="_blank" data-i18n="nav_support">Support</a>
+        <button class="login-btn" style="margin-top: 20px; width: 100%;" onclick="openModal('loginModal')" data-i18n="btn_login">Login</button>
     </div>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN -->
     <main>
         <section class="hero" id="home">
             <div class="game-badge">
@@ -1698,7 +1426,7 @@
             <div class="paks-text">PUBG MOBILE PAKS</div>
 
             <h1 class="hero-title">SHADOWCHEAT PROJECT</h1>
-            <p class="hero-subtitle">Premium Digital Store &amp; Tools</p>
+            <p class="hero-subtitle" data-i18n="hero_subtitle">Premium Digital Store & Tools</p>
 
             <div class="server-support">
                 <div class="server-tag"><span class="dot"></span> GLOBAL</div>
@@ -1709,95 +1437,95 @@
             </div>
 
             <div class="hero-cta">
-                <a href="#produk" class="btn-primary">Lihat Produk</a>
-                <a href="https://t.me/scp281025" target="_blank" class="btn-secondary">Hubungi Kami</a>
+                <a href="#produk" class="btn-primary" data-i18n="btn_view_products">View Products</a>
+                <a href="https://t.me/scp281025" target="_blank" class="btn-secondary" data-i18n="btn_contact">Contact Us</a>
             </div>
         </section>
 
         <section id="produk">
             <div class="section-header">
-                <h2 class="section-title">Katalog Produk</h2>
-                <p class="section-desc">Support PUBG Mobile Paks - Global, Korea, Vietnam, Taiwan | Android Non-Root</p>
+                <h2 class="section-title" data-i18n="section_catalog">Product Catalog</h2>
+                <p class="section-desc" data-i18n="section_catalog_desc">Support PUBG Mobile Paks - Global, Korea, Vietnam, Taiwan | Android Non-Root</p>
             </div>
             
             <div class="product-grid" id="productGrid">
-                <div class="product-card" data-name="key 7 hari pubg mobile global korea vietnam taiwan">
-                    <div class="product-badge">POPULER</div>
+                <div class="product-card" data-name="key 7 day pubg mobile global korea vietnam taiwan">
+                    <div class="product-badge" data-i18n="badge_popular">POPULAR</div>
                     <div class="product-icon-box">
                         <svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
                     </div>
-                    <h3 class="product-name">Key 7 Hari</h3>
-                    <p class="product-desc">Akses penuh 7 hari. Support PUBG Mobile Global, Korea, Vietnam &amp; Taiwan. Android Non-Root.</p>
+                    <h3 class="product-name" data-i18n="prod_7d_name">Key 7 Days</h3>
+                    <p class="product-desc" data-i18n="prod_7d_desc">Full access for 7 days. Support PUBG Mobile Global, Korea, Vietnam & Taiwan. Android Non-Root.</p>
                     <div class="product-price">Rp 50.000</div>
-                    <button class="buy-btn" onclick="openCheckout('Key 7 Hari', 50000, '7 Hari')">BELI SEKARANG</button>
+                    <button class="buy-btn" onclick="openCheckout('Key 7 Days', 50000, '7 Days')" data-i18n="btn_buy">BUY NOW</button>
                 </div>
 
-                <div class="product-card" data-name="key 15 hari pubg mobile global korea vietnam taiwan">
+                <div class="product-card" data-name="key 15 day pubg mobile global korea vietnam taiwan">
                     <div class="product-icon-box">
                         <svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
                     </div>
-                    <h3 class="product-name">Key 15 Hari</h3>
-                    <p class="product-desc">Akses penuh 15 hari. Support Global, Korea, Vietnam &amp; Taiwan. Android Non-Root.</p>
+                    <h3 class="product-name" data-i18n="prod_15d_name">Key 15 Days</h3>
+                    <p class="product-desc" data-i18n="prod_15d_desc">Full access for 15 days. Support Global, Korea, Vietnam & Taiwan. Android Non-Root.</p>
                     <div class="product-price">Rp 90.000</div>
-                    <button class="buy-btn" onclick="openCheckout('Key 15 Hari', 90000, '15 Hari')">BELI SEKARANG</button>
+                    <button class="buy-btn" onclick="openCheckout('Key 15 Days', 90000, '15 Days')" data-i18n="btn_buy">BUY NOW</button>
                 </div>
 
-                <div class="product-card" data-name="key 30 hari premium pubg mobile global korea vietnam taiwan">
-                    <div class="product-badge hot">BEST VALUE</div>
+                <div class="product-card" data-name="key 30 day premium pubg mobile global korea vietnam taiwan">
+                    <div class="product-badge hot" data-i18n="badge_best">BEST VALUE</div>
                     <div class="product-icon-box">
                         <svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
                     </div>
-                    <h3 class="product-name">Key 30 Hari</h3>
-                    <p class="product-desc">Akses penuh 30 hari. Full Safe &amp; garansi untuk PUBG Mobile Global, Korea, Vietnam &amp; Taiwan.</p>
+                    <h3 class="product-name" data-i18n="prod_30d_name">Key 30 Days</h3>
+                    <p class="product-desc" data-i18n="prod_30d_desc">Full access for 30 days. Full Safe & warranty for PUBG Mobile Global, Korea, Vietnam & Taiwan.</p>
                     <div class="product-price">Rp 150.000</div>
-                    <button class="buy-btn" onclick="openCheckout('Key 30 Hari', 150000, '30 Hari')">BELI SEKARANG</button>
+                    <button class="buy-btn" onclick="openCheckout('Key 30 Days', 150000, '30 Days')" data-i18n="btn_buy">BUY NOW</button>
                 </div>
 
                 <div class="product-card" data-name="key 1 season pubg mobile global korea vietnam taiwan">
-                    <div class="product-badge hot">SEASON</div>
+                    <div class="product-badge hot" data-i18n="badge_season">SEASON</div>
                     <div class="product-icon-box">
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
-                    <h3 class="product-name">Key 1 Season</h3>
-                    <p class="product-desc">Akses penuh selama 1 season (sekitar 2 bulan). Full Safe untuk semua server.</p>
+                    <h3 class="product-name" data-i18n="prod_season_name">Key 1 Season</h3>
+                    <p class="product-desc" data-i18n="prod_season_desc">Full access for 1 season (about 2 months). Full Safe for all servers.</p>
                     <div class="product-price">Rp 250.000</div>
-                    <button class="buy-btn" onclick="openCheckout('Key 1 Season', 250000, '1 Season')">BELI SEKARANG</button>
+                    <button class="buy-btn" onclick="openCheckout('Key 1 Season', 250000, '1 Season')" data-i18n="btn_buy">BUY NOW</button>
                 </div>
 
-                <div class="product-card" data-name="key permanen pubg mobile global korea vietnam taiwan">
-                    <div class="product-badge permanent">PERMANEN</div>
+                <div class="product-card" data-name="key permanent pubg mobile global korea vietnam taiwan">
+                    <div class="product-badge permanent" data-i18n="badge_permanent">PERMANENT</div>
                     <div class="product-icon-box">
                         <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
                     </div>
-                    <h3 class="product-name">Key Permanen</h3>
-                    <p class="product-desc">Akses permanen tanpa batas waktu. Full Safe &amp; garansi seumur hidup untuk semua server.</p>
+                    <h3 class="product-name" data-i18n="prod_perm_name">Key Permanent</h3>
+                    <p class="product-desc" data-i18n="prod_perm_desc">Permanent access without time limit. Full Safe & lifetime warranty for all servers.</p>
                     <div class="product-price">Rp 500.000</div>
-                    <button class="buy-btn" onclick="openCheckout('Key Permanen', 500000, 'Permanen')">BELI SEKARANG</button>
+                    <button class="buy-btn" onclick="openCheckout('Key Permanent', 500000, 'Permanent')" data-i18n="btn_buy">BUY NOW</button>
                 </div>
             </div>
         </section>
 
         <section id="faq">
             <div class="section-header">
-                <h2 class="section-title">Pertanyaan Umum</h2>
-                <p class="section-desc">Hal-hal yang sering ditanyakan oleh pelanggan</p>
+                <h2 class="section-title" data-i18n="faq_title">Frequently Asked Questions</h2>
+                <p class="section-desc" data-i18n="faq_desc">Common questions from our customers</p>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question"><span>Bagaimana cara membeli produk?</span><span class="faq-toggle">+</span></div>
-                <div class="faq-answer">Klik tombol "BELI SEKARANG" pada produk, pilih metode pembayaran (DANA, QRIS, SeaBank, BNI), lalu ikuti instruksi. Untuk DANA/SeaBank/BNI, detail pembayaran akan dikirim admin via chat Telegram pribadi.</div>
+                <div class="faq-question"><span data-i18n="faq_q1">How to buy a product?</span><span class="faq-toggle">+</span></div>
+                <div class="faq-answer" data-i18n="faq_a1">Click "BUY NOW" on the product, choose payment method (DANA, QRIS, SeaBank, BNI), then follow the instructions. For DANA/SeaBank/BNI, payment details will be sent by admin via personal Telegram chat.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question"><span>Metode pembayaran apa saja yang tersedia?</span><span class="faq-toggle">+</span></div>
-                <div class="faq-answer">Kami menerima pembayaran via E-Wallet <strong>DANA</strong>, <strong>QRIS</strong> (scan QR), serta Transfer Bank <strong>SeaBank</strong> dan <strong>BNI</strong>.</div>
+                <div class="faq-question"><span data-i18n="faq_q2">What payment methods are available?</span><span class="faq-toggle">+</span></div>
+                <div class="faq-answer" data-i18n="faq_a2">We accept payments via E-Wallet DANA, QRIS (scan QR), and Bank Transfer SeaBank & BNI.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question"><span>Kenapa tidak ada nomor rekening di website?</span><span class="faq-toggle">+</span></div>
-                <div class="faq-answer">Untuk keamanan bersama, detail pembayaran (nomor DANA, rekening bank, dll) akan dikirim langsung oleh admin melalui <strong>chat pribadi Telegram</strong> setelah Anda melakukan konfirmasi pemesanan.</div>
+                <div class="faq-question"><span data-i18n="faq_q3">Why is there no account number on the website?</span><span class="faq-toggle">+</span></div>
+                <div class="faq-answer" data-i18n="faq_a3">For mutual security, payment details (DANA number, bank account, etc.) will be sent directly by admin via personal Telegram chat after you confirm your order.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question"><span>Berapa lama proses pengiriman key?</span><span class="faq-toggle">+</span></div>
-                <div class="faq-answer">Proses pengiriman key dilakukan secara instan setelah pembayaran dikonfirmasi oleh admin via Telegram.</div>
+                <div class="faq-question"><span data-i18n="faq_q4">How long does key delivery take?</span><span class="faq-toggle">+</span></div>
+                <div class="faq-answer" data-i18n="faq_a4">Key delivery is instant after payment is confirmed by admin via Telegram.</div>
             </div>
         </section>
     </main>
@@ -1806,21 +1534,21 @@
     <footer>
         <div class="footer-col">
             <h4>SHADOWCHEAT PROJECT</h4>
-            <p>Platform penyedia produk digital premium untuk PUBG Mobile Paks. Support Global, Korea, Vietnam, Taiwan. Full Safe &amp; Android Non-Root.</p>
+            <p data-i18n="footer_desc">Premium digital product provider for PUBG Mobile Paks. Support Global, Korea, Vietnam, Taiwan. Full Safe & Android Non-Root.</p>
         </div>
 
         <div class="footer-col">
-            <h4>Navigasi</h4>
+            <h4 data-i18n="footer_nav">Navigation</h4>
             <div class="footer-links-row">
-                <a href="#home">Home</a>
-                <a href="#produk">Produk</a>
-                <a href="#faq">FAQ</a>
-                <a href="https://t.me/scp281025" target="_blank">Support</a>
+                <a href="#home" data-i18n="nav_home">Home</a>
+                <a href="#produk" data-i18n="nav_products">Products</a>
+                <a href="#faq" data-i18n="nav_faq">FAQ</a>
+                <a href="https://t.me/scp281025" target="_blank" data-i18n="nav_support">Support</a>
             </div>
         </div>
 
         <div class="footer-col">
-            <h4>Pembayaran</h4>
+            <h4 data-i18n="footer_payment">Payment</h4>
             <div class="footer-links-row">
                 <span>DANA</span>
                 <span>QRIS</span>
@@ -1830,14 +1558,14 @@
         </div>
 
         <div class="footer-col footer-contact">
-            <h4>Hubungi Kami</h4>
+            <h4 data-i18n="footer_contact">Contact Us</h4>
             <a href="https://t.me/scp281025" target="_blank">Telegram: @scp281025</a>
             <a href="#">Email: support@shadowcheat.com</a>
             <a href="#">Website: shadowcheat.com</a>
         </div>
 
-        <div class="footer-bottom">
-            &copy; 2024 Shadowcheat Project. All rights reserved. | Safe &amp; Secure
+        <div class="footer-bottom" data-i18n="footer_copy">
+            &copy; 2024 Shadowcheat Project. All rights reserved. | Safe & Secure
         </div>
     </footer>
 
@@ -1845,19 +1573,19 @@
     <div class="modal-overlay" id="loginModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Login Akun</h3>
+                <h3 data-i18n="login_title">Login Account</h3>
                 <button class="close-modal" onclick="closeModal('loginModal')">&times;</button>
             </div>
             <div class="form-group">
-                <label>Username / Email</label>
-                <input type="text" id="loginUser" placeholder="Masukkan username atau email">
+                <label data-i18n="login_user_label">Username / Email</label>
+                <input type="text" id="loginUser" placeholder="Enter username or email" data-i18n-placeholder="login_user_ph">
             </div>
             <div class="form-group">
-                <label>Password</label>
-                <input type="password" id="loginPass" placeholder="Masukkan password">
+                <label data-i18n="login_pass_label">Password</label>
+                <input type="password" id="loginPass" placeholder="Enter password" data-i18n-placeholder="login_pass_ph">
             </div>
-            <button class="btn-primary" style="width: 100%; margin-top: 10px;" onclick="handleLogin()">Masuk</button>
-            <p style="text-align: center; margin-top: 15px; font-size: 14px; color: var(--text-muted);">Belum punya akun? <a href="https://t.me/scp281025" target="_blank" style="color: var(--gold-primary); text-decoration: none; padding: 4px 10px; border-radius: 50px; display: inline-block;">Hubungi Admin</a></p>
+            <button class="btn-primary" style="width: 100%; margin-top: 10px;" onclick="handleLogin()" data-i18n="login_btn">Login</button>
+            <p style="text-align: center; margin-top: 15px; font-size: 14px; color: var(--text-muted);"><span data-i18n="login_no_acc">Don't have an account?</span> <a href="https://t.me/scp281025" target="_blank" style="color: var(--gold-primary); text-decoration: none; padding: 4px 10px; border-radius: 50px; display: inline-block;" data-i18n="login_contact">Contact Admin</a></p>
         </div>
     </div>
 
@@ -1865,80 +1593,80 @@
     <div class="modal-overlay" id="checkoutModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Checkout Pembelian</h3>
+                <h3 data-i18n="checkout_title">Checkout</h3>
                 <button class="close-modal" onclick="closeModal('checkoutModal')">&times;</button>
             </div>
 
             <div class="checkout-steps">
                 <div class="step-indicator active" id="step1Indicator">
                     <div class="step-circle">1</div>
-                    <div class="step-label">Ringkasan</div>
+                    <div class="step-label" data-i18n="step_summary">Summary</div>
                 </div>
                 <div class="step-indicator" id="step2Indicator">
                     <div class="step-circle">2</div>
-                    <div class="step-label">Pembayaran</div>
+                    <div class="step-label" data-i18n="step_payment">Payment</div>
                 </div>
                 <div class="step-indicator" id="step3Indicator">
                     <div class="step-circle">3</div>
-                    <div class="step-label">Konfirmasi</div>
+                    <div class="step-label" data-i18n="step_confirm">Confirmation</div>
                 </div>
             </div>
 
             <div class="checkout-step active" id="step1">
                 <div class="summary-box">
                     <div class="summary-row">
-                        <span class="summary-label">Produk</span>
+                        <span class="summary-label" data-i18n="sum_product">Product</span>
                         <span class="summary-value" id="summaryProduct">-</span>
                     </div>
                     <div class="summary-row">
-                        <span class="summary-label">Durasi</span>
+                        <span class="summary-label" data-i18n="sum_duration">Duration</span>
                         <span class="summary-value" id="summaryDuration">-</span>
                     </div>
                     <div class="summary-row">
-                        <span class="summary-label">Server</span>
+                        <span class="summary-label" data-i18n="sum_server">Server</span>
                         <span class="summary-value">Global / Korea / Vietnam / Taiwan</span>
                     </div>
                     <div class="summary-row">
-                        <span class="summary-label">Platform</span>
+                        <span class="summary-label" data-i18n="sum_platform">Platform</span>
                         <span class="summary-value">Android Non-Root</span>
                     </div>
                     <div class="summary-row">
-                        <span class="summary-label">Total Harga</span>
+                        <span class="summary-label" data-i18n="sum_total">Total Price</span>
                         <span class="summary-value gold" id="summaryPrice">-</span>
                     </div>
                 </div>
                 <div class="checkout-actions">
-                    <button class="btn-checkout btn-next" onclick="goToStep(2)">Lanjut ke Pembayaran</button>
+                    <button class="btn-checkout btn-next" onclick="goToStep(2)" data-i18n="btn_next_payment">Next to Payment</button>
                 </div>
             </div>
 
             <div class="checkout-step" id="step2">
-                <div class="payment-section-title">Pilih Metode Pembayaran</div>
+                <div class="payment-section-title" data-i18n="pay_choose">Choose Payment Method</div>
                 <div class="payment-grid">
                     <div class="payment-option" data-method="DANA" onclick="selectPayment('DANA')">
                         <div class="payment-logo dana">DANA</div>
                         <div class="payment-name">DANA</div>
-                        <div class="payment-type">E-Wallet</div>
+                        <div class="payment-type" data-i18n="pay_ewallet">E-Wallet</div>
                     </div>
                     <div class="payment-option" data-method="QRIS" onclick="selectPayment('QRIS')">
                         <div class="payment-logo qris">QRIS</div>
                         <div class="payment-name">QRIS</div>
-                        <div class="payment-type">Scan QR</div>
+                        <div class="payment-type" data-i18n="pay_scanqr">Scan QR</div>
                     </div>
                     <div class="payment-option" data-method="SeaBank" onclick="selectPayment('SeaBank')">
                         <div class="payment-logo seabank">SB</div>
                         <div class="payment-name">SeaBank</div>
-                        <div class="payment-type">Transfer Bank</div>
+                        <div class="payment-type" data-i18n="pay_bank">Bank Transfer</div>
                     </div>
                     <div class="payment-option" data-method="BNI" onclick="selectPayment('BNI')">
                         <div class="payment-logo bni">BNI</div>
                         <div class="payment-name">BNI</div>
-                        <div class="payment-type">Transfer Bank</div>
+                        <div class="payment-type" data-i18n="pay_bank">Bank Transfer</div>
                     </div>
                 </div>
                 <div class="checkout-actions">
-                    <button class="btn-checkout btn-back" onclick="goToStep(1)">Kembali</button>
-                    <button class="btn-checkout btn-next" id="btnToStep3" onclick="goToStep(3)" disabled>Lanjut</button>
+                    <button class="btn-checkout btn-back" onclick="goToStep(1)" data-i18n="btn_back">Back</button>
+                    <button class="btn-checkout btn-next" id="btnToStep3" onclick="goToStep(3)" disabled data-i18n="btn_next">Next</button>
                 </div>
             </div>
 
@@ -1955,23 +1683,23 @@
                 </div>
 
                 <div class="total-payment">
-                    <span class="label">Total Bayar</span>
+                    <span class="label" data-i18n="total_pay">Total Payment</span>
                     <span class="value" id="totalPayment">-</span>
                 </div>
 
                 <div class="instruction-box">
-                    <strong>Instruksi Pembayaran:</strong><br>
-                    1. Selesaikan pembayaran sesuai metode yang dipilih.<br>
-                    2. Screenshot bukti pembayaran.<br>
-                    3. Klik tombol konfirmasi di bawah untuk mengirim bukti ke Telegram admin.<br>
-                    4. Key akan dikirim setelah admin memverifikasi pembayaran Anda.
+                    <strong data-i18n="instr_title">Payment Instructions:</strong><br>
+                    <span data-i18n="instr_1">1. Complete payment using your chosen method.</span><br>
+                    <span data-i18n="instr_2">2. Screenshot your payment proof.</span><br>
+                    <span data-i18n="instr_3">3. Click the confirmation button below to send proof to Telegram admin.</span><br>
+                    <span data-i18n="instr_4">4. Key will be sent after admin verifies your payment.</span>
                 </div>
 
                 <div class="checkout-actions">
-                    <button class="btn-checkout btn-back" onclick="goToStep(2)">Kembali</button>
+                    <button class="btn-checkout btn-back" onclick="goToStep(2)" data-i18n="btn_back">Back</button>
                 </div>
-                <a href="https://t.me/scp281025" target="_blank" class="btn-checkout btn-confirm" id="confirmLink" style="margin-top: 12px;">
-                    Konfirmasi via Telegram
+                <a href="https://t.me/scp281025" target="_blank" class="btn-checkout btn-confirm" id="confirmLink" style="margin-top: 12px;" data-i18n="btn_confirm">
+                    Confirm via Telegram
                 </a>
             </div>
         </div>
@@ -1980,365 +1708,349 @@
     <!-- TOAST -->
     <div class="toast" id="toast">
         <span class="toast-indicator"></span>
-        <span class="toast-message" id="toastMessage">Pesan berhasil dikirim!</span>
+        <span class="toast-message" id="toastMessage">Message sent!</span>
     </div>
 
     <script>
-        // ============ DATA METODE PEMBAYARAN ============
-        // GANTI [QR_IMAGE] DENGAN URL FOTO QR CODE ANDA!
-        const QR_IMAGE_URL = "[QR_IMAGE]";
-
-        const paymentData = {
-            'DANA': { type: 'E-Wallet', logoClass: 'dana', logoText: 'DANA', displayMode: 'contact' },
-            'QRIS': { type: 'Scan QR Code', logoClass: 'qris', logoText: 'QRIS', displayMode: 'qr' },
-            'SeaBank': { type: 'Transfer Bank', logoClass: 'seabank', logoText: 'SB', displayMode: 'contact' },
-            'BNI': { type: 'Transfer Bank', logoClass: 'bni', logoText: 'BNI', displayMode: 'contact' }
-        };
-
-        let checkoutData = { product: '', price: 0, duration: '', paymentMethod: '' };
-
-        function formatRupiah(num) { return 'Rp ' + num.toLocaleString('id-ID'); }
-
-        // ============ ROBUST SCROLL LOCK ============
-        function lockScroll() {
-            const scrollY = window.scrollY || window.pageYOffset;
-            document.body.style.top = `-${scrollY}px`;
-            document.body.classList.add('no-scroll');
-        }
-
-        function unlockScroll() {
-            const scrollY = document.body.style.top;
-            document.body.classList.remove('no-scroll');
-            document.body.style.top = '';
-            window.scrollTo(0, parseInt(scrollY || '0') * -1);
-        }
-
-        // ============ OPEN/CLOSE MODAL ============
-        function openModal(modalId) {
-            document.getElementById(modalId).classList.add('active');
-            lockScroll();
-        }
-
-        function closeModal(modalId) { 
-            document.getElementById(modalId).classList.remove('active'); 
-            unlockScroll();
-        }
-
-        // ============ CHECKOUT ============
-        function openCheckout(product, price, duration) {
-            checkoutData = { product, price, duration, paymentMethod: '' };
-            document.getElementById('summaryProduct').textContent = product;
-            document.getElementById('summaryDuration').textContent = duration;
-            document.getElementById('summaryPrice').textContent = formatRupiah(price);
-            resetCheckoutSteps();
-            openModal('checkoutModal');
-        }
-
-        function resetCheckoutSteps() {
-            document.querySelectorAll('.step-indicator').forEach((el, i) => {
-                el.classList.remove('active', 'completed');
-                if (i === 0) el.classList.add('active');
-            });
-            document.querySelectorAll('.checkout-step').forEach(el => el.classList.remove('active'));
-            document.getElementById('step1').classList.add('active');
-            document.querySelectorAll('.payment-option').forEach(el => el.classList.remove('selected'));
-            document.getElementById('btnToStep3').disabled = true;
-            document.getElementById('paymentContentArea').innerHTML = '';
-            checkoutData.paymentMethod = '';
-        }
-
-        function goToStep(step) {
-            if (step === 3 && checkoutData.paymentMethod === '') {
-                showToast('Silakan pilih metode pembayaran terlebih dahulu!');
-                return;
-            }
-            document.querySelectorAll('.checkout-step').forEach(el => el.classList.remove('active'));
-            document.getElementById('step' + step).classList.add('active');
-            document.querySelectorAll('.step-indicator').forEach((el, i) => {
-                el.classList.remove('active', 'completed');
-                if (i + 1 < step) el.classList.add('completed');
-                if (i + 1 === step) el.classList.add('active');
-            });
-            if (step === 3) fillPaymentDetail();
-        }
-
-        function selectPayment(method) {
-            checkoutData.paymentMethod = method;
-            document.querySelectorAll('.payment-option').forEach(el => {
-                el.classList.remove('selected');
-                if (el.dataset.method === method) el.classList.add('selected');
-            });
-            document.getElementById('btnToStep3').disabled = false;
-        }
-
-        function fillPaymentDetail() {
-            const data = paymentData[checkoutData.paymentMethod];
-            if (!data) return;
-
-            const logo = document.getElementById('paymentDetailLogo');
-            logo.className = 'payment-detail-logo ' + data.logoClass;
-            logo.textContent = data.logoText;
-            document.getElementById('paymentDetailName').textContent = checkoutData.paymentMethod;
-            document.getElementById('paymentDetailType').textContent = data.type;
-
-            const contentArea = document.getElementById('paymentContentArea');
-
-            if (data.displayMode === 'qr') {
-                contentArea.innerHTML = `
-                    <div class="qr-container">
-                        <img src="${QR_IMAGE_URL}" alt="QRIS QR Code" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <p style="display:none; color: var(--danger-red);">Gambar QR belum tersedia. Silakan hubungi admin via Telegram.</p>
-                        <p>Scan QR code di atas menggunakan aplikasi pembayaran Anda (DANA, OVO, GoPay, ShopeePay, Mobile Banking, dll).</p>
-                    </div>
-                `;
-            } else {
-                contentArea.innerHTML = `
-                    <div class="contact-admin-box">
-                        <p>Detail pembayaran <strong>${checkoutData.paymentMethod}</strong> akan dikirim oleh admin melalui <strong>chat pribadi Telegram</strong>.</p>
-                        <p class="admin-hint">Klik tombol "Konfirmasi via Telegram" di bawah untuk memulai chat dengan admin.</p>
-                    </div>
-                `;
-            }
-
-            document.getElementById('totalPayment').textContent = formatRupiah(checkoutData.price);
-            document.getElementById('confirmLink').href = 'https://t.me/scp281025';
-        }
-
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toastMessage').textContent = message;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 3000);
-        }
-
-        // ============ EVENT LISTENERS ============
-        window.addEventListener('click', function(event) {
-            if (event.target.classList.contains('modal-overlay')) {
-                event.target.classList.remove('active');
-                unlockScroll();
-            }
-        });
-
-        document.getElementById('loginBtn').addEventListener('click', function() {
-            openModal('loginModal');
-        });
-
-        function handleLogin() {
-            const user = document.getElementById('loginUser').value;
-            const pass = document.getElementById('loginPass').value;
-            if (user === '' || pass === '') { showToast('Harap isi username dan password!'); return; }
-            showToast('Login berhasil! Selamat datang, ' + user);
-            closeModal('loginModal');
-            document.getElementById('loginUser').value = '';
-            document.getElementById('loginPass').value = '';
-        }
-
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function() {
-                const parent = this.parentElement;
-                const toggle = this.querySelector('.faq-toggle');
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    if (item !== parent) {
-                        item.classList.remove('active');
-                        const otherToggle = item.querySelector('.faq-toggle');
-                        if (otherToggle) otherToggle.textContent = '+';
-                    }
-                });
-                parent.classList.toggle('active');
-                toggle.textContent = parent.classList.contains('active') ? '−' : '+';
-            });
-        });
-
-        document.getElementById('searchInput').addEventListener('keyup', function() {
-            const searchValue = this.value.toLowerCase();
-            document.querySelectorAll('.product-card').forEach(product => {
-                const productName = product.getAttribute('data-name').toLowerCase();
-                const productTitle = product.querySelector('.product-name').textContent.toLowerCase();
-                product.style.display = (productName.includes(searchValue) || productTitle.includes(searchValue)) ? 'flex' : 'none';
-            });
-        });
-
-        // ============ MOBILE MENU ============
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        hamburgerBtn.addEventListener('click', function() {
-            const isActive = mobileMenu.classList.toggle('active');
-            
-            if (isActive) {
-                lockScroll();
-            } else {
-                unlockScroll();
-            }
-
-            const spans = hamburgerBtn.querySelectorAll('span');
-            if (isActive) {
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
-        });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.remove('active');
-                unlockScroll();
-                const spans = hamburgerBtn.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            });
-        });
-
-        // ============ SMOOTH SCROLL ============
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        const headerOffset = document.querySelector('header').offsetHeight;
-                        const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
-                        const offsetPosition = elementPosition - headerOffset - 10;
-                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-
         // ============================================
-        // --- ANTI COPY / ANTI SALIN (3 LAPIS PROTEKSI) ---
+        // --- MULTI-LANGUAGE TRANSLATIONS ---
         // ============================================
-
-        // 1. Cegah klik kanan (context menu)
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-            return false;
-        });
-
-        // 2. Cegah event copy, cut, drag
-        document.addEventListener('copy', function(e) {
-            e.preventDefault();
-            return false;
-        });
-        document.addEventListener('cut', function(e) {
-            e.preventDefault();
-            return false;
-        });
-        document.addEventListener('dragstart', function(e) {
-            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-            e.preventDefault();
-            return false;
-        });
-
-        // 3. Cegah tekan lama di HP (long press)
-        let longPressTimer;
-        document.addEventListener('touchstart', function(e) {
-            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-            longPressTimer = setTimeout(function() {
-                e.preventDefault();
-            }, 500);
-        }, { passive: false });
-
-        document.addEventListener('touchend', function() {
-            clearTimeout(longPressTimer);
-        });
-        document.addEventListener('touchmove', function() {
-            clearTimeout(longPressTimer);
-        });
-
-        // 4. Cegah keyboard shortcut
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && ['c','x','a','u','s'].includes(e.key.toLowerCase())) {
-                e.preventDefault();
-                return false;
-            }
-            if (e.key === 'F12' || 
-                (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase()))) {
-                e.preventDefault();
-                return false;
-            }
-            if (e.ctrlKey && e.key.toLowerCase() === 'p') {
-                e.preventDefault();
-                return false;
-            }
-        });
-
-        // 5. Cegah Select All
-        document.addEventListener('selectstart', function(e) {
-            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-            e.preventDefault();
-            return false;
-        });
-
-        // ============================================
-        // --- ANTI VIEW-SOURCE / ANTI DOWNLOAD HTML ---
-        // ============================================
-
-        // 6. Deteksi view-source:
-        if (window.location.protocol === 'view-source:') {
-            window.location.href = 'about:blank';
-        }
-
-        // 7. Deteksi iframe embedding
-        if (window.top !== window.self) {
-            try {
-                window.top.location = window.self.location;
-            } catch (e) {
-                document.documentElement.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#050505;color:#ffaa00;font-family:Orbitron,sans-serif;font-size:20px;text-align:center;padding:20px;">Akses Ditolak - Website ini tidak dapat ditampilkan dalam iframe.</div>';
-            }
-        }
-
-        // 8. Frame buster menggunakan meta tag (dipasang dinamis)
-        try {
-            if (window.self !== window.top) {
-                document.body.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#050505;color:#ffaa00;font-family:Orbitron,sans-serif;font-size:20px;text-align:center;padding:20px;">Akses Ditolak</div>';
-            }
-        } catch (e) {}
-
-        // 9. Deteksi Developer Tools terbuka → Redirect
-        let devtoolsOpen = false;
-        const element = new Image();
-        Object.defineProperty(element, 'id', {
-            get: function() {
-                devtoolsOpen = true;
-                setTimeout(function() {
-                    window.location.href = 'about:blank';
-                }, 100);
-                return 'devtools-detector';
-            }
-        });
-
-        setInterval(function() {
-            devtoolsOpen = false;
-            console.log(element);
-            if (devtoolsOpen) {
-                window.location.href = 'about:blank';
-            }
-        }, 1000);
-
-        // 10. Nonaktifkan console.log
-        (function() {
-            const noop = function() {};
-            const methods = ['log', 'debug', 'info', 'warn', 'error', 'trace', 'dir', 'dirxml', 'group', 'groupEnd', 'table', 'time', 'timeEnd', 'count', 'assert', 'profile', 'profileEnd'];
-            methods.forEach(function(method) {
-                try { console[method] = noop; } catch(e) {}
-            });
-        })();
-
-        // 11. Deteksi referrer dari view-source
-        window.addEventListener('load', function() {
-            if (document.referrer && document.referrer.includes('view-source')) {
-                window.location.href = 'about:blank';
-            }
-        });
-    </script>
-
-</body>
-</html>
+        const translations = {
+            'en': {
+                nav_home: 'Home', nav_products: 'Products', nav_faq: 'FAQ', nav_support: 'Support',
+                btn_login: 'Login',
+                search_placeholder: 'Search products...',
+                hero_subtitle: 'Premium Digital Store & Tools',
+                btn_view_products: 'View Products', btn_contact: 'Contact Us',
+                section_catalog: 'Product Catalog',
+                section_catalog_desc: 'Support PUBG Mobile Paks - Global, Korea, Vietnam, Taiwan | Android Non-Root',
+                badge_popular: 'POPULAR', badge_best: 'BEST VALUE', badge_season: 'SEASON', badge_permanent: 'PERMANENT',
+                prod_7d_name: 'Key 7 Days', prod_7d_desc: 'Full access for 7 days. Support PUBG Mobile Global, Korea, Vietnam & Taiwan. Android Non-Root.',
+                prod_15d_name: 'Key 15 Days', prod_15d_desc: 'Full access for 15 days. Support Global, Korea, Vietnam & Taiwan. Android Non-Root.',
+                prod_30d_name: 'Key 30 Days', prod_30d_desc: 'Full access for 30 days. Full Safe & warranty for PUBG Mobile Global, Korea, Vietnam & Taiwan.',
+                prod_season_name: 'Key 1 Season', prod_season_desc: 'Full access for 1 season (about 2 months). Full Safe for all servers.',
+                prod_perm_name: 'Key Permanent', prod_perm_desc: 'Permanent access without time limit. Full Safe & lifetime warranty for all servers.',
+                btn_buy: 'BUY NOW',
+                faq_title: 'Frequently Asked Questions', faq_desc: 'Common questions from our customers',
+                faq_q1: 'How to buy a product?',
+                faq_a1: 'Click "BUY NOW" on the product, choose payment method (DANA, QRIS, SeaBank, BNI), then follow the instructions. For DANA/SeaBank/BNI, payment details will be sent by admin via personal Telegram chat.',
+                faq_q2: 'What payment methods are available?',
+                faq_a2: 'We accept payments via E-Wallet DANA, QRIS (scan QR), and Bank Transfer SeaBank & BNI.',
+                faq_q3: 'Why is there no account number on the website?',
+                faq_a3: 'For mutual security, payment details (DANA number, bank account, etc.) will be sent directly by admin via personal Telegram chat after you confirm your order.',
+                faq_q4: 'How long does key delivery take?',
+                faq_a4: 'Key delivery is instant after payment is confirmed by admin via Telegram.',
+                footer_desc: 'Premium digital product provider for PUBG Mobile Paks. Support Global, Korea, Vietnam, Taiwan. Full Safe & Android Non-Root.',
+                footer_nav: 'Navigation', footer_payment: 'Payment', footer_contact: 'Contact Us',
+                footer_copy: '© 2024 Shadowcheat Project. All rights reserved. | Safe & Secure',
+                login_title: 'Login Account', login_user_label: 'Username / Email', login_user_ph: 'Enter username or email',
+                login_pass_label: 'Password', login_pass_ph: 'Enter password', login_btn: 'Login',
+                login_no_acc: "Don't have an account?", login_contact: 'Contact Admin',
+                checkout_title: 'Checkout', step_summary: 'Summary', step_payment: 'Payment', step_confirm: 'Confirmation',
+                sum_product: 'Product', sum_duration: 'Duration', sum_server: 'Server', sum_platform: 'Platform', sum_total: 'Total Price',
+                btn_next_payment: 'Next to Payment', pay_choose: 'Choose Payment Method',
+                pay_ewallet: 'E-Wallet', pay_scanqr: 'Scan QR', pay_bank: 'Bank Transfer',
+                btn_back: 'Back', btn_next: 'Next', total_pay: 'Total Payment',
+                instr_title: 'Payment Instructions:', instr_1: '1. Complete payment using your chosen method.', instr_2: '2. Screenshot your payment proof.',
+                instr_3: '3. Click the confirmation button below to send proof to Telegram admin.', instr_4: '4. Key will be sent after admin verifies your payment.',
+                btn_confirm: 'Confirm via Telegram', toast_fill: 'Please fill in username and password!', toast_login: 'Login successful! Welcome, ',
+                toast_payment: 'Please select a payment method first!', toast_no_qr: 'QR image not available. Please contact admin via Telegram.'
+            },
+            'id': {
+                nav_home: 'Beranda', nav_products: 'Produk', nav_faq: 'FAQ', nav_support: 'Dukungan',
+                btn_login: 'Masuk',
+                search_placeholder: 'Cari produk...',
+                hero_subtitle: 'Toko Digital Premium & Alat',
+                btn_view_products: 'Lihat Produk', btn_contact: 'Hubungi Kami',
+                section_catalog: 'Katalog Produk',
+                section_catalog_desc: 'Support PUBG Mobile Paks - Global, Korea, Vietnam, Taiwan | Android Non-Root',
+                badge_popular: 'POPULER', badge_best: 'BEST VALUE', badge_season: 'SEASON', badge_permanent: 'PERMANEN',
+                prod_7d_name: 'Key 7 Hari', prod_7d_desc: 'Akses penuh 7 hari. Support PUBG Mobile Global, Korea, Vietnam & Taiwan. Android Non-Root.',
+                prod_15d_name: 'Key 15 Hari', prod_15d_desc: 'Akses penuh 15 hari. Support Global, Korea, Vietnam & Taiwan. Android Non-Root.',
+                prod_30d_name: 'Key 30 Hari', prod_30d_desc: 'Akses penuh 30 hari. Full Safe & garansi untuk PUBG Mobile Global, Korea, Vietnam & Taiwan.',
+                prod_season_name: 'Key 1 Season', prod_season_desc: 'Akses penuh selama 1 season (sekitar 2 bulan). Full Safe untuk semua server.',
+                prod_perm_name: 'Key Permanen', prod_perm_desc: 'Akses permanen tanpa batas waktu. Full Safe & garansi seumur hidup untuk semua server.',
+                btn_buy: 'BELI SEKARANG',
+                faq_title: 'Pertanyaan Umum', faq_desc: 'Hal-hal yang sering ditanyakan oleh pelanggan',
+                faq_q1: 'Bagaimana cara membeli produk?',
+                faq_a1: 'Klik tombol "BELI SEKARANG" pada produk, pilih metode pembayaran (DANA, QRIS, SeaBank, BNI), lalu ikuti instruksi. Untuk DANA/SeaBank/BNI, detail pembayaran akan dikirim admin via chat Telegram pribadi.',
+                faq_q2: 'Metode pembayaran apa saja yang tersedia?',
+                faq_a2: 'Kami menerima pembayaran via E-Wallet DANA, QRIS (scan QR), serta Transfer Bank SeaBank & BNI.',
+                faq_q3: 'Kenapa tidak ada nomor rekening di website?',
+                faq_a3: 'Untuk keamanan bersama, detail pembayaran (nomor DANA, rekening bank, dll) akan dikirim langsung oleh admin melalui chat pribadi Telegram setelah Anda melakukan konfirmasi pemesanan.',
+                faq_q4: 'Berapa lama proses pengiriman key?',
+                faq_a4: 'Proses pengiriman key dilakukan secara instan setelah pembayaran dikonfirmasi oleh admin via Telegram.',
+                footer_desc: 'Platform penyedia produk digital premium untuk PUBG Mobile Paks. Support Global, Korea, Vietnam, Taiwan. Full Safe & Android Non-Root.',
+                footer_nav: 'Navigasi', footer_payment: 'Pembayaran', footer_contact: 'Hubungi Kami',
+                footer_copy: '© 2024 Shadowcheat Project. Hak cipta dilindungi. | Aman & Terjamin',
+                login_title: 'Login Akun', login_user_label: 'Username / Email', login_user_ph: 'Masukkan username atau email',
+                login_pass_label: 'Password', login_pass_ph: 'Masukkan password', login_btn: 'Masuk',
+                login_no_acc: 'Belum punya akun?', login_contact: 'Hubungi Admin',
+                checkout_title: 'Checkout Pembelian', step_summary: 'Ringkasan', step_payment: 'Pembayaran', step_confirm: 'Konfirmasi',
+                sum_product: 'Produk', sum_duration: 'Durasi', sum_server: 'Server', sum_platform: 'Platform', sum_total: 'Total Harga',
+                btn_next_payment: 'Lanjut ke Pembayaran', pay_choose: 'Pilih Metode Pembayaran',
+                pay_ewallet: 'E-Wallet', pay_scanqr: 'Scan QR', pay_bank: 'Transfer Bank',
+                btn_back: 'Kembali', btn_next: 'Lanjut', total_pay: 'Total Bayar',
+                instr_title: 'Instruksi Pembayaran:', instr_1: '1. Selesaikan pembayaran sesuai metode yang dipilih.', instr_2: '2. Screenshot bukti pembayaran.',
+                instr_3: '3. Klik tombol konfirmasi di bawah untuk mengirim bukti ke Telegram admin.', instr_4: '4. Key akan dikirim setelah admin memverifikasi pembayaran Anda.',
+                btn_confirm: 'Konfirmasi via Telegram', toast_fill: 'Harap isi username dan password!', toast_login: 'Login berhasil! Selamat datang, ',
+                toast_payment: 'Silakan pilih metode pembayaran terlebih dahulu!', toast_no_qr: 'Gambar QR belum tersedia. Silakan hubungi admin via Telegram.'
+            },
+            'hi': {
+                nav_home: 'होम', nav_products: 'उत्पाद', nav_faq: 'सामान्य प्रश्न', nav_support: 'सहायता',
+                btn_login: 'लॉगिन',
+                search_placeholder: 'उत्पाद खोजें...',
+                hero_subtitle: 'प्रीमियम डिजिटल स्टोर और टूल्स',
+                btn_view_products: 'उत्पाद देखें', btn_contact: 'संपर्क करें',
+                section_catalog: 'उत्पाद सूची',
+                section_catalog_desc: 'PUBG Mobile Paks सपोर्ट - Global, Korea, Vietnam, Taiwan | Android Non-Root',
+                badge_popular: 'लोकप्रिय', badge_best: 'सर्वश्रेष्ठ', badge_season: 'सीज़न', badge_permanent: 'स्थायी',
+                prod_7d_name: 'की 7 दिन', prod_7d_desc: '7 दिनों तक पूर्ण पहुँच। PUBG Mobile Global, Korea, Vietnam और Taiwan सपोर्ट। Android Non-Root।',
+                prod_15d_name: 'की 15 दिन', prod_15d_desc: '15 दिनों तक पूर्ण पहुँच। Global, Korea, Vietnam और Taiwan सपोर्ट। Android Non-Root।',
+                prod_30d_name: 'की 30 दिन', prod_30d_desc: '30 दिनों तक पूर्ण पहुँच। PUBG Mobile Global, Korea, Vietnam और Taiwan के लिए पूर्ण सुरक्षित।',
+                prod_season_name: 'की 1 सीज़न', prod_season_desc: '1 सीज़न (लगभग 2 महीने) तक पूर्ण पहुँच। सभी सर्वर के लिए पूर्ण सुरक्षित।',
+                prod_perm_name: 'की स्थायी', prod_perm_desc: 'समय सीमा के बिना स्थायी पहुँच। सभी सर्वर के लिए पूर्ण सुरक्षित और आजीवन वारंटी।',
+                btn_buy: 'अभी खरीदें',
+                faq_title: 'सामान्य प्रश्न', faq_desc: 'ग्राहकों द्वारा पूछे जाने वाले सामान्य प्रश्न',
+                faq_q1: 'उत्पाद कैसे खरीदें?',
+                faq_a1: 'उत्पाद पर "अभी खरीदें" क्लिक करें, भुगतान विधि चुनें (DANA, QRIS, SeaBank, BNI), फिर निर्देशों का पालन करें। DANA/SeaBank/BNI के लिए, भुगतान विवरण व्यक्तिगत Telegram चैट के माध्यम से भेजा जाएगा।',
+                faq_q2: 'कौन सी भुगतान विधियाँ उपलब्ध हैं?',
+                faq_a2: 'हम E-Wallet DANA, QRIS (QR स्कैन), और बैंक ट्रांसफर SeaBank और BNI के माध्यम से भुगतान स्वीकार करते हैं।',
+                faq_q3: 'वेबसाइट पर खाता संख्या क्यों नहीं है?',
+                faq_a3: 'पारस्परिक सुरक्षा के लिए, भुगतान विवरण (DANA नंबर, बैंक खाता, आदि) आपके ऑर्डर की पुष्टि के बाद व्यक्तिगत Telegram चैट के माध्यम से सीधे भेजे जाएंगे।',
+                faq_q4: 'की डिलीवरी में कितना समय लगता है?',
+                faq_a4: 'Telegram के माध्यम से व्यवस्थापक द्वारा भुगतान की पुष्टि के बाद की डिलीवरी तुरंत होती है।',
+                footer_desc: 'PUBG Mobile Paks के लिए प्रीमियम डिजिटल उत्पाद प्रदाता। Global, Korea, Vietnam, Taiwan सपोर्ट। पूर्ण सुरक्षित और Android Non-Root।',
+                footer_nav: 'नेविगेशन', footer_payment: 'भुगतान', footer_contact: 'संपर्क करें',
+                footer_copy: '© 2024 Shadowcheat Project. सर्वाधिकार सुरक्षित। | सुरक्षित और सुरक्षित',
+                login_title: 'खाता लॉगिन', login_user_label: 'उपयोगकर्ता नाम / ईमेल', login_user_ph: 'उपयोगकर्ता नाम या ईमेल दर्ज करें',
+                login_pass_label: 'पासवर्ड', login_pass_ph: 'पासवर्ड दर्ज करें', login_btn: 'लॉगिन',
+                login_no_acc: 'खाता नहीं है?', login_contact: 'व्यवस्थापक से संपर्क करें',
+                checkout_title: 'चेकआउट', step_summary: 'सारांश', step_payment: 'भुगतान', step_confirm: 'पुष्टिकरण',
+                sum_product: 'उत्पाद', sum_duration: 'अवधि', sum_server: 'सर्वर', sum_platform: 'प्लेटफ़ॉर्म', sum_total: 'कुल कीमत',
+                btn_next_payment: 'भुगतान पर जाएं', pay_choose: 'भुगतान विधि चुनें',
+                pay_ewallet: 'ई-वॉलेट', pay_scanqr: 'QR स्कैन', pay_bank: 'बैंक ट्रांसफर',
+                btn_back: 'वापस', btn_next: 'अगला', total_pay: 'कुल भुगतान',
+                instr_title: 'भुगतान निर्देश:', instr_1: '1. अपनी चुनी हुई विधि से भुगतान पूरा करें।', instr_2: '2. अपने भुगतान का स्क्रीनशॉट लें।',
+                instr_3: '3. Telegram व्यवस्थापक को प्रमाण भेजने के लिए नीचे पुष्टि बटन पर क्लिक करें।', instr_4: '4. व्यवस्थापक द्वारा सत्यापन के बाद की भेजी जाएगी।',
+                btn_confirm: 'Telegram के माध्यम से पुष्टि करें', toast_fill: 'कृपया उपयोगकर्ता नाम और पासवर्ड भरें!', toast_login: 'लॉगिन सफल! स्वागत है, ',
+                toast_payment: 'कृपया पहले भुगतान विधि चुनें!', toast_no_qr: 'QR छवि उपलब्ध नहीं है। कृपया Telegram पर व्यवस्थापक से संपर्क करें।'
+            },
+            'zh': {
+                nav_home: '首页', nav_products: '产品', nav_faq: '常见问题', nav_support: '支持',
+                btn_login: '登录',
+                search_placeholder: '搜索产品...',
+                hero_subtitle: '高级数字商店和工具',
+                btn_view_products: '查看产品', btn_contact: '联系我们',
+                section_catalog: '产品目录',
+                section_catalog_desc: '支持 PUBG Mobile Paks - 全球、韩国、越南、台湾 | Android 免 Root',
+                badge_popular: '热门', badge_best: '超值', badge_season: '赛季', badge_permanent: '永久',
+                prod_7d_name: '7 天密钥', prod_7d_desc: '7 天完全访问。支持 PUBG Mobile 全球、韩国、越南和台湾。Android 免 Root。',
+                prod_15d_name: '15 天密钥', prod_15d_desc: '15 天完全访问。支持全球、韩国、越南和台湾。Android 免 Root。',
+                prod_30d_name: '30 天密钥', prod_30d_desc: '30 天完全访问。PUBG Mobile 全球、韩国、越南和台湾完全安全。',
+                prod_season_name: '1 赛季密钥', prod_season_desc: '1 赛季（约 2 个月）完全访问。所有服务器完全安全。',
+                prod_perm_name: '永久密钥', prod_perm_desc: '永久访问无时间限制。所有服务器完全安全并终身保修。',
+                btn_buy: '立即购买',
+                faq_title: '常见问题', faq_desc: '客户常问的问题',
+                faq_q1: '如何购买产品？',
+                faq_a1: '在产品上点击"立即购买"，选择付款方式（DANA、QRIS、SeaBank、BNI），然后按照说明操作。对于 DANA/SeaBank/BNI，付款详情将通过个人 Telegram 聊天发送。',
+                faq_q2: '有哪些付款方式？',
+                faq_a2: '我们接受通过电子钱包 DANA、QRIS（扫描 QR）和银行转账 SeaBank 及 BNI 付款。',
+                faq_q3: '为什么网站上没有帐号？',
+                faq_a3: '为了双方安全，付款详情（DANA 号码、银行帐号等）将在您确认订单后直接通过个人 Telegram 聊天发送。',
+                faq_q4: '密钥交付需要多长时间？',
+                faq_a4: '管理员通过 Telegram 确认付款后，密钥立即交付。',
+                footer_desc: 'PUBG Mobile Paks 的高级数字产品提供商。支持全球、韩国、越南、台湾。完全安全且 Android 免 Root。',
+                footer_nav: '导航', footer_payment: '付款', footer_contact: '联系我们',
+                footer_copy: '© 2024 Shadowcheat Project. 保留所有权利。 | 安全可靠',
+                login_title: '登录帐户', login_user_label: '用户名 / 邮箱', login_user_ph: '输入用户名或邮箱',
+                login_pass_label: '密码', login_pass_ph: '输入密码', login_btn: '登录',
+                login_no_acc: '还没有帐户？', login_contact: '联系管理员',
+                checkout_title: '结帐', step_summary: '摘要', step_payment: '付款', step_confirm: '确认',
+                sum_product: '产品', sum_duration: '时长', sum_server: '服务器', sum_platform: '平台', sum_total: '总价',
+                btn_next_payment: '前往付款', pay_choose: '选择付款方式',
+                pay_ewallet: '电子钱包', pay_scanqr: '扫描 QR', pay_bank: '银行转账',
+                btn_back: '返回', btn_next: '下一步', total_pay: '付款总额',
+                instr_title: '付款说明：', instr_1: '1. 使用所选方式完成付款。', instr_2: '2. 截图您的付款证明。',
+                instr_3: '3. 点击下方确认按钮将证明发送给 Telegram 管理员。', instr_4: '4. 管理员验证付款后，密钥将被发送。',
+                btn_confirm: '通过 Telegram 确认', toast_fill: '请填写用户名和密码！', toast_login: '登录成功！欢迎，',
+                toast_payment: '请先选择付款方式！', toast_no_qr: 'QR 图片不可用。请通过 Telegram 联系管理员。'
+            },
+            'vi': {
+                nav_home: 'Trang chủ', nav_products: 'Sản phẩm', nav_faq: 'Câu hỏi', nav_support: 'Hỗ trợ',
+                btn_login: 'Đăng nhập',
+                search_placeholder: 'Tìm sản phẩm...',
+                hero_subtitle: 'Cửa hàng Kỹ thuật số Cao cấp & Công cụ',
+                btn_view_products: 'Xem Sản phẩm', btn_contact: 'Liên hệ',
+                section_catalog: 'Danh mục Sản phẩm',
+                section_catalog_desc: 'Hỗ trợ PUBG Mobile Paks - Global, Hàn Quốc, Việt Nam, Đài Loan | Android Non-Root',
+                badge_popular: 'PHỔ BIẾN', badge_best: 'GIÁ TỐT', badge_season: 'MÙA', badge_permanent: 'VĨNH VIỄN',
+                prod_7d_name: 'Key 7 Ngày', prod_7d_desc: 'Truy cập đầy đủ trong 7 ngày. Hỗ trợ PUBG Mobile Global, Hàn Quốc, Việt Nam & Đài Loan. Android Non-Root.',
+                prod_15d_name: 'Key 15 Ngày', prod_15d_desc: 'Truy cập đầy đủ trong 15 ngày. Hỗ trợ Global, Hàn Quốc, Việt Nam & Đài Loan. Android Non-Root.',
+                prod_30d_name: 'Key 30 Ngày', prod_30d_desc: 'Truy cập đầy đủ trong 30 ngày. Full Safe & bảo hành cho PUBG Mobile Global, Hàn Quốc, Việt Nam & Đài Loan.',
+                prod_season_name: 'Key 1 Mùa', prod_season_desc: 'Truy cập đầy đủ trong 1 mùa (khoảng 2 tháng). Full Safe cho tất cả các server.',
+                prod_perm_name: 'Key Vĩnh viễn', prod_perm_desc: 'Truy cập vĩnh viễn không giới hạn thời gian. Full Safe & bảo hành trọn đời cho tất cả các server.',
+                btn_buy: 'MUA NGAY',
+                faq_title: 'Câu hỏi Thường gặp', faq_desc: 'Những câu hỏi phổ biến từ khách hàng',
+                faq_q1: 'Làm thế nào để mua sản phẩm?',
+                faq_a1: 'Nhấp "MUA NGAY" trên sản phẩm, chọn phương thức thanh toán (DANA, QRIS, SeaBank, BNI), sau đó làm theo hướng dẫn. Đối với DANA/SeaBank/BNI, chi tiết thanh toán sẽ được admin gửi qua chat Telegram riêng.',
+                faq_q2: 'Có những phương thức thanh toán nào?',
+                faq_a2: 'Chúng tôi chấp nhận thanh toán qua Ví điện tử DANA, QRIS (quét QR), và Chuyển khoản Ngân hàng SeaBank & BNI.',
+                faq_q3: 'Tại sao không có số tài khoản trên website?',
+                faq_a3: 'Vì an toàn chung, chi tiết thanh toán (số DANA, tài khoản ngân hàng, v.v.) sẽ được admin gửi trực tiếp qua chat Telegram riêng sau khi bạn xác nhận đơn hàng.',
+                faq_q4: 'Mất bao lâu để giao key?',
+                faq_a4: 'Key được giao ngay sau khi admin xác nhận thanh toán qua Telegram.',
+                footer_desc: 'Nhà cung cấp sản phẩm kỹ thuật số cao cấp cho PUBG Mobile Paks. Hỗ trợ Global, Hàn Quốc, Việt Nam, Đài Loan. Full Safe & Android Non-Root.',
+                footer_nav: 'Điều hướng', footer_payment: 'Thanh toán', footer_contact: 'Liên hệ',
+                footer_copy: '© 2024 Shadowcheat Project. Bảo lưu mọi quyền. | An toàn & Bảo mật',
+                login_title: 'Đăng nhập Tài khoản', login_user_label: 'Tên người dùng / Email', login_user_ph: 'Nhập tên người dùng hoặc email',
+                login_pass_label: 'Mật khẩu', login_pass_ph: 'Nhập mật khẩu', login_btn: 'Đăng nhập',
+                login_no_acc: 'Chưa có tài khoản?', login_contact: 'Liên hệ Admin',
+                checkout_title: 'Thanh toán', step_summary: 'Tóm tắt', step_payment: 'Thanh toán', step_confirm: 'Xác nhận',
+                sum_product: 'Sản phẩm', sum_duration: 'Thời hạn', sum_server: 'Server', sum_platform: 'Nền tảng', sum_total: 'Tổng giá',
+                btn_next_payment: 'Tiếp tục Thanh toán', pay_choose: 'Chọn Phương thức Thanh toán',
+                pay_ewallet: 'Ví điện tử', pay_scanqr: 'Quét QR', pay_bank: 'Chuyển khoản',
+                btn_back: 'Quay lại', btn_next: 'Tiếp', total_pay: 'Tổng Thanh toán',
+                instr_title: 'Hướng dẫn Thanh toán:', instr_1: '1. Hoàn tất thanh toán bằng phương thức đã chọn.', instr_2: '2. Chụp ảnh chứng từ thanh toán.',
+                instr_3: '3. Nhấp nút xác nhận bên dưới để gửi chứng từ cho admin Telegram.', instr_4: '4. Key sẽ được gửi sau khi admin xác minh thanh toán.',
+                btn_confirm: 'Xác nhận qua Telegram', toast_fill: 'Vui lòng điền tên người dùng và mật khẩu!', toast_login: 'Đăng nhập thành công! Chào mừng, ',
+                toast_payment: 'Vui lòng chọn phương thức thanh toán trước!', toast_no_qr: 'Hình QR không có sẵn. Vui lòng liên hệ admin qua Telegram.'
+            },
+            'ko': {
+                nav_home: '홈', nav_products: '제품', nav_faq: '자주 묻는 질문', nav_support: '지원',
+                btn_login: '로그인',
+                search_placeholder: '제품 검색...',
+                hero_subtitle: '프리미엄 디지털 스토어 및 도구',
+                btn_view_products: '제품 보기', btn_contact: '문의하기',
+                section_catalog: '제품 카탈로그',
+                section_catalog_desc: 'PUBG Mobile Paks 지원 - 글로벌, 한국, 베트남, 대만 | Android Non-Root',
+                badge_popular: '인기', badge_best: '최고 가치', badge_season: '시즌', badge_permanent: '영구',
+                prod_7d_name: '7일 키', prod_7d_desc: '7일 동안 완전 액세스. PUBG Mobile 글로벌, 한국, 베트남 및 대만 지원. Android Non-Root.',
+                prod_15d_name: '15일 키', prod_15d_desc: '15일 동안 완전 액세스. 글로벌, 한국, 베트남 및 대만 지원. Android Non-Root.',
+                prod_30d_name: '30일 키', prod_30d_desc: '30일 동안 완전 액세스. PUBG Mobile 글로벌, 한국, 베트남 및 대만 완전 안전.',
+                prod_season_name: '1 시즌 키', prod_season_desc: '1 시즌(약 2개월) 동안 완전 액세스. 모든 서버 완전 안전.',
+                prod_perm_name: '영구 키', prod_perm_desc: '시간 제한 없이 영구 액세스. 모든 서버 완전 안전 및 평생 보증.',
+                btn_buy: '지금 구매',
+                faq_title: '자주 묻는 질문', faq_desc: '고객들이 자주 묻는 질문',
+                faq_q1: '제품을 구매하는 방법?',
+                faq_a1: '제품의 "지금 구매"를 클릭하고 결제 방법(DANA, QRIS, SeaBank, BNI)을 선택한 다음 지침을 따르세요. DANA/SeaBank/BNI의 경우 결제 세부 정보가 개인 Telegram 채팅을 통해 전송됩니다.',
+                faq_q2: '어떤 결제 방법을 사용할 수 있나요?',
+                faq_a2: '전자 지갑 DANA, QRIS(QR 스캔), 은행 송금 SeaBank 및 BNI를 통해 결제를 수락합니다.',
+                faq_q3: '웹사이트에 계좌 번호가 없는 이유는?',
+                faq_a3: '상호 보안을 위해 결제 세부 정보(DANA 번호, 은행 계좌 등)는 주문 확인 후 개인 Telegram 채팅을 통해 직접 전송됩니다.',
+                faq_q4: '키 배송은 얼마나 걸리나요?',
+                faq_a4: 'Telegram을 통해 관리자가 결제를 확인한 후 키가 즉시 배송됩니다.',
+                footer_desc: 'PUBG Mobile Paks를 위한 프리미엄 디지털 제품 제공 업체. 글로벌, 한국, 베트남, 대만 지원. 완전 안전 및 Android Non-Root.',
+                footer_nav: '네비게이션', footer_payment: '결제', footer_contact: '문의하기',
+                footer_copy: '© 2024 Shadowcheat Project. 모든 권리 보유. | 안전 및 보안',
+                login_title: '계정 로그인', login_user_label: '사용자 이름 / 이메일', login_user_ph: '사용자 이름 또는 이메일 입력',
+                login_pass_label: '비밀번호', login_pass_ph: '비밀번호 입력', login_btn: '로그인',
+                login_no_acc: '계정이 없으신가요?', login_contact: '관리자에게 문의',
+                checkout_title: '결제', step_summary: '요약', step_payment: '결제', step_confirm: '확인',
+                sum_product: '제품', sum_duration: '기간', sum_server: '서버', sum_platform: '플랫폼', sum_total: '총 가격',
+                btn_next_payment: '결제로 이동', pay_choose: '결제 방법 선택',
+                pay_ewallet: '전자 지갑', pay_scanqr: 'QR 스캔', pay_bank: '은행 송금',
+                btn_back: '뒤로', btn_next: '다음', total_pay: '총 결제',
+                instr_title: '결제 안내:', instr_1: '1. 선택한 방법으로 결제를 완료하세요.', instr_2: '2. 결제 증명을 스크린샷하세요.',
+                instr_3: '3. 아래 확인 버튼을 클릭하여 증명을 Telegram 관리자에게 보내세요.', instr_4: '4. 관리자가 결제를 확인한 후 키가 전송됩니다.',
+                btn_confirm: 'Telegram을 통해 확인', toast_fill: '사용자 이름과 비밀번호를 입력하세요!', toast_login: '로그인 성공! 환영합니다, ',
+                toast_payment: '먼저 결제 방법을 선택하세요!', toast_no_qr: 'QR 이미지를 사용할 수 없습니다. Telegram을 통해 관리자에게 문의하세요.'
+            },
+            'ja': {
+                nav_home: 'ホーム', nav_products: '製品', nav_faq: 'よくある質問', nav_support: 'サポート',
+                btn_login: 'ログイン',
+                search_placeholder: '製品を検索...',
+                hero_subtitle: 'プレミアムデジタルストア＆ツール',
+                btn_view_products: '製品を見る', btn_contact: 'お問い合わせ',
+                section_catalog: '製品カタログ',
+                section_catalog_desc: 'PUBG Mobile Paks サポート - グローバル、韓国、ベトナム、台湾 | Android Non-Root',
+                badge_popular: '人気', badge_best: 'ベストバリュー', badge_season: 'シーズン', badge_permanent: '永久',
+                prod_7d_name: '7日間キー', prod_7d_desc: '7日間の完全アクセス。PUBG Mobile グローバル、韓国、ベトナム、台湾をサポート。Android Non-Root。',
+                prod_15d_name: '15日間キー', prod_15d_desc: '15日間の完全アクセス。グローバル、韓国、ベトナム、台湾をサポート。Android Non-Root。',
+                prod_30d_name: '30日間キー', prod_30d_desc: '30日間の完全アクセス。PUBG Mobile グローバル、韓国、ベトナム、台湾で完全安全。',
+                prod_season_name: '1シーズンキー', prod_season_desc: '1シーズン（約2ヶ月）の完全アクセス。すべてのサーバーで完全安全。',
+                prod_perm_name: '永久キー', prod_perm_desc: '時間制限なしの永久アクセス。すべてのサーバーで完全安全＆生涯保証。',
+                btn_buy: '今すぐ購入',
+                faq_title: 'よくある質問', faq_desc: 'お客様からよく寄せられる質問',
+                faq_q1: '製品の購入方法は？',
+                faq_a1: '製品の「今すぐ購入」をクリックし、支払い方法（DANA、QRIS、SeaBank、BNI）を選択して、指示に従ってください。DANA/SeaBank/BNIの場合、支払いの詳細は個人のTelegramチャットで送信されます。',
+                faq_q2: '利用可能な支払い方法は？',
+                faq_a2: '電子ウォレットDANA、QRIS（QRスキャン）、銀行振込SeaBankおよびBNIでの支払いを受け付けています。',
+                faq_q3: 'ウェブサイトに口座番号がないのはなぜですか？',
+                faq_a3: '相互の安全のため、支払いの詳細（DANA番号、銀行口座など）は、ご注文確認後、個人のTelegramチャットを通じて直接送信されます。',
+                faq_q4: 'キーの配信にはどのくらい時間がかかりますか？',
+                faq_a4: 'Telegramを通じて管理者が支払いを確認した後、キーは即座に配信されます。',
+                footer_desc: 'PUBG Mobile Paksのプレミアムデジタル製品プロバイダー。グローバル、韓国、ベトナム、台湾をサポート。完全安全＆Android Non-Root。',
+                footer_nav: 'ナビゲーション', footer_payment: '支払い', footer_contact: 'お問い合わせ',
+                footer_copy: '© 2024 Shadowcheat Project. All rights reserved. | 安全＆セキュア',
+                login_title: 'アカウントログイン', login_user_label: 'ユーザー名 / メール', login_user_ph: 'ユーザー名またはメールを入力',
+                login_pass_label: 'パスワード', login_pass_ph: 'パスワードを入力', login_btn: 'ログイン',
+                login_no_acc: 'アカウントをお持ちでない方', login_contact: '管理者に連絡',
+                checkout_title: 'チェックアウト', step_summary: '概要', step_payment: '支払い', step_confirm: '確認',
+                sum_product: '製品', sum_duration: '期間', sum_server: 'サーバー', sum_platform: 'プラットフォーム', sum_total: '合計金額',
+                btn_next_payment: '支払いへ進む', pay_choose: '支払い方法を選択',
+                pay_ewallet: '電子ウォレット', pay_scanqr: 'QRスキャン', pay_bank: '銀行振込',
+                btn_back: '戻る', btn_next: '次へ', total_pay: '支払総額',
+                instr_title: '支払い手順：', instr_1: '1. 選択した方法で支払いを完了します。', instr_2: '2. 支払い証明をスクリーンショットします。',
+                instr_3: '3. 下の確認ボタンをクリックして、証明をTelegram管理者に送信します。', instr_4: '4. 管理者が支払いを確認した後、キーが送信されます。',
+                btn_confirm: 'Telegramで確認', toast_fill: 'ユーザー名とパスワードを入力してください！', toast_login: 'ログイン成功！ようこそ、',
+                toast_payment: '先に支払い方法を選択してください！', toast_no_qr: 'QR画像が利用できません。Telegramで管理者にお問い合わせください。'
+            },
+            'th': {
+                nav_home: 'หน้าแรก', nav_products: 'สินค้า', nav_faq: 'คำถามที่พบบ่อย', nav_support: 'สนับสนุน',
+                btn_login: 'เข้าสู่ระบบ',
+                search_placeholder: 'ค้นหาสินค้า...',
+                hero_subtitle: 'ร้านค้าดิจิทัลพรีเมียมและเครื่องมือ',
+                btn_view_products: 'ดูสินค้า', btn_contact: 'ติดต่อเรา',
+                section_catalog: 'แคตตาล็อกสินค้า',
+                section_catalog_desc: 'รองรับ PUBG Mobile Paks - Global, เกาหลี, เวียดนาม, ไต้หวัน | Android Non-Root',
+                badge_popular: 'ยอดนิยม', badge_best: 'คุ้มที่สุด', badge_season: 'ซีซั่น', badge_permanent: 'ถาวร',
+                prod_7d_name: 'คีย์ 7 วัน', prod_7d_desc: 'เข้าถึงเต็มรูปแบบ 7 วัน รองรับ PUBG Mobile Global, เกาหลี, เวียดนาม และไต้หวัน Android Non-Root',
+                prod_15d_name: 'คีย์ 15 วัน', prod_15d_desc: 'เข้าถึงเต็มรูปแบบ 15 วัน รองรับ Global, เกาหลี, เวียดนาม และไต้หวัน Android Non-Root',
+                prod_30d_name: 'คีย์ 30 วัน', prod_30d_desc: 'เข้าถึงเต็มรูปแบบ 30 วัน ปลอดภัยเต็มรูปแบบและรับประกันสำหรับ PUBG Mobile Global, เกาหลี, เวียดนาม และไต้หวัน',
+                prod_season_name: 'คีย์ 1 ซีซั่น', prod_season_desc: 'เข้าถึงเต็มรูปแบบ 1 ซีซั่น (ประมาณ 2 เดือน) ปลอดภัยเต็มรูปแบบสำหรับทุกเซิร์ฟเวอร์',
+                prod_perm_name: 'คีย์ถาวร', prod_perm_desc: 'เข้าถึงถาวรไม่มีขีดจำกัดเวลา ปลอดภัยเต็มรูปแบบและรับประกันตลอดชีพสำหรับทุกเซิร์ฟเวอร์',
+                btn_buy: 'ซื้อเลย',
+                faq_title: 'คำถามที่พบบ่อย', faq_desc: 'คำถามทั่วไปจากลูกค้า',
+                faq_q1: 'วิธีการซื้อสินค้า?',
+                faq_a1: 'คลิก "ซื้อเลย" ที่สินค้า เลือกวิธีการชำระเงิน (DANA, QRIS, SeaBank, BNI) จากนั้นทำตามคำแนะนำ สำหรับ DANA/SeaBank/BNI รายละเอียดการชำระเงินจะถูกส่งโดยผู้ดูแลผ่านแชท Telegram ส่วนตัว',
+                faq_q2: 'มีวิธีการชำระเงินอะไรบ้าง?',
+                faq_a2: 'เรารับชำระผ่าน E-Wallet DANA, QRIS (สแกน QR) และโอนผ่านธนาคาร SeaBank และ BNI',
+                faq_q3: 'ทำไมไม่มีเลขบัญชีในเว็บไซต์?',
+                faq_a3: 'เพื่อความปลอดภัยซึ่งกันและกัน รายละเอียดการชำระเงิน (หมายเลข DANA บัญชีธนาคาร ฯลฯ) จะถูกส่งโดยตรงโดยผู้ดูแลผ่านแชท Telegram ส่วนตัวหลังจากคุณยืนยันคำสั่งซื้อ',
+                faq_q4: 'การส่งคีย์ใช้เวลานานเท่าไหร่?',
+                faq_a4: 'การส่งคีย์จะทันทีหลังจากผู้ดูแลยืนยันการชำระเงินผ่าน Telegram',
+                footer_desc: 'ผู้ให้บริการผลิตภัณฑ์ดิจิทัลพรีเมียมสำหรับ PUBG Mobile Paks รองรับ Global, เกาหลี, เวียดนาม, ไต้หวัน ปลอดภัยเต็มรูปแบบและ Android Non-Root',
+                footer_nav: 'การนำทาง', footer_payment: 'การชำระเงิน', footer_contact: 'ติดต่อเรา',
+                footer_copy: '© 2024 Shadowcheat Project สงวนลิขสิทธิ์ | ปลอดภัยและมั่นคง',
+                login_title: 'เข้าสู่ระบบบัญชี', login_user_label: 'ชื่อผู้ใช้ / อีเมล', login_user_ph: 'ป้อนชื่อผู้ใช้หรืออีเมล',
+                login_pass_label: 'รหัสผ่าน', login_pass_ph: 'ป้อนรหัสผ่าน', login_btn: 'เข้าสู่ระบบ',
+                login_no_acc: 'ยังไม่มีบัญชี?', login_contact: 'ติดต่อผู้ดูแล',
+                checkout_title: 'ชำระเงิน', step_summary: 'สรุป', step_payment: 'การชำระเงิน', step_confirm: 'ยืนยัน',
+                sum_product: 'สินค้า', sum_duration: 'ระยะเวลา', sum_server: 'เซิร์ฟเวอร์', sum_platform: 'แพลตฟอร์ม', sum_total: 'ราคารวม',
+                btn_next_payment: 'ไปที่การชำระเงิน', pay_choose: 'เลือกวิธีการชำระเงิน',
+                pay_ewallet: 'E-Wallet', pay_scanqr: 'สแกน QR', pay_bank: 'โอนผ่านธนาคาร',
+                btn_back: 'กลับ', btn_next: 'ถัดไป', total_pay: 'ยอดชำระทั้งหมด',
+                instr_title: 'คำแนะนำการชำระเงิน:', instr_1: '1. ชำระเงินให้เสร็จสิ้นตามวิธีที่เลือก', instr_2: '2. แคปหน้าจอหลักฐานการชำระเงิน',
+                instr_3: '3. คลิกปุ่มยืนยันด้านล่างเพื่อส่งหลักฐานให้ผู้ดูแล Telegram', instr_4: '4. คีย์จะถูกส่งหลังจากผู้ดูแลยืนยันการชำระเงิน',
+                btn_confirm: 'ยืนยันผ่าน Telegram', toast_fill: 'กรุณากรอกชื่อผู้ใช้และรหัสผ่าน!', toast_login: 'เข้าสู่ระบบสำเร็จ! ยินดีต้อนรับ ',
+                toast_payment: 'กรุณาเลือกวิธีการชำระเงินก่อน!', toast_no_qr: 'ไม่มีรูปภาพ QR กรุณาติดต่อผู้ดูแลผ่าน Telegram'
+            },
+            'ar': {
+                nav_home: 'الرئيسية', nav_products: 'المنتجات', nav_faq: 'الأسئلة الشائعة', nav_support: 'الدعم',
+                btn_login: 'تسجيل الدخول',
+                search_placeholder: 'ابحث عن المنتجات...',
+                hero_subtitle: 'متجر رقمي متميز وأدوات',
+                btn_view_products: 'عرض المنتجات', btn_contact: 'اتصل بنا',
+                section_catalog: 'كتالوج المنتجات',
+                section_catalog_desc: 'دعم PUBG Mobile Paks - عالمي، كوريا، فيتنام، تايوان | Android Non-Root',
+                badge_popular: 'شائع', badge_best: 'أفضل قيمة', badge_season: 'موسم', badge_permanent: 'دائم',
+                prod_7d_name: 'مفتاح 7 أيام', prod_7d_desc: 'وصول كامل لمدة 7 أيام. دعم PUBG Mobile عالمي، كوريا، فيتنام وتايوان. Android Non-Root.',
+                prod_15d_name: 'مفتاح 15 يوم', prod_15d_desc: 'وصول كامل لمدة 15 يوم. دعم عالمي، كوريا، فيتنام وتايوان. Android Non-Root.',
+                prod_30d_name: 'مفتاح 30 يوم', prod_30d_desc: 'وصول كامل لمدة 30 يوم. آمن تمامًا وضمان لـ PUBG Mobile عالمي، كوريا، فيتنام وتايوان.',
+                prod_season_name: 'مفتاح موسم 1', prod_season_desc: 'وصول كامل لموسم واحد (حوالي شهرين). آمن تمامًا لجميع الخوادم.',
+                prod_perm_name: 'مفتاح دائم', prod_perm_desc: 'وصول دائم بدون حد زمني. آمن تمامًا وضمان مدى الحياة لجميع الخوادم.',
+                btn_buy: 'اشتر الآن',
+                faq_title: 'الأسئلة الشائعة', faq_desc: 'الأسئلة الشائعة من عملائنا',
+                faq_q1: 'كيف تشتري منتجًا؟',
+                faq_a1: 'انقر فوق "
