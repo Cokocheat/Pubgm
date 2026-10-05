@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shadowcheat Project - PUBG Mobile Paks</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://youtu.be; child-src 'self' https://www.youtube.com https://www.youtube-nocookie.com;">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://youtu.be; child-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://files.catbox.moe;">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="robots" content="noarchive, nosnippet">
@@ -65,7 +65,6 @@
             -webkit-touch-callout: none !important; outline: none !important; }
         a:focus, button:focus, div:focus, span:focus, input:focus { outline: none !important; }
 
-        /* HEADER */
         header { position: fixed; top: 0; left: 0; right: 0; height: var(--header-height); z-index: 1000;
             background: var(--bg-glass); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border-color); padding: 0 5%; display: flex;
@@ -141,7 +140,6 @@
             border-radius: 3px; transition: var(--transition); }
         .hamburger:active span { background: var(--gold-primary); box-shadow: 0 0 8px var(--gold-glow); }
 
-        /* HERO */
         main { padding: 0 5%; max-width: 1400px; margin: 0 auto; width: 100%; overflow: hidden; }
 
         .hero { display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -220,13 +218,13 @@
         .server-tag .dot { width: 7px; height: 7px; background: currentColor;
             border-radius: 50%; box-shadow: 0 0 8px currentColor; }
 
-        .hero-cta { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .hero-cta { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
 
-        .btn-primary, .btn-secondary { font-family: var(--font-heading); font-size: 15px;
-            font-weight: 700; padding: 16px 45px; border-radius: 50px; cursor: pointer;
+        .btn-primary, .btn-secondary, .btn-download-hero { font-family: var(--font-heading); font-size: 15px;
+            font-weight: 700; padding: 16px 40px; border-radius: 50px; cursor: pointer;
             text-transform: uppercase; letter-spacing: 2px; transition: var(--transition-fast);
-            text-decoration: none; display: inline-block; border: none;
-            position: relative; overflow: hidden; }
+            text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+            gap: 10px; border: none; position: relative; overflow: hidden; }
 
         .btn-primary { background: linear-gradient(90deg, #b8860b, var(--gold-primary));
             color: #000; box-shadow: 0 0 20px var(--gold-glow); }
@@ -246,7 +244,37 @@
         .btn-secondary:active { transform: scale(0.94); background: rgba(255, 170, 0, 0.2);
             box-shadow: 0 0 30px var(--gold-glow-strong), inset 0 0 30px rgba(255, 170, 0, 0.3); }
 
-        /* SECTION */
+        /* Hero Download Button (Green) */
+        .btn-download-hero {
+            background: linear-gradient(90deg, #00c853, #00e676);
+            color: #000;
+            box-shadow: 0 0 25px rgba(0, 200, 83, 0.5);
+            animation: heroDownloadPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes heroDownloadPulse {
+            0%, 100% { box-shadow: 0 0 25px rgba(0, 200, 83, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(0, 200, 83, 0.9), 0 0 70px rgba(0, 200, 83, 0.5); }
+        }
+
+        .btn-download-hero:hover {
+            transform: translateY(-3px) scale(1.02);
+            filter: brightness(1.15);
+            box-shadow: 0 10px 35px rgba(0, 200, 83, 0.9), 0 0 60px rgba(0, 200, 83, 0.5);
+        }
+
+        .btn-download-hero:active {
+            transform: scale(0.94);
+            filter: brightness(1.3);
+        }
+
+        .btn-download-hero svg {
+            width: 20px; height: 20px;
+            transition: var(--transition-fast);
+        }
+
+        .btn-download-hero:hover svg { transform: translateY(3px); }
+
         .section-header { text-align: center; margin-bottom: 50px; }
 
         .section-title { font-family: var(--font-heading); font-size: 30px; color: var(--gold-primary);
@@ -255,7 +283,6 @@
 
         .section-desc { color: var(--text-muted); font-size: 15px; }
 
-        /* PRODUK */
         #produk { padding: 70px 0; }
 
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
@@ -307,270 +334,125 @@
         .buy-btn:active { transform: scale(0.94);
             box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow); filter: brightness(1.3); }
 
-        /* TUTORIAL */
         #tutorial { padding: 70px 0; max-width: 900px; margin: 0 auto; }
 
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 2px solid var(--border-color);
+        .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%;
+            border-radius: 20px; overflow: hidden; border: 2px solid var(--border-color);
             box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255, 170, 0, 0.15);
-            background: #000;
-            transition: var(--transition);
-        }
+            background: #000; transition: var(--transition); }
 
-        .video-wrapper:hover {
-            border-color: var(--gold-primary);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 50px rgba(255, 170, 0, 0.3);
-        }
+        .video-wrapper:hover { border-color: var(--gold-primary);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 50px rgba(255, 170, 0, 0.3); }
 
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: none;
-        }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%; border: none; }
 
-        .tutorial-warning {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            background: rgba(255, 68, 68, 0.08);
-            border: 1px solid rgba(255, 68, 68, 0.4);
-            border-left: 4px solid var(--danger-red);
-            border-radius: 12px;
-            padding: 18px 22px;
-            margin-top: 25px;
-            box-shadow: 0 0 20px rgba(255, 68, 68, 0.15);
-            transition: var(--transition);
-        }
+        .tutorial-warning { display: flex; align-items: center; gap: 15px;
+            background: rgba(255, 68, 68, 0.08); border: 1px solid rgba(255, 68, 68, 0.4);
+            border-left: 4px solid var(--danger-red); border-radius: 12px; padding: 18px 22px;
+            margin-top: 25px; box-shadow: 0 0 20px rgba(255, 68, 68, 0.15);
+            transition: var(--transition); }
 
-        .tutorial-warning:hover {
-            box-shadow: 0 0 30px rgba(255, 68, 68, 0.25);
-            transform: translateY(-2px);
-        }
+        .tutorial-warning:hover { box-shadow: 0 0 30px rgba(255, 68, 68, 0.25); transform: translateY(-2px); }
 
-        .warning-icon {
-            font-family: var(--font-heading);
-            font-size: 24px;
-            font-weight: 900;
-            color: var(--danger-red);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(255, 68, 68, 0.15);
-            border: 2px solid var(--danger-red);
-            flex-shrink: 0;
-            text-shadow: 0 0 10px var(--red-glow);
-        }
+        .warning-icon { font-family: var(--font-heading); font-size: 24px; font-weight: 900;
+            color: var(--danger-red); width: 40px; height: 40px; display: flex;
+            align-items: center; justify-content: center; border-radius: 50%;
+            background: rgba(255, 68, 68, 0.15); border: 2px solid var(--danger-red);
+            flex-shrink: 0; text-shadow: 0 0 10px var(--red-glow); }
 
-        .tutorial-warning p {
-            color: var(--danger-red);
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 1.6;
-            letter-spacing: 0.5px;
-        }
+        .tutorial-warning p { color: var(--danger-red); font-size: 14px; font-weight: 700;
+            line-height: 1.6; letter-spacing: 0.5px; }
 
-        /* DOWNLOAD */
-        #download { padding: 70px 0; max-width: 700px; margin: 0 auto; }
+        #download { padding: 70px 0; max-width: 700px; margin: 0 auto; scroll-margin-top: 90px; }
 
-        .download-card {
-            background: var(--bg-panel);
-            border: 2px solid var(--border-color);
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
+        .download-card { background: var(--bg-panel); border: 2px solid var(--border-color);
+            border-radius: 20px; padding: 40px 30px; text-align: center;
             box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255, 170, 0, 0.15);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
+            transition: var(--transition); position: relative; overflow: hidden; }
 
-        .download-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #b8860b, var(--gold-primary), #b8860b);
-            box-shadow: 0 0 20px var(--gold-glow);
-        }
+        .download-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0;
+            height: 4px; background: linear-gradient(90deg, #b8860b, var(--gold-primary), #b8860b);
+            box-shadow: 0 0 20px var(--gold-glow); }
 
-        .download-card:hover {
-            border-color: var(--gold-primary);
+        .download-card:hover { border-color: var(--gold-primary);
             box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 60px rgba(255, 170, 0, 0.35);
-            transform: translateY(-5px);
-        }
+            transform: translateY(-5px); }
 
-        .download-icon {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            background: rgba(255, 170, 0, 0.08);
-            border: 2px solid var(--gold-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .download-icon { width: 90px; height: 90px; margin: 0 auto 20px; border-radius: 50%;
+            background: rgba(255, 170, 0, 0.08); border: 2px solid var(--gold-primary);
+            display: flex; align-items: center; justify-content: center;
             box-shadow: 0 0 25px var(--gold-glow);
-            animation: downloadFloat 3s ease-in-out infinite;
-        }
+            animation: downloadFloat 3s ease-in-out infinite; }
 
         @keyframes downloadFloat {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-8px); }
         }
 
-        .download-icon svg {
-            width: 45px;
-            height: 45px;
-            fill: var(--gold-primary);
-            filter: drop-shadow(0 0 10px var(--gold-glow-strong));
-        }
+        .download-icon svg { width: 45px; height: 45px; fill: var(--gold-primary);
+            filter: drop-shadow(0 0 10px var(--gold-glow-strong)); }
 
-        .download-file-name {
-            font-family: var(--font-heading);
-            font-size: 24px;
-            font-weight: 900;
-            color: var(--text-main);
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
+        .download-file-name { font-family: var(--font-heading); font-size: 24px; font-weight: 900;
+            color: var(--text-main); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1.5px; }
 
-        .download-info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 25px;
-        }
+        .download-features { background: rgba(0, 136, 204, 0.06); border-left: 3px solid var(--gold-primary);
+            border-radius: 12px; padding: 18px 22px; margin-bottom: 30px; text-align: left; }
 
-        .download-info-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 12px 15px;
-            text-align: left;
-            transition: var(--transition-fast);
-        }
+        .download-features h4 { font-family: var(--font-heading); font-size: 14px;
+            color: var(--gold-primary); margin-bottom: 12px; letter-spacing: 1px; text-transform: uppercase; }
 
-        .download-info-item:hover {
-            border-color: var(--gold-primary);
-            background: rgba(255, 170, 0, 0.05);
-            box-shadow: 0 0 15px rgba(255, 170, 0, 0.15);
-        }
+        .download-features ul { list-style: none; padding: 0; }
 
-        .info-label {
-            display: block;
-            font-size: 11px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
-        }
+        .download-features li { color: var(--text-muted); font-size: 13px;
+            padding: 6px 0 6px 25px; position: relative; line-height: 1.5; }
 
-        .info-value {
-            display: block;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--gold-primary);
-            text-shadow: 0 0 8px rgba(255, 170, 0, 0.4);
-        }
+        .download-features li::before { content: '✓'; position: absolute; left: 0; top: 6px;
+            color: var(--success-green); font-weight: 900; font-size: 14px;
+            text-shadow: 0 0 8px var(--green-glow); }
 
-        .download-features {
-            background: rgba(0, 136, 204, 0.06);
-            border-left: 3px solid var(--gold-primary);
-            border-radius: 12px;
-            padding: 18px 22px;
-            margin-bottom: 30px;
-            text-align: left;
-        }
-
-        .download-features h4 {
-            font-family: var(--font-heading);
-            font-size: 14px;
-            color: var(--gold-primary);
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .download-features ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .download-features li {
-            color: var(--text-muted);
-            font-size: 13px;
-            padding: 6px 0 6px 25px;
-            position: relative;
-            line-height: 1.5;
-        }
-
-        .download-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            top: 6px;
-            color: var(--success-green);
-            font-weight: 900;
-            font-size: 14px;
-            text-shadow: 0 0 8px var(--green-glow);
-        }
-
-        .btn-download {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: linear-gradient(90deg, #b8860b, var(--gold-primary));
-            color: #000;
-            font-family: var(--font-heading);
-            font-size: 16px;
-            font-weight: 900;
-            padding: 18px 50px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: var(--transition-fast);
-            box-shadow: 0 0 25px var(--gold-glow);
-            position: relative;
-            overflow: hidden;
+        .btn-download { display: inline-flex; align-items: center; justify-content: center;
+            gap: 12px; background: linear-gradient(90deg, #00c853, #00e676);
+            color: #000; font-family: var(--font-heading); font-size: 16px; font-weight: 900;
+            padding: 18px 50px; border: none; border-radius: 50px; cursor: pointer;
+            text-decoration: none; text-transform: uppercase; letter-spacing: 2px;
+            transition: var(--transition-fast); box-shadow: 0 0 25px rgba(0, 200, 83, 0.5);
+            position: relative; overflow: hidden;
             animation: downloadPulse 2.5s ease-in-out infinite;
-        }
+            -webkit-appearance: none;
+            font-family: var(--font-heading); }
 
         @keyframes downloadPulse {
-            0%, 100% { box-shadow: 0 0 25px var(--gold-glow); }
-            50% { box-shadow: 0 0 40px var(--gold-glow-strong), 0 0 70px var(--gold-glow); }
+            0%, 100% { box-shadow: 0 0 25px rgba(0, 200, 83, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(0, 200, 83, 0.9), 0 0 70px rgba(0, 200, 83, 0.5); }
         }
 
-        .btn-download svg { transition: var(--transition-fast); }
+        .btn-download svg { transition: var(--transition-fast); width: 22px; height: 22px; }
 
-        .btn-download:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 10px 35px var(--gold-glow-strong), 0 0 60px var(--gold-glow);
-            filter: brightness(1.15);
+        .btn-download:hover:not(:disabled) { transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 10px 35px rgba(0, 200, 83, 0.9), 0 0 60px rgba(0, 200, 83, 0.5);
+            filter: brightness(1.15); }
+
+        .btn-download:hover:not(:disabled) svg { transform: translateY(3px); }
+
+        .btn-download:active:not(:disabled) { transform: scale(0.94);
+            box-shadow: 0 0 50px rgba(0, 200, 83, 0.9), 0 0 90px rgba(0, 200, 83, 0.5);
+            filter: brightness(1.3); }
+
+        .btn-download:disabled { opacity: 0.7; cursor: wait; }
+
+        .btn-download .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(0, 0, 0, 0.2);
+            border-top-color: #000;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
         }
 
-        .btn-download:hover svg { transform: translateY(3px); }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
-        .btn-download:active {
-            transform: scale(0.94);
-            box-shadow: 0 0 50px var(--gold-glow-strong), 0 0 90px var(--gold-glow);
-            filter: brightness(1.3);
-        }
-
-        /* FAQ */
         #faq { padding: 70px 0; max-width: 800px; margin: 0 auto; }
 
         .faq-item { background: var(--bg-panel); border: 1px solid var(--border-color);
@@ -600,7 +482,6 @@
         .faq-item.active .faq-answer { max-height: 300px; padding: 0 20px 20px;
             border-top-color: rgba(255, 255, 255, 0.05); }
 
-        /* FOOTER */
         footer { margin-top: 70px; padding: 40px 5%; border-top: 1px solid var(--border-color);
             background: rgba(5, 5, 5, 0.9); display: flex; flex-direction: column;
             align-items: center; text-align: center; width: 100%; gap: 30px; }
@@ -638,7 +519,6 @@
         .footer-bottom { width: 100%; text-align: center; padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-muted); font-size: 13px; }
 
-        /* MODAL */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.9); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
             display: flex; align-items: center; justify-content: center; z-index: 2000;
@@ -686,7 +566,6 @@
         .form-group input:focus { border-color: var(--gold-primary);
             box-shadow: 0 0 20px var(--gold-glow), inset 0 0 10px rgba(255, 170, 0, 0.1); }
 
-        /* CHECKOUT */
         .checkout-steps { display: flex; justify-content: space-between; margin-bottom: 25px; position: relative; }
 
         .checkout-steps::before { content: ''; position: absolute; top: 15px; left: 15px; right: 15px;
@@ -875,7 +754,6 @@
         .btn-confirm:active { transform: scale(0.94);
             box-shadow: 0 0 30px var(--blue-glow), 0 0 60px rgba(0, 136, 204, 0.4); filter: brightness(1.25); }
 
-        /* TOAST */
         .toast { position: fixed; bottom: 30px; right: 30px; background: var(--bg-panel);
             border-left: 4px solid var(--gold-primary); color: var(--text-main);
             padding: 15px 25px; border-radius: 50px;
@@ -889,7 +767,6 @@
             background: var(--gold-primary); box-shadow: 0 0 10px var(--gold-primary); flex-shrink: 0; }
         .toast-message { font-size: 14px; font-weight: 600; }
 
-        /* RESPONSIVE */
         @media (min-width: 769px) and (max-width: 1024px) {
             :root { --header-height: 65px; }
             .brand-name { font-size: 17px; } .logo-img { width: 40px; height: 40px; }
@@ -923,8 +800,8 @@
             .product-price { font-size: 22px; }
             .toast { bottom: 20px; right: 20px; left: 20px; transform: translateY(150%); }
             .toast.show { transform: translateY(0); }
-            .hero-cta { flex-direction: column; width: 100%; max-width: 300px; gap: 15px; }
-            .btn-primary, .btn-secondary { width: 100%; text-align: center; padding: 14px 30px; font-size: 14px; }
+            .hero-cta { flex-direction: column; width: 100%; max-width: 300px; gap: 12px; }
+            .btn-primary, .btn-secondary, .btn-download-hero { width: 100%; text-align: center; padding: 14px 30px; font-size: 13px; }
             .game-badge { padding: 6px 16px 6px 8px; margin-bottom: 15px; }
             .pubg-logo { width: 26px; height: 26px; }
             .game-badge-text { font-size: 11px; letter-spacing: 1px; }
@@ -952,7 +829,6 @@
             .download-icon { width: 75px; height: 75px; }
             .download-icon svg { width: 38px; height: 38px; }
             .download-file-name { font-size: 20px; }
-            .download-info-grid { grid-template-columns: 1fr; gap: 8px; }
             .btn-download { width: 100%; padding: 16px 30px; font-size: 14px; }
             .download-features li { font-size: 12px; }
         }
@@ -964,7 +840,6 @@
             .paks-text { font-size: 12px; letter-spacing: 3px; }
         }
 
-        /* MOBILE MENU */
         .mobile-menu { position: fixed; top: var(--header-height); left: 0; right: 0; bottom: 0;
             width: 100%; height: calc(100vh - var(--header-height)); background: var(--bg-dark);
             z-index: 999; display: flex; flex-direction: column; padding: 20px 25px;
@@ -1039,6 +914,10 @@
                 <div class="server-tag safe"><span class="dot"></span> FULL SAFE</div>
             </div>
             <div class="hero-cta">
+                <a href="#download" class="btn-download-hero">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+                    <span data-i18n="download_btn_hero">DOWNLOAD</span>
+                </a>
                 <a href="#produk" class="btn-primary" data-i18n="btn_view_products">View Products</a>
                 <a href="https://t.me/scp281025" target="_blank" class="btn-secondary" data-i18n="btn_contact">Contact Us</a>
             </div>
@@ -1092,7 +971,6 @@
             </div>
         </section>
 
-        <!-- TUTORIAL SECTION -->
         <section id="tutorial">
             <div class="section-header">
                 <h2 class="section-title" data-i18n="tutorial_title">Cara Pasang Paks</h2>
@@ -1114,7 +992,6 @@
             </div>
         </section>
 
-        <!-- DOWNLOAD SECTION -->
         <section id="download">
             <div class="section-header">
                 <h2 class="section-title" data-i18n="download_title">Download Paks Mod</h2>
@@ -1130,25 +1007,6 @@
 
                 <h3 class="download-file-name" data-i18n="download_file">Paks Mod PUBG Mobile</h3>
 
-                <div class="download-info-grid">
-                    <div class="download-info-item">
-                        <span class="info-label" data-i18n="download_type_label">Tipe File</span>
-                        <span class="info-value">.ZIP</span>
-                    </div>
-                    <div class="download-info-item">
-                        <span class="info-label" data-i18n="download_support_label">Support Server</span>
-                        <span class="info-value">Global / Korea / Vietnam / Taiwan</span>
-                    </div>
-                    <div class="download-info-item">
-                        <span class="info-label" data-i18n="download_platform_label">Platform</span>
-                        <span class="info-value">Android Non-Root</span>
-                    </div>
-                    <div class="download-info-item">
-                        <span class="info-label" data-i18n="download_updated_label">Terakhir Update</span>
-                        <span class="info-value">2024</span>
-                    </div>
-                </div>
-
                 <div class="download-features">
                     <h4 data-i18n="download_features_title">Keterangan:</h4>
                     <ul>
@@ -1160,16 +1018,12 @@
                     </ul>
                 </div>
 
-                <a href="https://files.catbox.moe/an62hk.zip" 
-                   download 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="btn-download">
-                    <svg viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px;">
+                <button class="btn-download" id="downloadBtn" onclick="downloadPaksFile(event)">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/>
                     </svg>
-                    <span data-i18n="download_btn">DOWNLOAD SEKARANG</span>
-                </a>
+                    <span data-i18n="download_btn" id="downloadBtnText">DOWNLOAD SEKARANG</span>
+                </button>
             </div>
         </section>
 
@@ -1334,10 +1188,6 @@
                 download_title: 'Download Paks Mod',
                 download_desc: 'Latest Paks mod file for PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_type_label: 'File Type',
-                download_support_label: 'Server Support',
-                download_platform_label: 'Platform',
-                download_updated_label: 'Last Update',
                 download_features_title: 'Description:',
                 download_feat_1: 'File contains Paks Mod for PUBG Mobile',
                 download_feat_2: 'Suitable for Android Non-Root (no root needed)',
@@ -1345,6 +1195,9 @@
                 download_feat_4: 'How to install: watch the video tutorial above',
                 download_feat_5: 'Follow the video to make features work',
                 download_btn: 'DOWNLOAD NOW',
+                download_btn_hero: 'DOWNLOAD',
+                download_loading: 'DOWNLOADING...',
+                download_success: 'Download started!',
                 faq_title: 'Frequently Asked Questions', faq_desc: 'Common questions from our customers',
                 faq_q1: 'How to buy a product?',
                 faq_a1: 'Click "BUY NOW" on the product, choose payment method (DANA, QRIS, SeaBank, BNI), then follow the instructions. For DANA/SeaBank/BNI, payment details will be sent by admin via personal Telegram chat.',
@@ -1390,10 +1243,6 @@
                 download_title: 'Download Paks Mod',
                 download_desc: 'File Paks mod terbaru untuk PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_type_label: 'Tipe File',
-                download_support_label: 'Support Server',
-                download_platform_label: 'Platform',
-                download_updated_label: 'Terakhir Update',
                 download_features_title: 'Keterangan:',
                 download_feat_1: 'File berisi Paks Mod untuk PUBG Mobile',
                 download_feat_2: 'Cocok untuk Android Non-Root (tanpa root)',
@@ -1401,6 +1250,9 @@
                 download_feat_4: 'Cara pasang: tonton video tutorial di atas',
                 download_feat_5: 'Pastikan mengikuti video agar fitur berfungsi',
                 download_btn: 'DOWNLOAD SEKARANG',
+                download_btn_hero: 'DOWNLOAD',
+                download_loading: 'MENGUNDUH...',
+                download_success: 'Download berhasil dimulai!',
                 faq_title: 'Pertanyaan Umum', faq_desc: 'Hal-hal yang sering ditanyakan oleh pelanggan',
                 faq_q1: 'Bagaimana cara membeli produk?',
                 faq_a1: 'Klik tombol "BELI SEKARANG" pada produk, pilih metode pembayaran (DANA, QRIS, SeaBank, BNI), lalu ikuti instruksi. Untuk DANA/SeaBank/BNI, detail pembayaran akan dikirim admin via chat Telegram pribadi.',
@@ -1446,10 +1298,6 @@
                 download_title: 'Paks Mod डाउनलोड करें',
                 download_desc: 'PUBG Mobile के लिए नवीनतम Paks mod फ़ाइल',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_type_label: 'फ़ाइल प्रकार',
-                download_support_label: 'सर्वर सपोर्ट',
-                download_platform_label: 'प्लेटफ़ॉर्म',
-                download_updated_label: 'अंतिम अपडेट',
                 download_features_title: 'विवरण:',
                 download_feat_1: 'फ़ाइल में PUBG Mobile के लिए Paks Mod है',
                 download_feat_2: 'Android Non-Root के लिए उपयुक्त (रूट की आवश्यकता नहीं)',
@@ -1457,6 +1305,9 @@
                 download_feat_4: 'कैसे इंस्टॉल करें: ऊपर वीडियो ट्यूटोरियल देखें',
                 download_feat_5: 'सुविधाओं के लिए वीडियो का पालन करें',
                 download_btn: 'अभी डाउनलोड करें',
+                download_btn_hero: 'डाउनलोड',
+                download_loading: 'डाउनलोड हो रहा है...',
+                download_success: 'डाउनलोड शुरू हो गया!',
                 faq_title: 'सामान्य प्रश्न', faq_desc: 'ग्राहकों द्वारा पूछे जाने वाले सामान्य प्रश्न',
                 faq_q1: 'उत्पाद कैसे खरीदें?',
                 faq_a1: 'उत्पाद पर "अभी खरीदें" क्लिक करें, भुगतान विधि चुनें (DANA, QRIS, SeaBank, BNI), फिर निर्देशों का पालन करें। DANA/SeaBank/BNI के लिए, भुगतान विवरण व्यक्तिगत Telegram चैट के माध्यम से भेजा जाएगा।',
@@ -1502,10 +1353,6 @@
                 download_title: '下载 Paks Mod',
                 download_desc: 'PUBG Mobile 最新 Paks mod 文件',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_type_label: '文件类型',
-                download_support_label: '支持服务器',
-                download_platform_label: '平台',
-                download_updated_label: '最后更新',
                 download_features_title: '说明：',
                 download_feat_1: '文件包含 PUBG Mobile 的 Paks Mod',
                 download_feat_2: '适用于 Android 免 Root（无需 Root）',
@@ -1513,6 +1360,9 @@
                 download_feat_4: '安装方法：观看上方视频教程',
                 download_feat_5: '请按视频操作以使功能正常工作',
                 download_btn: '立即下载',
+                download_btn_hero: '下载',
+                download_loading: '下载中...',
+                download_success: '下载已开始！',
                 faq_title: '常见问题', faq_desc: '客户常问的问题',
                 faq_q1: '如何购买产品？',
                 faq_a1: '在产品上点击"立即购买"，选择付款方式（DANA、QRIS、SeaBank、BNI），然后按照说明操作。对于 DANA/SeaBank/BNI，付款详情将通过个人 Telegram 聊天发送。',
@@ -1558,10 +1408,6 @@
                 download_title: 'Tải Paks Mod',
                 download_desc: 'File Paks mod mới nhất cho PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_type_label: 'Loại File',
-                download_support_label: 'Hỗ trợ Server',
-                download_platform_label: 'Nền tảng',
-                download_updated_label: 'Cập nhật cuối',
                 download_features_title: 'Mô tả:',
                 download_feat_1: 'File chứa Paks Mod cho PUBG Mobile',
                 download_feat_2: 'Phù hợp với Android Non-Root (không cần root)',
@@ -1569,6 +1415,9 @@
                 download_feat_4: 'Cách cài: xem video hướng dẫn ở trên',
                 download_feat_5: 'Làm theo video để tính năng hoạt động',
                 download_btn: 'TẢI NGAY',
+                download_btn_hero: 'TẢI XUỐNG',
+                download_loading: 'ĐANG TẢI...',
+                download_success: 'Đã bắt đầu tải xuống!',
                 faq_title: 'Câu hỏi Thường gặp', faq_desc: 'Những câu hỏi phổ biến từ khách hàng',
                 faq_q1: 'Làm thế nào để mua sản phẩm?',
                 faq_a1: 'Nhấp "MUA NGAY" trên sản phẩm, chọn phương thức thanh toán (DANA, QRIS, SeaBank, BNI), sau đó làm theo hướng dẫn. Đối với DANA/SeaBank/BNI, chi tiết thanh toán sẽ được admin gửi qua chat Telegram riêng.',
@@ -1614,10 +1463,6 @@
                 download_title: 'Paks Mod 다운로드',
                 download_desc: 'PUBG Mobile용 최신 Paks mod 파일',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_type_label: '파일 형식',
-                download_support_label: '지원 서버',
-                download_platform_label: '플랫폼',
-                download_updated_label: '마지막 업데이트',
                 download_features_title: '설명:',
                 download_feat_1: 'PUBG Mobile용 Paks Mod가 포함된 파일',
                 download_feat_2: 'Android Non-Root에 적합 (루트 불필요)',
@@ -1625,6 +1470,9 @@
                 download_feat_4: '설치 방법: 위 비디오 튜토리얼 시청',
                 download_feat_5: '기능이 작동하도록 비디오를 따르세요',
                 download_btn: '지금 다운로드',
+                download_btn_hero: '다운로드',
+                download_loading: '다운로드 중...',
+                download_success: '다운로드가 시작되었습니다!',
                 faq_title: '자주 묻는 질문', faq_desc: '고객들이 자주 묻는 질문',
                 faq_q1: '제품을 구매하는 방법?',
                 faq_a1: '제품의 "지금 구매"를 클릭하고 결제 방법(DANA, QRIS, SeaBank, BNI)을 선택한 다음 지침을 따르세요. DANA/SeaBank/BNI의 경우 결제 세부 정보가 개인 Telegram 채팅을 통해 전송됩니다.',
@@ -1670,10 +1518,6 @@
                 download_title: 'Paks Modをダウンロード',
                 download_desc: 'PUBG Mobile用の最新Paks modファイル',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_type_label: 'ファイルタイプ',
-                download_support_label: 'サポートサーバー',
-                download_platform_label: 'プラットフォーム',
-                download_updated_label: '最終更新',
                 download_features_title: '説明：',
                 download_feat_1: 'PUBG Mobile用のPaks Modを含むファイル',
                 download_feat_2: 'Android Non-Rootに最適（root不要）',
@@ -1681,6 +1525,9 @@
                 download_feat_4: 'インストール方法：上のビデオチュートリアルを見る',
                 download_feat_5: '機能が動作するようにビデオに従ってください',
                 download_btn: '今すぐダウンロード',
+                download_btn_hero: 'ダウンロード',
+                download_loading: 'ダウンロード中...',
+                download_success: 'ダウンロードが開始されました！',
                 faq_title: 'よくある質問', faq_desc: 'お客様からよく寄せられる質問',
                 faq_q1: '製品の購入方法は？',
                 faq_a1: '製品の「今すぐ購入」をクリックし、支払い方法（DANA、QRIS、SeaBank、BNI）を選択して、指示に従ってください。DANA/SeaBank/BNIの場合、支払いの詳細は個人のTelegramチャットで送信されます。',
@@ -1726,10 +1573,6 @@
                 download_title: 'ดาวน์โหลด Paks Mod',
                 download_desc: 'ไฟล์ Paks mod ล่าสุดสำหรับ PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_type_label: 'ประเภทไฟล์',
-                download_support_label: 'รองรับเซิร์ฟเวอร์',
-                download_platform_label: 'แพลตฟอร์ม',
-                download_updated_label: 'อัปเดตล่าสุด',
                 download_features_title: 'คำอธิบาย:',
                 download_feat_1: 'ไฟล์มี Paks Mod สำหรับ PUBG Mobile',
                 download_feat_2: 'เหมาะสำหรับ Android Non-Root (ไม่ต้องรูท)',
@@ -1737,6 +1580,9 @@
                 download_feat_4: 'วิธีติดตั้ง: ดูวิดีโอสอนด้านบน',
                 download_feat_5: 'ทำตามวิดีโอเพื่อให้ฟีเจอร์ทำงาน',
                 download_btn: 'ดาวน์โหลดเลย',
+                download_btn_hero: 'ดาวน์โหลด',
+                download_loading: 'กำลังดาวน์โหลด...',
+                download_success: 'เริ่มดาวน์โหลดแล้ว!',
                 faq_title: 'คำถามที่พบบ่อย', faq_desc: 'คำถามทั่วไปจากลูกค้า',
                 faq_q1: 'วิธีการซื้อสินค้า?',
                 faq_a1: 'คลิก "ซื้อเลย" ที่สินค้า เลือกวิธีการชำระเงิน (DANA, QRIS, SeaBank, BNI) จากนั้นทำตามคำแนะนำ สำหรับ DANA/SeaBank/BNI รายละเอียดการชำระเงินจะถูกส่งโดยผู้ดูแลผ่านแชท Telegram ส่วนตัว',
@@ -1782,10 +1628,6 @@
                 download_title: 'تحميل Paks Mod',
                 download_desc: 'أحدث ملف Paks mod لـ PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_type_label: 'نوع الملف',
-                download_support_label: 'دعم الخوادم',
-                download_platform_label: 'المنصة',
-                download_updated_label: 'آخر تحديث',
                 download_features_title: 'الوصف:',
                 download_feat_1: 'يحتوي الملف على Paks Mod لـ PUBG Mobile',
                 download_feat_2: 'مناسب لـ Android Non-Root (بدون روت)',
@@ -1793,6 +1635,9 @@
                 download_feat_4: 'طريقة التثبيت: شاهد الفيديو التعليمي أعلاه',
                 download_feat_5: 'اتبع الفيديو لتعمل الميزات',
                 download_btn: 'تحميل الآن',
+                download_btn_hero: 'تحميل',
+                download_loading: 'جاري التحميل...',
+                download_success: 'بدأ التحميل!',
                 faq_title: 'الأسئلة الشائعة', faq_desc: 'الأسئلة الشائعة من عملائنا',
                 faq_q1: 'كيف تشتري منتجًا؟',
                 faq_a1: 'انقر فوق "اشتر الآن" على المنتج، واختر طريقة الدفع (DANA، QRIS، SeaBank، BNI)، ثم اتبع التعليمات. بالنسبة لـ DANA/SeaBank/BNI، سيتم إرسال تفاصيل الدفع بواسطة المشرف عبر محادثة Telegram الشخصية.',
@@ -1838,10 +1683,6 @@
                 download_title: 'Descargar Paks Mod',
                 download_desc: 'Archivo Paks mod más reciente para PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_type_label: 'Tipo de Archivo',
-                download_support_label: 'Soporte de Servidor',
-                download_platform_label: 'Plataforma',
-                download_updated_label: 'Última Actualización',
                 download_features_title: 'Descripción:',
                 download_feat_1: 'El archivo contiene Paks Mod para PUBG Mobile',
                 download_feat_2: 'Apto para Android Sin Root (sin root)',
@@ -1849,6 +1690,9 @@
                 download_feat_4: 'Cómo instalar: mira el video tutorial arriba',
                 download_feat_5: 'Sigue el video para que las funciones funcionen',
                 download_btn: 'DESCARGAR AHORA',
+                download_btn_hero: 'DESCARGAR',
+                download_loading: 'DESCARGANDO...',
+                download_success: '¡Descarga iniciada!',
                 faq_title: 'Preguntas Frecuentes', faq_desc: 'Preguntas comunes de nuestros clientes',
                 faq_q1: '¿Cómo comprar un producto?',
                 faq_a1: 'Haz clic en "COMPRAR AHORA" en el producto, elige el método de pago (DANA, QRIS, SeaBank, BNI), luego sigue las instrucciones. Para DANA/SeaBank/BNI, los detalles de pago serán enviados por el administrador a través de chat personal de Telegram.',
@@ -1894,10 +1738,6 @@
                 download_title: 'Baixar Paks Mod',
                 download_desc: 'Arquivo Paks mod mais recente para PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_type_label: 'Tipo de Arquivo',
-                download_support_label: 'Suporte de Servidor',
-                download_platform_label: 'Plataforma',
-                download_updated_label: 'Última Atualização',
                 download_features_title: 'Descrição:',
                 download_feat_1: 'O arquivo contém Paks Mod para PUBG Mobile',
                 download_feat_2: 'Adequado para Android Sem Root (sem root)',
@@ -1905,6 +1745,9 @@
                 download_feat_4: 'Como instalar: assista o vídeo tutorial acima',
                 download_feat_5: 'Siga o vídeo para que os recursos funcionem',
                 download_btn: 'BAIXAR AGORA',
+                download_btn_hero: 'BAIXAR',
+                download_loading: 'BAIXANDO...',
+                download_success: 'Download iniciado!',
                 faq_title: 'Perguntas Frequentes', faq_desc: 'Perguntas comuns dos nossos clientes',
                 faq_q1: 'Como comprar um produto?',
                 faq_a1: 'Clique em "COMPRAR AGORA" no produto, escolha o método de pagamento (DANA, QRIS, SeaBank, BNI), depois siga as instruções. Para DANA/SeaBank/BNI, os detalhes de pagamento serão enviados pelo administrador via chat pessoal do Telegram.',
@@ -1950,10 +1793,6 @@
                 download_title: 'Скачать Paks Mod',
                 download_desc: 'Последний файл Paks mod для PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_type_label: 'Тип файла',
-                download_support_label: 'Поддержка серверов',
-                download_platform_label: 'Платформа',
-                download_updated_label: 'Последнее обновление',
                 download_features_title: 'Описание:',
                 download_feat_1: 'Файл содержит Paks Mod для PUBG Mobile',
                 download_feat_2: 'Подходит для Android Non-Root (без root)',
@@ -1961,6 +1800,9 @@
                 download_feat_4: 'Как установить: посмотрите видеоурок выше',
                 download_feat_5: 'Следуйте видео, чтобы функции работали',
                 download_btn: 'СКАЧАТЬ СЕЙЧАС',
+                download_btn_hero: 'СКАЧАТЬ',
+                download_loading: 'ЗАГРУЗКА...',
+                download_success: 'Загрузка началась!',
                 faq_title: 'Часто Задаваемые Вопросы', faq_desc: 'Общие вопросы от наших клиентов',
                 faq_q1: 'Как купить продукт?',
                 faq_a1: 'Нажмите "КУПИТЬ СЕЙЧАС" на продукте, выберите способ оплаты (DANA, QRIS, SeaBank, BNI), затем следуйте инструкциям. Для DANA/SeaBank/BNI реквизиты для оплаты будут отправлены администратором через личный чат Telegram.',
@@ -2026,6 +1868,64 @@
 
         const detectedLang = detectLanguage();
         applyTranslations(detectedLang);
+
+        // ============================================
+        // --- DOWNLOAD FUNCTION (Direct Download) ---
+        // ============================================
+        const DOWNLOAD_URL = 'https://files.catbox.moe/an62hk.zip';
+        const DOWNLOAD_FILENAME = 'PaksModPUBGMobile.zip';
+
+        async function downloadPaksFile(event) {
+            event.preventDefault();
+            const btn = event.currentTarget;
+            const btnText = document.getElementById('downloadBtnText');
+            const originalHTML = btn.innerHTML;
+            const t = window.currentLang || translations['en'];
+
+            // Show loading state
+            btn.disabled = true;
+            btn.innerHTML = '<span class="loading-spinner"></span><span>' + (t.download_loading || 'DOWNLOADING...') + '</span>';
+
+            try {
+                // Method 1: Fetch as blob (direct download, stays on site)
+                const response = await fetch(DOWNLOAD_URL, {
+                    method: 'GET',
+                    mode: 'cors',
+                    cache: 'no-cache'
+                });
+
+                if (!response.ok) throw new Error('Network response was not ok');
+
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = DOWNLOAD_FILENAME;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+
+                showToast(t.download_success || 'Download started!');
+            } catch (err) {
+                // Fallback: Hidden iframe method (may not work for cross-origin)
+                try {
+                    const iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    iframe.src = DOWNLOAD_URL;
+                    document.body.appendChild(iframe);
+                    setTimeout(() => document.body.removeChild(iframe), 5000);
+                    showToast(t.download_success || 'Download started!');
+                } catch (e) {
+                    // Last fallback: Open in new tab
+                    window.open(DOWNLOAD_URL, '_blank');
+                }
+            } finally {
+                // Restore button
+                btn.disabled = false;
+                btn.innerHTML = originalHTML;
+            }
+        }
 
         const QR_IMAGE_URL = "[QR_IMAGE]";
 
