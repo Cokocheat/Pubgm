@@ -12,6 +12,7 @@
             --bg-glass: rgba(20, 20, 20, 0.85);
             --gold-primary: #ffaa00;
             --gold-glow: rgba(255, 170, 0, 0.4);
+            --gold-glow-strong: rgba(255, 170, 0, 0.8);
             --text-main: #ffffff;
             --text-muted: #a0a0a0;
             --border-color: rgba(255, 170, 0, 0.2);
@@ -20,6 +21,7 @@
             --font-heading: 'Orbitron', sans-serif;
             --font-body: 'Inter', sans-serif;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
             --header-height: 75px;
         }
 
@@ -44,7 +46,6 @@
             padding-top: var(--header-height);
         }
 
-        /* --- SCROLL LOCK ROBUST --- */
         body.no-scroll {
             position: fixed;
             top: var(--scroll-top, 0);
@@ -59,6 +60,68 @@
         ::-webkit-scrollbar-thumb { background: var(--gold-primary); border-radius: 10px; }
 
         .svg-icon { width: 18px; height: 18px; fill: currentColor; display: inline-block; vertical-align: middle; }
+
+        /* ============================================ */
+        /* --- TOMBOL MODERN: SUDUT MEMBULAT + GLOW --- */
+        /* ============================================ */
+
+        /* Base style untuk semua tombol utama */
+        .btn-modern {
+            border-radius: 50px !important;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-fast);
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+
+        /* Efek glow saat ditekan (klik) */
+        .btn-modern:active,
+        .btn-primary:active,
+        .btn-secondary:active,
+        .login-btn:active,
+        .buy-btn:active,
+        .btn-checkout:active,
+        .btn-next:active,
+        .btn-back:active,
+        .btn-confirm:active {
+            transform: scale(0.96) !important;
+            box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow) !important;
+            filter: brightness(1.3);
+        }
+
+        /* Efek ripple saat klik (garis kilat) */
+        .btn-primary::before,
+        .btn-secondary::before,
+        .login-btn::before,
+        .buy-btn::before,
+        .btn-next::before,
+        .btn-back::before,
+        .btn-confirm::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 0; height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s, opacity 0.5s;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .btn-primary:active::before,
+        .btn-secondary:active::before,
+        .login-btn:active::before,
+        .buy-btn:active::before,
+        .btn-next:active::before,
+        .btn-back:active::before,
+        .btn-confirm:active::before {
+            width: 300px;
+            height: 300px;
+            opacity: 1;
+            transition: width 0s, height 0s, opacity 0.5s;
+        }
 
         /* --- HEADER (FIXED) --- */
         header {
@@ -156,23 +219,31 @@
 
         .header-actions { display: flex; align-items: center; gap: 15px; }
 
+        /* --- LOGIN BUTTON (MODERN) --- */
         .login-btn {
             background: linear-gradient(90deg, #b8860b, var(--gold-primary));
             color: #000;
             font-family: var(--font-heading);
             font-size: 14px;
             font-weight: 700;
-            padding: 10px 25px;
+            padding: 12px 30px;
             border: none;
-            border-radius: 20px;
+            border-radius: 50px;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: var(--transition);
+            transition: var(--transition-fast);
             box-shadow: 0 0 15px var(--gold-glow);
+            position: relative;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        .login-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px var(--gold-glow); }
+        .login-btn:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 5px 25px var(--gold-glow), 0 0 40px var(--gold-glow);
+            filter: brightness(1.1);
+        }
 
         .hamburger {
             display: none;
@@ -319,7 +390,7 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-color);
             padding: 8px 16px;
-            border-radius: 8px;
+            border-radius: 50px;
             font-size: 12px;
             font-weight: 700;
             letter-spacing: 1.5px;
@@ -353,19 +424,23 @@
 
         .hero-cta { display: flex; gap: 20px; }
 
+        /* --- BUTTONS PRIMARY & SECONDARY (MODERN PILL) --- */
         .btn-primary, .btn-secondary {
             font-family: var(--font-heading);
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
-            padding: 15px 40px;
-            border-radius: 8px;
+            padding: 16px 45px;
+            border-radius: 50px;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 2px;
-            transition: var(--transition);
+            transition: var(--transition-fast);
             text-decoration: none;
             display: inline-block;
             border: none;
+            position: relative;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .btn-primary {
@@ -375,17 +450,23 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 0 35px var(--gold-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px var(--gold-glow), 0 0 50px var(--gold-glow);
+            filter: brightness(1.1);
         }
 
         .btn-secondary {
             background: transparent;
             color: var(--gold-primary);
             border: 2px solid var(--gold-primary);
+            box-shadow: inset 0 0 15px rgba(255, 170, 0, 0.1);
         }
 
-        .btn-secondary:hover { background: rgba(255, 170, 0, 0.1); transform: translateY(-3px); }
+        .btn-secondary:hover { 
+            background: rgba(255, 170, 0, 0.1); 
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--gold-glow), inset 0 0 20px rgba(255, 170, 0, 0.2);
+        }
 
         /* --- SECTION HEADER --- */
         .section-header { text-align: center; margin-bottom: 50px; }
@@ -413,7 +494,7 @@
         .product-card {
             background: var(--bg-panel);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 30px;
             display: flex;
             flex-direction: column;
@@ -483,30 +564,36 @@
             margin-bottom: 25px;
         }
 
+        /* --- BUY BUTTON (MODERN PILL) --- */
         .buy-btn {
             background: linear-gradient(90deg, #b8860b, var(--gold-primary));
             color: #000;
             font-family: var(--font-heading);
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
-            padding: 15px 30px;
+            padding: 16px 30px;
             border: none;
-            border-radius: 8px;
+            border-radius: 50px;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: var(--transition);
+            transition: var(--transition-fast);
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
+            box-shadow: 0 0 15px var(--gold-glow);
+            position: relative;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .buy-btn:hover {
             background: linear-gradient(90deg, var(--gold-primary), #ffcc00);
-            transform: scale(1.03);
-            box-shadow: 0 0 20px var(--gold-glow);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--gold-glow), 0 0 45px var(--gold-glow);
+            filter: brightness(1.1);
         }
 
         /* --- FAQ --- */
@@ -515,7 +602,7 @@
         .faq-item {
             background: var(--bg-panel);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
+            border-radius: 15px;
             margin-bottom: 15px;
             overflow: hidden;
             transition: var(--transition);
@@ -649,7 +736,7 @@
         .modal-content {
             background: var(--bg-panel);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 30px;
             width: 100%;
             max-width: 500px;
@@ -682,16 +769,27 @@
         }
 
         .close-modal {
-            background: none;
-            border: none;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--text-muted);
-            font-size: 28px;
+            font-size: 22px;
             cursor: pointer;
             transition: var(--transition);
             line-height: 1;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .close-modal:hover { color: var(--danger-red); transform: rotate(90deg); }
+        .close-modal:hover { 
+            color: var(--danger-red); 
+            transform: rotate(90deg);
+            background: rgba(255, 68, 68, 0.1);
+            border-color: var(--danger-red);
+        }
 
         .form-group { margin-bottom: 20px; }
 
@@ -707,8 +805,8 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--text-main);
-            padding: 12px 15px;
-            border-radius: 8px;
+            padding: 14px 18px;
+            border-radius: 50px;
             font-family: var(--font-body);
             outline: none;
             transition: var(--transition);
@@ -716,7 +814,7 @@
 
         .form-group input:focus {
             border-color: var(--gold-primary);
-            box-shadow: 0 0 10px rgba(255, 170, 0, 0.2);
+            box-shadow: 0 0 15px rgba(255, 170, 0, 0.25);
         }
 
         /* --- CHECKOUT MODAL --- */
@@ -792,7 +890,7 @@
         .summary-box {
             background: rgba(255, 170, 0, 0.05);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 15px;
             padding: 20px;
             margin-bottom: 20px;
         }
@@ -851,7 +949,7 @@
         .payment-option {
             background: rgba(255, 255, 255, 0.03);
             border: 2px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
+            border-radius: 15px;
             padding: 15px;
             cursor: pointer;
             transition: var(--transition);
@@ -868,7 +966,7 @@
         .payment-option.selected {
             border-color: var(--gold-primary);
             background: rgba(255, 170, 0, 0.1);
-            box-shadow: 0 0 15px rgba(255, 170, 0, 0.2);
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.3);
         }
 
         .payment-option.selected::after {
@@ -883,7 +981,7 @@
         .payment-logo {
             width: 60px; height: 60px;
             margin: 0 auto 10px;
-            border-radius: 12px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -895,7 +993,7 @@
         }
 
         .payment-logo.dana { background: linear-gradient(135deg, #118eea, #0a6fbf); }
-        .payment-logo.qris { background: linear-gradient(135deg, #e30613, #ff6b6b); font-size: 14px; }
+        .payment-logo.qris { background: linear-gradient(135deg, #e30613, #ff6b6b); font-size: 13px; }
         .payment-logo.seabank { background: linear-gradient(135deg, #ff6b00, #ff8c33); }
         .payment-logo.bni { background: linear-gradient(135deg, #f05a22, #005e8a); }
 
@@ -915,7 +1013,7 @@
         .payment-detail-box {
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 15px;
             padding: 20px;
             margin-bottom: 20px;
         }
@@ -931,7 +1029,7 @@
 
         .payment-detail-logo {
             width: 40px; height: 40px;
-            border-radius: 8px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -949,7 +1047,7 @@
             background: rgba(0, 136, 204, 0.08);
             border: 1px solid rgba(0, 136, 204, 0.4);
             border-left: 3px solid #0088cc;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 18px;
             text-align: center;
         }
@@ -975,7 +1073,7 @@
         .qr-container img {
             width: 100%;
             max-width: 260px;
-            border-radius: 12px;
+            border-radius: 15px;
             border: 3px solid var(--gold-primary);
             box-shadow: 0 0 25px rgba(255, 170, 0, 0.3);
             background: #fff;
@@ -991,8 +1089,8 @@
         .total-payment {
             background: linear-gradient(90deg, rgba(255, 170, 0, 0.15), rgba(255, 170, 0, 0.05));
             border: 1px solid var(--gold-primary);
-            border-radius: 12px;
-            padding: 18px;
+            border-radius: 50px;
+            padding: 18px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -1016,7 +1114,7 @@
         .instruction-box {
             background: rgba(0, 136, 204, 0.08);
             border-left: 3px solid #0088cc;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 15px;
             margin-bottom: 20px;
             font-size: 13px;
@@ -1032,23 +1130,27 @@
             margin-top: 20px;
         }
 
+        /* --- CHECKOUT BUTTONS (MODERN PILL) --- */
         .btn-checkout {
             flex: 1;
             font-family: var(--font-heading);
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 16px;
+            border-radius: 50px;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: var(--transition);
+            transition: var(--transition-fast);
             border: none;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            position: relative;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .btn-next {
@@ -1057,7 +1159,11 @@
             box-shadow: 0 0 15px var(--gold-glow);
         }
 
-        .btn-next:hover:not(:disabled) { transform: scale(1.02); box-shadow: 0 0 25px var(--gold-glow); }
+        .btn-next:hover:not(:disabled) { 
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 25px var(--gold-glow), 0 0 45px var(--gold-glow);
+            filter: brightness(1.1);
+        }
         .btn-next:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; }
 
         .btn-back {
@@ -1066,7 +1172,11 @@
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        .btn-back:hover { color: var(--text-main); border-color: var(--text-main); }
+        .btn-back:hover { 
+            color: var(--text-main); 
+            border-color: var(--text-main);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
 
         .btn-confirm {
             background: linear-gradient(90deg, #0088cc, #00a8e8);
@@ -1075,7 +1185,11 @@
             width: 100%;
         }
 
-        .btn-confirm:hover { transform: scale(1.02); box-shadow: 0 0 25px rgba(0, 136, 204, 0.6); }
+        .btn-confirm:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.6), 0 0 45px rgba(0, 136, 204, 0.4);
+            filter: brightness(1.15);
+        }
 
         /* --- TOAST --- */
         .toast {
@@ -1086,8 +1200,8 @@
             border-left: 4px solid var(--gold-primary);
             color: var(--text-main);
             padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px var(--gold-glow);
             display: flex;
             align-items: center;
             gap: 15px;
@@ -1110,7 +1224,7 @@
         .toast-message { font-size: 14px; font-weight: 600; }
 
         /* ============================================ */
-        /* --- RESPONSIVE: TABLET (768px - 1024px) --- */
+        /* --- RESPONSIVE --- */
         /* ============================================ */
         @media (min-width: 769px) and (max-width: 1024px) {
             :root { --header-height: 70px; }
@@ -1126,10 +1240,7 @@
             .hero-subtitle { font-size: 15px; letter-spacing: 4px; }
             .paks-text { font-size: 18px; letter-spacing: 6px; }
             .game-badge-text { font-size: 12px; }
-            .product-grid { 
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
+            .product-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
             .product-card { padding: 25px 20px; }
             .product-name { font-size: 19px; }
             .product-price { font-size: 24px; }
@@ -1137,17 +1248,11 @@
             .modal-content { max-width: 520px; padding: 25px; }
         }
 
-        /* ============================================ */
-        /* --- RESPONSIVE: DESKTOP BESAR (>1400px) --- */
-        /* ============================================ */
         @media (min-width: 1400px) {
             main { max-width: 1320px; }
             .product-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
-        /* ============================================ */
-        /* --- RESPONSIVE: MEDIUM DESKTOP (1025-1399) --- */
-        /* ============================================ */
         @media (min-width: 1025px) and (max-width: 1399px) {
             .product-grid { grid-template-columns: repeat(3, 1fr); }
         }
@@ -1159,9 +1264,6 @@
             .login-btn { display: none; }
         }
 
-        /* ============================================ */
-        /* --- RESPONSIVE: MOBILE (<768px) --- */
-        /* ============================================ */
         @media (max-width: 768px) {
             :root { --header-height: 65px; }
             header { padding: 0 20px; }
@@ -1194,24 +1296,17 @@
             .footer-links-row { gap: 15px; }
             .footer-links-row a,
             .footer-links-row span { font-size: 13px; }
+            .total-payment { padding: 15px 20px; }
+            .total-payment .value { font-size: 20px; }
         }
 
         @media (max-width: 400px) {
-            .summary-row {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
-            }
-            .summary-value, .summary-value.gold {
-                text-align: left;
-                font-size: 14px;
-            }
+            .summary-row { flex-direction: column; align-items: flex-start; gap: 5px; }
+            .summary-value, .summary-value.gold { text-align: left; font-size: 14px; }
             .brand-name { font-size: 13px; }
         }
 
-        /* ============================================ */
         /* --- MOBILE MENU OVERLAY --- */
-        /* ============================================ */
         .mobile-menu {
             position: fixed;
             top: var(--header-height);
@@ -1324,7 +1419,6 @@
             </div>
             
             <div class="product-grid" id="productGrid">
-                <!-- Produk 1: 7 Hari -->
                 <div class="product-card" data-name="key 7 hari pubg mobile global korea vietnam taiwan">
                     <div class="product-badge">POPULER</div>
                     <div class="product-icon-box">
@@ -1336,7 +1430,6 @@
                     <button class="buy-btn" onclick="openCheckout('Key 7 Hari', 50000, '7 Hari')">BELI SEKARANG</button>
                 </div>
 
-                <!-- Produk 2: 15 Hari -->
                 <div class="product-card" data-name="key 15 hari pubg mobile global korea vietnam taiwan">
                     <div class="product-icon-box">
                         <svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
@@ -1347,7 +1440,6 @@
                     <button class="buy-btn" onclick="openCheckout('Key 15 Hari', 90000, '15 Hari')">BELI SEKARANG</button>
                 </div>
 
-                <!-- Produk 3: 30 Hari -->
                 <div class="product-card" data-name="key 30 hari premium pubg mobile global korea vietnam taiwan">
                     <div class="product-badge hot">BEST VALUE</div>
                     <div class="product-icon-box">
@@ -1359,7 +1451,6 @@
                     <button class="buy-btn" onclick="openCheckout('Key 30 Hari', 150000, '30 Hari')">BELI SEKARANG</button>
                 </div>
 
-                <!-- Produk 4: 1 Season -->
                 <div class="product-card" data-name="key 1 season pubg mobile global korea vietnam taiwan">
                     <div class="product-badge hot">SEASON</div>
                     <div class="product-icon-box">
@@ -1371,7 +1462,6 @@
                     <button class="buy-btn" onclick="openCheckout('Key 1 Season', 250000, '1 Season')">BELI SEKARANG</button>
                 </div>
 
-                <!-- Produk 5: Permanen -->
                 <div class="product-card" data-name="key permanen pubg mobile global korea vietnam taiwan">
                     <div class="product-badge permanent">PERMANEN</div>
                     <div class="product-icon-box">
