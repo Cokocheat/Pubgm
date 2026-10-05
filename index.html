@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shadowcheat Project - Premium Store</title>
+    <title>Shadowcheat Project - PUBG Mobile Premium Store</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     <style>
-        /* --- CSS VARIABLES --- */
         :root {
             --bg-dark: #050505;
             --bg-panel: #0f0f0f;
@@ -24,16 +23,8 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* --- RESET & GLOBAL --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             background-color: var(--bg-dark);
@@ -48,7 +39,6 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-dark); }
         ::-webkit-scrollbar-thumb { background: var(--gold-primary); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #ffcc00; }
 
         /* --- HEADER --- */
         header {
@@ -92,7 +82,6 @@
 
         .brand-name span { color: var(--gold-primary); }
 
-        /* Navigasi Desktop */
         nav.desktop-nav {
             display: flex;
             gap: 30px;
@@ -123,7 +112,6 @@
         nav.desktop-nav a:hover { color: var(--gold-primary); }
         nav.desktop-nav a:hover::after { width: 100%; }
 
-        /* Search Bar */
         .search-container {
             position: relative;
             display: flex;
@@ -156,35 +144,10 @@
             font-size: 14px;
         }
 
-        /* Header Actions (Settings, Titik 3, Login) */
         .header-actions {
             display: flex;
             align-items: center;
             gap: 15px;
-            position: relative;
-        }
-
-        .icon-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-main);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 18px;
-        }
-
-        .icon-btn:hover {
-            background: rgba(255, 170, 0, 0.2);
-            border-color: var(--gold-primary);
-            color: var(--gold-primary);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px var(--gold-glow);
         }
 
         .login-btn {
@@ -193,7 +156,7 @@
             font-family: var(--font-heading);
             font-size: 14px;
             font-weight: 700;
-            padding: 10px 20px;
+            padding: 10px 25px;
             border: none;
             border-radius: 20px;
             cursor: pointer;
@@ -208,51 +171,6 @@
             box-shadow: 0 0 25px var(--gold-glow);
         }
 
-        /* Dropdown Menu */
-        .dropdown-menu {
-            position: absolute;
-            top: 55px;
-            right: 0;
-            background: var(--bg-panel);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            width: 220px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            z-index: 1001;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: var(--transition);
-        }
-
-        .dropdown-menu.active {
-            display: flex;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .dropdown-item {
-            padding: 15px 20px;
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-        }
-
-        .dropdown-item:last-child { border-bottom: none; }
-        .dropdown-item:hover { background: rgba(255, 170, 0, 0.1); color: var(--gold-primary); padding-left: 25px; }
-        .dropdown-item.logout { color: var(--danger-red); }
-        .dropdown-item.logout:hover { background: rgba(255, 68, 68, 0.1); }
-
-        /* Hamburger Menu (Mobile) */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -271,21 +189,20 @@
             transition: var(--transition);
         }
 
-        /* --- MAIN CONTENT --- */
+        /* --- HERO SECTION --- */
         main {
             padding: 0 5%;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        /* Hero Section */
         .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 100px 0 80px;
+            padding: 80px 0 60px;
             position: relative;
         }
 
@@ -294,15 +211,47 @@
             position: absolute;
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 600px; height: 600px;
+            width: 700px; height: 700px;
             background: radial-gradient(circle, rgba(255, 170, 0, 0.08) 0%, transparent 70%);
             z-index: -1;
             pointer-events: none;
         }
 
+        /* Badge PUBG Mobile */
+        .game-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(90deg, rgba(255, 170, 0, 0.15), rgba(255, 170, 0, 0.05));
+            border: 1px solid var(--gold-primary);
+            padding: 8px 25px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.2);
+            animation: floatBadge 3s ease-in-out infinite;
+        }
+
+        @keyframes floatBadge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .game-badge-icon {
+            font-size: 20px;
+        }
+
+        .game-badge-text {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+        }
+
         .hero-title {
             font-family: var(--font-heading);
-            font-size: 72px;
+            font-size: 68px;
             font-weight: 900;
             letter-spacing: 4px;
             background: linear-gradient(90deg, #fff, var(--gold-primary), #fff);
@@ -312,10 +261,11 @@
             margin-bottom: 15px;
             text-transform: uppercase;
             animation: shine 3s linear infinite;
+            line-height: 1.1;
         }
 
         @keyframes shine {
-            to { background-position: 200% center; }
+            to { background-position: 200% auto; }
         }
 
         .hero-subtitle {
@@ -323,7 +273,59 @@
             letter-spacing: 6px;
             color: var(--text-muted);
             text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        /* Server Support Badge */
+        .server-support {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
             margin-bottom: 40px;
+        }
+
+        .server-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-main);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .server-tag:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 170, 0, 0.2);
+        }
+
+        .server-tag.safe {
+            background: rgba(0, 255, 136, 0.08);
+            border-color: rgba(0, 255, 136, 0.4);
+            color: var(--success-green);
+        }
+
+        .server-tag.safe:hover {
+            border-color: var(--success-green);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+        }
+
+        .server-tag .dot {
+            width: 8px;
+            height: 8px;
+            background: currentColor;
+            border-radius: 50%;
+            box-shadow: 0 0 8px currentColor;
         }
 
         .hero-cta {
@@ -368,7 +370,7 @@
             transform: translateY(-3px);
         }
 
-        /* Section Titles */
+        /* --- SECTION HEADER --- */
         .section-header {
             text-align: center;
             margin-bottom: 50px;
@@ -588,7 +590,7 @@
             font-size: 13px;
         }
 
-        /* --- MODALS (SETTINGS & LOGIN) --- */
+        /* --- MODAL LOGIN --- */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -652,9 +654,7 @@
 
         .close-modal:hover { color: var(--danger-red); transform: rotate(90deg); }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+        .form-group { margin-bottom: 20px; }
 
         .form-group label {
             display: block;
@@ -680,47 +680,7 @@
             box-shadow: 0 0 10px rgba(255, 170, 0, 0.2);
         }
 
-        .setting-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .setting-item:last-child { border-bottom: none; }
-        .setting-item span { font-size: 15px; font-weight: 600; }
-
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 50px;
-            height: 26px;
-        }
-        .switch input { opacity: 0; width: 0; height: 0; }
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-color: #333;
-            transition: .4s;
-            border-radius: 26px;
-        }
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 18px;
-            width: 18px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-        input:checked + .slider { background-color: var(--gold-primary); }
-        input:checked + .slider:before { transform: translateX(24px); }
-
-        /* --- TOAST NOTIFICATION --- */
+        /* --- TOAST --- */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -747,23 +707,26 @@
         @media (max-width: 992px) {
             nav.desktop-nav { display: none; }
             .hamburger { display: flex; }
-            .search-container { display: none; } /* Sembunyikan search di mobile, bisa dipindah ke menu */
+            .search-container { display: none; }
             .hero-title { font-size: 48px; }
-            .hero-cta { flex-direction: column; width: 100%; max-width: 300px; }
-            .btn-primary, .btn-secondary { width: 100%; text-align: center; }
-            .login-btn { display: none; } /* Sembunyikan login di mobile, pindah ke dropdown */
+            .login-btn { display: none; }
         }
 
         @media (max-width: 768px) {
             header { padding: 15px 20px; }
             .brand-name { font-size: 16px; }
-            .hero-title { font-size: 36px; }
-            .hero-subtitle { font-size: 14px; letter-spacing: 3px; }
+            .hero-title { font-size: 34px; letter-spacing: 2px; }
+            .hero-subtitle { font-size: 13px; letter-spacing: 3px; }
             .section-title { font-size: 24px; }
             .product-grid { grid-template-columns: 1fr; }
             footer { grid-template-columns: 1fr; text-align: center; }
             .toast { bottom: 20px; right: 20px; left: 20px; transform: translateY(150%); }
             .toast.show { transform: translateY(0); }
+            .hero-cta { flex-direction: column; width: 100%; max-width: 300px; }
+            .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+            .game-badge { padding: 6px 15px; }
+            .game-badge-text { font-size: 12px; letter-spacing: 1px; }
+            .server-tag { font-size: 11px; padding: 6px 12px; }
         }
 
         /* Mobile Menu Overlay */
@@ -822,18 +785,6 @@
 
         <div class="header-actions">
             <button class="login-btn" id="loginBtn">Login</button>
-            
-            <button class="icon-btn" id="settingsBtn" title="Pengaturan">⚙️</button>
-            
-            <button class="icon-btn" id="menuBtn" title="Menu">⋮</button>
-
-            <!-- Dropdown Menu Titik 3 -->
-            <div class="dropdown-menu" id="dropdownMenu">
-                <a href="#home" class="dropdown-item">🏠 Home</a>
-                <a href="#" class="dropdown-item" id="profileBtn">👤 Profile</a>
-                <a href="https://t.me/scp281025" target="_blank" class="dropdown-item">💬 Support</a>
-                <a href="#" class="dropdown-item logout" id="logoutBtn">🚪 Logout</a>
-            </div>
         </div>
 
         <!-- Hamburger Mobile -->
@@ -857,8 +808,31 @@
     <main>
         <!-- HERO SECTION -->
         <section class="hero" id="home">
+            <!-- Badge PUBG Mobile -->
+            <div class="game-badge">
+                <span class="game-badge-icon">🎮</span>
+                <span class="game-badge-text">PUBG MOBILE</span>
+            </div>
+
             <h1 class="hero-title">SHADOWCHEAT PROJECT</h1>
             <p class="hero-subtitle">Premium Digital Store & Tools</p>
+
+            <!-- Server Support Badges -->
+            <div class="server-support">
+                <div class="server-tag">
+                    <span class="dot"></span> GLOBAL
+                </div>
+                <div class="server-tag">
+                    <span class="dot"></span> KOREA
+                </div>
+                <div class="server-tag">
+                    <span class="dot"></span> VIETNAM
+                </div>
+                <div class="server-tag safe">
+                    <span class="dot"></span> FULL SAFE
+                </div>
+            </div>
+
             <div class="hero-cta">
                 <a href="#produk" class="btn-primary">Lihat Produk</a>
                 <a href="https://t.me/scp281025" target="_blank" class="btn-secondary">Hubungi Kami</a>
@@ -869,35 +843,35 @@
         <section id="produk">
             <div class="section-header">
                 <h2 class="section-title">Katalog Produk</h2>
-                <p class="section-desc">Pilih paket yang sesuai dengan kebutuhan Anda</p>
+                <p class="section-desc">Support PUBG Mobile - Global, Korea, Vietnam | Android Non-Root</p>
             </div>
             
             <div class="product-grid" id="productGrid">
                 <!-- Produk 1 -->
-                <div class="product-card" data-name="key 1 hari private">
+                <div class="product-card" data-name="key 1 hari pubg mobile global korea vietnam">
                     <div class="product-badge">POPULER</div>
                     <div class="product-icon">🔑</div>
                     <h3 class="product-name">Private Key 1 Hari</h3>
-                    <p class="product-desc">Akses penuh selama 24 jam. Support Android Non-Root. Auto update.</p>
+                    <p class="product-desc">Akses penuh 24 jam. Support PUBG Mobile Global, Korea & Vietnam. Android Non-Root.</p>
                     <div class="product-price">Rp 15.000 <span>Rp 25.000</span></div>
                     <a href="https://t.me/scp281025" target="_blank" class="buy-btn">🛒 BELI SEKARANG</a>
                 </div>
 
                 <!-- Produk 2 -->
-                <div class="product-card" data-name="key 7 hari vip">
+                <div class="product-card" data-name="key 7 hari vip pubg mobile global korea vietnam">
                     <div class="product-badge hot">BEST VALUE</div>
                     <div class="product-icon">🔑</div>
                     <h3 class="product-name">VIP Key 7 Hari</h3>
-                    <p class="product-desc">Akses penuh selama 7 hari. Prioritas support & fitur terlengkap.</p>
+                    <p class="product-desc">Akses penuh 7 hari. Full Safe untuk Global, Korea, Vietnam. Prioritas support.</p>
                     <div class="product-price">Rp 50.000 <span>Rp 75.000</span></div>
                     <a href="https://t.me/scp281025" target="_blank" class="buy-btn">🛒 BELI SEKARANG</a>
                 </div>
 
                 <!-- Produk 3 -->
-                <div class="product-card" data-name="key 30 hari premium">
+                <div class="product-card" data-name="key 30 hari premium pubg mobile global korea vietnam">
                     <div class="product-icon">👑</div>
                     <h3 class="product-name">Premium Key 30 Hari</h3>
-                    <p class="product-desc">Akses penuh 1 bulan. Garansi penuh & akses ke semua fitur eksklusif.</p>
+                    <p class="product-desc">Akses penuh 1 bulan. Full Safe & garansi untuk PUBG Mobile Global, Korea, Vietnam.</p>
                     <div class="product-price">Rp 150.000 <span>Rp 200.000</span></div>
                     <a href="https://t.me/scp281025" target="_blank" class="buy-btn">🛒 BELI SEKARANG</a>
                 </div>
@@ -913,19 +887,19 @@
 
             <div class="faq-item">
                 <div class="faq-question">Bagaimana cara membeli produk? <span>+</span></div>
-                <div class="faq-answer">Anda cukup mengklik tombol "BELI SEKARANG" pada produk yang diinginkan. Anda akan diarahkan ke Telegram kami untuk proses pembayaran dan pengiriman key.</div>
+                <div class="faq-answer">Klik tombol "BELI SEKARANG" pada produk yang diinginkan. Anda akan diarahkan ke Telegram kami untuk proses pembayaran dan pengiriman key.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Server apa saja yang didukung? <span>+</span></div>
+                <div class="faq-answer">Produk kami mendukung PUBG Mobile server <strong>Global, Korea, dan Vietnam</strong>. Semua sudah Full Safe untuk Android Non-Root.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Apakah aman untuk akun saya? <span>+</span></div>
-                <div class="faq-answer">Kami menggunakan sistem keamanan berlapis dan selalu mengupdate produk kami untuk meminimalisir risiko. Namun, kami tetap menyarankan penggunaan akun cadangan untuk keamanan ekstra.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Metode pembayaran apa saja yang tersedia? <span>+</span></div>
-                <div class="faq-answer">Kami menerima pembayaran melalui Transfer Bank (BCA, Mandiri, BRI), E-Wallet (DANA, OVO, GoPay), dan QRIS. Detail akan diberikan oleh admin kami di Telegram.</div>
+                <div class="faq-answer">Kami menggunakan sistem keamanan berlapis (Full Safe) dan selalu mengupdate produk kami. Kami tetap menyarankan penggunaan akun cadangan untuk keamanan ekstra.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Berapa lama proses pengiriman key? <span>+</span></div>
-                <div class="faq-answer">Proses pengiriman key dilakukan secara instan setelah pembayaran dikonfirmasi. Jika ada kendala, admin kami akan segera membantu Anda.</div>
+                <div class="faq-answer">Proses pengiriman key dilakukan secara instan setelah pembayaran dikonfirmasi. Jika ada kendala, admin kami akan segera membantu Anda via Telegram.</div>
             </div>
         </section>
     </main>
@@ -934,7 +908,7 @@
     <footer>
         <div class="footer-col">
             <h4>SHADOWCHEAT PROJECT</h4>
-            <p>Platform penyedia produk digital premium untuk kebutuhan gaming Anda. Kami mengutamakan kualitas, kecepatan, dan keamanan.</p>
+            <p>Platform penyedia produk digital premium untuk PUBG Mobile. Support Global, Korea, Vietnam. Full Safe & Android Non-Root.</p>
         </div>
         <div class="footer-col">
             <h4>Navigasi</h4>
@@ -953,40 +927,6 @@
             &copy; 2024 Shadowcheat Project. All rights reserved. | Safe & Secure
         </div>
     </footer>
-
-    <!-- MODAL PENGATURAN -->
-    <div class="modal-overlay" id="settingsModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>⚙️ Pengaturan</h3>
-                <button class="close-modal" onclick="closeModal('settingsModal')">&times;</button>
-            </div>
-            <div class="setting-item">
-                <span>Notifikasi Suara</span>
-                <label class="switch">
-                    <input type="checkbox" id="soundToggle" checked>
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="setting-item">
-                <span>Mode Gelap (Default)</span>
-                <label class="switch">
-                    <input type="checkbox" checked disabled>
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="setting-item">
-                <span>Auto Update Produk</span>
-                <label class="switch">
-                    <input type="checkbox" id="autoUpdateToggle" checked>
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div style="margin-top: 25px; text-align: center;">
-                <button class="btn-primary" style="width: 100%; font-size: 14px; padding: 12px;" onclick="saveSettings()">Simpan Pengaturan</button>
-            </div>
-        </div>
-    </div>
 
     <!-- MODAL LOGIN -->
     <div class="modal-overlay" id="loginModal">
@@ -1016,9 +956,7 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        // --- FUNGSI UTAMA ---
-        
-        // 1. FUNGSI TOAST NOTIFICATION
+        // 1. TOAST NOTIFICATION
         function showToast(message, icon = '✅') {
             const toast = document.getElementById('toast');
             const toastMessage = document.getElementById('toastMessage');
@@ -1026,56 +964,23 @@
             
             toastMessage.textContent = message;
             toastIcon.textContent = icon;
-            
             toast.classList.add('show');
             
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
+            setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
-        // 2. FUNGSI MODAL
+        // 2. MODAL
         function closeModal(modalId) {
             document.getElementById(modalId).classList.remove('active');
         }
 
-        // Menutup modal jika klik di luar area modal
         window.addEventListener('click', function(event) {
             if (event.target.classList.contains('modal-overlay')) {
                 event.target.classList.remove('active');
             }
         });
 
-        // 3. MENU TITIK 3
-        const menuBtn = document.getElementById('menuBtn');
-        const dropdownMenu = document.getElementById('dropdownMenu');
-
-        menuBtn.addEventListener('click', function(event) {
-            event.stopPropagation();
-            dropdownMenu.classList.toggle('active');
-        });
-
-        document.addEventListener('click', function(event) {
-            if (!dropdownMenu.contains(event.target) && event.target !== menuBtn) {
-                dropdownMenu.classList.remove('active');
-            }
-        });
-
-        // 4. PENGATURAN
-        document.getElementById('settingsBtn').addEventListener('click', function() {
-            document.getElementById('settingsModal').classList.add('active');
-        });
-
-        function saveSettings() {
-            const sound = document.getElementById('soundToggle').checked;
-            const autoUpdate = document.getElementById('autoUpdateToggle').checked;
-            
-            // Simulasi penyimpanan
-            showToast('Pengaturan berhasil disimpan!', '⚙️');
-            closeModal('settingsModal');
-        }
-
-        // 5. LOGIN
+        // 3. LOGIN
         document.getElementById('loginBtn').addEventListener('click', function() {
             document.getElementById('loginModal').classList.add('active');
         });
@@ -1089,23 +994,17 @@
                 return;
             }
             
-            // Simulasi login berhasil
             showToast('Login berhasil! Selamat datang, ' + user, '🔓');
             closeModal('loginModal');
-            
-            // Reset form
             document.getElementById('loginUser').value = '';
             document.getElementById('loginPass').value = '';
         }
 
-        // 6. FAQ ACCORDION
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        
-        faqQuestions.forEach(question => {
+        // 4. FAQ ACCORDION
+        document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', function() {
                 const parent = this.parentElement;
                 
-                // Tutup semua FAQ lain
                 document.querySelectorAll('.faq-item').forEach(item => {
                     if (item !== parent) {
                         item.classList.remove('active');
@@ -1113,19 +1012,16 @@
                     }
                 });
                 
-                // Toggle FAQ yang diklik
                 parent.classList.toggle('active');
                 const icon = this.querySelector('span');
                 icon.textContent = parent.classList.contains('active') ? '-' : '+';
             });
         });
 
-        // 7. PENCARIAN PRODUK
+        // 5. PENCARIAN PRODUK
         document.getElementById('searchInput').addEventListener('keyup', function() {
             const searchValue = this.value.toLowerCase();
-            const products = document.querySelectorAll('.product-card');
-            
-            products.forEach(product => {
+            document.querySelectorAll('.product-card').forEach(product => {
                 const productName = product.getAttribute('data-name').toLowerCase();
                 const productTitle = product.querySelector('.product-name').textContent.toLowerCase();
                 
@@ -1137,14 +1033,13 @@
             });
         });
 
-        // 8. MOBILE MENU (HAMBURGER)
+        // 6. MOBILE MENU
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
         hamburgerBtn.addEventListener('click', function() {
             mobileMenu.classList.toggle('active');
-            // Animasi hamburger ke X
             const spans = hamburgerBtn.querySelectorAll('span');
             if (mobileMenu.classList.contains('active')) {
                 spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
@@ -1167,29 +1062,14 @@
             });
         });
 
-        // 9. PROFILE & LOGOUT (SIMULASI)
-        document.getElementById('profileBtn').addEventListener('click', function(e) {
-            e.preventDefault();
-            showToast('Fitur Profile akan segera hadir!', '👤');
-            dropdownMenu.classList.remove('active');
-        });
-
-        document.getElementById('logoutBtn').addEventListener('click', function(e) {
-            e.preventDefault();
-            showToast('Anda telah logout.', '🚪');
-            dropdownMenu.classList.remove('active');
-        });
-
-        // 10. SMOOTH SCROLLING UNTUK NAVIGASI
+        // 7. SMOOTH SCROLLING
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (href !== '#') {
                     e.preventDefault();
                     const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
