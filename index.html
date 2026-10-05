@@ -24,7 +24,7 @@
             --font-heading: 'Orbitron', sans-serif; --font-body: 'Inter', sans-serif;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-            --header-height: 70px;
+            --header-height: 60px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box;
@@ -71,24 +71,24 @@
             border-bottom: 1px solid var(--border-color); padding: 0 5%; display: flex;
             align-items: center; justify-content: space-between; width: 100%; }
 
-        .logo-container { display: flex; align-items: center; gap: 12px; cursor: pointer;
+        .logo-container { display: flex; align-items: center; gap: 10px; cursor: pointer;
             padding: 5px 10px; border-radius: 50px; transition: var(--transition-fast); }
         .logo-container:active { transform: scale(0.97); background: rgba(255, 170, 0, 0.1); }
         .logo-container:active .logo-img { box-shadow: 0 0 35px var(--gold-glow-strong), 0 0 60px var(--gold-glow); }
 
-        .logo-img { width: 45px; height: 45px; border-radius: 50%;
+        .logo-img { width: 38px; height: 38px; border-radius: 50%;
             border: 2px solid var(--gold-primary); box-shadow: 0 0 15px var(--gold-glow);
             object-fit: cover; background: #000; transition: var(--transition-fast); }
 
-        .brand-name { font-family: var(--font-heading); font-size: 20px; font-weight: 900;
+        .brand-name { font-family: var(--font-heading); font-size: 17px; font-weight: 900;
             letter-spacing: 1px; line-height: 1.2; }
         .brand-name span { color: var(--gold-primary); }
 
-        nav.desktop-nav { display: flex; gap: 25px; }
+        nav.desktop-nav { display: flex; gap: 20px; }
 
-        .nav-link { color: var(--text-main); text-decoration: none; font-size: 14px;
+        .nav-link { color: var(--text-main); text-decoration: none; font-size: 12px;
             font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
-            position: relative; padding: 8px 4px; transition: var(--transition-fast); border-radius: 6px; }
+            position: relative; padding: 6px 4px; transition: var(--transition-fast); border-radius: 6px; }
 
         .nav-link::after { content: ''; position: absolute; bottom: 0; left: 50%;
             transform: translateX(-50%); width: 0; height: 2px;
@@ -104,22 +104,22 @@
 
         .search-input { background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-main);
-            padding: 10px 15px 10px 40px; border-radius: 50px;
-            font-family: var(--font-body); font-size: 14px; width: 180px;
+            padding: 8px 12px 8px 34px; border-radius: 50px;
+            font-family: var(--font-body); font-size: 12px; width: 150px;
             transition: var(--transition); outline: none; }
 
         .search-input:hover { border-color: rgba(255, 170, 0, 0.4); }
-        .search-input:focus { width: 220px; border-color: var(--gold-primary);
+        .search-input:focus { width: 190px; border-color: var(--gold-primary);
             box-shadow: 0 0 20px var(--gold-glow), inset 0 0 10px rgba(255, 170, 0, 0.1); }
 
-        .search-icon { position: absolute; left: 14px; top: 50%;
-            transform: translateY(-50%); color: var(--text-muted); pointer-events: none; }
+        .search-icon { position: absolute; left: 12px; top: 50%;
+            transform: translateY(-50%); color: var(--text-muted); pointer-events: none; width: 14px; height: 14px; }
 
-        .header-actions { display: flex; align-items: center; gap: 15px; }
+        .header-actions { display: flex; align-items: center; gap: 12px; }
 
         .login-btn { background: linear-gradient(90deg, #b8860b, var(--gold-primary));
-            color: #000; font-family: var(--font-heading); font-size: 14px; font-weight: 700;
-            padding: 12px 30px; border: none; border-radius: 50px; cursor: pointer;
+            color: #000; font-family: var(--font-heading); font-size: 12px; font-weight: 700;
+            padding: 9px 22px; border: none; border-radius: 50px; cursor: pointer;
             text-transform: uppercase; letter-spacing: 1px; transition: var(--transition-fast);
             box-shadow: 0 0 15px var(--gold-glow); position: relative; overflow: hidden; }
 
@@ -130,14 +130,14 @@
 
         .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer;
             background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 10px; border-radius: 12px; z-index: 1100; transition: var(--transition-fast); }
+            padding: 8px; border-radius: 10px; z-index: 1100; transition: var(--transition-fast); }
 
         .hamburger:hover { border-color: var(--gold-primary); box-shadow: 0 0 15px var(--gold-glow); }
         .hamburger:active { transform: scale(0.9); background: rgba(255, 170, 0, 0.15);
             border-color: var(--gold-primary);
             box-shadow: 0 0 25px var(--gold-glow-strong), 0 0 45px var(--gold-glow); }
 
-        .hamburger span { width: 25px; height: 3px; background: var(--text-main);
+        .hamburger span { width: 22px; height: 2.5px; background: var(--text-main);
             border-radius: 3px; transition: var(--transition); }
         .hamburger:active span { background: var(--gold-primary); box-shadow: 0 0 8px var(--gold-glow); }
 
@@ -145,59 +145,59 @@
         main { padding: 0 5%; max-width: 1400px; margin: 0 auto; width: 100%; overflow: hidden; }
 
         .hero { display: flex; flex-direction: column; align-items: center; justify-content: center;
-            text-align: center; padding: 40px 0 50px; position: relative; }
+            text-align: center; padding: 25px 0 35px; position: relative; }
 
         .hero::before { content: ''; position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%); width: 500px; height: 500px;
+            transform: translate(-50%, -50%); width: 450px; height: 450px;
             max-width: 90vw; max-height: 90vw;
             background: radial-gradient(circle, rgba(255, 170, 0, 0.08) 0%, transparent 70%);
             z-index: -1; pointer-events: none; }
 
-        .game-badge { display: inline-flex; align-items: center; gap: 12px;
+        .game-badge { display: inline-flex; align-items: center; gap: 10px;
             background: linear-gradient(90deg, rgba(255, 170, 0, 0.15), rgba(255, 170, 0, 0.05));
-            border: 1px solid var(--gold-primary); padding: 8px 22px 8px 12px;
-            border-radius: 50px; margin-bottom: 18px;
+            border: 1px solid var(--gold-primary); padding: 6px 18px 6px 10px;
+            border-radius: 50px; margin-bottom: 12px;
             box-shadow: 0 0 20px rgba(255, 170, 0, 0.2);
             animation: floatBadge 3s ease-in-out infinite; }
 
         .game-badge:hover { box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 50px var(--gold-glow); }
 
-        @keyframes floatBadge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        @keyframes floatBadge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
 
-        .pubg-logo { width: 32px; height: 32px; border-radius: 50%; object-fit: cover;
+        .pubg-logo { width: 26px; height: 26px; border-radius: 50%; object-fit: cover;
             border: 1px solid var(--gold-primary); box-shadow: 0 0 10px rgba(255, 170, 0, 0.5); }
 
-        .game-badge-text { font-family: var(--font-heading); font-size: 14px; font-weight: 700;
-            letter-spacing: 2px; color: var(--gold-primary); text-transform: uppercase; }
+        .game-badge-text { font-family: var(--font-heading); font-size: 12px; font-weight: 700;
+            letter-spacing: 1.5px; color: var(--gold-primary); text-transform: uppercase; }
 
-        .paks-text { font-family: var(--font-heading); font-size: 20px; font-weight: 700;
-            letter-spacing: 6px; color: var(--gold-primary); text-transform: uppercase;
-            margin-bottom: 15px; padding: 6px 24px;
+        .paks-text { font-family: var(--font-heading); font-size: 16px; font-weight: 700;
+            letter-spacing: 4px; color: var(--gold-primary); text-transform: uppercase;
+            margin-bottom: 10px; padding: 4px 18px;
             border-top: 1px solid var(--gold-primary); border-bottom: 1px solid var(--gold-primary);
             text-shadow: 0 0 15px var(--gold-glow); animation: pulsePaks 2s ease-in-out infinite; }
 
         @keyframes pulsePaks { 0%, 100% { opacity: 1; text-shadow: 0 0 15px var(--gold-glow); }
             50% { opacity: 0.85; text-shadow: 0 0 25px var(--gold-glow); } }
 
-        .hero-title { font-family: var(--font-heading); font-size: 60px; font-weight: 900;
-            letter-spacing: 3px;
+        .hero-title { font-family: var(--font-heading); font-size: 44px; font-weight: 900;
+            letter-spacing: 2px;
             background: linear-gradient(90deg, #fff, var(--gold-primary), #fff);
             background-size: 200% auto; -webkit-background-clip: text; background-clip: text;
-            -webkit-text-fill-color: transparent; margin-bottom: 15px; text-transform: uppercase;
+            -webkit-text-fill-color: transparent; margin-bottom: 10px; text-transform: uppercase;
             animation: shine 3s linear infinite; line-height: 1.15; word-break: break-word; max-width: 100%; }
 
         @keyframes shine { to { background-position: 200% auto; } }
 
-        .hero-subtitle { font-size: 16px; letter-spacing: 5px; color: var(--text-muted);
-            text-transform: uppercase; margin-bottom: 25px; }
+        .hero-subtitle { font-size: 13px; letter-spacing: 4px; color: var(--text-muted);
+            text-transform: uppercase; margin-bottom: 18px; }
 
         .server-support { display: flex; align-items: center; justify-content: center;
-            gap: 12px; flex-wrap: wrap; margin-bottom: 35px; max-width: 100%; }
+            gap: 8px; flex-wrap: wrap; margin-bottom: 25px; max-width: 100%; }
 
         .server-tag { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color);
-            padding: 9px 20px; border-radius: 50px; font-size: 12px; font-weight: 700;
-            letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-main);
-            display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+            padding: 6px 14px; border-radius: 50px; font-size: 10px; font-weight: 700;
+            letter-spacing: 1px; text-transform: uppercase; color: var(--text-main);
+            display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
             transition: var(--transition-fast); }
 
         .server-tag:hover { border-color: var(--gold-primary); color: var(--gold-primary);
@@ -217,16 +217,16 @@
         .server-tag.safe:active { box-shadow: 0 0 25px var(--green-glow), 0 0 50px var(--green-glow);
             background: rgba(0, 255, 136, 0.15); }
 
-        .server-tag .dot { width: 7px; height: 7px; background: currentColor;
+        .server-tag .dot { width: 6px; height: 6px; background: currentColor;
             border-radius: 50%; box-shadow: 0 0 8px currentColor; }
 
-        .hero-cta { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        .hero-cta { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
 
-        .btn-primary, .btn-secondary, .btn-download-hero { font-family: var(--font-heading); font-size: 15px;
-            font-weight: 700; padding: 16px 40px; border-radius: 50px; cursor: pointer;
-            text-transform: uppercase; letter-spacing: 2px; transition: var(--transition-fast);
+        .btn-primary, .btn-secondary, .btn-download-hero { font-family: var(--font-heading); font-size: 13px;
+            font-weight: 700; padding: 12px 32px; border-radius: 50px; cursor: pointer;
+            text-transform: uppercase; letter-spacing: 1.5px; transition: var(--transition-fast);
             text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
-            gap: 10px; border: none; position: relative; overflow: hidden; }
+            gap: 8px; border: none; position: relative; overflow: hidden; }
 
         .btn-primary { background: linear-gradient(90deg, #b8860b, var(--gold-primary));
             color: #000; box-shadow: 0 0 20px var(--gold-glow); }
@@ -266,59 +266,59 @@
 
         .btn-download-hero:active { transform: scale(0.94); filter: brightness(1.3); }
 
-        .btn-download-hero svg { width: 20px; height: 20px; transition: var(--transition-fast); }
+        .btn-download-hero svg { width: 18px; height: 18px; transition: var(--transition-fast); }
         .btn-download-hero:hover svg { transform: translateY(3px); }
 
-        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header { text-align: center; margin-bottom: 35px; }
 
-        .section-title { font-family: var(--font-heading); font-size: 30px; color: var(--gold-primary);
-            letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;
+        .section-title { font-family: var(--font-heading); font-size: 24px; color: var(--gold-primary);
+            letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;
             text-shadow: 0 0 15px rgba(255, 170, 0, 0.3); }
 
-        .section-desc { color: var(--text-muted); font-size: 15px; }
+        .section-desc { color: var(--text-muted); font-size: 13px; }
 
         /* PRODUK */
-        #produk { padding: 70px 0; }
+        #produk { padding: 50px 0; }
 
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
 
         .product-card { background: var(--bg-panel); border: 1px solid var(--border-color);
-            border-radius: 20px; padding: 30px; display: flex; flex-direction: column;
+            border-radius: 18px; padding: 22px; display: flex; flex-direction: column;
             align-items: center; text-align: center; transition: var(--transition);
             position: relative; overflow: hidden; height: 100%; }
 
-        .product-card:hover { transform: translateY(-10px); border-color: var(--gold-primary);
+        .product-card:hover { transform: translateY(-8px); border-color: var(--gold-primary);
             box-shadow: 0 15px 40px rgba(255, 170, 0, 0.15), 0 0 60px rgba(255, 170, 0, 0.1); }
 
-        .product-badge { position: absolute; top: 18px; right: -38px;
-            background: var(--gold-primary); color: #000; font-weight: 700; font-size: 10px;
-            padding: 5px 45px; transform: rotate(45deg); text-transform: uppercase;
+        .product-badge { position: absolute; top: 14px; right: -32px;
+            background: var(--gold-primary); color: #000; font-weight: 700; font-size: 9px;
+            padding: 4px 40px; transform: rotate(45deg); text-transform: uppercase;
             letter-spacing: 1px; box-shadow: 0 0 15px var(--gold-glow); }
 
         .product-badge.hot { background: var(--danger-red); color: #fff; box-shadow: 0 0 15px var(--red-glow); }
         .product-badge.permanent { background: linear-gradient(90deg, #ff4444, #ff8800); color: #fff; }
 
-        .product-icon-box { width: 80px; height: 80px; display: flex; align-items: center;
+        .product-icon-box { width: 65px; height: 65px; display: flex; align-items: center;
             justify-content: center; border-radius: 50%; border: 1px solid var(--border-color);
-            background: rgba(255, 170, 0, 0.08); margin-bottom: 20px; transition: var(--transition); }
+            background: rgba(255, 170, 0, 0.08); margin-bottom: 15px; transition: var(--transition); }
 
         .product-card:hover .product-icon-box { box-shadow: 0 0 25px var(--gold-glow),
             inset 0 0 15px rgba(255, 170, 0, 0.15); transform: scale(1.08); }
 
-        .product-icon-box svg { width: 36px; height: 36px; fill: var(--gold-primary); transition: var(--transition); }
+        .product-icon-box svg { width: 28px; height: 28px; fill: var(--gold-primary); transition: var(--transition); }
         .product-card:hover .product-icon-box svg { filter: drop-shadow(0 0 8px var(--gold-glow-strong)); }
 
-        .product-name { font-size: 22px; font-weight: 700; margin-bottom: 10px;
+        .product-name { font-size: 18px; font-weight: 700; margin-bottom: 8px;
             text-transform: uppercase; letter-spacing: 1px; }
 
-        .product-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 25px; flex-grow: 1; }
+        .product-desc { color: var(--text-muted); font-size: 12px; margin-bottom: 18px; flex-grow: 1; }
 
-        .product-price { font-family: var(--font-heading); font-size: 28px; font-weight: 900;
-            color: var(--gold-primary); margin-bottom: 25px; text-shadow: 0 0 15px var(--gold-glow); }
+        .product-price { font-family: var(--font-heading); font-size: 22px; font-weight: 900;
+            color: var(--gold-primary); margin-bottom: 18px; text-shadow: 0 0 15px var(--gold-glow); }
 
         .buy-btn { background: linear-gradient(90deg, #b8860b, var(--gold-primary));
-            color: #000; font-family: var(--font-heading); font-size: 14px; font-weight: 700;
-            padding: 16px 30px; border: none; border-radius: 50px; cursor: pointer;
+            color: #000; font-family: var(--font-heading); font-size: 12px; font-weight: 700;
+            padding: 12px 22px; border: none; border-radius: 50px; cursor: pointer;
             text-transform: uppercase; letter-spacing: 1px; transition: var(--transition-fast);
             width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
             box-shadow: 0 0 15px var(--gold-glow); position: relative; overflow: hidden; }
@@ -330,10 +330,10 @@
             box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow); filter: brightness(1.3); }
 
         /* TUTORIAL */
-        #tutorial { padding: 70px 0; max-width: 900px; margin: 0 auto; scroll-margin-top: 90px; }
+        #tutorial { padding: 50px 0; max-width: 900px; margin: 0 auto; scroll-margin-top: 80px; }
 
         .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%;
-            border-radius: 20px; overflow: hidden; border: 2px solid var(--border-color);
+            border-radius: 18px; overflow: hidden; border: 2px solid var(--border-color);
             box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255, 170, 0, 0.15);
             background: #000; transition: var(--transition); }
 
@@ -343,28 +343,28 @@
         .video-wrapper iframe { position: absolute; top: 0; left: 0;
             width: 100%; height: 100%; border: none; }
 
-        .tutorial-warning { display: flex; align-items: center; gap: 15px;
+        .tutorial-warning { display: flex; align-items: center; gap: 12px;
             background: rgba(255, 68, 68, 0.08); border: 1px solid rgba(255, 68, 68, 0.4);
-            border-left: 4px solid var(--danger-red); border-radius: 12px; padding: 18px 22px;
-            margin-top: 25px; box-shadow: 0 0 20px rgba(255, 68, 68, 0.15);
+            border-left: 4px solid var(--danger-red); border-radius: 12px; padding: 14px 18px;
+            margin-top: 18px; box-shadow: 0 0 20px rgba(255, 68, 68, 0.15);
             transition: var(--transition); }
 
         .tutorial-warning:hover { box-shadow: 0 0 30px rgba(255, 68, 68, 0.25); transform: translateY(-2px); }
 
-        .warning-icon { font-family: var(--font-heading); font-size: 24px; font-weight: 900;
-            color: var(--danger-red); width: 40px; height: 40px; display: flex;
+        .warning-icon { font-family: var(--font-heading); font-size: 18px; font-weight: 900;
+            color: var(--danger-red); width: 32px; height: 32px; display: flex;
             align-items: center; justify-content: center; border-radius: 50%;
             background: rgba(255, 68, 68, 0.15); border: 2px solid var(--danger-red);
             flex-shrink: 0; text-shadow: 0 0 10px var(--red-glow); }
 
-        .tutorial-warning p { color: var(--danger-red); font-size: 14px; font-weight: 700;
+        .tutorial-warning p { color: var(--danger-red); font-size: 12px; font-weight: 700;
             line-height: 1.6; letter-spacing: 0.5px; }
 
         /* DOWNLOAD */
-        #download { padding: 70px 0; max-width: 700px; margin: 0 auto; scroll-margin-top: 90px; }
+        #download { padding: 50px 0; max-width: 650px; margin: 0 auto; scroll-margin-top: 80px; }
 
         .download-card { background: var(--bg-panel); border: 2px solid var(--border-color);
-            border-radius: 20px; padding: 40px 30px; text-align: center;
+            border-radius: 18px; padding: 28px 22px; text-align: center;
             box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255, 170, 0, 0.15);
             transition: var(--transition); position: relative; overflow: hidden; }
 
@@ -376,7 +376,7 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 60px rgba(255, 170, 0, 0.35);
             transform: translateY(-5px); }
 
-        .download-icon { width: 90px; height: 90px; margin: 0 auto 20px; border-radius: 50%;
+        .download-icon { width: 70px; height: 70px; margin: 0 auto 15px; border-radius: 50%;
             background: rgba(255, 170, 0, 0.08); border: 2px solid var(--gold-primary);
             display: flex; align-items: center; justify-content: center;
             box-shadow: 0 0 25px var(--gold-glow);
@@ -384,38 +384,23 @@
 
         @keyframes downloadFloat {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+            50% { transform: translateY(-6px); }
         }
 
-        .download-icon svg { width: 45px; height: 45px; fill: var(--gold-primary);
+        .download-icon svg { width: 34px; height: 34px; fill: var(--gold-primary);
             filter: drop-shadow(0 0 10px var(--gold-glow-strong)); }
 
-        .download-file-name { font-family: var(--font-heading); font-size: 24px; font-weight: 900;
-            color: var(--text-main); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1.5px; }
-
-        .download-features { background: rgba(0, 136, 204, 0.06); border-left: 3px solid var(--gold-primary);
-            border-radius: 12px; padding: 18px 22px; margin-bottom: 25px; text-align: left; }
-
-        .download-features h4 { font-family: var(--font-heading); font-size: 14px;
-            color: var(--gold-primary); margin-bottom: 12px; letter-spacing: 1px; text-transform: uppercase; }
-
-        .download-features ul { list-style: none; padding: 0; }
-
-        .download-features li { color: var(--text-muted); font-size: 13px;
-            padding: 6px 0 6px 25px; position: relative; line-height: 1.5; }
-
-        .download-features li::before { content: '✓'; position: absolute; left: 0; top: 6px;
-            color: var(--success-green); font-weight: 900; font-size: 14px;
-            text-shadow: 0 0 8px var(--green-glow); }
+        .download-file-name { font-family: var(--font-heading); font-size: 18px; font-weight: 900;
+            color: var(--text-main); margin-bottom: 18px; text-transform: uppercase; letter-spacing: 1.5px; }
 
         /* PROGRESS BAR */
         .progress-container {
             width: 100%;
-            max-width: 400px;
-            margin: 0 auto 20px;
+            max-width: 380px;
+            margin: 0 auto 15px;
             display: none;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
 
         .progress-container.active {
@@ -425,7 +410,7 @@
 
         .progress-bar-wrapper {
             width: 100%;
-            height: 24px;
+            height: 20px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-color);
             border-radius: 50px;
@@ -462,38 +447,38 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-muted);
             padding: 0 4px;
         }
 
         .progress-percentage {
             font-family: var(--font-heading);
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 900;
             color: var(--success-green);
             text-shadow: 0 0 10px var(--green-glow);
         }
 
         .progress-size {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-muted);
         }
 
         /* DOWNLOAD ACTIONS */
         .download-actions {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         .btn-download { display: inline-flex; align-items: center; justify-content: center;
-            gap: 12px; background: linear-gradient(90deg, #00c853, #00e676);
-            color: #000; font-family: var(--font-heading); font-size: 16px; font-weight: 900;
-            padding: 18px 40px; border: none; border-radius: 50px; cursor: pointer;
-            text-decoration: none; text-transform: uppercase; letter-spacing: 2px;
+            gap: 10px; background: linear-gradient(90deg, #00c853, #00e676);
+            color: #000; font-family: var(--font-heading); font-size: 13px; font-weight: 900;
+            padding: 13px 26px; border: none; border-radius: 50px; cursor: pointer;
+            text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px;
             transition: var(--transition-fast); box-shadow: 0 0 25px rgba(0, 200, 83, 0.5);
             position: relative; overflow: hidden;
             animation: downloadPulse 2.5s ease-in-out infinite; }
@@ -503,7 +488,7 @@
             50% { box-shadow: 0 0 40px rgba(0, 200, 83, 0.9), 0 0 70px rgba(0, 200, 83, 0.5); }
         }
 
-        .btn-download svg { transition: var(--transition-fast); width: 22px; height: 22px; }
+        .btn-download svg { transition: var(--transition-fast); width: 16px; height: 16px; }
 
         .btn-download:hover:not(:disabled) { transform: translateY(-3px) scale(1.03);
             box-shadow: 0 10px 35px rgba(0, 200, 83, 0.9), 0 0 60px rgba(0, 200, 83, 0.5);
@@ -519,9 +504,9 @@
 
         .btn-download .loading-spinner {
             display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(0, 0, 0, 0.2);
+            width: 16px;
+            height: 16px;
+            border: 2.5px solid rgba(0, 0, 0, 0.2);
             border-top-color: #000;
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
@@ -533,14 +518,14 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             background: transparent;
             color: var(--gold-primary);
             border: 2px solid var(--gold-primary);
             font-family: var(--font-heading);
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
-            padding: 18px 30px;
+            padding: 13px 26px;
             border-radius: 50px;
             cursor: pointer;
             text-decoration: none;
@@ -564,29 +549,29 @@
         }
 
         .btn-cara-pasang svg {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             fill: currentColor;
         }
 
         /* FAQ */
-        #faq { padding: 70px 0; max-width: 800px; margin: 0 auto; }
+        #faq { padding: 50px 0; max-width: 750px; margin: 0 auto; }
 
         .faq-item { background: var(--bg-panel); border: 1px solid var(--border-color);
-            border-radius: 15px; margin-bottom: 15px; overflow: hidden; transition: var(--transition); }
+            border-radius: 12px; margin-bottom: 10px; overflow: hidden; transition: var(--transition); }
 
         .faq-item:hover { border-color: rgba(255, 170, 0, 0.5); box-shadow: 0 0 20px rgba(255, 170, 0, 0.1); }
         .faq-item.active { border-color: var(--gold-primary); box-shadow: 0 0 25px var(--gold-glow); }
 
-        .faq-question { padding: 18px 20px; font-size: 17px; font-weight: 600;
+        .faq-question { padding: 14px 16px; font-size: 14px; font-weight: 600;
             cursor: pointer; display: flex; justify-content: space-between;
-            align-items: center; transition: var(--transition-fast); gap: 15px; }
+            align-items: center; transition: var(--transition-fast); gap: 12px; }
 
         .faq-question:hover { color: var(--gold-primary); text-shadow: 0 0 10px var(--gold-glow); }
         .faq-question:active { transform: scale(0.99); background: rgba(255, 170, 0, 0.08); }
 
-        .faq-toggle { font-family: var(--font-heading); font-size: 18px; font-weight: 700;
-            color: var(--gold-primary); flex-shrink: 0; width: 30px; height: 30px;
+        .faq-toggle { font-family: var(--font-heading); font-size: 15px; font-weight: 700;
+            color: var(--gold-primary); flex-shrink: 0; width: 25px; height: 25px;
             text-align: center; border-radius: 50%; background: rgba(255, 170, 0, 0.1);
             transition: var(--transition-fast); display: flex; align-items: center; justify-content: center; }
 
@@ -594,29 +579,29 @@
             box-shadow: 0 0 15px var(--gold-glow-strong); }
 
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;
-            padding: 0 20px; color: var(--text-muted); border-top: 1px solid transparent; font-size: 14px; }
+            padding: 0 16px; color: var(--text-muted); border-top: 1px solid transparent; font-size: 12px; }
 
-        .faq-item.active .faq-answer { max-height: 300px; padding: 0 20px 20px;
+        .faq-item.active .faq-answer { max-height: 300px; padding: 0 16px 16px;
             border-top-color: rgba(255, 255, 255, 0.05); }
 
         /* FOOTER */
-        footer { margin-top: 70px; padding: 40px 5%; border-top: 1px solid var(--border-color);
+        footer { margin-top: 50px; padding: 30px 5%; border-top: 1px solid var(--border-color);
             background: rgba(5, 5, 5, 0.9); display: flex; flex-direction: column;
-            align-items: center; text-align: center; width: 100%; gap: 30px; }
+            align-items: center; text-align: center; width: 100%; gap: 22px; }
 
         .footer-col { width: 100%; max-width: 900px; }
 
         .footer-col h4 { font-family: var(--font-heading); color: var(--gold-primary);
-            font-size: 17px; margin-bottom: 15px; letter-spacing: 1px;
+            font-size: 14px; margin-bottom: 12px; letter-spacing: 1px;
             text-shadow: 0 0 10px rgba(255, 170, 0, 0.3); }
 
-        .footer-col p { color: var(--text-muted); font-size: 14px; line-height: 1.7; }
+        .footer-col p { color: var(--text-muted); font-size: 12px; line-height: 1.6; }
 
-        .footer-links-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+        .footer-links-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
 
         .footer-links-row a, .footer-links-row span { color: var(--text-muted);
-            text-decoration: none; font-size: 14px; transition: var(--transition-fast);
-            cursor: pointer; padding: 6px 12px; border-radius: 50px; display: inline-block; }
+            text-decoration: none; font-size: 12px; transition: var(--transition-fast);
+            cursor: pointer; padding: 5px 10px; border-radius: 50px; display: inline-block; }
 
         .footer-links-row a:hover { color: var(--gold-primary);
             text-shadow: 0 0 10px var(--gold-glow); background: rgba(255, 170, 0, 0.08); }
@@ -624,9 +609,9 @@
             background: rgba(255, 170, 0, 0.15); box-shadow: 0 0 20px var(--gold-glow);
             text-shadow: 0 0 15px var(--gold-glow-strong); }
 
-        .footer-contact a { color: var(--text-muted); text-decoration: none; font-size: 14px;
-            display: block; margin-bottom: 8px; transition: var(--transition-fast);
-            padding: 6px 12px; border-radius: 50px; }
+        .footer-contact a { color: var(--text-muted); text-decoration: none; font-size: 12px;
+            display: block; margin-bottom: 6px; transition: var(--transition-fast);
+            padding: 5px 10px; border-radius: 50px; }
 
         .footer-contact a:hover { color: var(--gold-primary);
             text-shadow: 0 0 10px var(--gold-glow); background: rgba(255, 170, 0, 0.08); }
@@ -634,8 +619,8 @@
             background: rgba(255, 170, 0, 0.15); box-shadow: 0 0 20px var(--gold-glow);
             text-shadow: 0 0 15px var(--gold-glow-strong); }
 
-        .footer-bottom { width: 100%; text-align: center; padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-muted); font-size: 13px; }
+        .footer-bottom { width: 100%; text-align: center; padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-muted); font-size: 11px; }
 
         /* MODAL */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -647,7 +632,7 @@
         .modal-overlay.active { opacity: 1; visibility: visible; }
 
         .modal-content { background: var(--bg-panel); border: 1px solid var(--border-color);
-            border-radius: 20px; padding: 30px; width: 100%; max-width: 500px;
+            border-radius: 18px; padding: 24px; width: 100%; max-width: 450px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.9), 0 0 30px rgba(255, 170, 0, 0.1);
             transform: scale(0.9); transition: var(--transition); max-height: 90vh;
             overflow-y: auto; margin: auto; position: relative; z-index: 2001; }
@@ -655,15 +640,15 @@
         .modal-overlay.active .modal-content { transform: scale(1); }
 
         .modal-header { display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
+            margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; }
 
         .modal-header h3 { font-family: var(--font-heading); color: var(--gold-primary);
-            font-size: 19px; letter-spacing: 1px; text-shadow: 0 0 10px rgba(255, 170, 0, 0.3); }
+            font-size: 16px; letter-spacing: 1px; text-shadow: 0 0 10px rgba(255, 170, 0, 0.3); }
 
         .close-modal { background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-muted);
-            font-size: 22px; cursor: pointer; transition: var(--transition-fast);
-            line-height: 1; width: 40px; height: 40px; border-radius: 50%;
+            font-size: 20px; cursor: pointer; transition: var(--transition-fast);
+            line-height: 1; width: 34px; height: 34px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
         .close-modal:hover { color: var(--danger-red); transform: rotate(90deg);
@@ -673,30 +658,30 @@
             background: rgba(255, 68, 68, 0.2);
             box-shadow: 0 0 30px var(--red-glow), 0 0 60px rgba(255, 68, 68, 0.4); color: #fff; }
 
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-size: 14px; color: var(--text-muted); }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; margin-bottom: 6px; font-size: 12px; color: var(--text-muted); }
 
         .form-group input { width: 100%; background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-main);
-            padding: 14px 18px; border-radius: 50px; font-family: var(--font-body);
-            outline: none; transition: var(--transition); }
+            padding: 11px 16px; border-radius: 50px; font-family: var(--font-body);
+            font-size: 13px; outline: none; transition: var(--transition); }
 
         .form-group input:hover { border-color: rgba(255, 170, 0, 0.4); }
         .form-group input:focus { border-color: var(--gold-primary);
             box-shadow: 0 0 20px var(--gold-glow), inset 0 0 10px rgba(255, 170, 0, 0.1); }
 
         /* CHECKOUT */
-        .checkout-steps { display: flex; justify-content: space-between; margin-bottom: 25px; position: relative; }
+        .checkout-steps { display: flex; justify-content: space-between; margin-bottom: 20px; position: relative; }
 
-        .checkout-steps::before { content: ''; position: absolute; top: 15px; left: 15px; right: 15px;
+        .checkout-steps::before { content: ''; position: absolute; top: 13px; left: 13px; right: 13px;
             height: 2px; background: rgba(255, 255, 255, 0.1); z-index: 1; }
 
         .step-indicator { display: flex; flex-direction: column; align-items: center;
-            gap: 8px; z-index: 2; flex: 1; }
+            gap: 6px; z-index: 2; flex: 1; }
 
-        .step-circle { width: 32px; height: 32px; border-radius: 50%; background: var(--bg-dark);
+        .step-circle { width: 28px; height: 28px; border-radius: 50%; background: var(--bg-dark);
             border: 2px solid rgba(255, 255, 255, 0.2); display: flex; align-items: center;
-            justify-content: center; font-size: 13px; font-weight: 700;
+            justify-content: center; font-size: 12px; font-weight: 700;
             color: var(--text-muted); transition: var(--transition); font-family: var(--font-heading); }
 
         .step-indicator.active .step-circle { border-color: var(--gold-primary);
@@ -706,7 +691,7 @@
         .step-indicator.completed .step-circle { border-color: var(--success-green);
             background: var(--success-green); color: #000; box-shadow: 0 0 15px var(--green-glow); }
 
-        .step-label { font-size: 11px; font-weight: 600; color: var(--text-muted);
+        .step-label { font-size: 10px; font-weight: 600; color: var(--text-muted);
             text-transform: uppercase; letter-spacing: 1px; text-align: center; }
 
         .step-indicator.active .step-label { color: var(--gold-primary); text-shadow: 0 0 8px var(--gold-glow); }
@@ -716,31 +701,31 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         .summary-box { background: rgba(255, 170, 0, 0.05); border: 1px solid var(--border-color);
-            border-radius: 15px; padding: 20px; margin-bottom: 20px; }
+            border-radius: 12px; padding: 16px; margin-bottom: 16px; }
 
         .summary-row { display: flex; justify-content: space-between; align-items: flex-start;
-            padding: 12px 0; gap: 20px; border-bottom: 1px dashed rgba(255, 255, 255, 0.08); }
+            padding: 10px 0; gap: 16px; border-bottom: 1px dashed rgba(255, 255, 255, 0.08); }
 
         .summary-row:last-child { border-bottom: none; padding-bottom: 0; }
 
-        .summary-label { font-size: 13px; color: var(--text-muted); text-transform: uppercase;
+        .summary-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase;
             letter-spacing: 1px; flex-shrink: 0; }
 
-        .summary-value { font-weight: 600; font-size: 14px; text-align: right;
+        .summary-value { font-weight: 600; font-size: 13px; text-align: right;
             flex-grow: 1; word-break: break-word; line-height: 1.5; }
 
         .summary-value.gold { color: var(--gold-primary); font-family: var(--font-heading);
-            font-size: 18px; white-space: nowrap; text-shadow: 0 0 10px rgba(255, 170, 0, 0.4); }
+            font-size: 16px; white-space: nowrap; text-shadow: 0 0 10px rgba(255, 170, 0, 0.4); }
 
-        .payment-section-title { font-size: 14px; font-weight: 600; color: var(--text-muted);
-            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .payment-section-title { font-size: 12px; font-weight: 600; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
 
         .payment-grid { display: grid; grid-template-columns: repeat(2, 1fr);
-            gap: 12px; margin-bottom: 20px; }
+            gap: 10px; margin-bottom: 16px; }
 
         .payment-option { background: rgba(255, 255, 255, 0.03);
-            border: 2px solid rgba(255, 255, 255, 0.08); border-radius: 15px;
-            padding: 15px; cursor: pointer; text-align: center; position: relative;
+            border: 2px solid rgba(255, 255, 255, 0.08); border-radius: 12px;
+            padding: 12px; cursor: pointer; text-align: center; position: relative;
             transition: var(--transition-fast); }
 
         .payment-option[data-method="DANA"]:hover { border-color: #118eea;
@@ -771,8 +756,8 @@
             border-color: #f05a22; background: rgba(240, 90, 34, 0.15);
             box-shadow: 0 0 25px var(--bni-glow), 0 0 50px rgba(240, 90, 34, 0.4); }
 
-        .payment-option.selected::after { content: '✓'; position: absolute; top: 8px; right: 10px;
-            font-weight: 700; font-size: 16px; color: var(--text-main);
+        .payment-option.selected::after { content: '✓'; position: absolute; top: 6px; right: 8px;
+            font-weight: 700; font-size: 14px; color: var(--text-main);
             text-shadow: 0 0 10px currentColor; }
 
         .payment-option[data-method="DANA"].selected::after { color: #118eea; }
@@ -780,71 +765,71 @@
         .payment-option[data-method="SeaBank"].selected::after { color: #ff6b00; }
         .payment-option[data-method="BNI"].selected::after { color: #f05a22; }
 
-        .payment-logo { width: 60px; height: 60px; margin: 0 auto 10px; border-radius: 50%;
+        .payment-logo { width: 50px; height: 50px; margin: 0 auto 8px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-family: var(--font-heading); font-weight: 900; font-size: 18px;
+            font-family: var(--font-heading); font-weight: 900; font-size: 15px;
             color: #fff; letter-spacing: 1px; transition: var(--transition); }
 
         .payment-option:hover .payment-logo { transform: scale(1.05); }
 
         .payment-logo.dana { background: linear-gradient(135deg, #118eea, #0a6fbf); box-shadow: 0 0 15px rgba(17, 142, 234, 0.4); }
-        .payment-logo.qris { background: linear-gradient(135deg, #e30613, #ff6b6b); box-shadow: 0 0 15px rgba(227, 6, 19, 0.4); font-size: 13px; }
+        .payment-logo.qris { background: linear-gradient(135deg, #e30613, #ff6b6b); box-shadow: 0 0 15px rgba(227, 6, 19, 0.4); font-size: 11px; }
         .payment-logo.seabank { background: linear-gradient(135deg, #ff6b00, #ff8c33); box-shadow: 0 0 15px rgba(255, 107, 0, 0.4); }
         .payment-logo.bni { background: linear-gradient(135deg, #f05a22, #005e8a); box-shadow: 0 0 15px rgba(240, 90, 34, 0.4); }
 
-        .payment-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-        .payment-type { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+        .payment-name { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .payment-type { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
 
         .payment-detail-box { background: rgba(0, 0, 0, 0.3); border: 1px solid var(--border-color);
-            border-radius: 15px; padding: 20px; margin-bottom: 20px; }
+            border-radius: 12px; padding: 16px; margin-bottom: 16px; }
 
-        .payment-detail-header { display: flex; align-items: center; gap: 12px;
-            margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .payment-detail-header { display: flex; align-items: center; gap: 10px;
+            margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
 
-        .payment-detail-logo { width: 40px; height: 40px; border-radius: 50%;
+        .payment-detail-logo { width: 36px; height: 36px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-family: var(--font-heading); font-weight: 900; font-size: 13px; color: #fff; }
+            font-family: var(--font-heading); font-weight: 900; font-size: 12px; color: #fff; }
 
         .payment-detail-info { display: flex; flex-direction: column; }
-        .payment-detail-info strong { font-size: 15px; }
-        .payment-detail-info span { font-size: 12px; color: var(--text-muted); }
+        .payment-detail-info strong { font-size: 13px; }
+        .payment-detail-info span { font-size: 11px; color: var(--text-muted); }
 
         .contact-admin-box { background: rgba(0, 136, 204, 0.08);
             border: 1px solid rgba(0, 136, 204, 0.4); border-left: 3px solid #0088cc;
-            border-radius: 12px; padding: 18px; text-align: center; }
+            border-radius: 12px; padding: 14px; text-align: center; }
 
-        .contact-admin-box p { color: var(--text-main); font-size: 14px;
-            line-height: 1.6; margin-bottom: 12px; }
-        .contact-admin-box .admin-hint { color: var(--text-muted); font-size: 12px; font-style: italic; }
+        .contact-admin-box p { color: var(--text-main); font-size: 12px;
+            line-height: 1.6; margin-bottom: 10px; }
+        .contact-admin-box .admin-hint { color: var(--text-muted); font-size: 11px; font-style: italic; }
 
-        .qr-container { text-align: center; padding: 15px 0; }
-        .qr-container img { width: 100%; max-width: 260px; border-radius: 15px;
+        .qr-container { text-align: center; padding: 12px 0; }
+        .qr-container img { width: 100%; max-width: 220px; border-radius: 12px;
             border: 3px solid var(--gold-primary); box-shadow: 0 0 25px rgba(255, 170, 0, 0.3);
-            background: #fff; padding: 8px; transition: var(--transition); }
+            background: #fff; padding: 6px; transition: var(--transition); }
         .qr-container img:hover { box-shadow: 0 0 35px var(--gold-glow-strong), 0 0 60px var(--gold-glow); transform: scale(1.02); }
-        .qr-container p { color: var(--text-muted); font-size: 12px; margin-top: 12px; }
+        .qr-container p { color: var(--text-muted); font-size: 11px; margin-top: 10px; }
 
         .total-payment { background: linear-gradient(90deg, rgba(255, 170, 0, 0.15), rgba(255, 170, 0, 0.05));
-            border: 1px solid var(--gold-primary); border-radius: 50px; padding: 18px 25px;
+            border: 1px solid var(--gold-primary); border-radius: 50px; padding: 14px 20px;
             display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 20px; box-shadow: 0 0 20px rgba(255, 170, 0, 0.15); }
+            margin-bottom: 16px; box-shadow: 0 0 20px rgba(255, 170, 0, 0.15); }
 
-        .total-payment .label { font-size: 13px; text-transform: uppercase;
+        .total-payment .label { font-size: 11px; text-transform: uppercase;
             letter-spacing: 1px; color: var(--text-muted); }
 
-        .total-payment .value { font-family: var(--font-heading); font-size: 22px;
+        .total-payment .value { font-family: var(--font-heading); font-size: 18px;
             font-weight: 900; color: var(--gold-primary); text-shadow: 0 0 15px var(--gold-glow); }
 
         .instruction-box { background: rgba(0, 136, 204, 0.08);
-            border-left: 3px solid #0088cc; border-radius: 12px; padding: 15px;
-            margin-bottom: 20px; font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+            border-left: 3px solid #0088cc; border-radius: 12px; padding: 12px;
+            margin-bottom: 16px; font-size: 11px; color: var(--text-muted); line-height: 1.7; }
 
         .instruction-box strong { color: var(--text-main); }
 
-        .checkout-actions { display: flex; gap: 12px; margin-top: 20px; }
+        .checkout-actions { display: flex; gap: 10px; margin-top: 16px; }
 
-        .btn-checkout { flex: 1; font-family: var(--font-heading); font-size: 13px;
-            font-weight: 700; padding: 16px; border-radius: 50px; cursor: pointer;
+        .btn-checkout { flex: 1; font-family: var(--font-heading); font-size: 12px;
+            font-weight: 700; padding: 13px; border-radius: 50px; cursor: pointer;
             text-transform: uppercase; letter-spacing: 1px; transition: var(--transition-fast);
             border: none; text-decoration: none; display: inline-flex;
             align-items: center; justify-content: center; gap: 8px;
@@ -885,97 +870,97 @@
         .toast.show { transform: translateX(0); }
         .toast-indicator { width: 10px; height: 10px; border-radius: 50%;
             background: var(--gold-primary); box-shadow: 0 0 10px var(--gold-primary); flex-shrink: 0; }
-        .toast-message { font-size: 14px; font-weight: 600; }
+        .toast-message { font-size: 13px; font-weight: 600; }
 
         @media (min-width: 769px) and (max-width: 1024px) {
-            :root { --header-height: 65px; }
-            .brand-name { font-size: 17px; } .logo-img { width: 40px; height: 40px; }
-            nav.desktop-nav { gap: 12px; } .nav-link { font-size: 11px; }
-            .search-input { width: 130px; font-size: 13px; padding: 8px 12px 8px 35px; }
-            .search-input:focus { width: 160px; } .search-icon { left: 11px; width: 15px; height: 15px; }
-            .hero { padding: 40px 0 40px; } .hero-title { font-size: 46px; letter-spacing: 3px; }
-            .hero-subtitle { font-size: 14px; letter-spacing: 4px; }
-            .paks-text { font-size: 17px; letter-spacing: 5px; } .game-badge-text { font-size: 12px; }
-            .product-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-            .product-card { padding: 25px 20px; } .product-name { font-size: 19px; }
-            .product-price { font-size: 24px; } .section-title { font-size: 26px; }
-            .modal-content { max-width: 520px; padding: 25px; }
+            :root { --header-height: 58px; }
+            .brand-name { font-size: 15px; } .logo-img { width: 34px; height: 34px; }
+            nav.desktop-nav { gap: 10px; } .nav-link { font-size: 10px; }
+            .search-input { width: 120px; font-size: 11px; padding: 7px 10px 7px 30px; }
+            .search-input:focus { width: 150px; } .search-icon { left: 10px; width: 12px; height: 12px; }
+            .hero { padding: 25px 0 30px; } .hero-title { font-size: 36px; letter-spacing: 2px; }
+            .hero-subtitle { font-size: 12px; letter-spacing: 3px; }
+            .paks-text { font-size: 14px; letter-spacing: 4px; } .game-badge-text { font-size: 11px; }
+            .product-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .product-card { padding: 20px 16px; } .product-name { font-size: 16px; }
+            .product-price { font-size: 20px; } .section-title { font-size: 22px; }
+            .modal-content { max-width: 480px; padding: 22px; }
         }
-        @media (min-width: 1400px) { main { max-width: 1320px; } .product-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 1400px) { main { max-width: 1200px; } .product-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (min-width: 1025px) and (max-width: 1399px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (max-width: 992px) {
             nav.desktop-nav { display: none; } .hamburger { display: flex; }
             .search-container { display: none; } .login-btn { display: none; } }
 
         @media (max-width: 768px) {
-            :root { --header-height: 65px; }
-            header { padding: 0 20px; } .brand-name { font-size: 15px; }
-            .logo-img { width: 38px; height: 38px; } .hero { padding: 30px 0 30px; }
-            .hero-title { font-size: 30px; letter-spacing: 1.5px; }
-            .hero-subtitle { font-size: 11px; letter-spacing: 2px; }
-            .paks-text { font-size: 13px; letter-spacing: 4px; padding: 5px 14px; margin-bottom: 12px; }
-            .section-title { font-size: 20px; } .section-desc { font-size: 13px; }
-            .product-grid { grid-template-columns: 1fr; gap: 20px; }
-            .product-card { padding: 25px 20px; } .product-name { font-size: 18px; }
-            .product-price { font-size: 22px; }
-            .toast { bottom: 20px; right: 20px; left: 20px; transform: translateY(150%); }
+            :root { --header-height: 58px; }
+            header { padding: 0 16px; } .brand-name { font-size: 14px; }
+            .logo-img { width: 34px; height: 34px; } .hero { padding: 20px 0 25px; }
+            .hero-title { font-size: 26px; letter-spacing: 1px; }
+            .hero-subtitle { font-size: 10px; letter-spacing: 2px; }
+            .paks-text { font-size: 12px; letter-spacing: 3px; padding: 4px 12px; margin-bottom: 10px; }
+            .section-title { font-size: 18px; } .section-desc { font-size: 12px; }
+            .product-grid { grid-template-columns: 1fr; gap: 15px; }
+            .product-card { padding: 20px 18px; } .product-name { font-size: 16px; }
+            .product-price { font-size: 20px; }
+            .toast { bottom: 15px; right: 15px; left: 15px; transform: translateY(150%); }
             .toast.show { transform: translateY(0); }
-            .hero-cta { flex-direction: column; width: 100%; max-width: 300px; gap: 12px; }
-            .btn-primary, .btn-secondary, .btn-download-hero { width: 100%; text-align: center; padding: 14px 30px; font-size: 13px; }
-            .game-badge { padding: 6px 16px 6px 8px; margin-bottom: 15px; }
-            .pubg-logo { width: 26px; height: 26px; }
-            .game-badge-text { font-size: 11px; letter-spacing: 1px; }
-            .server-tag { font-size: 10px; padding: 7px 14px; letter-spacing: 1px; }
-            .server-support { gap: 8px; margin-bottom: 30px; }
+            .hero-cta { flex-direction: column; width: 100%; max-width: 280px; gap: 10px; }
+            .btn-primary, .btn-secondary, .btn-download-hero { width: 100%; text-align: center; padding: 11px 24px; font-size: 12px; }
+            .game-badge { padding: 5px 14px 5px 7px; margin-bottom: 10px; }
+            .pubg-logo { width: 22px; height: 22px; }
+            .game-badge-text { font-size: 10px; letter-spacing: 1px; }
+            .server-tag { font-size: 9px; padding: 5px 12px; letter-spacing: 1px; }
+            .server-support { gap: 6px; margin-bottom: 20px; }
             .payment-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-            .payment-option { padding: 12px 8px; }
-            .payment-logo { width: 48px; height: 48px; font-size: 14px; }
-            .payment-name { font-size: 11px; }
-            .modal-content { padding: 20px; max-width: 100%; border-radius: 16px; }
-            .checkout-steps .step-label { font-size: 9px; }
-            .step-circle { width: 28px; height: 28px; font-size: 12px; }
-            .footer-links-row { gap: 10px; }
-            .footer-links-row a, .footer-links-row span { font-size: 13px; padding: 5px 10px; }
-            .footer-contact a { font-size: 13px; }
-            .total-payment { padding: 15px 20px; } .total-payment .value { font-size: 18px; }
-            .faq-question { font-size: 15px; padding: 15px; }
-            .faq-toggle { width: 26px; height: 26px; font-size: 15px; }
-            .section-header { margin-bottom: 35px; }
-            #produk, #faq, #tutorial, #download { padding: 50px 0; }
-            .video-wrapper { border-radius: 15px; }
-            .tutorial-warning { flex-direction: column; text-align: center; gap: 10px; padding: 15px 18px; }
-            .tutorial-warning p { font-size: 13px; }
-            .download-card { padding: 30px 20px; }
-            .download-icon { width: 75px; height: 75px; }
-            .download-icon svg { width: 38px; height: 38px; }
-            .download-file-name { font-size: 20px; }
+            .payment-option { padding: 10px 6px; }
+            .payment-logo { width: 42px; height: 42px; font-size: 12px; }
+            .payment-name { font-size: 10px; }
+            .modal-content { padding: 18px; max-width: 100%; border-radius: 14px; }
+            .checkout-steps .step-label { font-size: 8px; }
+            .step-circle { width: 24px; height: 24px; font-size: 11px; }
+            .footer-links-row { gap: 8px; }
+            .footer-links-row a, .footer-links-row span { font-size: 11px; padding: 4px 8px; }
+            .footer-contact a { font-size: 11px; }
+            .total-payment { padding: 12px 16px; } .total-payment .value { font-size: 16px; }
+            .faq-question { font-size: 13px; padding: 12px; }
+            .faq-toggle { width: 22px; height: 22px; font-size: 13px; }
+            .section-header { margin-bottom: 25px; }
+            #produk, #faq, #tutorial, #download { padding: 35px 0; }
+            .video-wrapper { border-radius: 14px; }
+            .tutorial-warning { flex-direction: column; text-align: center; gap: 8px; padding: 12px 14px; }
+            .tutorial-warning p { font-size: 11px; }
+            .warning-icon { width: 28px; height: 28px; font-size: 15px; }
+            .download-card { padding: 22px 18px; }
+            .download-icon { width: 60px; height: 60px; }
+            .download-icon svg { width: 28px; height: 28px; }
+            .download-file-name { font-size: 15px; }
             .download-actions { flex-direction: column; }
-            .btn-download, .btn-cara-pasang { width: 100%; padding: 16px 20px; font-size: 13px; }
-            .download-features li { font-size: 12px; }
+            .btn-download, .btn-cara-pasang { width: 100%; padding: 12px 20px; font-size: 12px; }
             .progress-container { max-width: 100%; }
         }
 
         @media (max-width: 400px) {
-            .summary-row { flex-direction: column; align-items: flex-start; gap: 5px; }
-            .summary-value, .summary-value.gold { text-align: left; font-size: 14px; }
-            .brand-name { font-size: 13px; } .hero-title { font-size: 26px; }
-            .paks-text { font-size: 12px; letter-spacing: 3px; }
+            .summary-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+            .summary-value, .summary-value.gold { text-align: left; font-size: 12px; }
+            .brand-name { font-size: 12px; } .hero-title { font-size: 22px; }
+            .paks-text { font-size: 11px; letter-spacing: 2px; }
         }
 
         .mobile-menu { position: fixed; top: var(--header-height); left: 0; right: 0; bottom: 0;
             width: 100%; height: calc(100vh - var(--header-height)); background: var(--bg-dark);
-            z-index: 999; display: flex; flex-direction: column; padding: 20px 25px;
+            z-index: 999; display: flex; flex-direction: column; padding: 18px 22px;
             gap: 5px; transform: translateX(-100%); transition: var(--transition);
             overflow-y: auto; -webkit-overflow-scrolling: touch; }
 
         .mobile-menu.active { transform: translateX(0); }
 
         .mobile-menu a { color: var(--text-main); text-decoration: none;
-            font-size: 18px; font-weight: 600; padding: 16px 20px;
+            font-size: 16px; font-weight: 600; padding: 14px 18px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition-fast); border-radius: 12px; display: block; }
+            transition: var(--transition-fast); border-radius: 10px; display: block; }
 
-        .mobile-menu a:hover { color: var(--gold-primary); padding-left: 28px;
+        .mobile-menu a:hover { color: var(--gold-primary); padding-left: 24px;
             background: rgba(255, 170, 0, 0.08); text-shadow: 0 0 10px var(--gold-glow);
             border-bottom-color: transparent; }
 
@@ -1129,17 +1114,6 @@
 
                 <h3 class="download-file-name" data-i18n="download_file">Paks Mod PUBG Mobile</h3>
 
-                <div class="download-features">
-                    <h4 data-i18n="download_features_title">Keterangan:</h4>
-                    <ul>
-                        <li data-i18n="download_feat_1">File berisi Paks Mod untuk PUBG Mobile</li>
-                        <li data-i18n="download_feat_2">Cocok untuk Android Non-Root (tanpa root)</li>
-                        <li data-i18n="download_feat_3">Support server Global, Korea, Vietnam, Taiwan</li>
-                        <li data-i18n="download_feat_4">Cara pasang: tonton video tutorial di atas</li>
-                        <li data-i18n="download_feat_5">Pastikan mengikuti video agar fitur berfungsi</li>
-                    </ul>
-                </div>
-
                 <!-- Progress Bar -->
                 <div class="progress-container" id="progressContainer">
                     <div class="progress-bar-wrapper">
@@ -1240,7 +1214,7 @@
                 <input type="password" id="loginPass" placeholder="Enter password" data-i18n-placeholder="login_pass_ph">
             </div>
             <button class="btn-primary" style="width: 100%; margin-top: 10px;" onclick="handleLogin()" data-i18n="login_btn">Login</button>
-            <p style="text-align: center; margin-top: 15px; font-size: 14px; color: var(--text-muted);"><span data-i18n="login_no_acc">Don't have an account?</span> <a href="https://t.me/scp281025" target="_blank" style="color: var(--gold-primary); text-decoration: none; padding: 4px 10px; border-radius: 50px; display: inline-block;" data-i18n="login_contact">Contact Admin</a></p>
+            <p style="text-align: center; margin-top: 12px; font-size: 12px; color: var(--text-muted);"><span data-i18n="login_no_acc">Don't have an account?</span> <a href="https://t.me/scp281025" target="_blank" style="color: var(--gold-primary); text-decoration: none; padding: 4px 10px; border-radius: 50px; display: inline-block;" data-i18n="login_contact">Contact Admin</a></p>
         </div>
     </div>
 
@@ -1299,7 +1273,7 @@
                 <div class="checkout-actions">
                     <button class="btn-checkout btn-back" onclick="goToStep(2)" data-i18n="btn_back">Back</button>
                 </div>
-                <a href="https://t.me/scp281025" target="_blank" class="btn-checkout btn-confirm" id="confirmLink" style="margin-top: 12px;" data-i18n="btn_confirm">Confirm via Telegram</a>
+                <a href="https://t.me/scp281025" target="_blank" class="btn-checkout btn-confirm" id="confirmLink" style="margin-top: 10px;" data-i18n="btn_confirm">Confirm via Telegram</a>
             </div>
         </div>
     </div>
@@ -1331,16 +1305,9 @@
                 download_title: 'Download Paks Mod',
                 download_desc: 'Latest Paks mod file for PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_features_title: 'Description:',
-                download_feat_1: 'File contains Paks Mod for PUBG Mobile',
-                download_feat_2: 'Suitable for Android Non-Root (no root needed)',
-                download_feat_3: 'Support Global, Korea, Vietnam, Taiwan servers',
-                download_feat_4: 'How to install: watch the video tutorial above',
-                download_feat_5: 'Follow the video to make features work',
                 download_btn: 'DOWNLOAD NOW',
                 download_btn_hero: 'DOWNLOAD',
                 download_loading: 'DOWNLOADING...',
-                download_success: 'Download started!',
                 download_connecting: 'Connecting...',
                 btn_cara_pasang: 'HOW TO INSTALL',
                 faq_title: 'Frequently Asked Questions', faq_desc: 'Common questions from our customers',
@@ -1388,16 +1355,9 @@
                 download_title: 'Download Paks Mod',
                 download_desc: 'File Paks mod terbaru untuk PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_features_title: 'Keterangan:',
-                download_feat_1: 'File berisi Paks Mod untuk PUBG Mobile',
-                download_feat_2: 'Cocok untuk Android Non-Root (tanpa root)',
-                download_feat_3: 'Support server Global, Korea, Vietnam, Taiwan',
-                download_feat_4: 'Cara pasang: tonton video tutorial di atas',
-                download_feat_5: 'Pastikan mengikuti video agar fitur berfungsi',
                 download_btn: 'DOWNLOAD SEKARANG',
                 download_btn_hero: 'DOWNLOAD',
                 download_loading: 'MENGUNDUH...',
-                download_success: 'Download berhasil dimulai!',
                 download_connecting: 'Menghubungkan...',
                 btn_cara_pasang: 'CARA PASANG',
                 faq_title: 'Pertanyaan Umum', faq_desc: 'Hal-hal yang sering ditanyakan oleh pelanggan',
@@ -1445,16 +1405,9 @@
                 download_title: 'Paks Mod डाउनलोड करें',
                 download_desc: 'PUBG Mobile के लिए नवीनतम Paks mod फ़ाइल',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_features_title: 'विवरण:',
-                download_feat_1: 'फ़ाइल में PUBG Mobile के लिए Paks Mod है',
-                download_feat_2: 'Android Non-Root के लिए उपयुक्त (रूट की आवश्यकता नहीं)',
-                download_feat_3: 'Global, Korea, Vietnam, Taiwan सर्वर सपोर्ट',
-                download_feat_4: 'कैसे इंस्टॉल करें: ऊपर वीडियो ट्यूटोरियल देखें',
-                download_feat_5: 'सुविधाओं के लिए वीडियो का पालन करें',
                 download_btn: 'अभी डाउनलोड करें',
                 download_btn_hero: 'डाउनलोड',
                 download_loading: 'डाउनलोड हो रहा है...',
-                download_success: 'डाउनलोड शुरू हो गया!',
                 download_connecting: 'कनेक्ट हो रहा है...',
                 btn_cara_pasang: 'कैसे इंस्टॉल करें',
                 faq_title: 'सामान्य प्रश्न', faq_desc: 'ग्राहकों द्वारा पूछे जाने वाले सामान्य प्रश्न',
@@ -1502,16 +1455,9 @@
                 download_title: '下载 Paks Mod',
                 download_desc: 'PUBG Mobile 最新 Paks mod 文件',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_features_title: '说明：',
-                download_feat_1: '文件包含 PUBG Mobile 的 Paks Mod',
-                download_feat_2: '适用于 Android 免 Root（无需 Root）',
-                download_feat_3: '支持 Global、Korea、Vietnam、Taiwan 服务器',
-                download_feat_4: '安装方法：观看上方视频教程',
-                download_feat_5: '请按视频操作以使功能正常工作',
                 download_btn: '立即下载',
                 download_btn_hero: '下载',
                 download_loading: '下载中...',
-                download_success: '下载已开始！',
                 download_connecting: '连接中...',
                 btn_cara_pasang: '安装教程',
                 faq_title: '常见问题', faq_desc: '客户常问的问题',
@@ -1559,16 +1505,9 @@
                 download_title: 'Tải Paks Mod',
                 download_desc: 'File Paks mod mới nhất cho PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_features_title: 'Mô tả:',
-                download_feat_1: 'File chứa Paks Mod cho PUBG Mobile',
-                download_feat_2: 'Phù hợp với Android Non-Root (không cần root)',
-                download_feat_3: 'Hỗ trợ server Global, Korea, Vietnam, Taiwan',
-                download_feat_4: 'Cách cài: xem video hướng dẫn ở trên',
-                download_feat_5: 'Làm theo video để tính năng hoạt động',
                 download_btn: 'TẢI NGAY',
                 download_btn_hero: 'TẢI XUỐNG',
                 download_loading: 'ĐANG TẢI...',
-                download_success: 'Đã bắt đầu tải xuống!',
                 download_connecting: 'Đang kết nối...',
                 btn_cara_pasang: 'CÁCH CÀI ĐẶT',
                 faq_title: 'Câu hỏi Thường gặp', faq_desc: 'Những câu hỏi phổ biến từ khách hàng',
@@ -1616,16 +1555,9 @@
                 download_title: 'Paks Mod 다운로드',
                 download_desc: 'PUBG Mobile용 최신 Paks mod 파일',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_features_title: '설명:',
-                download_feat_1: 'PUBG Mobile용 Paks Mod가 포함된 파일',
-                download_feat_2: 'Android Non-Root에 적합 (루트 불필요)',
-                download_feat_3: 'Global, Korea, Vietnam, Taiwan 서버 지원',
-                download_feat_4: '설치 방법: 위 비디오 튜토리얼 시청',
-                download_feat_5: '기능이 작동하도록 비디오를 따르세요',
                 download_btn: '지금 다운로드',
                 download_btn_hero: '다운로드',
                 download_loading: '다운로드 중...',
-                download_success: '다운로드가 시작되었습니다!',
                 download_connecting: '연결 중...',
                 btn_cara_pasang: '설치 방법',
                 faq_title: '자주 묻는 질문', faq_desc: '고객들이 자주 묻는 질문',
@@ -1673,16 +1605,9 @@
                 download_title: 'Paks Modをダウンロード',
                 download_desc: 'PUBG Mobile用の最新Paks modファイル',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_features_title: '説明：',
-                download_feat_1: 'PUBG Mobile用のPaks Modを含むファイル',
-                download_feat_2: 'Android Non-Rootに最適（root不要）',
-                download_feat_3: 'Global、Korea、Vietnam、Taiwanサーバー対応',
-                download_feat_4: 'インストール方法：上のビデオチュートリアルを見る',
-                download_feat_5: '機能が動作するようにビデオに従ってください',
                 download_btn: '今すぐダウンロード',
                 download_btn_hero: 'ダウンロード',
                 download_loading: 'ダウンロード中...',
-                download_success: 'ダウンロードが開始されました！',
                 download_connecting: '接続中...',
                 btn_cara_pasang: 'インストール方法',
                 faq_title: 'よくある質問', faq_desc: 'お客様からよく寄せられる質問',
@@ -1730,16 +1655,9 @@
                 download_title: 'ดาวน์โหลด Paks Mod',
                 download_desc: 'ไฟล์ Paks mod ล่าสุดสำหรับ PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_features_title: 'คำอธิบาย:',
-                download_feat_1: 'ไฟล์มี Paks Mod สำหรับ PUBG Mobile',
-                download_feat_2: 'เหมาะสำหรับ Android Non-Root (ไม่ต้องรูท)',
-                download_feat_3: 'รองรับเซิร์ฟเวอร์ Global, Korea, Vietnam, Taiwan',
-                download_feat_4: 'วิธีติดตั้ง: ดูวิดีโอสอนด้านบน',
-                download_feat_5: 'ทำตามวิดีโอเพื่อให้ฟีเจอร์ทำงาน',
                 download_btn: 'ดาวน์โหลดเลย',
                 download_btn_hero: 'ดาวน์โหลด',
                 download_loading: 'กำลังดาวน์โหลด...',
-                download_success: 'เริ่มดาวน์โหลดแล้ว!',
                 download_connecting: 'กำลังเชื่อมต่อ...',
                 btn_cara_pasang: 'วิธีติดตั้ง',
                 faq_title: 'คำถามที่พบบ่อย', faq_desc: 'คำถามทั่วไปจากลูกค้า',
@@ -1787,16 +1705,9 @@
                 download_title: 'تحميل Paks Mod',
                 download_desc: 'أحدث ملف Paks mod لـ PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_features_title: 'الوصف:',
-                download_feat_1: 'يحتوي الملف على Paks Mod لـ PUBG Mobile',
-                download_feat_2: 'مناسب لـ Android Non-Root (بدون روت)',
-                download_feat_3: 'دعم خوادم Global, Korea, Vietnam, Taiwan',
-                download_feat_4: 'طريقة التثبيت: شاهد الفيديو التعليمي أعلاه',
-                download_feat_5: 'اتبع الفيديو لتعمل الميزات',
                 download_btn: 'تحميل الآن',
                 download_btn_hero: 'تحميل',
                 download_loading: 'جاري التحميل...',
-                download_success: 'بدأ التحميل!',
                 download_connecting: 'جاري الاتصال...',
                 btn_cara_pasang: 'طريقة التثبيت',
                 faq_title: 'الأسئلة الشائعة', faq_desc: 'الأسئلة الشائعة من عملائنا',
@@ -1844,16 +1755,9 @@
                 download_title: 'Descargar Paks Mod',
                 download_desc: 'Archivo Paks mod más reciente para PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_features_title: 'Descripción:',
-                download_feat_1: 'El archivo contiene Paks Mod para PUBG Mobile',
-                download_feat_2: 'Apto para Android Sin Root (sin root)',
-                download_feat_3: 'Soporte servidores Global, Korea, Vietnam, Taiwan',
-                download_feat_4: 'Cómo instalar: mira el video tutorial arriba',
-                download_feat_5: 'Sigue el video para que las funciones funcionen',
                 download_btn: 'DESCARGAR AHORA',
                 download_btn_hero: 'DESCARGAR',
                 download_loading: 'DESCARGANDO...',
-                download_success: '¡Descarga iniciada!',
                 download_connecting: 'Conectando...',
                 btn_cara_pasang: 'CÓMO INSTALAR',
                 faq_title: 'Preguntas Frecuentes', faq_desc: 'Preguntas comunes de nuestros clientes',
@@ -1901,16 +1805,9 @@
                 download_title: 'Baixar Paks Mod',
                 download_desc: 'Arquivo Paks mod mais recente para PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_features_title: 'Descrição:',
-                download_feat_1: 'O arquivo contém Paks Mod para PUBG Mobile',
-                download_feat_2: 'Adequado para Android Sem Root (sem root)',
-                download_feat_3: 'Suporte servidores Global, Korea, Vietnam, Taiwan',
-                download_feat_4: 'Como instalar: assista o vídeo tutorial acima',
-                download_feat_5: 'Siga o vídeo para que os recursos funcionem',
                 download_btn: 'BAIXAR AGORA',
                 download_btn_hero: 'BAIXAR',
                 download_loading: 'BAIXANDO...',
-                download_success: 'Download iniciado!',
                 download_connecting: 'Conectando...',
                 btn_cara_pasang: 'COMO INSTALAR',
                 faq_title: 'Perguntas Frequentes', faq_desc: 'Perguntas comuns dos nossos clientes',
@@ -1958,16 +1855,9 @@
                 download_title: 'Скачать Paks Mod',
                 download_desc: 'Последний файл Paks mod для PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_features_title: 'Описание:',
-                download_feat_1: 'Файл содержит Paks Mod для PUBG Mobile',
-                download_feat_2: 'Подходит для Android Non-Root (без root)',
-                download_feat_3: 'Поддержка серверов Global, Korea, Vietnam, Taiwan',
-                download_feat_4: 'Как установить: посмотрите видеоурок выше',
-                download_feat_5: 'Следуйте видео, чтобы функции работали',
                 download_btn: 'СКАЧАТЬ СЕЙЧАС',
                 download_btn_hero: 'СКАЧАТЬ',
                 download_loading: 'ЗАГРУЗКА...',
-                download_success: 'Загрузка началась!',
                 download_connecting: 'Подключение...',
                 btn_cara_pasang: 'КАК УСТАНОВИТЬ',
                 faq_title: 'Часто Задаваемые Вопросы', faq_desc: 'Общие вопросы от наших клиентов',
@@ -2037,7 +1927,7 @@
         applyTranslations(detectedLang);
 
         // ============================================
-        // --- DOWNLOAD WITH PROGRESS ---
+        // --- DOWNLOAD WITH PROGRESS (NO TOAST) ---
         // ============================================
         const DOWNLOAD_URL = 'https://files.catbox.moe/an62hk.zip';
         const DOWNLOAD_FILENAME = 'PaksModPUBGMobile.zip';
@@ -2083,7 +1973,6 @@
                 const total = contentLength ? parseInt(contentLength, 10) : 0;
                 let loaded = 0;
 
-                // Stream reader for progress
                 if (response.body && response.body.getReader) {
                     const reader = response.body.getReader();
                     const chunks = [];
@@ -2107,14 +1996,12 @@
                         }
                     }
 
-                    // Complete
                     progressFill.style.width = '100%';
                     progressPercentage.textContent = '100%';
                     if (total > 0) {
                         progressSize.textContent = formatBytes(total) + ' / ' + formatBytes(total);
                     }
 
-                    // Create download
                     const blob = new Blob(chunks);
                     const url = window.URL.createObjectURL(blob);
                     const a = document.createElement('a');
@@ -2125,13 +2012,10 @@
                     document.body.removeChild(a);
                     window.URL.revokeObjectURL(url);
 
-                    showToast('✅ ' + (t.download_success || 'Download started!'));
-
                     setTimeout(() => {
                         progressContainer.classList.remove('active');
                     }, 3000);
                 } else {
-                    // Fallback: no stream support
                     const blob = await response.blob();
                     progressFill.style.width = '100%';
                     progressPercentage.textContent = '100%';
@@ -2146,8 +2030,6 @@
                     document.body.removeChild(a);
                     window.URL.revokeObjectURL(url);
 
-                    showToast('✅ ' + (t.download_success || 'Download started!'));
-
                     setTimeout(() => {
                         progressContainer.classList.remove('active');
                     }, 3000);
@@ -2155,7 +2037,6 @@
 
             } catch (err) {
                 console.error('Download error:', err);
-                // Fallback: direct link download
                 progressFill.style.width = '100%';
                 progressPercentage.textContent = '100%';
                 progressSize.textContent = '✓';
@@ -2168,8 +2049,6 @@
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
-
-                showToast('✅ ' + (t.download_success || 'Download started!'));
 
                 setTimeout(() => {
                     progressContainer.classList.remove('active');
