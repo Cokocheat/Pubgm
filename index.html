@@ -10,7 +10,6 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="robots" content="noarchive, nosnippet">
     <meta name="referrer" content="no-referrer">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-dark: #050505; --bg-panel: #0f0f0f; --bg-glass: rgba(20, 20, 20, 0.85);
@@ -21,7 +20,8 @@
             --seabank-glow: rgba(255, 107, 0, 0.85); --bni-glow: rgba(240, 90, 34, 0.85);
             --text-main: #ffffff; --text-muted: #a0a0a0; --border-color: rgba(255, 170, 0, 0.2);
             --success-green: #00ff88; --danger-red: #ff4444;
-            --font-heading: 'Orbitron', sans-serif; --font-body: 'Inter', sans-serif;
+            --font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
             --header-height: 70px;
@@ -80,7 +80,7 @@
             object-fit: cover; background: #000; transition: var(--transition-fast); }
 
         .brand-name { font-family: var(--font-heading); font-size: 20px; font-weight: 900;
-            letter-spacing: 1px; line-height: 1.2; }
+            letter-spacing: 0.5px; line-height: 1.2; }
         .brand-name span { color: var(--gold-primary); }
 
         nav.desktop-nav { display: flex; gap: 25px; }
@@ -169,7 +169,7 @@
             letter-spacing: 2px; color: var(--gold-primary); text-transform: uppercase; }
 
         .paks-text { font-family: var(--font-heading); font-size: 20px; font-weight: 700;
-            letter-spacing: 6px; color: var(--gold-primary); text-transform: uppercase;
+            letter-spacing: 4px; color: var(--gold-primary); text-transform: uppercase;
             margin-bottom: 15px; padding: 6px 24px;
             border-top: 1px solid var(--gold-primary); border-bottom: 1px solid var(--gold-primary);
             text-shadow: 0 0 15px var(--gold-glow); animation: pulsePaks 2s ease-in-out infinite; }
@@ -177,8 +177,8 @@
         @keyframes pulsePaks { 0%, 100% { opacity: 1; text-shadow: 0 0 15px var(--gold-glow); }
             50% { opacity: 0.85; text-shadow: 0 0 25px var(--gold-glow); } }
 
-        .hero-title { font-family: var(--font-heading); font-size: 60px; font-weight: 900;
-            letter-spacing: 3px;
+        .hero-title { font-family: var(--font-heading); font-size: 58px; font-weight: 900;
+            letter-spacing: 2px;
             background: linear-gradient(90deg, #fff, var(--gold-primary), #fff);
             background-size: 200% auto; -webkit-background-clip: text; background-clip: text;
             -webkit-text-fill-color: transparent; margin-bottom: 15px; text-transform: uppercase;
@@ -277,15 +277,14 @@
 
         #produk { padding: 70px 0; }
 
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 700px; margin: 0 auto; }
 
         .product-card { background: var(--bg-panel); border: 1px solid var(--border-color);
             border-radius: 20px; padding: 30px; display: flex; flex-direction: column;
             align-items: center; text-align: center; transition: var(--transition);
             position: relative; overflow: hidden; height: 100%; }
 
-        .product-card:hover { transform: translateY(-10px); border-color: var(--gold-primary);
-            box-shadow: 0 15px 40px rgba(255, 170, 0, 0.15), 0 0 60px rgba(255, 170, 0, 0.1); }
+        .product-card:hover { transform: translateY(-10px); border-color: var(--gold-primary); }
 
         .product-badge { position: absolute; top: 18px; right: -38px;
             background: var(--gold-primary); color: #000; font-weight: 700; font-size: 10px;
@@ -299,11 +298,9 @@
             justify-content: center; border-radius: 50%; border: 1px solid var(--border-color);
             background: rgba(255, 170, 0, 0.08); margin-bottom: 20px; transition: var(--transition); }
 
-        .product-card:hover .product-icon-box { box-shadow: 0 0 25px var(--gold-glow),
-            inset 0 0 15px rgba(255, 170, 0, 0.15); transform: scale(1.08); }
+        .product-card:hover .product-icon-box { transform: scale(1.08); }
 
         .product-icon-box svg { width: 36px; height: 36px; fill: var(--gold-primary); transition: var(--transition); }
-        .product-card:hover .product-icon-box svg { filter: drop-shadow(0 0 8px var(--gold-glow-strong)); }
 
         .product-name { font-size: 22px; font-weight: 700; margin-bottom: 10px;
             text-transform: uppercase; letter-spacing: 1px; }
@@ -329,12 +326,10 @@
         #tutorial { padding: 70px 0; max-width: 900px; margin: 0 auto; scroll-margin-top: 90px; }
 
         .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%;
-            border-radius: 20px; overflow: hidden; border: 2px solid var(--border-color);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255, 170, 0, 0.15);
+            border-radius: 20px; overflow: hidden; border: 1px solid var(--border-color);
             background: #000; transition: var(--transition); }
 
-        .video-wrapper:hover { border-color: var(--gold-primary);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 50px rgba(255, 170, 0, 0.3); }
+        .video-wrapper:hover { border-color: var(--gold-primary); }
 
         .video-wrapper iframe { position: absolute; top: 0; left: 0;
             width: 100%; height: 100%; border: none; }
@@ -352,7 +347,7 @@
             color: var(--danger-red); width: 40px; height: 40px; display: flex;
             align-items: center; justify-content: center; border-radius: 50%;
             background: rgba(255, 68, 68, 0.15); border: 2px solid var(--danger-red);
-            flex-shrink: 0; text-shadow: 0 0 10px var(--red-glow); }
+            flex-shrink: 0; }
 
         .tutorial-warning p { color: var(--danger-red); font-size: 14px; font-weight: 700;
             line-height: 1.6; letter-spacing: 0.5px; }
@@ -370,7 +365,6 @@
         .download-icon { width: 90px; height: 90px; margin: 0 auto 20px; border-radius: 50%;
             background: rgba(255, 170, 0, 0.08); border: 2px solid var(--gold-primary);
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 0 25px var(--gold-glow);
             animation: downloadFloat 3s ease-in-out infinite; }
 
         @keyframes downloadFloat {
@@ -378,11 +372,10 @@
             50% { transform: translateY(-8px); }
         }
 
-        .download-icon svg { width: 45px; height: 45px; fill: var(--gold-primary);
-            filter: drop-shadow(0 0 10px var(--gold-glow-strong)); }
+        .download-icon svg { width: 45px; height: 45px; fill: var(--gold-primary); }
 
         .download-file-name { font-family: var(--font-heading); font-size: 24px; font-weight: 900;
-            color: var(--text-main); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1.5px; }
+            color: var(--text-main); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
 
         .progress-container {
             width: 100%;
@@ -527,14 +520,12 @@
         .btn-cara-pasang:hover {
             background: rgba(255, 170, 0, 0.1);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px var(--gold-glow), inset 0 0 20px rgba(255, 170, 0, 0.2);
             text-shadow: 0 0 10px var(--gold-glow);
         }
 
         .btn-cara-pasang:active {
             transform: scale(0.94);
             background: rgba(255, 170, 0, 0.2);
-            box-shadow: 0 0 30px var(--gold-glow-strong), inset 0 0 30px rgba(255, 170, 0, 0.3);
         }
 
         .btn-cara-pasang svg {
@@ -548,23 +539,21 @@
         .faq-item { background: var(--bg-panel); border: 1px solid var(--border-color);
             border-radius: 15px; margin-bottom: 15px; overflow: hidden; transition: var(--transition); }
 
-        .faq-item:hover { border-color: rgba(255, 170, 0, 0.5); box-shadow: 0 0 20px rgba(255, 170, 0, 0.1); }
-        .faq-item.active { border-color: var(--gold-primary); box-shadow: 0 0 25px var(--gold-glow); }
+        .faq-item:hover { border-color: rgba(255, 170, 0, 0.5); }
+        .faq-item.active { border-color: var(--gold-primary); }
 
         .faq-question { padding: 18px 20px; font-size: 17px; font-weight: 600;
             cursor: pointer; display: flex; justify-content: space-between;
             align-items: center; transition: var(--transition-fast); gap: 15px; }
 
-        .faq-question:hover { color: var(--gold-primary); text-shadow: 0 0 10px var(--gold-glow); }
-        .faq-question:active { transform: scale(0.99); background: rgba(255, 170, 0, 0.08); }
+        .faq-question:hover { color: var(--gold-primary); }
 
         .faq-toggle { font-family: var(--font-heading); font-size: 18px; font-weight: 700;
             color: var(--gold-primary); flex-shrink: 0; width: 30px; height: 30px;
             text-align: center; border-radius: 50%; background: rgba(255, 170, 0, 0.1);
             transition: var(--transition-fast); display: flex; align-items: center; justify-content: center; }
 
-        .faq-question:hover .faq-toggle { background: var(--gold-primary); color: #000;
-            box-shadow: 0 0 15px var(--gold-glow-strong); }
+        .faq-question:hover .faq-toggle { background: var(--gold-primary); color: #000; }
 
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;
             padding: 0 20px; color: var(--text-muted); border-top: 1px solid transparent; font-size: 14px; }
@@ -579,8 +568,7 @@
         .footer-col { width: 100%; max-width: 900px; }
 
         .footer-col h4 { font-family: var(--font-heading); color: var(--gold-primary);
-            font-size: 17px; margin-bottom: 15px; letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(255, 170, 0, 0.3); }
+            font-size: 17px; margin-bottom: 15px; letter-spacing: 1px; }
 
         .footer-col p { color: var(--text-muted); font-size: 14px; line-height: 1.7; }
 
@@ -590,21 +578,13 @@
             text-decoration: none; font-size: 14px; transition: var(--transition-fast);
             cursor: pointer; padding: 6px 12px; border-radius: 50px; display: inline-block; }
 
-        .footer-links-row a:hover { color: var(--gold-primary);
-            text-shadow: 0 0 10px var(--gold-glow); background: rgba(255, 170, 0, 0.08); }
-        .footer-links-row a:active { transform: scale(0.93); color: var(--gold-primary);
-            background: rgba(255, 170, 0, 0.15); box-shadow: 0 0 20px var(--gold-glow);
-            text-shadow: 0 0 15px var(--gold-glow-strong); }
+        .footer-links-row a:hover { color: var(--gold-primary); background: rgba(255, 170, 0, 0.08); }
 
         .footer-contact a { color: var(--text-muted); text-decoration: none; font-size: 14px;
             display: block; margin-bottom: 8px; transition: var(--transition-fast);
             padding: 6px 12px; border-radius: 50px; }
 
-        .footer-contact a:hover { color: var(--gold-primary);
-            text-shadow: 0 0 10px var(--gold-glow); background: rgba(255, 170, 0, 0.08); }
-        .footer-contact a:active { transform: scale(0.95); color: var(--gold-primary);
-            background: rgba(255, 170, 0, 0.15); box-shadow: 0 0 20px var(--gold-glow);
-            text-shadow: 0 0 15px var(--gold-glow-strong); }
+        .footer-contact a:hover { color: var(--gold-primary); background: rgba(255, 170, 0, 0.08); }
 
         .footer-bottom { width: 100%; text-align: center; padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-muted); font-size: 13px; }
@@ -619,7 +599,6 @@
 
         .modal-content { background: var(--bg-panel); border: 1px solid var(--border-color);
             border-radius: 20px; padding: 30px; width: 100%; max-width: 500px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.9), 0 0 30px rgba(255, 170, 0, 0.1);
             transform: scale(0.9); transition: var(--transition); max-height: 90vh;
             overflow-y: auto; margin: auto; position: relative; z-index: 2001; }
 
@@ -629,7 +608,7 @@
             margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
 
         .modal-header h3 { font-family: var(--font-heading); color: var(--gold-primary);
-            font-size: 19px; letter-spacing: 1px; text-shadow: 0 0 10px rgba(255, 170, 0, 0.3); }
+            font-size: 19px; letter-spacing: 1px; }
 
         .close-modal { background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-muted);
@@ -638,11 +617,7 @@
             display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
         .close-modal:hover { color: var(--danger-red); transform: rotate(90deg);
-            background: rgba(255, 68, 68, 0.1); border-color: var(--danger-red);
-            box-shadow: 0 0 20px var(--red-glow); }
-        .close-modal:active { transform: rotate(180deg) scale(0.9);
-            background: rgba(255, 68, 68, 0.2);
-            box-shadow: 0 0 30px var(--red-glow), 0 0 60px rgba(255, 68, 68, 0.4); color: #fff; }
+            background: rgba(255, 68, 68, 0.1); border-color: var(--danger-red); }
 
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; font-size: 14px; color: var(--text-muted); }
@@ -652,9 +627,7 @@
             padding: 14px 18px; border-radius: 50px; font-family: var(--font-body);
             outline: none; transition: var(--transition); }
 
-        .form-group input:hover { border-color: rgba(255, 170, 0, 0.4); }
-        .form-group input:focus { border-color: var(--gold-primary);
-            box-shadow: 0 0 20px var(--gold-glow), inset 0 0 10px rgba(255, 170, 0, 0.1); }
+        .form-group input:focus { border-color: var(--gold-primary); }
 
         .checkout-steps { display: flex; justify-content: space-between; margin-bottom: 25px; position: relative; }
 
@@ -670,16 +643,15 @@
             color: var(--text-muted); transition: var(--transition); font-family: var(--font-heading); }
 
         .step-indicator.active .step-circle { border-color: var(--gold-primary);
-            background: var(--gold-primary); color: #000;
-            box-shadow: 0 0 15px var(--gold-glow-strong), 0 0 30px var(--gold-glow); }
+            background: var(--gold-primary); color: #000; }
 
         .step-indicator.completed .step-circle { border-color: var(--success-green);
-            background: var(--success-green); color: #000; box-shadow: 0 0 15px var(--green-glow); }
+            background: var(--success-green); color: #000; }
 
         .step-label { font-size: 11px; font-weight: 600; color: var(--text-muted);
             text-transform: uppercase; letter-spacing: 1px; text-align: center; }
 
-        .step-indicator.active .step-label { color: var(--gold-primary); text-shadow: 0 0 8px var(--gold-glow); }
+        .step-indicator.active .step-label { color: var(--gold-primary); }
 
         .checkout-step { display: none; }
         .checkout-step.active { display: block; animation: fadeIn 0.3s ease; }
@@ -700,7 +672,7 @@
             flex-grow: 1; word-break: break-word; line-height: 1.5; }
 
         .summary-value.gold { color: var(--gold-primary); font-family: var(--font-heading);
-            font-size: 18px; white-space: nowrap; text-shadow: 0 0 10px rgba(255, 170, 0, 0.4); }
+            font-size: 18px; white-space: nowrap; }
 
         .payment-section-title { font-size: 14px; font-weight: 600; color: var(--text-muted);
             text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
@@ -713,37 +685,17 @@
             padding: 15px; cursor: pointer; text-align: center; position: relative;
             transition: var(--transition-fast); }
 
-        .payment-option[data-method="DANA"]:hover { border-color: #118eea;
-            background: rgba(17, 142, 234, 0.08); transform: translateY(-3px);
-            box-shadow: 0 5px 20px var(--dana-glow); }
-        .payment-option[data-method="DANA"]:active, .payment-option[data-method="DANA"].selected {
-            border-color: #118eea; background: rgba(17, 142, 234, 0.15);
-            box-shadow: 0 0 25px var(--dana-glow), 0 0 50px rgba(17, 142, 234, 0.4); }
-
-        .payment-option[data-method="QRIS"]:hover { border-color: #e30613;
-            background: rgba(227, 6, 19, 0.08); transform: translateY(-3px);
-            box-shadow: 0 5px 20px var(--qris-glow); }
-        .payment-option[data-method="QRIS"]:active, .payment-option[data-method="QRIS"].selected {
-            border-color: #e30613; background: rgba(227, 6, 19, 0.15);
-            box-shadow: 0 0 25px var(--qris-glow), 0 0 50px rgba(227, 6, 19, 0.4); }
-
-        .payment-option[data-method="SeaBank"]:hover { border-color: #ff6b00;
-            background: rgba(255, 107, 0, 0.08); transform: translateY(-3px);
-            box-shadow: 0 5px 20px var(--seabank-glow); }
-        .payment-option[data-method="SeaBank"]:active, .payment-option[data-method="SeaBank"].selected {
-            border-color: #ff6b00; background: rgba(255, 107, 0, 0.15);
-            box-shadow: 0 0 25px var(--seabank-glow), 0 0 50px rgba(255, 107, 0, 0.4); }
-
-        .payment-option[data-method="BNI"]:hover { border-color: #f05a22;
-            background: rgba(240, 90, 34, 0.08); transform: translateY(-3px);
-            box-shadow: 0 5px 20px var(--bni-glow); }
-        .payment-option[data-method="BNI"]:active, .payment-option[data-method="BNI"].selected {
-            border-color: #f05a22; background: rgba(240, 90, 34, 0.15);
-            box-shadow: 0 0 25px var(--bni-glow), 0 0 50px rgba(240, 90, 34, 0.4); }
+        .payment-option[data-method="DANA"]:hover,
+        .payment-option[data-method="DANA"].selected { border-color: #118eea; background: rgba(17, 142, 234, 0.1); }
+        .payment-option[data-method="QRIS"]:hover,
+        .payment-option[data-method="QRIS"].selected { border-color: #e30613; background: rgba(227, 6, 19, 0.1); }
+        .payment-option[data-method="SeaBank"]:hover,
+        .payment-option[data-method="SeaBank"].selected { border-color: #ff6b00; background: rgba(255, 107, 0, 0.1); }
+        .payment-option[data-method="BNI"]:hover,
+        .payment-option[data-method="BNI"].selected { border-color: #f05a22; background: rgba(240, 90, 34, 0.1); }
 
         .payment-option.selected::after { content: '✓'; position: absolute; top: 8px; right: 10px;
-            font-weight: 700; font-size: 16px; color: var(--text-main);
-            text-shadow: 0 0 10px currentColor; }
+            font-weight: 700; font-size: 16px; color: var(--text-main); }
 
         .payment-option[data-method="DANA"].selected::after { color: #118eea; }
         .payment-option[data-method="QRIS"].selected::after { color: #e30613; }
@@ -753,14 +705,12 @@
         .payment-logo { width: 60px; height: 60px; margin: 0 auto 10px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             font-family: var(--font-heading); font-weight: 900; font-size: 18px;
-            color: #fff; letter-spacing: 1px; transition: var(--transition); }
+            color: #fff; letter-spacing: 1px; }
 
-        .payment-option:hover .payment-logo { transform: scale(1.05); }
-
-        .payment-logo.dana { background: linear-gradient(135deg, #118eea, #0a6fbf); box-shadow: 0 0 15px rgba(17, 142, 234, 0.4); }
-        .payment-logo.qris { background: linear-gradient(135deg, #e30613, #ff6b6b); box-shadow: 0 0 15px rgba(227, 6, 19, 0.4); font-size: 13px; }
-        .payment-logo.seabank { background: linear-gradient(135deg, #ff6b00, #ff8c33); box-shadow: 0 0 15px rgba(255, 107, 0, 0.4); }
-        .payment-logo.bni { background: linear-gradient(135deg, #f05a22, #005e8a); box-shadow: 0 0 15px rgba(240, 90, 34, 0.4); }
+        .payment-logo.dana { background: linear-gradient(135deg, #118eea, #0a6fbf); }
+        .payment-logo.qris { background: linear-gradient(135deg, #e30613, #ff6b6b); font-size: 13px; }
+        .payment-logo.seabank { background: linear-gradient(135deg, #ff6b00, #ff8c33); }
+        .payment-logo.bni { background: linear-gradient(135deg, #f05a22, #005e8a); }
 
         .payment-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
         .payment-type { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
@@ -789,21 +739,19 @@
 
         .qr-container { text-align: center; padding: 15px 0; }
         .qr-container img { width: 100%; max-width: 260px; border-radius: 15px;
-            border: 3px solid var(--gold-primary); box-shadow: 0 0 25px rgba(255, 170, 0, 0.3);
-            background: #fff; padding: 8px; transition: var(--transition); }
-        .qr-container img:hover { box-shadow: 0 0 35px var(--gold-glow-strong), 0 0 60px var(--gold-glow); transform: scale(1.02); }
+            border: 3px solid var(--gold-primary); background: #fff; padding: 8px; }
         .qr-container p { color: var(--text-muted); font-size: 12px; margin-top: 12px; }
 
         .total-payment { background: linear-gradient(90deg, rgba(255, 170, 0, 0.15), rgba(255, 170, 0, 0.05));
             border: 1px solid var(--gold-primary); border-radius: 50px; padding: 18px 25px;
             display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 20px; box-shadow: 0 0 20px rgba(255, 170, 0, 0.15); }
+            margin-bottom: 20px; }
 
         .total-payment .label { font-size: 13px; text-transform: uppercase;
             letter-spacing: 1px; color: var(--text-muted); }
 
         .total-payment .value { font-family: var(--font-heading); font-size: 22px;
-            font-weight: 900; color: var(--gold-primary); text-shadow: 0 0 15px var(--gold-glow); }
+            font-weight: 900; color: var(--gold-primary); }
 
         .instruction-box { background: rgba(0, 136, 204, 0.08);
             border-left: 3px solid #0088cc; border-radius: 12px; padding: 15px;
@@ -817,44 +765,29 @@
             font-weight: 700; padding: 16px; border-radius: 50px; cursor: pointer;
             text-transform: uppercase; letter-spacing: 1px; transition: var(--transition-fast);
             border: none; text-decoration: none; display: inline-flex;
-            align-items: center; justify-content: center; gap: 8px;
-            position: relative; overflow: hidden; }
+            align-items: center; justify-content: center; gap: 8px; }
 
         .btn-next { background: linear-gradient(90deg, #b8860b, var(--gold-primary));
-            color: #000; box-shadow: 0 0 15px var(--gold-glow); }
-        .btn-next:hover:not(:disabled) { transform: translateY(-2px);
-            box-shadow: 0 8px 25px var(--gold-glow), 0 0 45px var(--gold-glow); filter: brightness(1.1); }
-        .btn-next:active:not(:disabled) { transform: scale(0.94);
-            box-shadow: 0 0 30px var(--gold-glow-strong), 0 0 60px var(--gold-glow); filter: brightness(1.3); }
-        .btn-next:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; }
+            color: #000; }
+        .btn-next:disabled { opacity: 0.4; cursor: not-allowed; }
 
         .btn-back { background: transparent; color: var(--text-muted);
             border: 1px solid rgba(255, 255, 255, 0.15); }
-        .btn-back:hover { color: var(--text-main); border-color: var(--text-main);
-            box-shadow: 0 0 15px var(--white-glow), inset 0 0 15px rgba(255, 255, 255, 0.05);
-            background: rgba(255, 255, 255, 0.05); }
-        .btn-back:active { transform: scale(0.94); background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 0 25px var(--white-glow), inset 0 0 20px rgba(255, 255, 255, 0.1);
-            color: var(--text-main); border-color: var(--text-main); }
+        .btn-back:hover { color: var(--text-main); border-color: var(--text-main); }
 
         .btn-confirm { background: linear-gradient(90deg, #0088cc, #00a8e8);
-            color: #fff; box-shadow: 0 0 15px rgba(0, 136, 204, 0.4); width: 100%; }
-        .btn-confirm:hover { transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.6), 0 0 45px rgba(0, 136, 204, 0.4); filter: brightness(1.15); }
-        .btn-confirm:active { transform: scale(0.94);
-            box-shadow: 0 0 30px var(--blue-glow), 0 0 60px rgba(0, 136, 204, 0.4); filter: brightness(1.25); }
+            color: #fff; width: 100%; }
 
         .toast { position: fixed; bottom: 30px; right: 30px; background: var(--bg-panel);
             border-left: 4px solid var(--gold-primary); color: var(--text-main);
             padding: 15px 25px; border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px var(--gold-glow);
             display: flex; align-items: center; gap: 15px; transform: translateX(150%);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 3000; max-width: calc(100vw - 40px); }
 
         .toast.show { transform: translateX(0); }
         .toast-indicator { width: 10px; height: 10px; border-radius: 50%;
-            background: var(--gold-primary); box-shadow: 0 0 10px var(--gold-primary); flex-shrink: 0; }
+            background: var(--gold-primary); flex-shrink: 0; }
         .toast-message { font-size: 14px; font-weight: 600; }
 
         @media (min-width: 769px) and (max-width: 1024px) {
@@ -863,16 +796,16 @@
             nav.desktop-nav { gap: 12px; } .nav-link { font-size: 11px; }
             .search-input { width: 130px; font-size: 13px; padding: 8px 12px 8px 35px; }
             .search-input:focus { width: 160px; } .search-icon { left: 11px; width: 15px; height: 15px; }
-            .hero { padding: 40px 0 40px; } .hero-title { font-size: 46px; letter-spacing: 3px; }
+            .hero { padding: 40px 0 40px; } .hero-title { font-size: 44px; letter-spacing: 2px; }
             .hero-subtitle { font-size: 14px; letter-spacing: 4px; }
-            .paks-text { font-size: 17px; letter-spacing: 5px; } .game-badge-text { font-size: 12px; }
+            .paks-text { font-size: 17px; letter-spacing: 4px; } .game-badge-text { font-size: 12px; }
             .product-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
             .product-card { padding: 25px 20px; } .product-name { font-size: 19px; }
             .product-price { font-size: 24px; } .section-title { font-size: 26px; }
             .modal-content { max-width: 520px; padding: 25px; }
         }
-        @media (min-width: 1400px) { main { max-width: 1320px; } .product-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (min-width: 1025px) and (max-width: 1399px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 1400px) { main { max-width: 1320px; } }
+        @media (min-width: 1025px) and (max-width: 1399px) { }
         @media (max-width: 992px) {
             nav.desktop-nav { display: none; } .hamburger { display: flex; }
             .search-container { display: none; } .login-btn { display: none; } }
@@ -881,9 +814,9 @@
             :root { --header-height: 65px; }
             header { padding: 0 20px; } .brand-name { font-size: 15px; }
             .logo-img { width: 38px; height: 38px; } .hero { padding: 30px 0 30px; }
-            .hero-title { font-size: 30px; letter-spacing: 1.5px; }
+            .hero-title { font-size: 30px; letter-spacing: 1px; }
             .hero-subtitle { font-size: 11px; letter-spacing: 2px; }
-            .paks-text { font-size: 13px; letter-spacing: 4px; padding: 5px 14px; margin-bottom: 12px; }
+            .paks-text { font-size: 13px; letter-spacing: 3px; padding: 5px 14px; margin-bottom: 12px; }
             .section-title { font-size: 20px; } .section-desc { font-size: 13px; }
             .product-grid { grid-template-columns: 1fr; gap: 20px; }
             .product-card { padding: 25px 20px; } .product-name { font-size: 18px; }
@@ -927,8 +860,8 @@
         @media (max-width: 400px) {
             .summary-row { flex-direction: column; align-items: flex-start; gap: 5px; }
             .summary-value, .summary-value.gold { text-align: left; font-size: 14px; }
-            .brand-name { font-size: 13px; } .hero-title { font-size: 26px; }
-            .paks-text { font-size: 12px; letter-spacing: 3px; }
+            .brand-name { font-size: 13px; } .hero-title { font-size: 24px; }
+            .paks-text { font-size: 12px; letter-spacing: 2px; }
         }
 
         .mobile-menu { position: fixed; top: var(--header-height); left: 0; right: 0; bottom: 0;
@@ -945,19 +878,17 @@
             transition: var(--transition-fast); border-radius: 12px; display: block; }
 
         .mobile-menu a:hover { color: var(--gold-primary); padding-left: 28px;
-            background: rgba(255, 170, 0, 0.08); text-shadow: 0 0 10px var(--gold-glow);
-            border-bottom-color: transparent; }
+            background: rgba(255, 170, 0, 0.08); }
 
         .mobile-menu a:active { transform: scale(0.97); color: var(--gold-primary);
-            background: rgba(255, 170, 0, 0.15); box-shadow: 0 0 20px var(--gold-glow);
-            text-shadow: 0 0 15px var(--gold-glow-strong); border-bottom-color: transparent; }
+            background: rgba(255, 170, 0, 0.15); }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo-container" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-            <img src="https://cdn.jsdelivr.net/gh/Cokocheat/Pubgm@main/icon.png" alt="Shadowcheat Logo" class="logo-img" onerror="this.style.background='linear-gradient(135deg, #ffaa00, #b8860b)'; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%22 y=%2265%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22black%22 font-family=%22Orbitron,sans-serif%22 font-weight=%22bold%22>S</text></svg>';">
+            <img src="https://cdn.jsdelivr.net/gh/Cokocheat/Pubgm@main/icon.png" alt="Shadowcheat Logo" class="logo-img" onerror="this.style.background='linear-gradient(135deg, #ffaa00, #b8860b)'; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%22 y=%2265%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22black%22 font-family=%22sans-serif%22 font-weight=%22bold%22>S</text></svg>';">
             <div class="brand-name">SHADOW<span>CHEAT</span> PROJECT</div>
         </div>
         <nav class="desktop-nav">
@@ -1020,44 +951,21 @@
                 <p class="section-desc" data-i18n="section_catalog_desc">Support PUBG Mobile Paks - Global, Korea, Vietnam, Taiwan | Android Non-Root</p>
             </div>
             <div class="product-grid" id="productGrid">
-                <div class="product-card" data-name="key 7 day pubg mobile global korea vietnam taiwan">
-                    <div class="product-badge" data-i18n="badge_popular">POPULAR</div>
-                    <div class="product-icon-box"><svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></div>
-                    <h3 class="product-name" data-i18n="prod_7d_name">Key 7 Days</h3>
-                    <p class="product-desc" data-i18n="prod_7d_desc">Full access for 7 days. Support PUBG Mobile Global, Korea, Vietnam & Taiwan. Android Non-Root.</p>
-                    <div class="product-price">Rp 50.000</div>
-                    <button class="buy-btn" onclick="openCheckout('Key 7 Days', 50000, '7 Days')" data-i18n="btn_buy">BUY NOW</button>
-                </div>
-                <div class="product-card" data-name="key 15 day pubg mobile global korea vietnam taiwan">
-                    <div class="product-icon-box"><svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg></div>
-                    <h3 class="product-name" data-i18n="prod_15d_name">Key 15 Days</h3>
-                    <p class="product-desc" data-i18n="prod_15d_desc">Full access for 15 days. Support Global, Korea, Vietnam & Taiwan. Android Non-Root.</p>
-                    <div class="product-price">Rp 90.000</div>
-                    <button class="buy-btn" onclick="openCheckout('Key 15 Days', 90000, '15 Days')" data-i18n="btn_buy">BUY NOW</button>
-                </div>
-                <div class="product-card" data-name="key 30 day premium pubg mobile global korea vietnam taiwan">
-                    <div class="product-badge hot" data-i18n="badge_best">BEST VALUE</div>
-                    <div class="product-icon-box"><svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg></div>
-                    <h3 class="product-name" data-i18n="prod_30d_name">Key 30 Days</h3>
-                    <p class="product-desc" data-i18n="prod_30d_desc">Full access for 30 days. Full Safe & warranty for PUBG Mobile Global, Korea, Vietnam & Taiwan.</p>
-                    <div class="product-price">Rp 150.000</div>
-                    <button class="buy-btn" onclick="openCheckout('Key 30 Days', 150000, '30 Days')" data-i18n="btn_buy">BUY NOW</button>
-                </div>
                 <div class="product-card" data-name="key 1 season pubg mobile global korea vietnam taiwan">
                     <div class="product-badge hot" data-i18n="badge_season">SEASON</div>
                     <div class="product-icon-box"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
                     <h3 class="product-name" data-i18n="prod_season_name">Key 1 Season</h3>
                     <p class="product-desc" data-i18n="prod_season_desc">Full access for 1 season (about 2 months). Full Safe for all servers.</p>
-                    <div class="product-price">Rp 250.000</div>
-                    <button class="buy-btn" onclick="openCheckout('Key 1 Season', 250000, '1 Season')" data-i18n="btn_buy">BUY NOW</button>
+                    <div class="product-price">Rp 150.000</div>
+                    <button class="buy-btn" onclick="openCheckout('Key 1 Season', 150000, '1 Season')" data-i18n="btn_buy">BUY NOW</button>
                 </div>
                 <div class="product-card" data-name="key permanent pubg mobile global korea vietnam taiwan">
                     <div class="product-badge permanent" data-i18n="badge_permanent">PERMANENT</div>
                     <div class="product-icon-box"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg></div>
                     <h3 class="product-name" data-i18n="prod_perm_name">Key Permanent</h3>
                     <p class="product-desc" data-i18n="prod_perm_desc">Permanent access without time limit. Full Safe & lifetime warranty for all servers.</p>
-                    <div class="product-price">Rp 500.000</div>
-                    <button class="buy-btn" onclick="openCheckout('Key Permanent', 500000, 'Permanent')" data-i18n="btn_buy">BUY NOW</button>
+                    <div class="product-price">Rp 400.000</div>
+                    <button class="buy-btn" onclick="openCheckout('Key Permanent', 400000, 'Permanent')" data-i18n="btn_buy">BUY NOW</button>
                 </div>
             </div>
         </section>
@@ -1375,14 +1283,11 @@
                 section_catalog: 'उत्पाद सूची',
                 section_catalog_desc: 'PUBG Mobile Paks सपोर्ट - Global, Korea, Vietnam, Taiwan | Android Non-Root',
                 badge_popular: 'लोकप्रिय', badge_best: 'सर्वश्रेष्ठ', badge_season: 'सीज़न', badge_permanent: 'स्थायी',
-                prod_7d_name: 'की 7 दिन', prod_7d_desc: '7 दिनों तक पूर्ण पहुँच। PUBG Mobile Global, Korea, Vietnam और Taiwan सपोर्ट। Android Non-Root।',
-                prod_15d_name: 'की 15 दिन', prod_15d_desc: '15 दिनों तक पूर्ण पहुँच। Global, Korea, Vietnam और Taiwan सपोर्ट। Android Non-Root।',
-                prod_30d_name: 'की 30 दिन', prod_30d_desc: '30 दिनों तक पूर्ण पहुँच। PUBG Mobile Global, Korea, Vietnam और Taiwan के लिए पूर्ण सुरक्षित।',
                 prod_season_name: 'की 1 सीज़न', prod_season_desc: '1 सीज़न (लगभग 2 महीने) तक पूर्ण पहुँच। सभी सर्वर के लिए पूर्ण सुरक्षित।',
                 prod_perm_name: 'की स्थायी', prod_perm_desc: 'समय सीमा के बिना स्थायी पहुँच। सभी सर्वर के लिए पूर्ण सुरक्षित और आजीवन वारंटी।',
                 btn_buy: 'अभी खरीदें',
                 tutorial_title: 'Paks कैसे इंस्टॉल करें',
-                tutorial_desc: 'नीचे दिए गए वीडियो ट्यूटोरियल का सही तरीके से पालन करें ताकि सुविधाएं इष्टतम रूप से काम करें',
+                tutorial_desc: 'नीचे दिए गए वीडियो ट्यूटोरियल का सही तरीके से पालन करें',
                 tutorial_warning: 'वीडियो के अनुसार सही तरीके से करें। यदि कोई कदम छूट गया, तो सुविधाएं काम नहीं करेंगी!',
                 download_title: 'Paks Mod डाउनलोड करें',
                 download_desc: 'PUBG Mobile के लिए नवीनतम Paks mod फ़ाइल',
@@ -1394,17 +1299,17 @@
                 btn_cara_pasang: 'कैसे इंस्टॉल करें',
                 faq_title: 'सामान्य प्रश्न', faq_desc: 'ग्राहकों द्वारा पूछे जाने वाले सामान्य प्रश्न',
                 faq_q1: 'उत्पाद कैसे खरीदें?',
-                faq_a1: 'उत्पाद पर "अभी खरीदें" क्लिक करें, भुगतान विधि चुनें (DANA, QRIS, SeaBank, BNI), फिर निर्देशों का पालन करें। DANA/SeaBank/BNI के लिए, भुगतान विवरण व्यक्तिगत Telegram चैट के माध्यम से भेजा जाएगा।',
+                faq_a1: 'उत्पाद पर "अभी खरीदें" क्लिक करें, भुगतान विधि चुनें (DANA, QRIS, SeaBank, BNI), फिर निर्देशों का पालन करें।',
                 faq_q2: 'कौन सी भुगतान विधियाँ उपलब्ध हैं?',
-                faq_a2: 'हम E-Wallet DANA, QRIS (QR स्कैन), और बैंक ट्रांसफर SeaBank और BNI के माध्यम से भुगतान स्वीकार करते हैं।',
+                faq_a2: 'हम E-Wallet DANA, QRIS, और बैंक ट्रांसफर SeaBank और BNI स्वीकार करते हैं।',
                 faq_q3: 'वेबसाइट पर खाता संख्या क्यों नहीं है?',
-                faq_a3: 'पारस्परिक सुरक्षा के लिए, भुगतान विवरण (DANA नंबर, बैंक खाता, आदि) आपके ऑर्डर की पुष्टि के बाद व्यक्तिगत Telegram चैट के माध्यम से सीधे भेजे जाएंगे।',
+                faq_a3: 'पारस्परिक सुरक्षा के लिए, भुगतान विवरण व्यक्तिगत Telegram चैट के माध्यम से भेजे जाएंगे।',
                 faq_q4: 'की डिलीवरी में कितना समय लगता है?',
-                faq_a4: 'Telegram के माध्यम से व्यवस्थापक द्वारा भुगतान की पुष्टि के बाद की डिलीवरी तुरंत होती है।',
-                footer_desc: 'PUBG Mobile Paks के लिए प्रीमियम डिजिटल उत्पाद प्रदाता। Global, Korea, Vietnam, Taiwan सपोर्ट। पूर्ण सुरक्षित और Android Non-Root।',
+                faq_a4: 'भुगतान की पुष्टि के बाद की डिलीवरी तुरंत होती है।',
+                footer_desc: 'PUBG Mobile Paks के लिए प्रीमियम डिजिटल उत्पाद प्रदाता। Global, Korea, Vietnam, Taiwan सपोर्ट।',
                 footer_nav: 'नेविगेशन', footer_payment: 'भुगतान', footer_contact: 'संपर्क करें',
-                footer_copy: '© 2024 Shadowcheat Project. सर्वाधिकार सुरक्षित। | सुरक्षित और सुरक्षित',
-                login_title: 'खाता लॉगिन', login_user_label: 'उपयोगकर्ता नाम / ईमेल', login_user_ph: 'उपयोगकर्ता नाम या ईमेल दर्ज करें',
+                footer_copy: '© 2024 Shadowcheat Project. सर्वाधिकार सुरक्षित।',
+                login_title: 'खाता लॉगिन', login_user_label: 'उपयोगकर्ता नाम / ईमेल', login_user_ph: 'उपयोगकर्ता नाम दर्ज करें',
                 login_pass_label: 'पासवर्ड', login_pass_ph: 'पासवर्ड दर्ज करें', login_btn: 'लॉगिन',
                 login_no_acc: 'खाता नहीं है?', login_contact: 'व्यवस्थापक से संपर्क करें',
                 checkout_title: 'चेकआउट', step_summary: 'सारांश', step_payment: 'भुगतान', step_confirm: 'पुष्टिकरण',
@@ -1412,10 +1317,10 @@
                 btn_next_payment: 'भुगतान पर जाएं', pay_choose: 'भुगतान विधि चुनें',
                 pay_ewallet: 'ई-वॉलेट', pay_scanqr: 'QR स्कैन', pay_bank: 'बैंक ट्रांसफर',
                 btn_back: 'वापस', btn_next: 'अगला', total_pay: 'कुल भुगतान',
-                instr_title: 'भुगतान निर्देश:', instr_1: '1. अपनी चुनी हुई विधि से भुगतान पूरा करें।', instr_2: '2. अपने भुगतान का स्क्रीनशॉट लें।',
-                instr_3: '3. Telegram व्यवस्थापक को प्रमाण भेजने के लिए नीचे पुष्टि बटन पर क्लिक करें।', instr_4: '4. व्यवस्थापक द्वारा सत्यापन के बाद की भेजी जाएगी।',
-                btn_confirm: 'Telegram के माध्यम से पुष्टि करें', toast_fill: 'कृपया उपयोगकर्ता नाम और पासवर्ड भरें!', toast_login: 'लॉगिन सफल! स्वागत है, ',
-                toast_payment: 'कृपया पहले भुगतान विधि चुनें!', toast_no_qr: 'QR छवि उपलब्ध नहीं है। कृपया Telegram पर व्यवस्थापक से संपर्क करें।'
+                instr_title: 'भुगतान निर्देश:', instr_1: '1. भुगतान पूरा करें।', instr_2: '2. स्क्रीनशॉट लें।',
+                instr_3: '3. Telegram व्यवस्थापक को भेजें।', instr_4: '4. सत्यापन के बाद की भेजी जाएगी।',
+                btn_confirm: 'Telegram के माध्यम से पुष्टि करें', toast_fill: 'कृपया भरें!', toast_login: 'स्वागत है, ',
+                toast_payment: 'पहले भुगतान विधि चुनें!', toast_no_qr: 'QR उपलब्ध नहीं।'
             },
             'zh': {
                 nav_home: '首页', nav_products: '产品', nav_tutorial: '教程', nav_download: '下载', nav_faq: '常见问题', nav_support: '支持',
@@ -1425,14 +1330,11 @@
                 section_catalog: '产品目录',
                 section_catalog_desc: '支持 PUBG Mobile Paks - 全球、韩国、越南、台湾 | Android 免 Root',
                 badge_popular: '热门', badge_best: '超值', badge_season: '赛季', badge_permanent: '永久',
-                prod_7d_name: '7 天密钥', prod_7d_desc: '7 天完全访问。支持 PUBG Mobile 全球、韩国、越南和台湾。Android 免 Root。',
-                prod_15d_name: '15 天密钥', prod_15d_desc: '15 天完全访问。支持全球、韩国、越南和台湾。Android 免 Root。',
-                prod_30d_name: '30 天密钥', prod_30d_desc: '30 天完全访问。PUBG Mobile 全球、韩国、越南和台湾完全安全。',
                 prod_season_name: '1 赛季密钥', prod_season_desc: '1 赛季（约 2 个月）完全访问。所有服务器完全安全。',
                 prod_perm_name: '永久密钥', prod_perm_desc: '永久访问无时间限制。所有服务器完全安全并终身保修。',
                 btn_buy: '立即购买',
                 tutorial_title: '如何安装 Paks',
-                tutorial_desc: '请正确遵循下面的视频教程，以确保功能正常运作',
+                tutorial_desc: '请正确遵循下面的视频教程',
                 tutorial_warning: '请按照视频正确操作。如果遗漏任何步骤，功能将无法激活！',
                 download_title: '下载 Paks Mod',
                 download_desc: 'PUBG Mobile 最新 Paks mod 文件',
@@ -1444,17 +1346,17 @@
                 btn_cara_pasang: '安装教程',
                 faq_title: '常见问题', faq_desc: '客户常问的问题',
                 faq_q1: '如何购买产品？',
-                faq_a1: '在产品上点击"立即购买"，选择付款方式（DANA、QRIS、SeaBank、BNI），然后按照说明操作。对于 DANA/SeaBank/BNI，付款详情将通过个人 Telegram 聊天发送。',
+                faq_a1: '点击"立即购买"，选择付款方式（DANA、QRIS、SeaBank、BNI）。',
                 faq_q2: '有哪些付款方式？',
-                faq_a2: '我们接受通过电子钱包 DANA、QRIS（扫描 QR）和银行转账 SeaBank 及 BNI 付款。',
+                faq_a2: '电子钱包 DANA、QRIS、银行转账 SeaBank 及 BNI。',
                 faq_q3: '为什么网站上没有帐号？',
-                faq_a3: '为了双方安全，付款详情（DANA 号码、银行帐号等）将在您确认订单后直接通过个人 Telegram 聊天发送。',
+                faq_a3: '付款详情将通过个人 Telegram 聊天发送。',
                 faq_q4: '密钥交付需要多长时间？',
-                faq_a4: '管理员通过 Telegram 确认付款后，密钥立即交付。',
-                footer_desc: 'PUBG Mobile Paks 的高级数字产品提供商。支持全球、韩国、越南、台湾。完全安全且 Android 免 Root。',
+                faq_a4: '确认付款后立即交付。',
+                footer_desc: 'PUBG Mobile Paks 的高级数字产品提供商。',
                 footer_nav: '导航', footer_payment: '付款', footer_contact: '联系我们',
-                footer_copy: '© 2024 Shadowcheat Project. 保留所有权利。 | 安全可靠',
-                login_title: '登录帐户', login_user_label: '用户名 / 邮箱', login_user_ph: '输入用户名或邮箱',
+                footer_copy: '© 2024 Shadowcheat Project. 保留所有权利。',
+                login_title: '登录帐户', login_user_label: '用户名 / 邮箱', login_user_ph: '输入用户名',
                 login_pass_label: '密码', login_pass_ph: '输入密码', login_btn: '登录',
                 login_no_acc: '还没有帐户？', login_contact: '联系管理员',
                 checkout_title: '结帐', step_summary: '摘要', step_payment: '付款', step_confirm: '确认',
@@ -1462,28 +1364,25 @@
                 btn_next_payment: '前往付款', pay_choose: '选择付款方式',
                 pay_ewallet: '电子钱包', pay_scanqr: '扫描 QR', pay_bank: '银行转账',
                 btn_back: '返回', btn_next: '下一步', total_pay: '付款总额',
-                instr_title: '付款说明：', instr_1: '1. 使用所选方式完成付款。', instr_2: '2. 截图您的付款证明。',
-                instr_3: '3. 点击下方确认按钮将证明发送给 Telegram 管理员。', instr_4: '4. 管理员验证付款后，密钥将被发送。',
-                btn_confirm: '通过 Telegram 确认', toast_fill: '请填写用户名和密码！', toast_login: '登录成功！欢迎，',
-                toast_payment: '请先选择付款方式！', toast_no_qr: 'QR 图片不可用。请通过 Telegram 联系管理员。'
+                instr_title: '付款说明：', instr_1: '1. 完成付款。', instr_2: '2. 截图。',
+                instr_3: '3. 发送给管理员。', instr_4: '4. 验证后发送密钥。',
+                btn_confirm: '通过 Telegram 确认', toast_fill: '请填写！', toast_login: '欢迎，',
+                toast_payment: '请先选择付款方式！', toast_no_qr: 'QR 不可用。'
             },
             'vi': {
                 nav_home: 'Trang chủ', nav_products: 'Sản phẩm', nav_tutorial: 'Hướng dẫn', nav_download: 'Tải xuống', nav_faq: 'Câu hỏi', nav_support: 'Hỗ trợ',
                 btn_login: 'Đăng nhập', search_placeholder: 'Tìm sản phẩm...',
-                hero_subtitle: 'Cửa hàng Kỹ thuật số Cao cấp & Công cụ',
+                hero_subtitle: 'Cửa hàng Kỹ thuật số Cao cấp',
                 btn_view_products: 'Xem Sản phẩm', btn_contact: 'Liên hệ',
                 section_catalog: 'Danh mục Sản phẩm',
                 section_catalog_desc: 'Hỗ trợ PUBG Mobile Paks - Global, Hàn Quốc, Việt Nam, Đài Loan | Android Non-Root',
                 badge_popular: 'PHỔ BIẾN', badge_best: 'GIÁ TỐT', badge_season: 'MÙA', badge_permanent: 'VĨNH VIỄN',
-                prod_7d_name: 'Key 7 Ngày', prod_7d_desc: 'Truy cập đầy đủ trong 7 ngày. Hỗ trợ PUBG Mobile Global, Hàn Quốc, Việt Nam & Đài Loan. Android Non-Root.',
-                prod_15d_name: 'Key 15 Ngày', prod_15d_desc: 'Truy cập đầy đủ trong 15 ngày. Hỗ trợ Global, Hàn Quốc, Việt Nam & Đài Loan. Android Non-Root.',
-                prod_30d_name: 'Key 30 Ngày', prod_30d_desc: 'Truy cập đầy đủ trong 30 ngày. Full Safe & bảo hành cho PUBG Mobile Global, Hàn Quốc, Việt Nam & Đài Loan.',
-                prod_season_name: 'Key 1 Mùa', prod_season_desc: 'Truy cập đầy đủ trong 1 mùa (khoảng 2 tháng). Full Safe cho tất cả các server.',
-                prod_perm_name: 'Key Vĩnh viễn', prod_perm_desc: 'Truy cập vĩnh viễn không giới hạn thời gian. Full Safe & bảo hành trọn đời cho tất cả các server.',
+                prod_season_name: 'Key 1 Mùa', prod_season_desc: 'Truy cập đầy đủ trong 1 mùa (khoảng 2 tháng).',
+                prod_perm_name: 'Key Vĩnh viễn', prod_perm_desc: 'Truy cập vĩnh viễn không giới hạn thời gian.',
                 btn_buy: 'MUA NGAY',
                 tutorial_title: 'Cách Cài Đặt Paks',
-                tutorial_desc: 'Làm theo video hướng dẫn bên dưới một cách chính xác để các tính năng hoạt động tối ưu',
-                tutorial_warning: 'Làm theo video một cách chính xác. Nếu sai bước, tính năng sẽ không hoạt động!',
+                tutorial_desc: 'Làm theo video hướng dẫn bên dưới',
+                tutorial_warning: 'Làm theo video một cách chính xác!',
                 download_title: 'Tải Paks Mod',
                 download_desc: 'File Paks mod mới nhất cho PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
@@ -1492,48 +1391,41 @@
                 download_loading: 'ĐANG TẢI...',
                 download_connecting: 'Đang kết nối...',
                 btn_cara_pasang: 'CÁCH CÀI ĐẶT',
-                faq_title: 'Câu hỏi Thường gặp', faq_desc: 'Những câu hỏi phổ biến từ khách hàng',
-                faq_q1: 'Làm thế nào để mua sản phẩm?',
-                faq_a1: 'Nhấp "MUA NGAY" trên sản phẩm, chọn phương thức thanh toán (DANA, QRIS, SeaBank, BNI), sau đó làm theo hướng dẫn. Đối với DANA/SeaBank/BNI, chi tiết thanh toán sẽ được admin gửi qua chat Telegram riêng.',
-                faq_q2: 'Có những phương thức thanh toán nào?',
-                faq_a2: 'Chúng tôi chấp nhận thanh toán qua Ví điện tử DANA, QRIS (quét QR), và Chuyển khoản Ngân hàng SeaBank & BNI.',
-                faq_q3: 'Tại sao không có số tài khoản trên website?',
-                faq_a3: 'Vì an toàn chung, chi tiết thanh toán (số DANA, tài khoản ngân hàng, v.v.) sẽ được admin gửi trực tiếp qua chat Telegram riêng sau khi bạn xác nhận đơn hàng.',
-                faq_q4: 'Mất bao lâu để giao key?',
-                faq_a4: 'Key được giao ngay sau khi admin xác nhận thanh toán qua Telegram.',
-                footer_desc: 'Nhà cung cấp sản phẩm kỹ thuật số cao cấp cho PUBG Mobile Paks. Hỗ trợ Global, Hàn Quốc, Việt Nam, Đài Loan. Full Safe & Android Non-Root.',
+                faq_title: 'Câu hỏi Thường gặp', faq_desc: 'Câu hỏi phổ biến',
+                faq_q1: 'Làm thế nào để mua?', faq_a1: 'Nhấp "MUA NGAY", chọn phương thức thanh toán.',
+                faq_q2: 'Có những phương thức nào?', faq_a2: 'DANA, QRIS, SeaBank & BNI.',
+                faq_q3: 'Tại sao không có số tài khoản?', faq_a3: 'Chi tiết thanh toán sẽ được gửi qua Telegram.',
+                faq_q4: 'Mất bao lâu để giao key?', faq_a4: 'Key được giao ngay sau khi thanh toán.',
+                footer_desc: 'Nhà cung cấp sản phẩm kỹ thuật số cao cấp cho PUBG Mobile Paks.',
                 footer_nav: 'Điều hướng', footer_payment: 'Thanh toán', footer_contact: 'Liên hệ',
-                footer_copy: '© 2024 Shadowcheat Project. Bảo lưu mọi quyền. | An toàn & Bảo mật',
-                login_title: 'Đăng nhập Tài khoản', login_user_label: 'Tên người dùng / Email', login_user_ph: 'Nhập tên người dùng hoặc email',
+                footer_copy: '© 2024 Shadowcheat Project. Bảo lưu mọi quyền.',
+                login_title: 'Đăng nhập', login_user_label: 'Tên người dùng', login_user_ph: 'Nhập tên',
                 login_pass_label: 'Mật khẩu', login_pass_ph: 'Nhập mật khẩu', login_btn: 'Đăng nhập',
                 login_no_acc: 'Chưa có tài khoản?', login_contact: 'Liên hệ Admin',
                 checkout_title: 'Thanh toán', step_summary: 'Tóm tắt', step_payment: 'Thanh toán', step_confirm: 'Xác nhận',
                 sum_product: 'Sản phẩm', sum_duration: 'Thời hạn', sum_server: 'Server', sum_platform: 'Nền tảng', sum_total: 'Tổng giá',
-                btn_next_payment: 'Tiếp tục Thanh toán', pay_choose: 'Chọn Phương thức Thanh toán',
+                btn_next_payment: 'Tiếp tục', pay_choose: 'Chọn Phương thức',
                 pay_ewallet: 'Ví điện tử', pay_scanqr: 'Quét QR', pay_bank: 'Chuyển khoản',
-                btn_back: 'Quay lại', btn_next: 'Tiếp', total_pay: 'Tổng Thanh toán',
-                instr_title: 'Hướng dẫn Thanh toán:', instr_1: '1. Hoàn tất thanh toán bằng phương thức đã chọn.', instr_2: '2. Chụp ảnh chứng từ thanh toán.',
-                instr_3: '3. Nhấp nút xác nhận bên dưới để gửi chứng từ cho admin Telegram.', instr_4: '4. Key sẽ được gửi sau khi admin xác minh thanh toán.',
-                btn_confirm: 'Xác nhận qua Telegram', toast_fill: 'Vui lòng điền tên người dùng và mật khẩu!', toast_login: 'Đăng nhập thành công! Chào mừng, ',
-                toast_payment: 'Vui lòng chọn phương thức thanh toán trước!', toast_no_qr: 'Hình QR không có sẵn. Vui lòng liên hệ admin qua Telegram.'
+                btn_back: 'Quay lại', btn_next: 'Tiếp', total_pay: 'Tổng',
+                instr_title: 'Hướng dẫn:', instr_1: '1. Thanh toán.', instr_2: '2. Chụp ảnh.',
+                instr_3: '3. Gửi cho admin.', instr_4: '4. Nhận key sau khi xác minh.',
+                btn_confirm: 'Xác nhận qua Telegram', toast_fill: 'Vui lòng điền!', toast_login: 'Chào mừng, ',
+                toast_payment: 'Chọn phương thức trước!', toast_no_qr: 'QR không có sẵn.'
             },
             'ko': {
                 nav_home: '홈', nav_products: '제품', nav_tutorial: '튜토리얼', nav_download: '다운로드', nav_faq: '자주 묻는 질문', nav_support: '지원',
                 btn_login: '로그인', search_placeholder: '제품 검색...',
-                hero_subtitle: '프리미엄 디지털 스토어 및 도구',
+                hero_subtitle: '프리미엄 디지털 스토어',
                 btn_view_products: '제품 보기', btn_contact: '문의하기',
                 section_catalog: '제품 카탈로그',
                 section_catalog_desc: 'PUBG Mobile Paks 지원 - 글로벌, 한국, 베트남, 대만 | Android Non-Root',
                 badge_popular: '인기', badge_best: '최고 가치', badge_season: '시즌', badge_permanent: '영구',
-                prod_7d_name: '7일 키', prod_7d_desc: '7일 동안 완전 액세스. PUBG Mobile 글로벌, 한국, 베트남 및 대만 지원. Android Non-Root.',
-                prod_15d_name: '15일 키', prod_15d_desc: '15일 동안 완전 액세스. 글로벌, 한국, 베트남 및 대만 지원. Android Non-Root.',
-                prod_30d_name: '30일 키', prod_30d_desc: '30일 동안 완전 액세스. PUBG Mobile 글로벌, 한국, 베트남 및 대만 완전 안전.',
-                prod_season_name: '1 시즌 키', prod_season_desc: '1 시즌(약 2개월) 동안 완전 액세스. 모든 서버 완전 안전.',
-                prod_perm_name: '영구 키', prod_perm_desc: '시간 제한 없이 영구 액세스. 모든 서버 완전 안전 및 평생 보증.',
+                prod_season_name: '1 시즌 키', prod_season_desc: '1 시즌(약 2개월) 동안 완전 액세스.',
+                prod_perm_name: '영구 키', prod_perm_desc: '시간 제한 없이 영구 액세스.',
                 btn_buy: '지금 구매',
                 tutorial_title: 'Paks 설치 방법',
-                tutorial_desc: '기능이 최적으로 작동하도록 아래 비디오 튜토리얼을 올바르게 따르세요',
-                tutorial_warning: '비디오대로 정확히 따라하세요. 단계를 놓치면 기능이 활성화되지 않습니다!',
+                tutorial_desc: '아래 비디오 튜토리얼을 따르세요',
+                tutorial_warning: '비디오대로 정확히 따라하세요!',
                 download_title: 'Paks Mod 다운로드',
                 download_desc: 'PUBG Mobile용 최신 Paks mod 파일',
                 download_file: 'Paks Mod PUBG Mobile',
@@ -1542,19 +1434,15 @@
                 download_loading: '다운로드 중...',
                 download_connecting: '연결 중...',
                 btn_cara_pasang: '설치 방법',
-                faq_title: '자주 묻는 질문', faq_desc: '고객들이 자주 묻는 질문',
-                faq_q1: '제품을 구매하는 방법?',
-                faq_a1: '제품의 "지금 구매"를 클릭하고 결제 방법(DANA, QRIS, SeaBank, BNI)을 선택한 다음 지침을 따르세요. DANA/SeaBank/BNI의 경우 결제 세부 정보가 개인 Telegram 채팅을 통해 전송됩니다.',
-                faq_q2: '어떤 결제 방법을 사용할 수 있나요?',
-                faq_a2: '전자 지갑 DANA, QRIS(QR 스캔), 은행 송금 SeaBank 및 BNI를 통해 결제를 수락합니다.',
-                faq_q3: '웹사이트에 계좌 번호가 없는 이유는?',
-                faq_a3: '상호 보안을 위해 결제 세부 정보(DANA 번호, 은행 계좌 등)는 주문 확인 후 개인 Telegram 채팅을 통해 직접 전송됩니다.',
-                faq_q4: '키 배송은 얼마나 걸리나요?',
-                faq_a4: 'Telegram을 통해 관리자가 결제를 확인한 후 키가 즉시 배송됩니다.',
-                footer_desc: 'PUBG Mobile Paks를 위한 프리미엄 디지털 제품 제공 업체. 글로벌, 한국, 베트남, 대만 지원. 완전 안전 및 Android Non-Root.',
+                faq_title: '자주 묻는 질문', faq_desc: '고객 질문',
+                faq_q1: '제품 구매 방법?', faq_a1: '"지금 구매"를 클릭하고 결제 방법을 선택하세요.',
+                faq_q2: '결제 방법?', faq_a2: 'DANA, QRIS, SeaBank & BNI.',
+                faq_q3: '계좌 번호가 없는 이유?', faq_a3: '결제 세부 정보는 Telegram을 통해 전송됩니다.',
+                faq_q4: '키 배송 시간?', faq_a4: '결제 확인 후 즉시 배송됩니다.',
+                footer_desc: 'PUBG Mobile Paks를 위한 프리미엄 디지털 제품 제공 업체.',
                 footer_nav: '네비게이션', footer_payment: '결제', footer_contact: '문의하기',
-                footer_copy: '© 2024 Shadowcheat Project. 모든 권리 보유. | 안전 및 보안',
-                login_title: '계정 로그인', login_user_label: '사용자 이름 / 이메일', login_user_ph: '사용자 이름 또는 이메일 입력',
+                footer_copy: '© 2024 Shadowcheat Project. 모든 권리 보유.',
+                login_title: '계정 로그인', login_user_label: '사용자 이름', login_user_ph: '이름 입력',
                 login_pass_label: '비밀번호', login_pass_ph: '비밀번호 입력', login_btn: '로그인',
                 login_no_acc: '계정이 없으신가요?', login_contact: '관리자에게 문의',
                 checkout_title: '결제', step_summary: '요약', step_payment: '결제', step_confirm: '확인',
@@ -1562,28 +1450,25 @@
                 btn_next_payment: '결제로 이동', pay_choose: '결제 방법 선택',
                 pay_ewallet: '전자 지갑', pay_scanqr: 'QR 스캔', pay_bank: '은행 송금',
                 btn_back: '뒤로', btn_next: '다음', total_pay: '총 결제',
-                instr_title: '결제 안내:', instr_1: '1. 선택한 방법으로 결제를 완료하세요.', instr_2: '2. 결제 증명을 스크린샷하세요.',
-                instr_3: '3. 아래 확인 버튼을 클릭하여 증명을 Telegram 관리자에게 보내세요.', instr_4: '4. 관리자가 결제를 확인한 후 키가 전송됩니다.',
-                btn_confirm: 'Telegram을 통해 확인', toast_fill: '사용자 이름과 비밀번호를 입력하세요!', toast_login: '로그인 성공! 환영합니다, ',
-                toast_payment: '먼저 결제 방법을 선택하세요!', toast_no_qr: 'QR 이미지를 사용할 수 없습니다. Telegram을 통해 관리자에게 문의하세요.'
+                instr_title: '결제 안내:', instr_1: '1. 결제 완료.', instr_2: '2. 스크린샷.',
+                instr_3: '3. 관리자에게 전송.', instr_4: '4. 확인 후 키 전송.',
+                btn_confirm: 'Telegram을 통해 확인', toast_fill: '입력하세요!', toast_login: '환영합니다, ',
+                toast_payment: '결제 방법을 선택하세요!', toast_no_qr: 'QR 사용 불가.'
             },
             'ja': {
                 nav_home: 'ホーム', nav_products: '製品', nav_tutorial: 'チュートリアル', nav_download: 'ダウンロード', nav_faq: 'よくある質問', nav_support: 'サポート',
                 btn_login: 'ログイン', search_placeholder: '製品を検索...',
-                hero_subtitle: 'プレミアムデジタルストア＆ツール',
+                hero_subtitle: 'プレミアムデジタルストア',
                 btn_view_products: '製品を見る', btn_contact: 'お問い合わせ',
                 section_catalog: '製品カタログ',
                 section_catalog_desc: 'PUBG Mobile Paks サポート - グローバル、韓国、ベトナム、台湾 | Android Non-Root',
-                badge_popular: '人気', badge_best: 'ベストバリュー', badge_season: 'シーズン', badge_permanent: '永久',
-                prod_7d_name: '7日間キー', prod_7d_desc: '7日間の完全アクセス。PUBG Mobile グローバル、韓国、ベトナム、台湾をサポート。Android Non-Root。',
-                prod_15d_name: '15日間キー', prod_15d_desc: '15日間の完全アクセス。グローバル、韓国、ベトナム、台湾をサポート。Android Non-Root。',
-                prod_30d_name: '30日間キー', prod_30d_desc: '30日間の完全アクセス。PUBG Mobile グローバル、韓国、ベトナム、台湾で完全安全。',
-                prod_season_name: '1シーズンキー', prod_season_desc: '1シーズン（約2ヶ月）の完全アクセス。すべてのサーバーで完全安全。',
-                prod_perm_name: '永久キー', prod_perm_desc: '時間制限なしの永久アクセス。すべてのサーバーで完全安全＆生涯保証。',
+                badge_popular: '人気', badge_best: 'ベスト', badge_season: 'シーズン', badge_permanent: '永久',
+                prod_season_name: '1シーズンキー', prod_season_desc: '1シーズン（約2ヶ月）の完全アクセス。',
+                prod_perm_name: '永久キー', prod_perm_desc: '時間制限なしの永久アクセス。',
                 btn_buy: '今すぐ購入',
                 tutorial_title: 'Paksのインストール方法',
-                tutorial_desc: '機能が最適に動作するように、以下のビデオチュートリアルを正しく実行してください',
-                tutorial_warning: 'ビデオの通りに正確に実行してください。手順を間違えると機能が有効になりません！',
+                tutorial_desc: '以下のビデオチュートリアルを実行してください',
+                tutorial_warning: 'ビデオの通りに正確に実行してください！',
                 download_title: 'Paks Modをダウンロード',
                 download_desc: 'PUBG Mobile用の最新Paks modファイル',
                 download_file: 'Paks Mod PUBG Mobile',
@@ -1592,48 +1477,41 @@
                 download_loading: 'ダウンロード中...',
                 download_connecting: '接続中...',
                 btn_cara_pasang: 'インストール方法',
-                faq_title: 'よくある質問', faq_desc: 'お客様からよく寄せられる質問',
-                faq_q1: '製品の購入方法は？',
-                faq_a1: '製品の「今すぐ購入」をクリックし、支払い方法（DANA、QRIS、SeaBank、BNI）を選択して、指示に従ってください。DANA/SeaBank/BNIの場合、支払いの詳細は個人のTelegramチャットで送信されます。',
-                faq_q2: '利用可能な支払い方法は？',
-                faq_a2: '電子ウォレットDANA、QRIS（QRスキャン）、銀行振込SeaBankおよびBNIでの支払いを受け付けています。',
-                faq_q3: 'ウェブサイトに口座番号がないのはなぜですか？',
-                faq_a3: '相互の安全のため、支払いの詳細（DANA番号、銀行口座など）は、ご注文確認後、個人のTelegramチャットを通じて直接送信されます。',
-                faq_q4: 'キーの配信にはどのくらい時間がかかりますか？',
-                faq_a4: 'Telegramを通じて管理者が支払いを確認した後、キーは即座に配信されます。',
-                footer_desc: 'PUBG Mobile Paksのプレミアムデジタル製品プロバイダー。グローバル、韓国、ベトナム、台湾をサポート。完全安全＆Android Non-Root。',
-                footer_nav: 'ナビゲーション', footer_payment: '支払い', footer_contact: 'お問い合わせ',
-                footer_copy: '© 2024 Shadowcheat Project. All rights reserved. | 安全＆セキュア',
-                login_title: 'アカウントログイン', login_user_label: 'ユーザー名 / メール', login_user_ph: 'ユーザー名またはメールを入力',
+                faq_title: 'よくある質問', faq_desc: 'よくある質問',
+                faq_q1: '購入方法は？', faq_a1: '「今すぐ購入」をクリックし、支払い方法を選択してください。',
+                faq_q2: '支払い方法は？', faq_a2: 'DANA、QRIS、SeaBank、BNI。',
+                faq_q3: '口座番号がないのは？', faq_a3: '支払いの詳細はTelegramで送信されます。',
+                faq_q4: 'キーの配信時間？', faq_a4: '支払い確認後、即座に配信されます。',
+                footer_desc: 'PUBG Mobile Paksのプレミアムデジタル製品プロバイダー。',
+                footer_nav: 'ナビ', footer_payment: '支払い', footer_contact: 'お問い合わせ',
+                footer_copy: '© 2024 Shadowcheat Project. All rights reserved.',
+                login_title: 'アカウントログイン', login_user_label: 'ユーザー名', login_user_ph: 'ユーザー名を入力',
                 login_pass_label: 'パスワード', login_pass_ph: 'パスワードを入力', login_btn: 'ログイン',
                 login_no_acc: 'アカウントをお持ちでない方', login_contact: '管理者に連絡',
                 checkout_title: 'チェックアウト', step_summary: '概要', step_payment: '支払い', step_confirm: '確認',
-                sum_product: '製品', sum_duration: '期間', sum_server: 'サーバー', sum_platform: 'プラットフォーム', sum_total: '合計金額',
+                sum_product: '製品', sum_duration: '期間', sum_server: 'サーバー', sum_platform: 'プラットフォーム', sum_total: '合計',
                 btn_next_payment: '支払いへ進む', pay_choose: '支払い方法を選択',
                 pay_ewallet: '電子ウォレット', pay_scanqr: 'QRスキャン', pay_bank: '銀行振込',
                 btn_back: '戻る', btn_next: '次へ', total_pay: '支払総額',
-                instr_title: '支払い手順：', instr_1: '1. 選択した方法で支払いを完了します。', instr_2: '2. 支払い証明をスクリーンショットします。',
-                instr_3: '3. 下の確認ボタンをクリックして、証明をTelegram管理者に送信します。', instr_4: '4. 管理者が支払いを確認した後、キーが送信されます。',
-                btn_confirm: 'Telegramで確認', toast_fill: 'ユーザー名とパスワードを入力してください！', toast_login: 'ログイン成功！ようこそ、',
-                toast_payment: '先に支払い方法を選択してください！', toast_no_qr: 'QR画像が利用できません。Telegramで管理者にお問い合わせください。'
+                instr_title: '支払い手順：', instr_1: '1. 支払いを完了。', instr_2: '2. スクリーンショット。',
+                instr_3: '3. 管理者に送信。', instr_4: '4. 確認後、キーを送信。',
+                btn_confirm: 'Telegramで確認', toast_fill: '入力してください！', toast_login: 'ようこそ、',
+                toast_payment: '先に支払い方法を選択！', toast_no_qr: 'QR画像が利用できません。'
             },
             'th': {
                 nav_home: 'หน้าแรก', nav_products: 'สินค้า', nav_tutorial: 'สอนใช้งาน', nav_download: 'ดาวน์โหลด', nav_faq: 'คำถามที่พบบ่อย', nav_support: 'สนับสนุน',
                 btn_login: 'เข้าสู่ระบบ', search_placeholder: 'ค้นหาสินค้า...',
-                hero_subtitle: 'ร้านค้าดิจิทัลพรีเมียมและเครื่องมือ',
+                hero_subtitle: 'ร้านค้าดิจิทัลพรีเมียม',
                 btn_view_products: 'ดูสินค้า', btn_contact: 'ติดต่อเรา',
                 section_catalog: 'แคตตาล็อกสินค้า',
                 section_catalog_desc: 'รองรับ PUBG Mobile Paks - Global, เกาหลี, เวียดนาม, ไต้หวัน | Android Non-Root',
                 badge_popular: 'ยอดนิยม', badge_best: 'คุ้มที่สุด', badge_season: 'ซีซั่น', badge_permanent: 'ถาวร',
-                prod_7d_name: 'คีย์ 7 วัน', prod_7d_desc: 'เข้าถึงเต็มรูปแบบ 7 วัน รองรับ PUBG Mobile Global, เกาหลี, เวียดนาม และไต้หวัน Android Non-Root',
-                prod_15d_name: 'คีย์ 15 วัน', prod_15d_desc: 'เข้าถึงเต็มรูปแบบ 15 วัน รองรับ Global, เกาหลี, เวียดนาม และไต้หวัน Android Non-Root',
-                prod_30d_name: 'คีย์ 30 วัน', prod_30d_desc: 'เข้าถึงเต็มรูปแบบ 30 วัน ปลอดภัยเต็มรูปแบบและรับประกันสำหรับ PUBG Mobile Global, เกาหลี, เวียดนาม และไต้หวัน',
-                prod_season_name: 'คีย์ 1 ซีซั่น', prod_season_desc: 'เข้าถึงเต็มรูปแบบ 1 ซีซั่น (ประมาณ 2 เดือน) ปลอดภัยเต็มรูปแบบสำหรับทุกเซิร์ฟเวอร์',
-                prod_perm_name: 'คีย์ถาวร', prod_perm_desc: 'เข้าถึงถาวรไม่มีขีดจำกัดเวลา ปลอดภัยเต็มรูปแบบและรับประกันตลอดชีพสำหรับทุกเซิร์ฟเวอร์',
+                prod_season_name: 'คีย์ 1 ซีซั่น', prod_season_desc: 'เข้าถึงเต็มรูปแบบ 1 ซีซั่น (ประมาณ 2 เดือน)',
+                prod_perm_name: 'คีย์ถาวร', prod_perm_desc: 'เข้าถึงถาวรไม่มีขีดจำกัดเวลา',
                 btn_buy: 'ซื้อเลย',
                 tutorial_title: 'วิธีติดตั้ง Paks',
-                tutorial_desc: 'ทำตามวิดีโอสอนด้านล่างอย่างถูกต้องเพื่อให้ฟีเจอร์ทำงานได้อย่างเหมาะสม',
-                tutorial_warning: 'ทำตามวิดีโออย่างถูกต้อง หากผิดขั้นตอน ฟีเจอร์จะไม่ทำงาน!',
+                tutorial_desc: 'ทำตามวิดีโอสอนด้านล่าง',
+                tutorial_warning: 'ทำตามวิดีโออย่างถูกต้อง!',
                 download_title: 'ดาวน์โหลด Paks Mod',
                 download_desc: 'ไฟล์ Paks mod ล่าสุดสำหรับ PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
@@ -1642,48 +1520,41 @@
                 download_loading: 'กำลังดาวน์โหลด...',
                 download_connecting: 'กำลังเชื่อมต่อ...',
                 btn_cara_pasang: 'วิธีติดตั้ง',
-                faq_title: 'คำถามที่พบบ่อย', faq_desc: 'คำถามทั่วไปจากลูกค้า',
-                faq_q1: 'วิธีการซื้อสินค้า?',
-                faq_a1: 'คลิก "ซื้อเลย" ที่สินค้า เลือกวิธีการชำระเงิน (DANA, QRIS, SeaBank, BNI) จากนั้นทำตามคำแนะนำ สำหรับ DANA/SeaBank/BNI รายละเอียดการชำระเงินจะถูกส่งโดยผู้ดูแลผ่านแชท Telegram ส่วนตัว',
-                faq_q2: 'มีวิธีการชำระเงินอะไรบ้าง?',
-                faq_a2: 'เรารับชำระผ่าน E-Wallet DANA, QRIS (สแกน QR) และโอนผ่านธนาคาร SeaBank และ BNI',
-                faq_q3: 'ทำไมไม่มีเลขบัญชีในเว็บไซต์?',
-                faq_a3: 'เพื่อความปลอดภัยซึ่งกันและกัน รายละเอียดการชำระเงิน (หมายเลข DANA บัญชีธนาคาร ฯลฯ) จะถูกส่งโดยตรงโดยผู้ดูแลผ่านแชท Telegram ส่วนตัวหลังจากคุณยืนยันคำสั่งซื้อ',
-                faq_q4: 'การส่งคีย์ใช้เวลานานเท่าไหร่?',
-                faq_a4: 'การส่งคีย์จะทันทีหลังจากผู้ดูแลยืนยันการชำระเงินผ่าน Telegram',
-                footer_desc: 'ผู้ให้บริการผลิตภัณฑ์ดิจิทัลพรีเมียมสำหรับ PUBG Mobile Paks รองรับ Global, เกาหลี, เวียดนาม, ไต้หวัน ปลอดภัยเต็มรูปแบบและ Android Non-Root',
+                faq_title: 'คำถามที่พบบ่อย', faq_desc: 'คำถามทั่วไป',
+                faq_q1: 'วิธีการซื้อ?', faq_a1: 'คลิก "ซื้อเลย" เลือกวิธีการชำระเงิน',
+                faq_q2: 'วิธีการชำระเงิน?', faq_a2: 'DANA, QRIS, SeaBank และ BNI',
+                faq_q3: 'ทำไมไม่มีเลขบัญชี?', faq_a3: 'รายละเอียดจะถูกส่งผ่าน Telegram',
+                faq_q4: 'การส่งคีย์?', faq_a4: 'ทันทีหลังยืนยันการชำระเงิน',
+                footer_desc: 'ผู้ให้บริการผลิตภัณฑ์ดิจิทัลพรีเมียมสำหรับ PUBG Mobile Paks',
                 footer_nav: 'การนำทาง', footer_payment: 'การชำระเงิน', footer_contact: 'ติดต่อเรา',
-                footer_copy: '© 2024 Shadowcheat Project สงวนลิขสิทธิ์ | ปลอดภัยและมั่นคง',
-                login_title: 'เข้าสู่ระบบบัญชี', login_user_label: 'ชื่อผู้ใช้ / อีเมล', login_user_ph: 'ป้อนชื่อผู้ใช้หรืออีเมล',
+                footer_copy: '© 2024 Shadowcheat Project สงวนลิขสิทธิ์',
+                login_title: 'เข้าสู่ระบบ', login_user_label: 'ชื่อผู้ใช้', login_user_ph: 'ป้อนชื่อผู้ใช้',
                 login_pass_label: 'รหัสผ่าน', login_pass_ph: 'ป้อนรหัสผ่าน', login_btn: 'เข้าสู่ระบบ',
                 login_no_acc: 'ยังไม่มีบัญชี?', login_contact: 'ติดต่อผู้ดูแล',
                 checkout_title: 'ชำระเงิน', step_summary: 'สรุป', step_payment: 'การชำระเงิน', step_confirm: 'ยืนยัน',
                 sum_product: 'สินค้า', sum_duration: 'ระยะเวลา', sum_server: 'เซิร์ฟเวอร์', sum_platform: 'แพลตฟอร์ม', sum_total: 'ราคารวม',
                 btn_next_payment: 'ไปที่การชำระเงิน', pay_choose: 'เลือกวิธีการชำระเงิน',
                 pay_ewallet: 'E-Wallet', pay_scanqr: 'สแกน QR', pay_bank: 'โอนผ่านธนาคาร',
-                btn_back: 'กลับ', btn_next: 'ถัดไป', total_pay: 'ยอดชำระทั้งหมด',
-                instr_title: 'คำแนะนำการชำระเงิน:', instr_1: '1. ชำระเงินให้เสร็จสิ้นตามวิธีที่เลือก', instr_2: '2. แคปหน้าจอหลักฐานการชำระเงิน',
-                instr_3: '3. คลิกปุ่มยืนยันด้านล่างเพื่อส่งหลักฐานให้ผู้ดูแล Telegram', instr_4: '4. คีย์จะถูกส่งหลังจากผู้ดูแลยืนยันการชำระเงิน',
-                btn_confirm: 'ยืนยันผ่าน Telegram', toast_fill: 'กรุณากรอกชื่อผู้ใช้และรหัสผ่าน!', toast_login: 'เข้าสู่ระบบสำเร็จ! ยินดีต้อนรับ ',
-                toast_payment: 'กรุณาเลือกวิธีการชำระเงินก่อน!', toast_no_qr: 'ไม่มีรูปภาพ QR กรุณาติดต่อผู้ดูแลผ่าน Telegram'
+                btn_back: 'กลับ', btn_next: 'ถัดไป', total_pay: 'ยอดชำระ',
+                instr_title: 'คำแนะนำ:', instr_1: '1. ชำระเงิน', instr_2: '2. แคปหน้าจอ',
+                instr_3: '3. ส่งให้ผู้ดูแล', instr_4: '4. รับคีย์หลังยืนยัน',
+                btn_confirm: 'ยืนยันผ่าน Telegram', toast_fill: 'กรอกให้ครบ!', toast_login: 'ยินดีต้อนรับ ',
+                toast_payment: 'เลือกวิธีการชำระเงินก่อน!', toast_no_qr: 'ไม่มีรูป QR'
             },
             'ar': {
-                nav_home: 'الرئيسية', nav_products: 'المنتجات', nav_tutorial: 'البرنامج التعليمي', nav_download: 'تحميل', nav_faq: 'الأسئلة الشائعة', nav_support: 'الدعم',
-                btn_login: 'تسجيل الدخول', search_placeholder: 'ابحث عن المنتجات...',
-                hero_subtitle: 'متجر رقمي متميز وأدوات',
+                nav_home: 'الرئيسية', nav_products: 'المنتجات', nav_tutorial: 'البرنامج التعليمي', nav_download: 'تحميل', nav_faq: 'الأسئلة', nav_support: 'الدعم',
+                btn_login: 'تسجيل الدخول', search_placeholder: 'ابحث...',
+                hero_subtitle: 'متجر رقمي متميز',
                 btn_view_products: 'عرض المنتجات', btn_contact: 'اتصل بنا',
                 section_catalog: 'كتالوج المنتجات',
                 section_catalog_desc: 'دعم PUBG Mobile Paks - عالمي، كوريا، فيتنام، تايوان | Android Non-Root',
-                badge_popular: 'شائع', badge_best: 'أفضل قيمة', badge_season: 'موسم', badge_permanent: 'دائم',
-                prod_7d_name: 'مفتاح 7 أيام', prod_7d_desc: 'وصول كامل لمدة 7 أيام. دعم PUBG Mobile عالمي، كوريا، فيتنام وتايوان. Android Non-Root.',
-                prod_15d_name: 'مفتاح 15 يوم', prod_15d_desc: 'وصول كامل لمدة 15 يوم. دعم عالمي، كوريا، فيتنام وتايوان. Android Non-Root.',
-                prod_30d_name: 'مفتاح 30 يوم', prod_30d_desc: 'وصول كامل لمدة 30 يوم. آمن تمامًا وضمان لـ PUBG Mobile عالمي، كوريا، فيتنام وتايوان.',
-                prod_season_name: 'مفتاح موسم 1', prod_season_desc: 'وصول كامل لموسم واحد (حوالي شهرين). آمن تمامًا لجميع الخوادم.',
-                prod_perm_name: 'مفتاح دائم', prod_perm_desc: 'وصول دائم بدون حد زمني. آمن تمامًا وضمان مدى الحياة لجميع الخوادم.',
+                badge_popular: 'شائع', badge_best: 'أفضل', badge_season: 'موسم', badge_permanent: 'دائم',
+                prod_season_name: 'مفتاح موسم 1', prod_season_desc: 'وصول كامل لموسم واحد (حوالي شهرين).',
+                prod_perm_name: 'مفتاح دائم', prod_perm_desc: 'وصول دائم بدون حد زمني.',
                 btn_buy: 'اشتر الآن',
-                tutorial_title: 'كيفية تثبيت Paks',
-                tutorial_desc: 'اتبع الفيديو التعليمي أدناه بشكل صحيح حتى تعمل الميزات بشكل مثالي',
-                tutorial_warning: 'اتبع الفيديو بشكل صحيح. إذا أخطأت في خطوة، لن يتم تنشيط الميزات!',
+                tutorial_title: 'كيفية التثبيت',
+                tutorial_desc: 'اتبع الفيديو التعليمي أدناه',
+                tutorial_warning: 'اتبع الفيديو بشكل صحيح!',
                 download_title: 'تحميل Paks Mod',
                 download_desc: 'أحدث ملف Paks mod لـ PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
@@ -1692,48 +1563,41 @@
                 download_loading: 'جاري التحميل...',
                 download_connecting: 'جاري الاتصال...',
                 btn_cara_pasang: 'طريقة التثبيت',
-                faq_title: 'الأسئلة الشائعة', faq_desc: 'الأسئلة الشائعة من عملائنا',
-                faq_q1: 'كيف تشتري منتجًا؟',
-                faq_a1: 'انقر فوق "اشتر الآن" على المنتج، واختر طريقة الدفع (DANA، QRIS، SeaBank، BNI)، ثم اتبع التعليمات. بالنسبة لـ DANA/SeaBank/BNI، سيتم إرسال تفاصيل الدفع بواسطة المشرف عبر محادثة Telegram الشخصية.',
-                faq_q2: 'ما هي طرق الدفع المتاحة؟',
-                faq_a2: 'نقبل المدفوعات عبر المحفظة الإلكترونية DANA، QRIS (مسح QR)، والتحويل البنكي SeaBank و BNI.',
-                faq_q3: 'لماذا لا يوجد رقم حساب على الموقع؟',
-                faq_a3: 'للأمان المتبادل، سيتم إرسال تفاصيل الدفع (رقم DANA، الحساب البنكي، إلخ) مباشرة من قبل المشرف عبر محادثة Telegram الشخصية بعد تأكيد طلبك.',
-                faq_q4: 'كم يستغرق تسليم المفتاح؟',
-                faq_a4: 'يتم تسليم المفتاح على الفور بعد تأكيد الدفع من قبل المشرف عبر Telegram.',
-                footer_desc: 'مزود منتجات رقمية متميزة لـ PUBG Mobile Paks. دعم عالمي، كوريا، فيتنام، تايوان. آمن تمامًا و Android Non-Root.',
+                faq_title: 'الأسئلة الشائعة', faq_desc: 'أسئلة شائعة',
+                faq_q1: 'كيف أشتري؟', faq_a1: 'انقر "اشتر الآن"، اختر طريقة الدفع.',
+                faq_q2: 'طرق الدفع؟', faq_a2: 'DANA، QRIS، SeaBank و BNI.',
+                faq_q3: 'لماذا لا يوجد رقم حساب؟', faq_a3: 'سيتم إرسال التفاصيل عبر Telegram.',
+                faq_q4: 'تسليم المفتاح؟', faq_a4: 'فور تأكيد الدفع.',
+                footer_desc: 'مزود منتجات رقمية متميزة لـ PUBG Mobile Paks.',
                 footer_nav: 'التنقل', footer_payment: 'الدفع', footer_contact: 'اتصل بنا',
-                footer_copy: '© 2024 Shadowcheat Project. جميع الحقوق محفوظة. | آمن ومضمون',
-                login_title: 'تسجيل الدخول', login_user_label: 'اسم المستخدم / البريد الإلكتروني', login_user_ph: 'أدخل اسم المستخدم أو البريد الإلكتروني',
+                footer_copy: '© 2024 Shadowcheat Project. جميع الحقوق محفوظة.',
+                login_title: 'تسجيل الدخول', login_user_label: 'اسم المستخدم', login_user_ph: 'أدخل الاسم',
                 login_pass_label: 'كلمة المرور', login_pass_ph: 'أدخل كلمة المرور', login_btn: 'دخول',
                 login_no_acc: 'ليس لديك حساب؟', login_contact: 'اتصل بالمشرف',
                 checkout_title: 'الدفع', step_summary: 'ملخص', step_payment: 'الدفع', step_confirm: 'التأكيد',
-                sum_product: 'المنتج', sum_duration: 'المدة', sum_server: 'الخادم', sum_platform: 'المنصة', sum_total: 'السعر الإجمالي',
-                btn_next_payment: 'الانتقال إلى الدفع', pay_choose: 'اختر طريقة الدفع',
+                sum_product: 'المنتج', sum_duration: 'المدة', sum_server: 'الخادم', sum_platform: 'المنصة', sum_total: 'الإجمالي',
+                btn_next_payment: 'الانتقال للدفع', pay_choose: 'اختر طريقة الدفع',
                 pay_ewallet: 'محفظة إلكترونية', pay_scanqr: 'مسح QR', pay_bank: 'تحويل بنكي',
-                btn_back: 'رجوع', btn_next: 'التالي', total_pay: 'إجمالي الدفع',
-                instr_title: 'تعليمات الدفع:', instr_1: '1. أكمل الدفع باستخدام الطريقة التي اخترتها.', instr_2: '2. التقط لقطة شاشة لإثبات الدفع.',
-                instr_3: '3. انقر فوق زر التأكيد أدناه لإرسال الإثبات إلى مشرف Telegram.', instr_4: '4. سيتم إرسال المفتاح بعد أن يتحقق المشرف من دفعك.',
-                btn_confirm: 'تأكيد عبر Telegram', toast_fill: 'يرجى ملء اسم المستخدم وكلمة المرور!', toast_login: 'تم تسجيل الدخول بنجاح! مرحبًا، ',
-                toast_payment: 'يرجى اختيار طريقة الدفع أولاً!', toast_no_qr: 'صورة QR غير متوفرة. يرجى الاتصال بالمشرف عبر Telegram.'
+                btn_back: 'رجوع', btn_next: 'التالي', total_pay: 'الإجمالي',
+                instr_title: 'التعليمات:', instr_1: '1. أكمل الدفع.', instr_2: '2. لقطة شاشة.',
+                instr_3: '3. أرسل للمشرف.', instr_4: '4. سيتم إرسال المفتاح بعد التحقق.',
+                btn_confirm: 'تأكيد عبر Telegram', toast_fill: 'يرجى الملء!', toast_login: 'مرحبًا ',
+                toast_payment: 'اختر طريقة الدفع أولاً!', toast_no_qr: 'QR غير متوفر.'
             },
             'es': {
                 nav_home: 'Inicio', nav_products: 'Productos', nav_tutorial: 'Tutorial', nav_download: 'Descargar', nav_faq: 'Preguntas', nav_support: 'Soporte',
                 btn_login: 'Iniciar sesión', search_placeholder: 'Buscar productos...',
-                hero_subtitle: 'Tienda Digital Premium y Herramientas',
+                hero_subtitle: 'Tienda Digital Premium',
                 btn_view_products: 'Ver Productos', btn_contact: 'Contáctanos',
                 section_catalog: 'Catálogo de Productos',
                 section_catalog_desc: 'Soporte PUBG Mobile Paks - Global, Corea, Vietnam, Taiwán | Android Sin Root',
-                badge_popular: 'POPULAR', badge_best: 'MEJOR VALOR', badge_season: 'TEMPORADA', badge_permanent: 'PERMANENTE',
-                prod_7d_name: 'Clave 7 Días', prod_7d_desc: 'Acceso completo por 7 días. Soporte PUBG Mobile Global, Corea, Vietnam y Taiwán. Android Sin Root.',
-                prod_15d_name: 'Clave 15 Días', prod_15d_desc: 'Acceso completo por 15 días. Soporte Global, Corea, Vietnam y Taiwán. Android Sin Root.',
-                prod_30d_name: 'Clave 30 Días', prod_30d_desc: 'Acceso completo por 30 días. Full Safe y garantía para PUBG Mobile Global, Corea, Vietnam y Taiwán.',
-                prod_season_name: 'Clave 1 Temporada', prod_season_desc: 'Acceso completo por 1 temporada (aproximadamente 2 meses). Full Safe para todos los servidores.',
-                prod_perm_name: 'Clave Permanente', prod_perm_desc: 'Acceso permanente sin límite de tiempo. Full Safe y garantía de por vida para todos los servidores.',
+                badge_popular: 'POPULAR', badge_best: 'MEJOR', badge_season: 'TEMPORADA', badge_permanent: 'PERMANENTE',
+                prod_season_name: 'Clave 1 Temporada', prod_season_desc: 'Acceso completo por 1 temporada (aproximadamente 2 meses).',
+                prod_perm_name: 'Clave Permanente', prod_perm_desc: 'Acceso permanente sin límite de tiempo.',
                 btn_buy: 'COMPRAR AHORA',
                 tutorial_title: 'Cómo Instalar Paks',
-                tutorial_desc: 'Sigue el video tutorial a continuación correctamente para que las funciones funcionen de manera óptima',
-                tutorial_warning: 'Sigue el video correctamente. ¡Si te saltas un paso, las funciones no se activarán!',
+                tutorial_desc: 'Sigue el video tutorial a continuación',
+                tutorial_warning: '¡Sigue el video correctamente!',
                 download_title: 'Descargar Paks Mod',
                 download_desc: 'Archivo Paks mod más reciente para PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
@@ -1742,48 +1606,41 @@
                 download_loading: 'DESCARGANDO...',
                 download_connecting: 'Conectando...',
                 btn_cara_pasang: 'CÓMO INSTALAR',
-                faq_title: 'Preguntas Frecuentes', faq_desc: 'Preguntas comunes de nuestros clientes',
-                faq_q1: '¿Cómo comprar un producto?',
-                faq_a1: 'Haz clic en "COMPRAR AHORA" en el producto, elige el método de pago (DANA, QRIS, SeaBank, BNI), luego sigue las instrucciones. Para DANA/SeaBank/BNI, los detalles de pago serán enviados por el administrador a través de chat personal de Telegram.',
-                faq_q2: '¿Qué métodos de pago están disponibles?',
-                faq_a2: 'Aceptamos pagos a través de E-Wallet DANA, QRIS (escanear QR), y Transferencia Bancaria SeaBank y BNI.',
-                faq_q3: '¿Por qué no hay número de cuenta en el sitio web?',
-                faq_a3: 'Por seguridad mutua, los detalles de pago (número DANA, cuenta bancaria, etc.) serán enviados directamente por el administrador a través de chat personal de Telegram después de confirmar tu pedido.',
-                faq_q4: '¿Cuánto tarda la entrega de la clave?',
-                faq_a4: 'La entrega de la clave es instantánea después de que el administrador confirme el pago a través de Telegram.',
-                footer_desc: 'Proveedor de productos digitales premium para PUBG Mobile Paks. Soporte Global, Corea, Vietnam, Taiwán. Full Safe y Android Sin Root.',
+                faq_title: 'Preguntas Frecuentes', faq_desc: 'Preguntas comunes',
+                faq_q1: '¿Cómo comprar?', faq_a1: 'Haz clic en "COMPRAR AHORA" y elige el método de pago.',
+                faq_q2: '¿Métodos de pago?', faq_a2: 'DANA, QRIS, SeaBank y BNI.',
+                faq_q3: '¿Por qué no hay número de cuenta?', faq_a3: 'Los detalles se envían por Telegram.',
+                faq_q4: '¿Tiempo de entrega?', faq_a4: 'Instantáneo después de la confirmación.',
+                footer_desc: 'Proveedor de productos digitales premium para PUBG Mobile Paks.',
                 footer_nav: 'Navegación', footer_payment: 'Pago', footer_contact: 'Contáctanos',
-                footer_copy: '© 2024 Shadowcheat Project. Todos los derechos reservados. | Seguro y protegido',
-                login_title: 'Iniciar Sesión', login_user_label: 'Usuario / Email', login_user_ph: 'Ingresa usuario o email',
+                footer_copy: '© 2024 Shadowcheat Project. Todos los derechos reservados.',
+                login_title: 'Iniciar Sesión', login_user_label: 'Usuario', login_user_ph: 'Ingresa usuario',
                 login_pass_label: 'Contraseña', login_pass_ph: 'Ingresa contraseña', login_btn: 'Iniciar',
                 login_no_acc: '¿No tienes cuenta?', login_contact: 'Contactar Administrador',
                 checkout_title: 'Pago', step_summary: 'Resumen', step_payment: 'Pago', step_confirm: 'Confirmación',
-                sum_product: 'Producto', sum_duration: 'Duración', sum_server: 'Servidor', sum_platform: 'Plataforma', sum_total: 'Precio Total',
+                sum_product: 'Producto', sum_duration: 'Duración', sum_server: 'Servidor', sum_platform: 'Plataforma', sum_total: 'Total',
                 btn_next_payment: 'Ir al Pago', pay_choose: 'Elegir Método de Pago',
-                pay_ewallet: 'E-Wallet', pay_scanqr: 'Escanear QR', pay_bank: 'Transferencia Bancaria',
+                pay_ewallet: 'E-Wallet', pay_scanqr: 'Escanear QR', pay_bank: 'Transferencia',
                 btn_back: 'Atrás', btn_next: 'Siguiente', total_pay: 'Pago Total',
-                instr_title: 'Instrucciones de Pago:', instr_1: '1. Completa el pago usando el método elegido.', instr_2: '2. Captura de pantalla de tu comprobante de pago.',
-                instr_3: '3. Haz clic en el botón de confirmación a continuación para enviar el comprobante al administrador de Telegram.', instr_4: '4. La clave se enviará después de que el administrador verifique tu pago.',
-                btn_confirm: 'Confirmar vía Telegram', toast_fill: '¡Por favor completa usuario y contraseña!', toast_login: '¡Inicio de sesión exitoso! Bienvenido, ',
-                toast_payment: '¡Por favor selecciona un método de pago primero!', toast_no_qr: 'Imagen QR no disponible. Por favor contacta al administrador por Telegram.'
+                instr_title: 'Instrucciones:', instr_1: '1. Completa el pago.', instr_2: '2. Captura de pantalla.',
+                instr_3: '3. Envía al admin.', instr_4: '4. Clave enviada tras verificación.',
+                btn_confirm: 'Confirmar vía Telegram', toast_fill: '¡Completa!', toast_login: 'Bienvenido, ',
+                toast_payment: '¡Selecciona método primero!', toast_no_qr: 'QR no disponible.'
             },
             'pt': {
                 nav_home: 'Início', nav_products: 'Produtos', nav_tutorial: 'Tutorial', nav_download: 'Baixar', nav_faq: 'FAQ', nav_support: 'Suporte',
                 btn_login: 'Entrar', search_placeholder: 'Pesquisar produtos...',
-                hero_subtitle: 'Loja Digital Premium e Ferramentas',
+                hero_subtitle: 'Loja Digital Premium',
                 btn_view_products: 'Ver Produtos', btn_contact: 'Fale Conosco',
                 section_catalog: 'Catálogo de Produtos',
                 section_catalog_desc: 'Suporte PUBG Mobile Paks - Global, Coreia, Vietnã, Taiwan | Android Sem Root',
-                badge_popular: 'POPULAR', badge_best: 'MELHOR VALOR', badge_season: 'TEMPORADA', badge_permanent: 'PERMANENTE',
-                prod_7d_name: 'Chave 7 Dias', prod_7d_desc: 'Acesso completo por 7 dias. Suporte PUBG Mobile Global, Coreia, Vietnã e Taiwan. Android Sem Root.',
-                prod_15d_name: 'Chave 15 Dias', prod_15d_desc: 'Acesso completo por 15 dias. Suporte Global, Coreia, Vietnã e Taiwan. Android Sem Root.',
-                prod_30d_name: 'Chave 30 Dias', prod_30d_desc: 'Acesso completo por 30 dias. Full Safe e garantia para PUBG Mobile Global, Coreia, Vietnã e Taiwan.',
-                prod_season_name: 'Chave 1 Temporada', prod_season_desc: 'Acesso completo por 1 temporada (cerca de 2 meses). Full Safe para todos os servidores.',
-                prod_perm_name: 'Chave Permanente', prod_perm_desc: 'Acesso permanente sem limite de tempo. Full Safe e garantia vitalícia para todos os servidores.',
+                badge_popular: 'POPULAR', badge_best: 'MELHOR', badge_season: 'TEMPORADA', badge_permanent: 'PERMANENTE',
+                prod_season_name: 'Chave 1 Temporada', prod_season_desc: 'Acesso completo por 1 temporada (cerca de 2 meses).',
+                prod_perm_name: 'Chave Permanente', prod_perm_desc: 'Acesso permanente sem limite de tempo.',
                 btn_buy: 'COMPRAR AGORA',
                 tutorial_title: 'Como Instalar Paks',
-                tutorial_desc: 'Siga o vídeo tutorial abaixo corretamente para que os recursos funcionem de forma ideal',
-                tutorial_warning: 'Siga o vídeo corretamente. Se você pular uma etapa, os recursos não serão ativados!',
+                tutorial_desc: 'Siga o vídeo tutorial abaixo',
+                tutorial_warning: 'Siga o vídeo corretamente!',
                 download_title: 'Baixar Paks Mod',
                 download_desc: 'Arquivo Paks mod mais recente para PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
@@ -1792,80 +1649,69 @@
                 download_loading: 'BAIXANDO...',
                 download_connecting: 'Conectando...',
                 btn_cara_pasang: 'COMO INSTALAR',
-                faq_title: 'Perguntas Frequentes', faq_desc: 'Perguntas comuns dos nossos clientes',
-                faq_q1: 'Como comprar um produto?',
-                faq_a1: 'Clique em "COMPRAR AGORA" no produto, escolha o método de pagamento (DANA, QRIS, SeaBank, BNI), depois siga as instruções. Para DANA/SeaBank/BNI, os detalhes de pagamento serão enviados pelo administrador via chat pessoal do Telegram.',
-                faq_q2: 'Quais métodos de pagamento estão disponíveis?',
-                faq_a2: 'Aceitamos pagamentos via E-Wallet DANA, QRIS (escanear QR), e Transferência Bancária SeaBank e BNI.',
-                faq_q3: 'Por que não há número de conta no site?',
-                faq_a3: 'Para segurança mútua, os detalhes de pagamento (número DANA, conta bancária, etc.) serão enviados diretamente pelo administrador via chat pessoal do Telegram após você confirmar seu pedido.',
-                faq_q4: 'Quanto tempo leva a entrega da chave?',
-                faq_a4: 'A entrega da chave é instantânea após o administrador confirmar o pagamento via Telegram.',
-                footer_desc: 'Fornecedor de produtos digitais premium para PUBG Mobile Paks. Suporte Global, Coreia, Vietnã, Taiwan. Full Safe e Android Sem Root.',
+                faq_title: 'Perguntas Frequentes', faq_desc: 'Perguntas comuns',
+                faq_q1: 'Como comprar?', faq_a1: 'Clique em "COMPRAR AGORA" e escolha o método de pagamento.',
+                faq_q2: 'Métodos de pagamento?', faq_a2: 'DANA, QRIS, SeaBank e BNI.',
+                faq_q3: 'Por que não há número de conta?', faq_a3: 'Os detalhes são enviados via Telegram.',
+                faq_q4: 'Tempo de entrega?', faq_a4: 'Instantâneo após confirmação.',
+                footer_desc: 'Fornecedor de produtos digitais premium para PUBG Mobile Paks.',
                 footer_nav: 'Navegação', footer_payment: 'Pagamento', footer_contact: 'Fale Conosco',
-                footer_copy: '© 2024 Shadowcheat Project. Todos os direitos reservados. | Seguro e Protegido',
-                login_title: 'Entrar na Conta', login_user_label: 'Usuário / Email', login_user_ph: 'Digite usuário ou email',
+                footer_copy: '© 2024 Shadowcheat Project. Todos os direitos reservados.',
+                login_title: 'Entrar na Conta', login_user_label: 'Usuário', login_user_ph: 'Digite usuário',
                 login_pass_label: 'Senha', login_pass_ph: 'Digite a senha', login_btn: 'Entrar',
-                login_no_acc: 'Não tem uma conta?', login_contact: 'Contatar Administrador',
+                login_no_acc: 'Não tem conta?', login_contact: 'Contatar Administrador',
                 checkout_title: 'Checkout', step_summary: 'Resumo', step_payment: 'Pagamento', step_confirm: 'Confirmação',
-                sum_product: 'Produto', sum_duration: 'Duração', sum_server: 'Servidor', sum_platform: 'Plataforma', sum_total: 'Preço Total',
-                btn_next_payment: 'Ir para Pagamento', pay_choose: 'Escolher Método de Pagamento',
-                pay_ewallet: 'E-Wallet', pay_scanqr: 'Escanear QR', pay_bank: 'Transferência Bancária',
-                btn_back: 'Voltar', btn_next: 'Próximo', total_pay: 'Pagamento Total',
-                instr_title: 'Instruções de Pagamento:', instr_1: '1. Complete o pagamento usando o método escolhido.', instr_2: '2. Tire uma captura de tela do comprovante de pagamento.',
-                instr_3: '3. Clique no botão de confirmação abaixo para enviar o comprovante ao administrador do Telegram.', instr_4: '4. A chave será enviada após o administrador verificar seu pagamento.',
-                btn_confirm: 'Confirmar via Telegram', toast_fill: 'Por favor preencha usuário e senha!', toast_login: 'Login bem-sucedido! Bem-vindo, ',
-                toast_payment: 'Por favor selecione um método de pagamento primeiro!', toast_no_qr: 'Imagem QR não disponível. Por favor contate o administrador via Telegram.'
+                sum_product: 'Produto', sum_duration: 'Duração', sum_server: 'Servidor', sum_platform: 'Plataforma', sum_total: 'Total',
+                btn_next_payment: 'Ir para Pagamento', pay_choose: 'Escolher Método',
+                pay_ewallet: 'E-Wallet', pay_scanqr: 'Escanear QR', pay_bank: 'Transferência',
+                btn_back: 'Voltar', btn_next: 'Próximo', total_pay: 'Total',
+                instr_title: 'Instruções:', instr_1: '1. Complete o pagamento.', instr_2: '2. Captura de tela.',
+                instr_3: '3. Envie ao admin.', instr_4: '4. Chave enviada após verificação.',
+                btn_confirm: 'Confirmar via Telegram', toast_fill: 'Por favor preencha!', toast_login: 'Bem-vindo, ',
+                toast_payment: 'Selecione o método primeiro!', toast_no_qr: 'QR indisponível.'
             },
             'ru': {
                 nav_home: 'Главная', nav_products: 'Продукты', nav_tutorial: 'Учебник', nav_download: 'Скачать', nav_faq: 'Вопросы', nav_support: 'Поддержка',
                 btn_login: 'Войти', search_placeholder: 'Поиск продуктов...',
-                hero_subtitle: 'Премиальный Цифровой Магазин и Инструменты',
-                btn_view_products: 'Просмотр Продуктов', btn_contact: 'Связаться',
+                hero_subtitle: 'Премиальный Магазин',
+                btn_view_products: 'Продукты', btn_contact: 'Связаться',
                 section_catalog: 'Каталог Продуктов',
                 section_catalog_desc: 'Поддержка PUBG Mobile Paks - Global, Корея, Вьетнам, Тайвань | Android Non-Root',
-                badge_popular: 'ПОПУЛЯРНОЕ', badge_best: 'ЛУЧШАЯ ЦЕНА', badge_season: 'СЕЗОН', badge_permanent: 'НАВСЕГДА',
-                prod_7d_name: 'Ключ 7 Дней', prod_7d_desc: 'Полный доступ на 7 дней. Поддержка PUBG Mobile Global, Корея, Вьетнам и Тайвань. Android Non-Root.',
-                prod_15d_name: 'Ключ 15 Дней', prod_15d_desc: 'Полный доступ на 15 дней. Поддержка Global, Корея, Вьетнам и Тайвань. Android Non-Root.',
-                prod_30d_name: 'Ключ 30 Дней', prod_30d_desc: 'Полный доступ на 30 дней. Full Safe и гарантия для PUBG Mobile Global, Корея, Вьетнам и Тайвань.',
-                prod_season_name: 'Ключ 1 Сезон', prod_season_desc: 'Полный доступ на 1 сезон (около 2 месяцев). Full Safe для всех серверов.',
-                prod_perm_name: 'Ключ Навсегда', prod_perm_desc: 'Постоянный доступ без ограничения по времени. Full Safe и пожизненная гарантия для всех серверов.',
-                btn_buy: 'КУПИТЬ СЕЙЧАС',
-                tutorial_title: 'Как Установить Paks',
-                tutorial_desc: 'Следуйте видеоуроку ниже правильно, чтобы функции работали оптимально',
-                tutorial_warning: 'Следуйте видео правильно. Если вы пропустите шаг, функции не активируются!',
+                badge_popular: 'ПОПУЛЯРНОЕ', badge_best: 'ЛУЧШЕЕ', badge_season: 'СЕЗОН', badge_permanent: 'НАВСЕГДА',
+                prod_season_name: 'Ключ 1 Сезон', prod_season_desc: 'Полный доступ на 1 сезон (около 2 месяцев).',
+                prod_perm_name: 'Ключ Навсегда', prod_perm_desc: 'Постоянный доступ без ограничения по времени.',
+                btn_buy: 'КУПИТЬ',
+                tutorial_title: 'Как Установить',
+                tutorial_desc: 'Следуйте видеоуроку ниже',
+                tutorial_warning: 'Следуйте видео правильно!',
                 download_title: 'Скачать Paks Mod',
                 download_desc: 'Последний файл Paks mod для PUBG Mobile',
                 download_file: 'Paks Mod PUBG Mobile',
-                download_btn: 'СКАЧАТЬ СЕЙЧАС',
+                download_btn: 'СКАЧАТЬ',
                 download_btn_hero: 'СКАЧАТЬ',
                 download_loading: 'ЗАГРУЗКА...',
                 download_connecting: 'Подключение...',
                 btn_cara_pasang: 'КАК УСТАНОВИТЬ',
-                faq_title: 'Часто Задаваемые Вопросы', faq_desc: 'Общие вопросы от наших клиентов',
-                faq_q1: 'Как купить продукт?',
-                faq_a1: 'Нажмите "КУПИТЬ СЕЙЧАС" на продукте, выберите способ оплаты (DANA, QRIS, SeaBank, BNI), затем следуйте инструкциям. Для DANA/SeaBank/BNI реквизиты для оплаты будут отправлены администратором через личный чат Telegram.',
-                faq_q2: 'Какие способы оплаты доступны?',
-                faq_a2: 'Мы принимаем платежи через E-Wallet DANA, QRIS (сканирование QR) и банковский перевод SeaBank и BNI.',
-                faq_q3: 'Почему на сайте нет номера счета?',
-                faq_a3: 'Для взаимной безопасности реквизиты для оплаты (номер DANA, банковский счет и т.д.) будут отправлены напрямую администратором через личный чат Telegram после подтверждения заказа.',
-                faq_q4: 'Сколько времени занимает доставка ключа?',
-                faq_a4: 'Доставка ключа происходит мгновенно после подтверждения оплаты администратором через Telegram.',
-                footer_desc: 'Поставщик премиальных цифровых продуктов для PUBG Mobile Paks. Поддержка Global, Корея, Вьетнам, Тайвань. Full Safe и Android Non-Root.',
+                faq_title: 'Вопросы', faq_desc: 'Часто задаваемые вопросы',
+                faq_q1: 'Как купить?', faq_a1: 'Нажмите "КУПИТЬ" и выберите способ оплаты.',
+                faq_q2: 'Способы оплаты?', faq_a2: 'DANA, QRIS, SeaBank и BNI.',
+                faq_q3: 'Почему нет номера счета?', faq_a3: 'Детали отправляются через Telegram.',
+                faq_q4: 'Время доставки?', faq_a4: 'Мгновенно после подтверждения.',
+                footer_desc: 'Поставщик премиальных цифровых продуктов для PUBG Mobile Paks.',
                 footer_nav: 'Навигация', footer_payment: 'Оплата', footer_contact: 'Связаться',
-                footer_copy: '© 2024 Shadowcheat Project. Все права защищены. | Безопасно и защищено',
-                login_title: 'Вход в Аккаунт', login_user_label: 'Имя пользователя / Email', login_user_ph: 'Введите имя пользователя или email',
+                footer_copy: '© 2024 Shadowcheat Project. Все права защищены.',
+                login_title: 'Вход', login_user_label: 'Имя', login_user_ph: 'Введите имя',
                 login_pass_label: 'Пароль', login_pass_ph: 'Введите пароль', login_btn: 'Войти',
-                login_no_acc: 'Нет аккаунта?', login_contact: 'Связаться с администратором',
+                login_no_acc: 'Нет аккаунта?', login_contact: 'Связаться',
                 checkout_title: 'Оформление', step_summary: 'Сводка', step_payment: 'Оплата', step_confirm: 'Подтверждение',
-                sum_product: 'Продукт', sum_duration: 'Длительность', sum_server: 'Сервер', sum_platform: 'Платформа', sum_total: 'Общая Цена',
-                btn_next_payment: 'Перейти к Оплате', pay_choose: 'Выбрать Способ Оплаты',
+                sum_product: 'Продукт', sum_duration: 'Длительность', sum_server: 'Сервер', sum_platform: 'Платформа', sum_total: 'Итого',
+                btn_next_payment: 'К Оплате', pay_choose: 'Выбрать Способ',
                 pay_ewallet: 'Электронный кошелек', pay_scanqr: 'Сканировать QR', pay_bank: 'Банковский перевод',
-                btn_back: 'Назад', btn_next: 'Далее', total_pay: 'Общая Сумма',
-                instr_title: 'Инструкции по Оплате:', instr_1: '1. Завершите оплату выбранным способом.', instr_2: '2. Сделайте скриншот подтверждения оплаты.',
-                instr_3: '3. Нажмите кнопку подтверждения ниже, чтобы отправить подтверждение администратору в Telegram.', instr_4: '4. Ключ будет отправлен после проверки оплаты администратором.',
-                btn_confirm: 'Подтвердить через Telegram', toast_fill: 'Пожалуйста, заполните имя пользователя и пароль!', toast_login: 'Вход успешен! Добро пожаловать, ',
-                toast_payment: 'Сначала выберите способ оплаты!', toast_no_qr: 'Изображение QR недоступно. Свяжитесь с администратором в Telegram.'
+                btn_back: 'Назад', btn_next: 'Далее', total_pay: 'Итого',
+                instr_title: 'Инструкции:', instr_1: '1. Оплатите.', instr_2: '2. Скриншот.',
+                instr_3: '3. Отправьте админу.', instr_4: '4. Ключ после проверки.',
+                btn_confirm: 'Подтвердить через Telegram', toast_fill: 'Заполните!', toast_login: 'Добро пожаловать, ',
+                toast_payment: 'Выберите способ оплаты!', toast_no_qr: 'QR недоступен.'
             }
         };
 
@@ -2139,7 +1985,7 @@
                 const messages = {
                     'en': `Payment details for <strong>${checkoutData.paymentMethod}</strong> will be sent by admin via <strong>personal Telegram chat</strong>.`,
                     'id': `Detail pembayaran <strong>${checkoutData.paymentMethod}</strong> akan dikirim oleh admin melalui <strong>chat pribadi Telegram</strong>.`,
-                    'hi': `<strong>${checkoutData.paymentMethod}</strong> के लिए भुगतान विवरण व्यवस्थापक द्वारा <strong>व्यक्तिगत Telegram चैट</strong> के माध्यम से भेजा जाएगा।`,
+                    'hi': `भुगतान विवरण <strong>${checkoutData.paymentMethod}</strong> के लिए <strong>Telegram चैट</strong> के माध्यम से भेजा जाएगा।`,
                     'zh': `<strong>${checkoutData.paymentMethod}</strong> 的付款详情将通过<strong>个人 Telegram 聊天</strong>由管理员发送。`,
                     'vi': `Chi tiết thanh toán cho <strong>${checkoutData.paymentMethod}</strong> sẽ được admin gửi qua <strong>chat Telegram riêng</strong>.`,
                     'ko': `<strong>${checkoutData.paymentMethod}</strong>의 결제 세부 정보는 관리자가 <strong>개인 Telegram 채팅</strong>을 통해 전송합니다.`,
@@ -2153,16 +1999,16 @@
                 const hintMessages = {
                     'en': 'Click the "Confirm via Telegram" button below to start chatting with admin.',
                     'id': 'Klik tombol "Konfirmasi via Telegram" di bawah untuk memulai chat dengan admin.',
-                    'hi': 'व्यवस्थापक के साथ चैट शुरू करने के लिए नीचे "Telegram के माध्यम से पुष्टि करें" बटन पर क्लिक करें।',
+                    'hi': 'व्यवस्थापक के साथ चैट शुरू करने के लिए नीचे बटन पर क्लिक करें।',
                     'zh': '点击下方"通过 Telegram 确认"按钮开始与管理员聊天。',
-                    'vi': 'Nhấp nút "Xác nhận qua Telegram" bên dưới để bắt đầu trò chuyện với admin.',
-                    'ko': '아래 "Telegram을 통해 확인" 버튼을 클릭하여 관리자와 채팅을 시작하세요.',
-                    'ja': '下の「Telegramで確認」ボタンをクリックして管理者とのチャットを開始してください。',
-                    'th': 'คลิกปุ่ม "ยืนยันผ่าน Telegram" ด้านล่างเพื่อเริ่มแชทกับผู้ดูแล',
-                    'ar': 'انقر فوق زر "تأكيد عبر Telegram" أدناه لبدء الدردشة مع المشرف.',
-                    'es': 'Haz clic en el botón "Confirmar vía Telegram" a continuación para iniciar el chat con el administrador.',
-                    'pt': 'Clique no botão "Confirmar via Telegram" abaixo para iniciar o chat com o administrador.',
-                    'ru': 'Нажмите кнопку "Подтвердить через Telegram" ниже, чтобы начать чат с администратором.'
+                    'vi': 'Nhấp nút "Xác nhận qua Telegram" bên dưới để bắt đầu trò chuyện.',
+                    'ko': '아래 확인 버튼을 클릭하여 관리자와 채팅을 시작하세요.',
+                    'ja': '下の確認ボタンをクリックして管理者とのチャットを開始してください。',
+                    'th': 'คลิกปุ่มยืนยันด้านล่างเพื่อเริ่มแชทกับผู้ดูแล',
+                    'ar': 'انقر فوق زر التأكيد أدناه لبدء الدردشة مع المشرف.',
+                    'es': 'Haz clic en el botón de confirmación a continuación.',
+                    'pt': 'Clique no botão de confirmação abaixo.',
+                    'ru': 'Нажмите кнопку подтверждения ниже.'
                 };
                 const lang = document.documentElement.lang || 'en';
                 contentArea.innerHTML = `
@@ -2304,7 +2150,7 @@
         if (window.top !== window.self) {
             try { window.top.location = window.self.location; }
             catch (e) {
-                document.documentElement.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#050505;color:#ffaa00;font-family:Orbitron,sans-serif;font-size:20px;text-align:center;padding:20px;">Access Denied</div>';
+                document.documentElement.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#050505;color:#ffaa00;font-family:sans-serif;font-size:20px;text-align:center;padding:20px;">Access Denied</div>';
             }
         }
         let devtoolsOpen = false;
